@@ -1,8 +1,20 @@
-body {
-  padding: 50px;
-  font: 14px "Helvetica", Helvetica, Arial, sans-serif;
+h1{
+	color: blue;
+	font-size: 100px;
 }
-
-a {
-  color: #00B7FF;
+section {
+  padding: 25px 0 35px;
+  background: #fff;
+  height: 700px;
+}
+.container {
+  font-size: 60px;
+}
+.navbar-brand img{
+	margin-top: -15px;
+	height: 50px;
+}
+.navbar .navbar-default{
+	margin-bottom: 0px;
+	border: 0px;
 }

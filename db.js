@@ -8,7 +8,6 @@ var BreakingNews = new Schema({
 	content : String,
 	isImportant : Boolean,
 	tag : String,
-	url : String,
 	create_at : {type : Date, default: Date.now}
 });
 
@@ -25,7 +24,6 @@ var BlogPosts = new Schema({
 	title : String,
 	department : String,
 	author : String,
-	shortContent : String,
 	content : String,
 	tag : String,
 	create_at : {type: Date, default: Date.now}

@@ -1,10 +1,15 @@
+exports.index = function(req,res){
+	res.render('index',{title:"lulala"});
+}
+
+/* GG
+
 var db = require('../db');
 var mongoose = require('mongoose');
 var BreakingNews = mongoose.model('BreakingNews');
 var BlogPosts = mongoose.model('BlogPosts');
 var Users = mongoose.model('Users')
 
-/* Users Start*/
 exports.users = function (req, res){
 	//Display on User Page//
 	Users.find(function(error, users){
@@ -12,7 +17,7 @@ exports.users = function (req, res){
   	});
   	console.log('>>>>> route through index.js fn exports.user <<<<<');
 }
-exports.users.create = function ( req, res ){
+exports.users.create = function (req,res){
 	console.log(req.body.name);
   	console.log('>>>>> route through index.js fn exports.user.create <<<<<');
 	new User({
@@ -36,11 +41,9 @@ exports.users.destroy = function(req,res){
 		});
 	});
 };
-/* Users End*/
 
 
-/* Breaking News Start*/
-/* Breaking News Start*/
+
 exports.breakingnews = function(req,res){
 	console.log(">>>> through index.js <<<<<");
 	BreakingNews.find(function(error, news){
@@ -72,12 +75,9 @@ exports.breakingnews.destroy = function(req,res){
 		});
 	});
 };
-/* Breaking News End*/
 
 
 
-/* Blog Posts Start */
-/* Blog Posts Start */
 exports.blogposts = function(req,res){
 	console.log(">>>> through index.js <<<<<");
 	blogposts.find(function(error, news){
@@ -88,44 +88,20 @@ exports.blogposts.create = function(req,res){
 	console.log(">>>> through index.js <<<<<");
 	new BlogPosts ({
 		title : req.body.title,
-		department : ,
-		author : String,
-		shortContent : String,
-		content : String,
-		tag : String,
+		department : req.body.department,
+		author : req.body.author,
+		content : req.body.content,
+		tag : req.body.tag,
 		create_at : {type: Date, default: Date.now}
 	})
-
+}
+exports.blogposts.destroy = function(req,res){
+	console.log(">>>> through index.js <<<<<");
+	BlogPosts.findById(req.params.id, function(err, blogposts){
+		blogposts.remove(function(err, news){
+			res.redirect('/blogposts');
+		})
+	})
 
 }
-
-
-/* Blog Posts End */
-
-
-
-// Old db //
-exports.index = function ( req, res, next ){
-  var user_id = req.cookies ?
-    req.cookies.user_id : undefined;
-
-  Todo.
-    find({ user_id : user_id }).
-    sort( '-updated_at' ).
-    exec( function ( err, todos ){
-      if( err ) return next( err );
-
-      res.render( 'index', {
-          title : 'Express Todo Example',
-          todos : todos
-      });
-    });
-};
-exports.index = function ( req, res ){
-  User.find( function ( err, todos, count ){
-    res.render( 'index', {
-        title : 'Express Todo Example',
-        users : users
-    });
-  });
-};
+*/
