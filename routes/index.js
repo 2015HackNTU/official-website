@@ -52,7 +52,6 @@ exports.breakingnews.create = function(req,res){
 	new BreakingNews({
 		title : req.body.title,
 		department : req.body.department,
-		shortContent : req.body.shortContent,
 		content : req.body.content,
 		isImportant : req.body.isImportant,
 		tag : req.body.tag,
@@ -84,6 +83,20 @@ exports.blogposts = function(req,res){
 	blogposts.find(function(error, news){
 		res.render('blog',{title:'Breaking News', news: news});
 	});	
+}
+exports.blogposts.create = function(req,res){
+	console.log(">>>> through index.js <<<<<");
+	new BlogPosts ({
+		title : req.body.title,
+		department : ,
+		author : String,
+		shortContent : String,
+		content : String,
+		tag : String,
+		create_at : {type: Date, default: Date.now}
+	})
+
+
 }
 
 

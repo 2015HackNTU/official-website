@@ -5,7 +5,6 @@ var Schema = mongoose.Schema;
 var BreakingNews = new Schema({
 	title : String,
 	department : String,
-	shortContent : String,
 	content : String,
 	isImportant : Boolean,
 	tag : String,
@@ -25,6 +24,7 @@ var User = new Schema({
 var BlogPosts = new Schema({
 	title : String,
 	department : String,
+	author : String,
 	shortContent : String,
 	content : String,
 	tag : String,
