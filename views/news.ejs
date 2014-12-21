@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+	<% layout( 'layout' ) -%>
+	 
+	<h1><%= title %></h1>
+	<form action="/create" method="post" accept-charset="utf-8">
+	  <input type="text" name="name" />
+	  <input type="text" name="department"/>
+	  <input type="text" name="username" id=""/>
+	  <input type="password" name="password" id=""/>
+	  <input type="text" name="create_at"/>
+	</form>
+
+	<% users.forEach( function( users ){ %>
+		<p>Name : <%= users.name %></p>
+		<p>Department : <%= users.department %></p>
+		<p>Username : <%= users.username %></p>
+		<p>Passowrd : <% users.password %></p>
+		<p>Create Time : <% users.create_at %></p>
+	<% }); %>
+
+  </body>
+</html>
