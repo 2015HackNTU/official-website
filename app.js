@@ -38,6 +38,7 @@ app.get('/user/delete/:id', users.users.destroy);
 
 app.get('/news', news.breakingnews);
 app.post('/news/create', news.breakingnews.create);
+app.get('/news/isImportant/:id', news.breakingnews.isImportant);
 app.get('/news/delete/:id', news.breakingnews.destroy);
 // Routes //
 

@@ -84,7 +84,7 @@
 	            <td>Department</td>
 	            <td>Content</td>
 	            <td>Tags</td>
-	            <td>Create Time</td>
+	            <td>Is this breaking news?</td>
 	            <td>Delete</td>
        		</tr>
             <% news.forEach( function (news){ %>
@@ -93,7 +93,7 @@
                 <td> <%= news.department %> </td>
                 <td> <%= news.content %> </td>
                 <td> <%= news.tag %> </td>
-                <td> <%= news.create_at %> </td>
+                <td> <a href="/news/isImportant/<%= news._id %>"> <%= news.isImportant %> </a> </td>
                 <td> <a href="/news/delete/<%= news._id %>">Delete</a></td>
             <% }); %>
         </tbody>
@@ -108,7 +108,7 @@
                     <input type="department" name="department" autofocus="autofocus" placeholder="Department"/><br><br>
                     <input type="textarea" name="content" autofocus="autofocus" placeholder="Content">
                     <input type="text" name="tag" placeholder="Tags" id="tag">
-                    Important? <input type="radio" name="isImportant" autofocus="autofocus" label="Is this breakingnews?"/>
+                    Important? <input type="radio" name="isImportant" autofocus="autofocus" default="false" label="Is this breakingnews?"/>
                     <br><br>
         			<input type="submit" class="btn btn-default" name="news-submit" value="Add To List"/>
         	</form>
