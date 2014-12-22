@@ -22,6 +22,12 @@ exports.blogposts.create = function(req,res){
 		tag : req.body.tag,
 		create_at : {type: Date, default: Date.now}
 	}).save(function(err, blogposts, count){
+        if(err){
+            res.render('error', {
+                message: err.message,
+                error: {}
+            });
+        }   
 		console.log("BlogPosts " + blogposts.title + " created.");
 		res.redirect('/blog');
 	})
@@ -30,6 +36,12 @@ exports.blogposts.destroy = function(req,res){
 	console.log(">>>> through blogposts.js <<<<<");
 	BlogPosts.findById(req.params.id, function(err, blogposts){
 		blogposts.remove(function(err, blogposts){
+	        if(err){
+	            res.render('error', {
+	                message: err.message,
+	                error: {}
+	            });
+	        }   
 			res.redirect('/blog');
 		})
 	})

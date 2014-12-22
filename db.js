@@ -33,4 +33,6 @@ var BlogPosts = new Schema({
 var Users = mongoose.model('Users',User);
 var BreakingNews = mongoose.model('BreakingNews',BreakingNews);
 var BlogPosts = mongoose.model('BlogPosts',BlogPosts);
-mongoose.connect('mongodb://localhost/officail-website');
+mongoose.connect('mongodb://localhost/HackNTU-website',function(){
+	console.log("DB connected")
+})

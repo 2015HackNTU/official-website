@@ -23,6 +23,12 @@ exports.users.create = function (req,res){
 		password : req.body.password,
 		creat_at : req.body.create_at
 	}).save( function( err, user, count ){
+        if(err){
+            res.render('error', {
+                message: err.message,
+                error: {}
+            });
+        }   
 		console.log(req.body.department + "'s " + req.body.name + " is created.")
 		res.redirect( '/user' );
 	});
@@ -32,6 +38,12 @@ exports.users.destroy = function(req,res){
   	console.log('>>>>> route through users.js fn exports.user.destroy <<<<<');
   	// Delete //
   	Users.findById(req.params.id, function(err, user){
+        if(err){
+	        res.render('error', {
+                message: err.message,
+                error: {}
+            });
+        }   
     	user.remove( function(err, user){
       		res.redirect('/user');
 		});
