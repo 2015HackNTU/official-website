@@ -23,9 +23,10 @@ exports.blogposts.create = function(req,res){
 		create_at : {type: Date, default: Date.now}
 	}).save(function(err, blogposts, count){
         if(err){
+	        res.status(err.status || 500);
             res.render('error', {
                 message: err.message,
-                error: {}
+                err: {}
             });
         }   
 		console.log("BlogPosts " + blogposts.title + " created.");
@@ -37,9 +38,10 @@ exports.blogposts.destroy = function(req,res){
 	BlogPosts.findById(req.params.id, function(err, blogposts){
 		blogposts.remove(function(err, blogposts){
 	        if(err){
+		        res.status(err.status || 500);
 	            res.render('error', {
 	                message: err.message,
-	                error: {}
+	                err: err
 	            });
 	        }   
 			res.redirect('/blog');
