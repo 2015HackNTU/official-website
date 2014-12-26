@@ -30,7 +30,7 @@ app.get('/', index.index);
 
 app.get('/blog', blogposts.blogposts);
 app.post('/blog/create', blogposts.blogposts.create);
-app.get('/delete/:id', blogposts.blogposts.destroy);
+app.get('/blog/delete/:id', blogposts.blogposts.destroy);
 
 app.get('/user', users.users);
 app.post('/user/create', users.users.create);

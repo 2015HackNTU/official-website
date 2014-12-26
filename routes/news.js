@@ -10,6 +10,7 @@ exports.breakingnews = function(req,res){
     console.log(">>>> through news.js <<<<<");
     BreakingNews.find(function(err, news){
         if(err){
+            res.status(err.status || 500);
             res.render('error', {
                 message: err.message,
                 err: err
@@ -27,8 +28,10 @@ exports.breakingnews.create = function(req,res){
         isImportant : req.body.isImportant,
         tag : req.body.tag,
         create_at : req.body.create_at
-    }).save( function(err, news, count){
+    })
+    .save( function(err, news, count){
         if(err){
+            res.status(err.status || 500);
             res.render('error', {
                 message: err.message,
                 err: err
@@ -42,7 +45,7 @@ exports.breakingnews.isImportant = function(req,res){
     console.log(">>>> through news.js hi <<<<<");
     BreakingNews.findById(req.params.id, function(err, news){
 
-        if (news.isImportant===true) {
+        if (news.isImportant === true) {
             console.log(news.isImportant)
             news.isImportant = false;
         }
