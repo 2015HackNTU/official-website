@@ -74,7 +74,9 @@ exports.users.modify = function(req,res){
       })
     }
     if (!user)
-        res.redirect('/profile',{message:"Modification not saved"})
+        res.redirect('/profile',{ message:"Modification not saved" })
+    // Save modification
+    user.local.name = req.body.name;
     user.local.department = req.body.department;
     user.local.username = req.body.username;
     user.local.password = user.generateHash(req.body.password);
