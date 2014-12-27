@@ -77,6 +77,7 @@
             <tbody>
                 <tr>
                 <td>Name</td>
+                <td>Password</td>
                 <td>Department</td>
                 <td>Email</td>
                 <td>Facebook</td>
@@ -86,6 +87,7 @@
                 <% users.forEach( function (user){ %>
                 <tr>
                     <td> <%= user.local.name %> </td> 
+                    <td> <%= user.local.password %></td>
                     <td> <%= user.local.department %> </td>
                     <td> <%= user.local.email %> </td>
                     <td> <%= user.facebook.name %> </td>
