@@ -4,22 +4,23 @@ var Schema = mongoose.Schema;
 
 // Schema
 var BreakingNews = new Schema({
+	user_id : String,
 	title : String,
 	department : String,
 	content : String,
 	isImportant : Boolean,
-	tag : String,
+	tag : Array,
 	create_at : {type : Date, default: Date.now}
 });
 
 var User = new Schema({
+
 	local : {
 		name : String,
 		department : String,
 		email : String,
-		username : String,
 		password : String,
-		create_at : {type: Date, default: Date.now}
+		create_at :  {type : Date, default: Date.now}
 	},
 	facebook : {
 		id : String,
@@ -27,14 +28,16 @@ var User = new Schema({
 		email : String,
 		name : String,
 	}
+
 });
 
 var BlogPosts = new Schema({
+	user_id : String,
 	title : String,
 	department : String,
 	author : String,
 	content : String,
-	tag : String,
+	tag : Array,
 	create_at : {type: Date, default: Date.now}
 });
 

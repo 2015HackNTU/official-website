@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Setup Passport.js
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({ secret: 'lulalachen' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -41,10 +41,12 @@ require('./routes/frontEndTest')(app);
 
 app.get('/', index.index);
 
-app.get('/blog', blogposts.blogposts);
-app.post('/blog/create', blogposts.blogposts.create);
-app.get('/blog/delete/:id', blogposts.blogposts.destroy);
-
+app.get('/posts', blogposts.blogposts);
+app.get('/posts/new', blogposts.blogposts.newPosts);
+app.post('/posts/create', blogposts.blogposts.create);
+app.get('/posts/edit/:id',blogposts.blogposts.edit);
+app.post('/posts/edit/:id', blogposts.blogposts.editUpdate)
+app.get('/posts/delete/:id', blogposts.blogposts.destroy);
 
 
 app.get('/news', news.breakingnews);

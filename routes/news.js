@@ -24,6 +24,7 @@ exports.breakingnews.create = function(req,res){
     new BreakingNews({
         title : req.body.title,
         department : req.body.department,
+
         content : req.body.content,
         isImportant : req.body.isImportant,
         tag : req.body.tag,

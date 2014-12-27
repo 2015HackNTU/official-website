@@ -1,10 +1,14 @@
 var mongoose = require('mongoose');
 var Users = mongoose.model('Users');
+var BreakingNews = mongoose.model('BreakingNews');
+var BlogPosts = mongoose.model('BlogPosts');
+
 module.exports = function(app,passport){
 
 	var users = require('./users');
 	app.get('/user', users.users);
 	app.post('/user/create', users.users.create)
+	app.get('/user/edit/:id',isLoggedIn, users.users.edit)
 	app.post('/user/edit/:id', isLoggedIn, users.users.modify);
 	app.get('/user/delete/:id', users.users.destroy);
 
@@ -13,9 +17,15 @@ module.exports = function(app,passport){
 		res.render('index')
 	});
 	app.get('/profile', isLoggedIn, function(req,res){
-		res.render('profile',{
-			user : req.user
-		});
+		BreakingNews.find(function(err, news){
+			BlogPosts.find(function(err, posts){
+				res.render('profile',{
+					user : req.user,
+					posts : posts,
+					news : news
+				});
+			})
+		})
 	});
 	app.get('/logout',function(req,res){
 		req.logout();
@@ -27,6 +37,7 @@ module.exports = function(app,passport){
 			user : req.user
 		});
 	});
+
 
 
 	// Authenticate //
@@ -55,11 +66,11 @@ module.exports = function(app,passport){
 
 		// Facebook //
 			/* Login */
-			app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email'}))			
+			app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }))			
 			/* Sign-up */
 			app.get('/auth/facebook/callback',passport.authenticate('facebook', {
 				successRedirect : '/profile',
-				failureRedirect : '/login'
+				failureRedirect : '/signup'
 			}));
 
 	// Already Registered //

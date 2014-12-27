@@ -1,8 +1,8 @@
 var db = require('../config/db');
 var mongoose = require('mongoose');
-//var BreakingNews = mongoose.model('BreakingNews');
+var BreakingNews = mongoose.model('BreakingNews');
 var BlogPosts = mongoose.model('BlogPosts');
-//var Users = mongoose.model('Users')
+var Users = mongoose.model('Users')
 
 /* Blog Posts Start */
 /* Blog Posts Start */
@@ -12,9 +12,15 @@ exports.blogposts = function(req,res){
 		res.render('blog',{title:'Blog Posts', blogposts: blogposts});
 	});	
 }
+exports.blogposts.newPosts =function(req,res){
+	res.render('newPosts',{
+		user : req.user
+	})
+}
 exports.blogposts.create = function(req,res){
 	console.log(">>>> through blogposts.js <<<<<");
 	new BlogPosts ({
+		user_id : req.body.user_id,
 		title : req.body.title,
 		department : req.body.department,
 		author : req.body.author,
@@ -30,9 +36,42 @@ exports.blogposts.create = function(req,res){
             });
         }   
 		console.log("BlogPosts " + blogposts.title + " created.");
-		res.redirect('/blog');
+		res.redirect('/profile');
 	})
 }
+exports.blogposts.edit = function(req,res){
+	BlogPosts.findById(req.params.id,function(err,posts){
+		console.log("GET:"+req.posts)
+		res.render('editPosts',{
+			posts : posts,
+			user : req.user
+		})
+	})
+}
+exports.blogposts.editUpdate = function(req,res){
+	console.log('update'+req.body.user_id)
+	BlogPosts.findById(req.params.id, function(err, posts){
+		Users.findById(req.body.user_id, function(err, user){
+			if(err)
+				res.redirect('error',{ message : err.message, err:{} })
+			// Update //
+			posts.user_id = req.body.user_id;
+			posts.title = req.body.title;
+			posts.department = req.body.department;
+			posts.author = user.local.name;
+			posts.content = req.body.content;
+			posts.tag = req.body.tag;
+			// Update //
+
+			posts.save(function(err, posts, count){
+				if(err)
+					res.render('error',{message:err.message, err:{}})
+				res.redirect('/profile');
+			})
+		})
+	})
+}
+
 exports.blogposts.destroy = function(req,res){
 	console.log(">>>> through blogposts.js <<<<<");
 	BlogPosts.findById(req.params.id, function(err, blogposts){
@@ -44,7 +83,7 @@ exports.blogposts.destroy = function(req,res){
 	                err: err
 	            });
 	        }   
-			res.redirect('/blog');
+			res.redirect('/profile');
 		})
 	})
 

@@ -68,7 +68,7 @@
           </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-    <section>
+    <section style="padding:40px;padding-top:60px">
         <h2> <%= title %></h2>
         <div class="row-fluid" id="user">
             <div class="list offset3 span6">
@@ -83,11 +83,11 @@
                 <td>Facebook</td>
                 <td>Create Time</td>
                 <td>Delete</td>
-            </tr>
+                </tr>
                 <% users.forEach( function (user){ %>
                 <tr>
                     <td> <%= user.local.name %> </td> 
-                    <td> <%= user.local.password %></td>
+                    <td> <%= user.g %></td>
                     <td> <%= user.local.department %> </td>
                     <td> <%= user.local.email %> </td>
                     <td> <%= user.facebook.name %> </td>

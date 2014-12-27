@@ -135,7 +135,7 @@ module.exports = function(passport){
     // =======================  FACEBOOK =========+============================
     // ========================================================================
 
-    passport.use(new FacebookStrategy({
+    passport.use('facebook',new FacebookStrategy({
 
         clientID        : configAuth.facebookAuth.clientID,
         clientSecret    : configAuth.facebookAuth.clientSecret,
@@ -173,20 +173,8 @@ module.exports = function(passport){
 
                         return done(null, user); // user found, return that user
                     } else {
-                        // if there is no user, create them
-                        var newUser            = new User();
-
-                        newUser.facebook.id    = profile.id;
-                        newUser.facebook.token = token;
-                        newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
-                        newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
-
-                        newUser.save(function(err) {
-                            if (err)
-                                return done(err);
-                                
-                            return done(null, newUser);
-                        });
+                        
+                        return done(null ,false);
                     }
                 });
 
