@@ -124,8 +124,45 @@
 			</div>
 
 			<div class="well" style="padding-top:0px">
-				<h3><span class="fa fa-star-o fa-lg"></span>&nbsp;&nbsp;Breaking News</h3>
-				
+				<h3>
+					<span class="fa fa-star-o fa-lg"></span>&nbsp;&nbsp;Breaking News
+					<div style="text-align:right">
+						<a href="/news/new"><span class="fa fa-pencil-square-o"></span>New News</a>
+					</div>
+				</h3>
+				<% if(news) {%>
+						<table class="ui table">
+							<thead>
+							    <tr>
+									<th>Title</th>
+									<th>Content</th>
+									<!-- <th>Tags</th> -->
+									<th>Create Date</th>
+									<th>Edit</th>
+									<th>Delete</th>
+							    </tr>
+						  	</thead>
+		  					<% news.forEach(function(news){ %>
+								<% if(news.user_id === user.id) {%>
+								  	<tbody>
+									    <tr>
+									      <td><%= news.title %></td>
+									      <td><%= news.content %></td>
+									      <!-- <td><%= news.tag %></td> -->
+									      <td><span class="news_date<%= news._id %>"></span></td>
+									      <td><a href="/news/edit/<%= news._id %>">Edit</a></td>
+									      <td><a href="/news/delete/<%= news._id %>">Delete</a></td>
+									    </tr>
+								  	</tbody>
+
+									<script>
+										var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+										$('.news_date<%=news._id%>').append(monthNames[<%= news.create_at.getMonth() %>] + " " + <%= news.create_at.getDate() %> + ", " + <%= news.create_at.getYear()+1900 %> + " | "+ <%= (news.create_at.getHours()%12) %> + ":" + <%= news.create_at.getMinutes()%> )
+									</script>
+								<% } %>
+							<% }) %>
+						</table>	
+				<% }%>
 			</div>
 		</div>
 	</div>

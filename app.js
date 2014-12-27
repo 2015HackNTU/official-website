@@ -51,6 +51,9 @@ app.get('/posts/delete/:id', blogposts.blogposts.destroy);
 
 app.get('/news', news.breakingnews);
 app.post('/news/create', news.breakingnews.create);
+app.get('/news/new', news.breakingnews.newPosts);
+app.get('/news/edit/:id', news.breakingnews.edit);
+app.post('/news/edit/:id', news.breakingnews.editUpdate);
 app.get('/news/isImportant/:id', news.breakingnews.isImportant);
 app.get('/news/delete/:id', news.breakingnews.destroy);
 // Routes //

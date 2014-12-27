@@ -7,6 +7,7 @@ var BreakingNews = new Schema({
 	user_id : String,
 	title : String,
 	department : String,
+	author : String,
 	content : String,
 	isImportant : Boolean,
 	tag : Array,
