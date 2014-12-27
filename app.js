@@ -4,7 +4,10 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var db = require('./db'); 
+var passport = require('passport');
+var flash    = require('connect-flash');
+var session      = require('express-session');
+var db = require('./config/db'); 
 
 //var routes = require('./routes');
 var index = require('./routes')
@@ -25,7 +28,17 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Setup Passport.js
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
+
+
 // Routes //
+require('./config/passport')(passport); // pass passport for configuration
+require('./routes/login')(app,passport);
+
 app.get('/', index.index);
 
 app.get('/blog', blogposts.blogposts);
@@ -33,7 +46,8 @@ app.post('/blog/create', blogposts.blogposts.create);
 app.get('/blog/delete/:id', blogposts.blogposts.destroy);
 
 app.get('/user', users.users);
-app.post('/user/create', users.users.create);
+app.post('/user/create', users.users.create)
+app.post('/user/edit/:id', users.users.modify);
 app.get('/user/delete/:id', users.users.destroy);
 
 app.get('/news', news.breakingnews);

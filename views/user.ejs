@@ -78,18 +78,18 @@
                 <tr>
                 <td>Name</td>
                 <td>Department</td>
-                <td>User Name</td>
-                <td>Password</td>
+                <td>Email</td>
+                <td>Facebook</td>
                 <td>Create Time</td>
                 <td>Delete</td>
             </tr>
                 <% users.forEach( function (user){ %>
                 <tr>
-                    <td> <%= user.name %> </td> 
-                    <td> <%= user.department %> </td>
-                    <td> <%= user.username %> </td>
-                    <td> <%= user.password %> </td>
-                    <td> <%= user.create_at %> </td>
+                    <td> <%= user.local.name %> </td> 
+                    <td> <%= user.local.department %> </td>
+                    <td> <%= user.local.email %> </td>
+                    <td> <%= user.facebook.name %> </td>
+                    <td> <%= user.local.create_at %> </td>
                     <td> <a href="/user/delete/<%= user._id %>">Delete</a></td>
                 <% }); %>
             </tbody>
@@ -100,10 +100,13 @@
         
         <div class="row-fluid">
             <div class="list offset3 input-append">
+                <% if (message) {  %>
+                  <p><%= message %></p>
+                <%}%>
                 <form action="/user/create" method="post">
                         <input type="text" name="name" autofocus="autofocus" placeholder="Name" length="5px"/>
                         <input type="text" name="department" autofocus="autofocus" placeholder="Department"/><br><br>
-                        <input type="text" name="username" id="username" autofocus="autofocus" placeholder="Username">
+                        <input type="text" name="email" id="email" autofocus="autofocus" placeholder="Email">
                         <input type="password" name="password" autofocus="autofocus" placeholder="password"/>
                         <br><br>
                         <input type="submit" class="btn" name="todo-submit" value="Add To List"/>
