@@ -38,6 +38,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 // Routes //
 require('./config/passport')(passport); // pass passport for configuration
 require('./routes/login')(app,passport);
+require('./routes/frontEndTest')(app);
 
 app.get('/', index.index);
 
