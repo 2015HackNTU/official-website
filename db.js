@@ -17,9 +17,8 @@ var User = new Schema({
 		name : String,
 		department : String,
 		email : String,
-		username : String,
 		password : String,
-		create_at : {type: Date, default: Date.now}
+		create_at :  Date.now.getDate()
 	},
 	facebook : {
 		id : String,

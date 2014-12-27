@@ -75,11 +75,14 @@ exports.users.modify = function(req,res){
     }
     if (!user)
         res.redirect('/profile',{ message:"Modification not saved" })
+    if( !(req.body.password && req.body.name && req.body.department) ){
     // Save modification
-    user.local.name = req.body.name;
-    user.local.department = req.body.department;
-    user.local.username = req.body.username;
-    user.local.password = user.generateHash(req.body.password);
+        user.local.name = req.body.name;
+        user.local.department = req.body.department;
+        user.local.password = user.generateHash(req.body.password);
+    }else{
+        res.redirect('/user/edit',{ message : 'lala'})
+    }
 
     user.save(function(err, user, count){
       res.redirect('/profile');
@@ -105,4 +108,5 @@ exports.users.destroy = function(req,res){
 		});
 	});
 };
+
 /* Users End*/

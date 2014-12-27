@@ -12,7 +12,6 @@ var db = require('./config/db');
 //var routes = require('./routes');
 var index = require('./routes')
 var blogposts = require('./routes/blogposts');
-var users = require('./routes/users');
 var news = require('./routes/news');
 
 var app = express();
@@ -46,10 +45,7 @@ app.get('/blog', blogposts.blogposts);
 app.post('/blog/create', blogposts.blogposts.create);
 app.get('/blog/delete/:id', blogposts.blogposts.destroy);
 
-app.get('/user', users.users);
-app.post('/user/create', users.users.create)
-app.post('/user/edit/:id', users.users.modify);
-app.get('/user/delete/:id', users.users.destroy);
+
 
 app.get('/news', news.breakingnews);
 app.post('/news/create', news.breakingnews.create);

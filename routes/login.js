@@ -2,6 +2,12 @@ var mongoose = require('mongoose');
 var Users = mongoose.model('Users');
 module.exports = function(app,passport){
 
+	var users = require('./users');
+	app.get('/user', users.users);
+	app.post('/user/create', users.users.create)
+	app.post('/user/edit/:id', isLoggedIn, users.users.modify);
+	app.get('/user/delete/:id', users.users.destroy);
+
 	// Basic routing 
 	app.get('/',function(req,res){
 		res.render('index')
@@ -59,6 +65,7 @@ module.exports = function(app,passport){
 	// Already Registered //
 
 		// locally //
+			/* LINK */
 		app.get('/connect/local', function(req, res) {
 			res.render('connect-local.ejs', { message: req.flash('loginMessage') });
 		});
@@ -67,16 +74,35 @@ module.exports = function(app,passport){
 			failureRedirect : '/connect/local', 
 			failureFlash : true 
 		}));
+			/* UNLINK */
+		app.get('/unlink/local', isLoggedIn, function(req, res) {
+			var user            = req.user;
+			user.local.email    = undefined;
+			user.local.password = undefined;
+			user.save(function(err) {
+				res.redirect('/profile');
+			});
+		});
+
+
 
 		// facebook //
-
-		// send to facebook to do the authentication
+			/* LINK */
 		app.get('/connect/facebook', passport.authorize('facebook', { scope : 'email' }));
-		// handle the callback after facebook has authorized the user
 		app.get('/connect/facebook/callback',passport.authorize('facebook', {
 			successRedirect : '/profile',
 			failureRedirect : '/login'
 		}));
+			/* UNLINK */
+		app.get('/unlink/facebook', isLoggedIn, function(req, res) {
+			var user            = req.user;
+			user.facebook.id = undefined;
+			user.facebook.email = undefined;
+			user.facebook.token = undefined;
+			user.save(function(err) {
+				res.redirect('/profile');
+			});
+		});
 
 };
 

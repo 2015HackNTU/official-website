@@ -4,8 +4,11 @@
 	<title>Node Authentication</title>
 	<link rel="stylesheet" href="/stylesheets/bootstrap.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/stylesheets/semantic.css">
+	<link rel="text/javascript" href="/javascripts/semantic.js">
+	<script src="/javascripts/jquery.min.js"></script>
 	<style>
-		body 		{ padding-top:80px; word-wrap:break-word; }
+		body 		{ padding-top:10px; word-wrap:break-word; }
 	</style>
 </head>
 <body>
@@ -13,48 +16,56 @@
 
 	<div class="page-header text-center">
 		<h1><span class="fa fa-anchor"></span> Profile Page</h1>
-		<h3><span class="fa fa-star"></span> Hello, <%= user.local.name %>. Welcome back!</h3>
+			<h3><span class="fa fa-star"></span> Hello, <%= user.local.name %> Welcome back!</h3>
+
 		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
 	</div>
-
+			<div class="modal">
+				<form action="/user/edit/<%=user._id%>" method="post">
+					<input type="text" name="name" autofocus="autofocus" placeholder="Name" length="5px"/>
+                    <input type="text" name="department" autofocus="autofocus" placeholder="Department"/><br><br>
+                    <input type="text" name="username" id="username" autofocus="autofocus" placeholder="Username">
+                    <input type="password" name="password" autofocus="autofocus" placeholder="password"/>
+					<input type="hidden" name="id" value="<%=user._id%>">
+                    <br><br>
+	                <input type="submit" class="btn btn-deafult" name="todo-submit" value="Update"/>	
+				</form>
+			</div>
 	<div class="row">
 
 		<!-- LOCAL INFORMATION -->
-		<div class="col-sm-6">
-			<div class="well">
-				<h3><span class="fa fa-user"></span> Local</h3>
-
-				<% if (user.local.email) { %>
-					<p>
-						<strong>id</strong>: <%= user._id %><br>
-						<strong>email</strong>: <%= user.local.email %><br>
-						<strong>password</strong>: <%= user.local.password %>
-					</p>
-					<div class="well">
-						<h3><span class="fa fa-github"></span>Department Info</h3>
-						<% if (user.local.department) { %>
-							<p>You're member of <%= user.local.department %></p>
-						<% } else { %>
-							<p>Please update your info</p>
-						<% }%>
-					</div>
-					<a href="/unlink/local" class="btn btn-default">Unlink</a>
-				<% } else { %>
-					<a href="/connect/local" class="btn btn-default">Connect Local</a>
-				<% } %>
-					<a href="/user/edit" class="btn btn-primary">Edit Info</a>
-
+		<div class="col-sm-3">
+			<div class="ui card">
+				<div class="image">
+					<img src="http://graph.facebook.com/<%= user.facebook.id %>/picture?type=large" >
+				</div>
+			    <div class="content">
+    				<a class="header"><%= user.local.name %></a>
+    				<div class="description">
+    					<span calss="description"> Member of <%= user.local.department%></span>
+    				</div>
+    				<div class="meta">
+	      				<span class="date">Joined in <%= user.local.create_at %></span><br>
+    				</div>
+			    </div>
+				<div class="extra content" >
+					<a class="btn btn-primary" id="edit"><p style="color:white">Edit Info</p></a>
+				</div>
 
 			</div>
 		</div>
 
 		<!-- FACEBOOK INFORMATION -->
-		<div class="col-sm-6">
-			<div class="well">
-				<h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
-
+		<div class="col-sm-9">
+			<div class="well" style="padding-top:0px">
+			<% if (!user.facebook.token) { %>
+				<h1>Hurry up! Connect your facebook account!</h1>
+			<% } %>
 				<!-- check if the user has this token (is the user authenticated with this social account) -->
 				<% if (user.facebook.token) { %>
+					<h3 class="text-primary">
+						<img class="ui avatar image" src="http://graph.facebook.com/<%= user.facebook.id %>/picture"> Facebook
+					</h3>
 					<p>
 						<strong>id</strong>: <%= user.facebook.id %><br>
 						<strong>token</strong>: <%= user.facebook.token %><br>
@@ -69,16 +80,22 @@
 
 			</div>
 		</div>
+		<button class="test">hi</button>
 	</div>
-
-
+	<div class="row">
+		<div class="text-center" style="padding:40px">
+			<p>- Hack NTU 2015 -</p>
+		</div>
 	</div>
-
-
-	<div class="text-center">
-		<p>Hack NTU</p>
-	</div>
-
 </div>
 </body>
+<script>
+$('.modal')
+	.modal('attach events', 'test', 'show')
+;
+$('#edit').click(function(){
+	$('.text-center').append("poka")
+
+})
+</script>
 </html>

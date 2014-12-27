@@ -19,17 +19,26 @@
 	<div class="row">
 
 		<!-- LOCAL INFORMATION -->
+		<div class="col-sm-3">
+			<div class="ui card">
+				<div class="image">
+					<img src="http://graph.facebook.com/<%= user.facebook.id %>/picture?type=large" >
+				</div>
+			    <div class="content">
+    				<a class="header"><%= user.local.name %></a>
+    				<div class="meta">
+	      				<span class="date">Joined in <%= user.local.create_at %></span>
+	      				<span calss="description"> Member of <%= user.local.department %></span>
+    				</div>
+			    </div>
+				<div class="extra content">
+					<a href="/user/edit" class="btn btn-primary"><p style="color:white">Edit Info</p></a>
+				</div>
+
+			</div>
+		</div>
 		<div class="col-sm-6">
 			<div class="well">
-				<h3><span class="fa fa-user"></span> Local</h3>
-
-				<% if (user.local.email) { %>
-					<p>
-						<strong>id</strong>: <%= user._id %><br>
-						<strong>email</strong>: <%= user.local.email %><br>
-						<strong>password</strong>: <%= user.local.password %>
-					</p>
-				<% } %>
 				<form action="/user/edit/<%=user._id%>" method="post">
 					<input type="text" name="name" autofocus="autofocus" placeholder="Name" length="5px"/>
                     <input type="text" name="department" autofocus="autofocus" placeholder="Department"/><br><br>
@@ -39,9 +48,6 @@
                     <br><br>
 	                <input type="submit" class="btn btn-deafult" name="todo-submit" value="Update"/>	
 				</form>
-					
-
-
 			</div>
 		</div>
 
