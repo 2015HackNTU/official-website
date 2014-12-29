@@ -5,6 +5,7 @@ var GoogleStrategy   = require('passport-google-oauth').OAuth2Strategy;
 
 var mongoose = require('mongoose');
 var Users = mongoose.model('Users');
+var tempUsers = mongoose.model('tempUsers');
 
 var configAuth = require('./auth');
 
@@ -59,17 +60,23 @@ module.exports = function(passport){
                     } else {
 
                         // create the user
-                        var newUser            = new Users();
+                        var newTempUser            = new tempUsers();
 
-                        newUser.local.name = req.body.name;
-                        newUser.local.email    = email;
-                        newUser.local.password = newUser.generateHash(password);
-
-                        newUser.save(function(err) {
+                        newTempUser.local.name = req.body.name;
+                        newTempUser.local.email    = email;
+                        newTempUser.local.password = newTempUser.generateHash(password);
+                        newTempUser.local.creat_at = req.body.create_at;
+                        
+                ///
+                newTempUser.save(function(err, user, count){
+                    if(err)
+                        res.redirect('/user');
+                })
+                        newTempUser.save(function(err) {
                             if (err)
                                 return done(err);
 
-                            return done(null, newUser);
+                            return done(null, newTempUser, req.flash('profileMessage','Sign-up successfully'));
                         });
                     }
 
@@ -93,7 +100,7 @@ module.exports = function(passport){
                             if (err)
                                 return done(err);
                             
-                            return done(null,user);
+                            return done(null,user,req.flash('profileMessage','Local Linked'));
                         });
                     }
                 });
@@ -126,7 +133,7 @@ module.exports = function(passport){
     			return done(null, false, req.flash('loginMessage', 'Wrong Password'))
     		}
     		else{
-    			return done(null, user);
+    			return done(null, user, req.flash('profileMessage', 'Successful logged-in'));
     		}
     	});
     }));
@@ -134,12 +141,12 @@ module.exports = function(passport){
     // ========================================================================
     // =======================  FACEBOOK =========+============================
     // ========================================================================
+    // Log-in //
+    passport.use(new FacebookStrategy({
 
-    passport.use('facebook',new FacebookStrategy({
-
-        clientID        : configAuth.facebookAuth.clientID,
-        clientSecret    : configAuth.facebookAuth.clientSecret,
-        callbackURL     : configAuth.facebookAuth.callbackURL,
+        clientID        : configAuth.facebook.clientID,
+        clientSecret    : configAuth.facebook.clientSecret,
+        callbackURL     : configAuth.facebook.callbackURL,
         passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
 
     },
@@ -150,13 +157,13 @@ module.exports = function(passport){
 
             // check if the user is already logged in
             if (!req.user) {
-
+                // if not logged-in
+                console.log(req.user)
                 Users.findOne({ 'facebook.id' : profile.id }, function(err, user) {
                     if (err)
                         return done(err);
 
                     if (user) {
-
                         // if there is a user id already but no token (user was linked at one point and then removed)
                         if (!user.facebook.token) {
                             user.facebook.token = token;
@@ -170,16 +177,17 @@ module.exports = function(passport){
                                 return done(null, user);
                             });
                         }
+                        console.log('good')
 
-                        return done(null, user); // user found, return that user
+                        return done(null, user, req.flash( 'profileMessage', 'Successful logged-in.' ) ); // user found, return that user
                     } else {
-                        
-                        return done(null ,false);
+                        console.log('signup first')
+                        return done(null ,false ,  req.flash( 'signupMessage', 'You have to signup first') );
                     }
                 });
 
             } else {
-                // user already exists and is logged in, we have to link accounts
+                // Link 
                 var user            = req.user; // pull the user out of the session
 
                 user.facebook.id    = profile.id;
@@ -190,14 +198,54 @@ module.exports = function(passport){
                 user.save(function(err) {
                     if (err)
                         return done(err);
-                        
-                    return done(null, user);
+                    console.log('Linked')
+                    return done(null, user, req.flash( 'profileMessage', 'Successful linked.') ) ;
                 });
+                    console.log('Failed')
 
             }
         });
 
     }));
 
+/*
+    // Link Facebook //
+    passport.use('facebookLink',new FacebookStrategy({
+
+        clientID        : configAuth.facebookLink.clientID,
+        clientSecret    : configAuth.facebookLink.clientSecret,
+        callbackURL     : configAuth.facebookLink.callbackURL,
+        passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
+
+    },
+    function(req, token, refreshToken, profile, done) {
+
+        // asynchronous
+        process.nextTick(function() {
+            console.log(profile)
+            // check if the user is already logged in
+            if (req.user) {
+                // if logged-in, then link facebook //
+                var user            = req.user; // pull the user out of the session
+
+                user.facebook.id    = profile.id;
+                user.facebook.token = token;
+                user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
+                user.facebook.email = (profile.emails[0].value || '').toLowerCase();
+
+                user.save(function(err) {
+                    if (err)
+                        return done(err);
+
+                    return done(null, user, req.flash( 'profileMessage', 'Successful linked.') ) ;
+                });
+
+            }else{
+                return done(null, false, req.flash( 'profileMessage', '') );
+            }
+        });
+
+    }));
+*/
 
 };

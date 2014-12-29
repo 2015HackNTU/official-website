@@ -11,6 +11,7 @@ module.exports = function(app,passport){
 	app.get('/user/edit/:id',isLoggedIn, users.users.edit)
 	app.post('/user/edit/:id', isLoggedIn, users.users.modify);
 	app.get('/user/delete/:id', users.users.destroy);
+	app.get('/user/authenticate/:id', users.users.authenticate );
 
 	// Basic routing 
 	app.get('/',function(req,res){
@@ -22,7 +23,8 @@ module.exports = function(app,passport){
 				res.render('profile',{
 					user : req.user,
 					posts : posts,
-					news : news
+					news : news,
+					message : req.flash('profileMessage')
 				});
 			})
 		})
@@ -46,63 +48,45 @@ module.exports = function(app,passport){
 		// Local //
 			/* Login */
 			app.get('/login',function(req,res){
-				console.log(req.flash)
+				console.log(req.flash('loginMessage'))
+
 				res.render('login', { message : req.flash('loginMessage') });
 			})
 			app.post('/login', passport.authenticate('local-login',{
 				successRedirect : '/profile',
-				failreRedirect : '/login',
-				failureFlash : true
+				failureRedirect : '/login',
+				//failureFlash : true			
 			}))
 			/* Sign-up */
 			app.get('/signup',function(req,res){
-				res.render('signup', { message : req.flash('signipMessage') });
+				res.render('signup', { message : req.flash('signupMessage') });
 			})
 			app.post('/signup',passport.authenticate('local-signup',{
 				successRedirect : '/profile',
-				failreRedirect : '/signup',
+				failureRedirect : '/signup',
 				failureFlash : true
 			}))
 
 		// Facebook //
 			/* Login */
-			app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }))			
-			/* Sign-up */
-			app.get('/auth/facebook/callback',passport.authenticate('facebook', {
+			app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }))
+			app.get('/auth/facebook/callback', passport.authenticate('facebook',{
 				successRedirect : '/profile',
-				failureRedirect : '/signup'
-			}));
+				failureRedirect : '/login',
+				successFlash : true,
+				failureFlash : true
+			}))			
 
 	// Already Registered //
-
-		// locally //
-			/* LINK */
-		app.get('/connect/local', function(req, res) {
-			res.render('connect-local.ejs', { message: req.flash('loginMessage') });
-		});
-		app.post('/connect/local', passport.authenticate('local-signup', {
-			successRedirect : '/profile', 
-			failureRedirect : '/connect/local', 
-			failureFlash : true 
-		}));
-			/* UNLINK */
-		app.get('/unlink/local', isLoggedIn, function(req, res) {
-			var user            = req.user;
-			user.local.email    = undefined;
-			user.local.password = undefined;
-			user.save(function(err) {
-				res.redirect('/profile');
-			});
-		});
-
-
 
 		// facebook //
 			/* LINK */
 		app.get('/connect/facebook', passport.authorize('facebook', { scope : 'email' }));
 		app.get('/connect/facebook/callback',passport.authorize('facebook', {
 			successRedirect : '/profile',
-			failureRedirect : '/login'
+			failureRedirect : '/profile',
+			successFlash : true,
+			failureFlash : true
 		}));
 			/* UNLINK */
 		app.get('/unlink/facebook', isLoggedIn, function(req, res) {
