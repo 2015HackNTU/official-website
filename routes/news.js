@@ -1,4 +1,4 @@
-var db = require('../db');
+var db = require('../config/db');
 var mongoose = require('mongoose');
 var BreakingNews = mongoose.model('BreakingNews');
 //var BlogPosts = mongoose.model('BlogPosts');
