@@ -12,7 +12,6 @@ var db = require('./config/db');
 //var routes = require('./routes');
 var index = require('./routes')
 var blogposts = require('./routes/blogposts');
-var users = require('./routes/users');
 var news = require('./routes/news');
 
 var app = express();
@@ -29,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Setup Passport.js
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({ secret: 'lulalachen' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -38,20 +37,23 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 // Routes //
 require('./config/passport')(passport); // pass passport for configuration
 require('./routes/login')(app,passport);
+require('./routes/frontEndTest')(app);
 
 app.get('/', index.index);
 
-app.get('/blog', blogposts.blogposts);
-app.post('/blog/create', blogposts.blogposts.create);
-app.get('/blog/delete/:id', blogposts.blogposts.destroy);
+app.get('/posts', blogposts.blogposts);
+app.get('/posts/new', blogposts.blogposts.newPosts);
+app.post('/posts/create', blogposts.blogposts.create);
+app.get('/posts/edit/:id',blogposts.blogposts.edit);
+app.post('/posts/edit/:id', blogposts.blogposts.editUpdate)
+app.get('/posts/delete/:id', blogposts.blogposts.destroy);
 
-app.get('/user', users.users);
-app.post('/user/create', users.users.create)
-app.post('/user/edit/:id', users.users.modify);
-app.get('/user/delete/:id', users.users.destroy);
 
 app.get('/news', news.breakingnews);
 app.post('/news/create', news.breakingnews.create);
+app.get('/news/new', news.breakingnews.newPosts);
+app.get('/news/edit/:id', news.breakingnews.edit);
+app.post('/news/edit/:id', news.breakingnews.editUpdate);
 app.get('/news/isImportant/:id', news.breakingnews.isImportant);
 app.get('/news/delete/:id', news.breakingnews.destroy);
 // Routes //

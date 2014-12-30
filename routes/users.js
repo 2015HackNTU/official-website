@@ -65,6 +65,13 @@ exports.users.create = function (req,res){
     */
 };
 
+exports.users.edit =function(req,res){
+    res.render('useredit',{
+        user : req.user,
+        posts : req.posts,
+        news : req.news
+    })
+}
 exports.users.modify = function(req,res){
   Users.findById(req.params.id, function(err, user){
     if(err){
@@ -74,18 +81,22 @@ exports.users.modify = function(req,res){
       })
     }
     if (!user)
-        res.redirect('/profile',{message:"Modification not saved"})
-    user.local.department = req.body.department;
-    user.local.username = req.body.username;
-    user.local.password = user.generateHash(req.body.password);
+        res.redirect('/profile',{ message:"Modification not saved" })
+
+    // Save modification
+        user.local.name = req.body.name;
+        user.local.department = req.body.department;
+        //user.local.password = user.generateHash(req.body.password);
+
 
     user.save(function(err, user, count){
-      res.redirect('/profile');
+        res.redirect('/profile');
     })
 
-  })
+  });
+}
 
-;}
+
 
 exports.users.destroy = function(req,res){
 	console.log(req.body.name + ' removed');
@@ -103,4 +114,5 @@ exports.users.destroy = function(req,res){
 		});
 	});
 };
+
 /* Users End*/
