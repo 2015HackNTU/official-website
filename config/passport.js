@@ -66,7 +66,7 @@ module.exports = function(passport){
                         newTempUser.local.email    = email;
                         newTempUser.local.password = newTempUser.generateHash(password);
                         newTempUser.local.creat_at = req.body.create_at;
-                        
+
                 ///
                 newTempUser.save(function(err, user, count){
                     if(err)
@@ -122,13 +122,12 @@ module.exports = function(passport){
     	Users.findOne({'local.email': email}, function(err, user){
     		console.log('User:'+user);
     		if(err)
-    				return done(err)
-
-    		if(!user){
+    				return done(err, false, req.flash('loginMessage', 'User Not Found.'))
+                console.log(password)
+    		if(!user||email===null){
     			console.log('user not found');
     			return done(null, false, req.flash('loginMessage', 'User Not Found.'))
-    		}
-    		if(!user.validPassword(password)){
+    		}else if(!user.validPassword(password)||password===null){
     			console.log(user+" wrong password")
     			return done(null, false, req.flash('loginMessage', 'Wrong Password'))
     		}

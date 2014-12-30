@@ -48,7 +48,8 @@ module.exports = function(app,passport){
 		// Local //
 			/* Login */
 			app.get('/login',function(req,res){
-				console.log(req.flash('loginMessage'))
+				//req.flash('loginMessage','hi')
+				//console.log(req.flash('loginMessage'))
 
 				res.render('login', { message : req.flash('loginMessage') });
 			})
