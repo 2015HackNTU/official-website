@@ -97,7 +97,7 @@
                 <td> <%= blogposts.content %> </td>
                 <td> <%= blogposts.tag %> </td>
                 <td> <%= blogposts.create_at %> </td>
-                <td> <a href="/blogposts/delete/<%= blogposts._id %>">Delete</a></td>
+                <td> <a href="/posts/delete/<%= blogposts._id %>">Delete</a></td>
             <% }); %>
         </tbody>
     	</table>
@@ -106,7 +106,7 @@
 	
 	<div class="row-fluid">
         <div class="list offset3 input-append">
-        	<form action="/blog/create" method="post">
+        	<form action="/posts/create" method="post">
         			<input type="text" name="title" autofocus="autofocus" placeholder="Title" length="5px"/>
                     <input type="department" name="department" autofocus="autofocus" placeholder="Department"/>
 					<input type="text" name="author" Placeholder="Author"/>
