@@ -14,11 +14,11 @@
 <div class="ui two column centered grid">
 	<div class="column">
 		<div class="ui two column middle aligned relaxed fitted stackable grid">
-			<% if (message.length > 0) { %>
-				<div class="alert alert-danger"><%= message %></div>
-			<% } %>
 			<div class="column">
 				<h1><span class="fa fa-sign-in"></span> Login</h1>
+				<% if (message.length > 0) { %>
+					<div class="alert alert-danger"><%= message %></div>
+				<% } %>
 				<div class="ui form segment">
 					<form action="/login" method="post">
 		      		<div class="field">
@@ -37,7 +37,7 @@
 		        		</div>
 		      		</div>
 		      		
-			      		<button class="ui submit button">
+			      		<button class="ui submit button" type="submit">
 			      			Login
 			      		</button>
 			      		<div class="ui horizontal divider">OR</div>

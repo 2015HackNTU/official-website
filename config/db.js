@@ -15,7 +15,7 @@ var BreakingNews = new Schema({
 });
 
 var User = new Schema({
-
+	/* Authenticate Users */
 	local : {
 		name : String,
 		department : String,
@@ -29,8 +29,20 @@ var User = new Schema({
 		email : String,
 		name : String,
 	}
-
 });
+
+var tempUser = new Schema ({
+	/* Unahthenticate Users */
+	local : {
+		name : String,
+		department : String,
+		email : String,
+		password : String,
+		create_at :  {type : Date, default: Date.now}
+	},
+	isAuthenticate : { type : Boolean, default : false },
+	authenticate_at : { type : Date }
+})
 
 var BlogPosts = new Schema({
 	user_id : String,
@@ -53,8 +65,19 @@ User.methods.validPassword = function(password) {
      return bcrypt.compareSync(password, this.local.password);
     //return password;
 };
+// generating a hash
+tempUser.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+    //return password
+};
 
+// checking if password is valid
+tempUser.methods.validPassword = function(password) {
+     return bcrypt.compareSync(password, this.local.password);
+    //return password;
+};
 
+var tempUsers = mongoose.model('tempUsers',tempUser);
 var Users = mongoose.model('Users',User);
 var BreakingNews = mongoose.model('BreakingNews',BreakingNews);
 var BlogPosts = mongoose.model('BlogPosts',BlogPosts);

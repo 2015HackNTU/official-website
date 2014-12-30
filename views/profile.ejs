@@ -17,6 +17,9 @@
 	<div class="page-header text-center">
 		<h1><span class="fa fa-anchor"></span> Profile Page</h1>
 			<h3><span class="fa fa-star"></span> Hello, <%= user.local.name %> Welcome back!</h3>
+			<% if (message.length > 0 && message!='edit' ) {%>
+				<div class="alert"> <%= message %></div>
+			<% } %>
 
 		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
 	</div>
@@ -54,14 +57,32 @@
 
 			</div>
 		</div>
-
-		<!-- FACEBOOK INFORMATION -->
 		<div class="col-sm-9">
+			<% if (message==='edit') {%>
 			<div class="well" style="padding-top:0px">
+				<h3>Edit Information</h3>
+				<span class="ui" name='ui'>
+				<form action="/user/edit/<%=user._id%>" method="post" class="form" name="form">
+					<input type="text" name="name" autofocus="autofocus" placeholder="Name" length="5px"/><br><br>
+                    <input type="text" name="department" autofocus="autofocus" placeholder="Department"/>
+                    <!-- <input type="password" name="password" autofocus="autofocus" placeholder="password"/> -->
+					<input type="hidden" name="id" value="<%=user._id%>">
+                    <br><br>
+	                <input type="submit" class="btn btn-deafult" name="todo-submit" value="Update"/>	
+				</form>
+				</span>
+			</div>
+			<% } %>
+		<!-- FACEBOOK INFORMATION -->				
+			
+			<% if (user.facebook.email==='lulalachen@hotmail.com' || !user.facebook.token) { %>
+			<div class="well" style="padding-top:0px">
+			
 			<% if (!user.facebook.token) { %>
 				<h1>Hurry up! Connect your facebook account!</h1>
 			<% } %>
 				<!-- check if the user has this token (is the user authenticated with this social account) -->
+
 				<% if (user.facebook.token) { %>
 					<h3 class="text-primary">
 						<span class="fa fa-facebook fa-lg"></span>&nbsp;&nbsp;
@@ -75,11 +96,12 @@
 					</p>
 
 					<a href="/unlink/facebook" class="btn btn-primary">Unlink</a>
-				<% } else { %>
+				<% } %>
+				<% if (!user.facebook.token) { %> 
 					<a href="/connect/facebook" class="btn btn-primary">Connect Facebook</a>
 				<% } %>
-
 			</div>
+			<% } %>
 
 			<div class="well" style="padding-top:0px">
 				<h3>
@@ -184,7 +206,28 @@ var monthNames = [ "January", "February", "March", "April", "May", "June",
 $('.date').append("Joined in " + monthNames[<%= user.local.create_at.getMonth() %>] + " " + <%= user.local.create_at.getDate() %> + ", " + <%= user.local.create_at.getYear()+1900 %>)
 
 // show Join time
-
+$('.ui.form')
+.form({
+    name: {
+      identifier  : 'name',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : 'Please enter your name'
+        }
+      ]
+    },
+    department : {
+      identifier  : 'department',
+      rules: [
+        {
+          type   : 'empty',
+          prompt : 'Please enter your department'
+        }
+      ]
+    },
+  })
+;
 
 
 $('.modal')

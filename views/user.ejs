@@ -87,7 +87,7 @@
                 <% users.forEach( function (user){ %>
                 <tr>
                     <td> <%= user.local.name %> </td> 
-                    <td> <%= user.g %></td>
+                    <td> <%= user.local.password %></td>
                     <td> <%= user.local.department %> </td>
                     <td> <%= user.local.email %> </td>
                     <td> <%= user.facebook.name %> </td>
@@ -98,7 +98,34 @@
             </table>
             </div>
         </div>
-
+        <h2>Temp Users</h2>
+        <div class="row-fluid" id="tempUser">
+            <div class="list offset3 span6">
+            <table class="table table-hover table-bordered">
+            <tbody>
+                <tr>
+                <td>Name</td>
+                <td>Password</td>
+                <td>Department</td>
+                <td>Email</td>
+                <td>isAuthenticate?</td>
+                <td>Create Time</td>
+                <td>Authenticate</td>
+                </tr>
+                <% tempUsers.forEach( function (user){ %>
+                <tr>
+                    <td> <%= user.local.name %> </td> 
+                    <td> <%= user.local.password %></td>
+                    <td> <%= user.local.department %> </td>
+                    <td> <%= user.local.email %> </td>
+                    <td> <%= user.isAuthenticate %> </td>
+                    <td> <%= user.local.create_at %> </td>
+                    <td> <a href="/user/authenticate/<%= user._id %>">Authenticate</a></td>
+                <% }); %>
+            </tbody>
+            </table>
+            </div>
+        </div>
         
         <div class="row-fluid">
             <div class="list offset3 input-append">
