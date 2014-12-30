@@ -14,13 +14,13 @@
     "debug": "~0.7.4",
     "ejs": "~0.8.5",
     "mongoose": "~3.8.20",
-    "passport" : "~0.1.17",     
-    "passport-local" : "~0.1.6",  
-    "passport-facebook" : "~1.0.2", 
-    "passport-twitter" : "~1.0.2",  
-    "passport-google-oauth" : "~0.1.5",
-    "connect-flash" : "~0.1.1",   
-    "bcrypt-nodejs" : "~0.0.3",
-    "express-session" : ""
+    "passport": "~0.1.18",
+    "passport-local": "~0.1.6",
+    "passport-facebook": "~1.0.3",
+    "passport-twitter": "~1.0.2",
+    "passport-google-oauth": "~0.1.5",
+    "connect-flash": "~0.1.1",
+    "bcrypt-nodejs": "0.0.3",
+    "express-session": "~1.9.3"
   }
 }
