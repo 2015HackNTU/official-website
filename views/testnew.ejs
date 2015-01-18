@@ -8,13 +8,50 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="/javascripts/jquery.min.js"></script>
     <script src="/javascripts/parallax.min.js"></script>
+    <script type="text/javascript">
+      var middle_month;
+      var month_array = ['JAN', 'FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+      function createfunction(){
+        var today = new Date();
+        var month = today.getMonth() + 1 - 6;
+        var calender_parent = document.getElementsByClassName("monthbar");
+        middle_month = month;
+        for (var i = 0 ; i < 12; i++)
+        {
+          var elem = document.createElement("div");
+          elem.className = " position-" + i ;
+          elem.innerHTML = month_array[month - 1];
+          elem.onClick = function() {
+            var move = month - middle_month; // > 0 left, < 0 right
+            var direction = move > 0? -1: 1;
+            if (move == 0)
+              return;
+            if (move < 0)
+              move *= -1;
+            else
+              move = 1;
+            var children = calender_parent.childNodes;
+            for (var i = 0; i < 12 ;i++) {
+
+            }
+            elem.className = "_"
+            //compute shift direction and num
+          };
+
+          calender_parent.appendChild(elem)
+          month++;
+        }
+      }
+    </script>
     
   </head>
 
   <body>
 
+
     
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div>
         <div class="container-fluid">
     
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,7 +101,13 @@
               <div class="triangle"></div>  
             </div>
 
-            <div class = "month">
+            
+
+            <div class="monthbar" onload = createfunction()>
+
+            </div>
+
+            <div class = "test-img">
               <img src="images/2015hackNTU_2.jpg">
             </div>
           
