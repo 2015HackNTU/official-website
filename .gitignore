@@ -1,5 +1,4 @@
-.DS_Store
-css/.DS_Store
-images/.DS_Store
-js/.DS_Store
+node_modules
+.elasticbeanstalk/
+*/.DS_Store
 node_modules

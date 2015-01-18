@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
+var BlogPosts = mongoose.model('BlogPosts');
 var Users = mongoose.model('Users');
 
 module.exports = function(app){
@@ -26,6 +27,12 @@ module.exports = function(app){
 	app.get('/example',function(req,res){
 		res.render('example', { message : 'example.ejs' }); // You can also pass something to the front
 	});
+
+
+	app.get('/api/todos',function(req,res){
+
+	})
+
 	
 	//render to a file called example.ejs
 	app.get('/test',function(req,res){
