@@ -17,7 +17,8 @@ var news = require('./routes/news');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views/client'));
+
 app.set('view engine', 'ejs');
 
 app.use(favicon());
@@ -26,6 +27,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views/client')));
+
 
 // Setup Passport.js
 app.use(session({ secret: 'lulalachen' })); // session secret
