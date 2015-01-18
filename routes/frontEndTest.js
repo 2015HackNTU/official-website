@@ -1,3 +1,5 @@
+var mongoose = require('mongoose')
+var BlogPosts = mongoose.model('BlogPosts');
 module.exports = function(app){
 
 	/* ==================================== 
@@ -25,5 +27,8 @@ module.exports = function(app){
 	});
 
 
+	app.get('/api/todos',function(req,res){
+
+	})
 
 }

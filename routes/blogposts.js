@@ -3,13 +3,12 @@ var mongoose = require('mongoose');
 var BreakingNews = mongoose.model('BreakingNews');
 var BlogPosts = mongoose.model('BlogPosts');
 var Users = mongoose.model('Users')
-
 /* Blog Posts Start */
 /* Blog Posts Start */
 exports.blogposts = function(req,res){
 	console.log(">>>> through blogposts.js <<<<<");
 	BlogPosts.find(function(error, blogposts){
-		res.render('blog',{title:'Blog Posts', blogposts: blogposts});
+		res.json(blogposts);
 	});	
 }
 exports.blogposts.newPosts =function(req,res){
