@@ -70,7 +70,9 @@ section {
 	z-index: 9;
 }
 
-
+.month img {
+	width: 100%;
+}
 
 
 /*#example .following .logo .side{
