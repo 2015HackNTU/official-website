@@ -9,6 +9,7 @@
     <script src="/javascripts/jquery.min.js"></script>
     <script src="/javascripts/parallax.min.js"></script>
     <script type="text/javascript">
+      var GO_LEFT = -1, GO_RIGHT = 1;
       var middle_month;
       var month_array = ['JAN', 'FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
       function createfunction(){
@@ -19,28 +20,70 @@
         for (var i = 0 ; i < 12; i++)
         {
           var elem = document.createElement("div");
-          elem.className = " position-" + i ;
+          elem.className = "position-" + i ;
           elem.innerHTML = month_array[month - 1];
-          elem.onClick = function() {
-            var move = month - middle_month; // > 0 left, < 0 right
-            var direction = move > 0? -1: 1;
-            if (move == 0)
-              return;
-            if (move < 0)
-              move *= -1;
-            else
-              move = 1;
-            var children = calender_parent.childNodes;
-            for (var i = 0; i < 12 ;i++) {
-
-            }
-            elem.className = "_"
-            //compute shift direction and num
-          };
-
+          elem.onClick = swiftfunction;
           calender_parent.appendChild(elem)
-          month++;
+          monthadd(month, 1);
         }
+      }
+      function swiftfunction() {
+        var month = parseInt(event.target.innerHTML);
+        var move = month - middle_month; // > 0 left, < 0 right
+        var direction = move > 0? GO_LEFT: GO_RIGHT;// -1 : left
+        if (move == 0)
+                return;
+        if (move < 0)
+          move *= -1;
+        else
+          move = 1;
+        //add buffer
+        for (var i = 0; i < move; i++) {
+          var position, add_month;
+          if (direction == GO_RIGHT) {//go right-> add at 
+            position = -1 - i;
+            add_month = monthmines(middle_month, 7+ i);
+          } else {//go left -> add at right
+            position = 12 + i;
+            add_month = monthadd(middle_month, 6+ i);
+          }
+          var elem = document.createElement("div");
+          elem.className = "position-" + i ;
+          elem.innerHTML = month_array[month - 1];
+          elem.onClick = swiftfunction;
+          if (direction == GO_RIGHT) {
+            calender_parent.insertBefore(elem, calender_parent.childNodes[0]);
+          } else {
+            calender_parent.insertChild(elem)
+          }
+        }
+        //move
+        var children = calender_parent.childNodes;
+        for (var i = 0; i < 12 + move; i++) {
+          var new_position = direction == GO_RIGHT? i, i - move;
+          children[i].className = "position-" + new_position + " swift-animation" + move;
+          window.setInterval(function () {children[i].className = "position-" + new_position;}, move * 1000);
+        }
+        //removebuffer
+        for (var i = 0; i < move; i++) {
+          if (direction == GO_RIGHT) {
+            calender_parent.removeChild(calender_parent.childNodes[0]);
+          } else {
+            calender_parent.removeChild(calender_parent.childNodes[12]);
+          }
+        }
+        //adjust middle month
+        middle_month = month;
+      }
+      function monthadd(cur_month, adder) {
+        return (cur_month + adder) % 12;
+      }
+      function monthmines(cur_month, minus) {
+        cur_month = cur_month - minus; 
+        while (cur_month <= 0) {
+          cur_month + 12;
+        }
+        return cur_month;
       }
     </script>
     
