@@ -28,7 +28,7 @@
         }
       }
       function swiftfunction() {
-        var month = parseInt(event.target.innerHTML);
+        var month = parseInt(getMonth(event.target.innerHTML));
         var move = month - middle_month; // > 0 left, < 0 right
         var direction = move > 0? GO_LEFT: GO_RIGHT;// -1 : left
         if (move == 0)
@@ -74,6 +74,13 @@
         }
         //adjust middle month
         middle_month = month;
+      }
+      function getMonth(monthString) {
+        for (i = 0; i < 12; i++) {
+          if (month_array[i] == monthString)
+            return i + 1;
+        }
+        return null;
       }
       function monthadd(cur_month, adder) {
         return (cur_month + adder) % 12;

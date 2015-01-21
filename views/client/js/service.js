@@ -14,3 +14,27 @@ function getActivitys() {
 function getProjects() {
 
 }
+
+
+
+// private fuctions
+function notificationsHandler(notifications) {
+	var noti;
+	save(new Date().getTime(), 'hackntu.last_query_noti');
+	for (noti in notifications) {
+		setNotiInCalender();
+	}
+}
+
+///[GET_ACTIVITY, [ isSpecific, num, page, activityId]]
+function activitysHandler() {
+
+}
+
+function projectsHandler() {
+
+}
+
+function setNotiInCalender(type) {
+	
+}
