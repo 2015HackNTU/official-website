@@ -16,7 +16,8 @@ exports.breakingnews = function(req,res){
                 err: err
             });
         }   
-        res.render('news',{title:'Breaking News', news: news});
+        //res.render('news',{title:'Breaking News', news: news});
+        res.json(news)
     });
 };
 exports.breakingnews.newPosts =function(req,res){

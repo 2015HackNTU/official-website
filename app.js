@@ -18,8 +18,8 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views/client'));
-
 app.set('view engine', 'ejs');
+
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -44,7 +44,7 @@ require('./routes/frontEndTest')(app);
 
 app.get('/', index.index);
 
-app.get('/posts', blogposts.blogposts);
+app.get('/api/posts', blogposts.blogposts);
 app.get('/posts/new', blogposts.blogposts.newPosts);
 app.post('/posts/create', blogposts.blogposts.create);
 app.get('/posts/edit/:id',blogposts.blogposts.edit);
@@ -52,7 +52,7 @@ app.post('/posts/edit/:id', blogposts.blogposts.editUpdate)
 app.get('/posts/delete/:id', blogposts.blogposts.destroy);
 
 
-app.get('/news', news.breakingnews);
+app.get('/api/news', news.breakingnews);
 app.post('/news/create', news.breakingnews.create);
 app.get('/news/new', news.breakingnews.newPosts);
 app.get('/news/edit/:id', news.breakingnews.edit);
