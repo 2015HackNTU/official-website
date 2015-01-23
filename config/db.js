@@ -81,6 +81,6 @@ var tempUsers = mongoose.model('tempUsers',tempUser);
 var Users = mongoose.model('Users',User);
 var BreakingNews = mongoose.model('BreakingNews',BreakingNews);
 var BlogPosts = mongoose.model('BlogPosts',BlogPosts);
-mongoose.connect('mongodb://localhost/HackNTU-website',function(){
+mongoose.connect('mongodb://admin:admin@ds063870.mongolab.com:63870/hackntu',function(){
 	console.log("DB connected")
 })
