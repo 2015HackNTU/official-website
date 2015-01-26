@@ -1425,3 +1425,60 @@ mongod --help for help and startup options
 2015-01-26T12:22:48.500+0800 [clientcursormon] mem (MB) res:3 virt:3934
 2015-01-26T12:22:48.526+0800 [clientcursormon]  mapped (incl journal view):1440
 2015-01-26T12:22:48.526+0800 [clientcursormon]  connections:0
+2015-01-26T12:27:48.806+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:27:48.807+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:27:48.807+0800 [clientcursormon]  connections:0
+2015-01-26T12:32:49.079+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:32:49.096+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:32:49.096+0800 [clientcursormon]  connections:0
+2015-01-26T12:37:49.398+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:37:49.398+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:37:49.398+0800 [clientcursormon]  connections:0
+2015-01-26T12:42:49.667+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:42:49.667+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:42:49.667+0800 [clientcursormon]  connections:0
+2015-01-26T12:47:49.912+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:47:49.912+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:47:49.912+0800 [clientcursormon]  connections:0
+2015-01-26T12:52:50.225+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:52:50.225+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:52:50.225+0800 [clientcursormon]  connections:0
+2015-01-26T12:57:50.685+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:57:50.685+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:57:50.685+0800 [clientcursormon]  connections:0
+2015-01-26T13:02:50.949+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:02:50.950+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:02:50.950+0800 [clientcursormon]  connections:0
+2015-01-26T13:07:51.203+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:07:51.203+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:07:51.203+0800 [clientcursormon]  connections:0
+2015-01-26T13:12:51.461+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:12:51.487+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:12:51.488+0800 [clientcursormon]  connections:0
+2015-01-26T13:17:51.768+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:17:51.768+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:17:51.769+0800 [clientcursormon]  connections:0
+2015-01-26T13:22:52.035+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:22:52.035+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:22:52.035+0800 [clientcursormon]  connections:0
+2015-01-26T13:27:52.295+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:27:52.295+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:27:52.295+0800 [clientcursormon]  connections:0
+2015-01-26T13:32:52.557+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:32:52.557+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:32:52.557+0800 [clientcursormon]  connections:0
+2015-01-26T13:37:52.849+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:37:52.849+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:37:52.849+0800 [clientcursormon]  connections:0
+2015-01-26T13:42:53.077+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:42:53.077+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:42:53.078+0800 [clientcursormon]  connections:0
+2015-01-26T13:47:53.307+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:47:53.307+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:47:53.308+0800 [clientcursormon]  connections:0
+2015-01-26T13:52:53.540+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:52:53.540+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:52:53.540+0800 [clientcursormon]  connections:0
+2015-01-26T13:57:53.780+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T13:57:53.780+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T13:57:53.780+0800 [clientcursormon]  connections:0
