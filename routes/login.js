@@ -15,12 +15,12 @@ module.exports = function(app,passport){
 
 	// Basic routing 
 	app.get('/',function(req,res){
-		res.render('index')
+		res.render('client/index')
 	});
 	app.get('/profile', isLoggedIn, function(req,res){
 		BreakingNews.find(function(err, news){
 			BlogPosts.find(function(err, posts){
-				res.render('profile',{
+				res.render('admin/profile',{
 					user : req.user,
 					posts : posts,
 					news : news,
@@ -35,7 +35,7 @@ module.exports = function(app,passport){
 	});
 
 	app.get('/user/edit',function(req,res){
-		res.render('useredit',{
+		res.render('admin/useredit',{
 			user : req.user
 		});
 	});
@@ -51,7 +51,7 @@ module.exports = function(app,passport){
 				//req.flash('loginMessage','hi')
 				//console.log(req.flash('loginMessage'))
 
-				res.render('login', { message : req.flash('loginMessage') });
+				res.render('admin/login', { message : req.flash('loginMessage') });
 			})
 			app.post('/login', passport.authenticate('local-login',{
 				successRedirect : '/profile',
@@ -60,7 +60,7 @@ module.exports = function(app,passport){
 			}))
 			/* Sign-up */
 			app.get('/signup',function(req,res){
-				res.render('signup', { message : req.flash('signupMessage') });
+				res.render('admin/signup', { message : req.flash('signupMessage') });
 			})
 			app.post('/signup',passport.authenticate('local-signup',{
 				successRedirect : '/profile',

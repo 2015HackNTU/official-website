@@ -25,7 +25,7 @@ module.exports = function(app){
 	==================================== */
 
 	app.get('/example',function(req,res){
-		res.render('example', { message : 'example.ejs' }); // You can also pass something to the front
+		res.render('client/example', { message : 'example.ejs' }); // You can also pass something to the front
 	});
 
 
@@ -36,25 +36,25 @@ module.exports = function(app){
 	
 	//render to a file called example.ejs
 	app.get('/test',function(req,res){
-		res.render('testing', { 
+		res.render('client/testing', { 
 			message : 'Test.ejs',
 		});
 	})
 
 	app.get('/HackNTUMemberrrrr',function(req,res){
-		res.render('HackNTUMembers')
+		res.render('client/HackNTUMembers')
 	})
 	app.get('/testnew',function(req,res){
-		res.render('testnew')
+		res.render('client/testnew')
 	})
 	app.get('/activitynew',function(req,res){
-		res.render('activitynew')
+		res.render('client/activitynew')
 	})
 	// get will add somethind in URL 
 	//so it will add /HackNTUMenberrrrr behind URL
 
 	app.get('/getUser', function(req,res){
-		res.render('getUser')
+		res.render('client/getUser')
     		
 	})
 }
