@@ -8,7 +8,8 @@ var Users = mongoose.model('Users')
 exports.blogposts = function(req,res){
 	console.log(">>>> through blogposts.js <<<<<");
 	BlogPosts.find(function(error, blogposts){
-		res.json(blogposts);
+        res.send(blogposts.toString("utf8"))
+		//res.json(blogposts);
 	});	
 }
 exports.blogposts.newPosts =function(req,res){

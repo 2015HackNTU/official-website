@@ -17,7 +17,9 @@ exports.breakingnews = function(req,res){
             });
         }   
         //res.render('news',{title:'Breaking News', news: news});
-        res.json(news)
+        res.send(news.toString("utf8"))
+        //res.setEncoding('utf8');
+        //res.json(news.toString("UTF-8"))
     });
 };
 exports.breakingnews.newPosts =function(req,res){

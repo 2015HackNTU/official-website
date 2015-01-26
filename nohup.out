@@ -1413,3 +1413,15 @@ mongod --help for help and startup options
 2015-01-26T12:02:47.378+0800 [clientcursormon] mem (MB) res:3 virt:3934
 2015-01-26T12:02:47.408+0800 [clientcursormon]  mapped (incl journal view):1440
 2015-01-26T12:02:47.408+0800 [clientcursormon]  connections:0
+2015-01-26T12:07:47.691+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:07:47.691+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:07:47.691+0800 [clientcursormon]  connections:0
+2015-01-26T12:12:47.939+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:12:47.939+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:12:47.939+0800 [clientcursormon]  connections:0
+2015-01-26T12:17:48.212+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:17:48.212+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:17:48.212+0800 [clientcursormon]  connections:0
+2015-01-26T12:22:48.500+0800 [clientcursormon] mem (MB) res:3 virt:3934
+2015-01-26T12:22:48.526+0800 [clientcursormon]  mapped (incl journal view):1440
+2015-01-26T12:22:48.526+0800 [clientcursormon]  connections:0
