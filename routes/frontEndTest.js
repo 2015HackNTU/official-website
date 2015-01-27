@@ -47,6 +47,12 @@ module.exports = function(app){
 	app.get('/testnew',function(req,res){
 		res.render('testnew')
 	})
+	app.get('/blog',function(req,res){
+		res.render('blog')
+	})
+	app.get('/blog-single',function(req,res){
+		res.render('blog-single')
+	})
 	app.get('/activitynew',function(req,res){
 		res.render('activitynew')
 	})

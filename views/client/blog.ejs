@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<meta charset="utf-8">
+		<!-- Title here -->
+		<title>Blog - CakeFactory</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+		<!-- Portfolio CSS -->
+		<link rel="stylesheet" href="/stylesheets/prettyPhoto.css" >
+		<!-- Font awesome CSS -->
+		<link href="/stylesheets/font-awesome.min.css" rel="stylesheet">	
+		<!-- Custom Less -->
+		<link href="/stylesheets/less-style.css" rel="stylesheet">	
+		<!-- Custom CSS -->
+		<link href="/stylesheets/style 2.css" rel="stylesheet">
+		<!--[if IE]><link rel="stylesheet" href="css/ie-style.css"><![endif]-->
+		<link href="/stylesheets/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="#">
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="/javascripts/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="/javascripts/bootstrap.min.js"></script>
+		<!-- Pretty Photo JS -->
+		<script src="/javascripts/jquery.prettyPhoto.js"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="/javascripts/respond.min.js"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="/javascripts/html5shiv.js"></script>
+		<!-- Custom JS -->
+		<script src="/javascripts/custom.js"></script>
+		<!-- JS code for this page -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+      		$('.btn-calender-md .calender-link').click(function(e){
+        		e.preventDefault();
+    			var $dd_menu = $('.btn-calender-md .calender-dropdown')
+    			if ($dd_menu.hasClass('open')) {
+          			$dd_menu.fadeOut();
+          			$dd_menu.removeClass('open');
+    			} 
+    			else {
+      				$dd_menu.fadeIn();
+      				$dd_menu.addClass('open');
+    			}
+  				});
+				});
+		</script>
+	</head>
+	
+	<body>
+		<!-- header start -->
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div> -->
+        <div class="container-fluid">
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Activity <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Hackathon</a></li>
+              <li><a href="#">Blog</a></li>
+              <li>
+                <a class="navbar-brand" href="#">
+                  <img alt="Brand" style = "margin-top:-45px"src="images/logo-small.png">
+                </a>
+              </li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Organization</a></li>
+              <li>
+                <div class="btn-calender-md">
+                  <a class="calender-link" href="#">
+                    <!-- <img class="img-responsive" id="calender" src="images/calender.png" alt="" /> -->
+                    <i class="fa fa-calendar fa-4x"></i>
+                    <div class="clearfix"></div>
+                  </a>
+                    <div class="small-triangle"></div>
+                    <div class="calender-dropdown" role="calender">
+                      <table>
+                      <p>2015年 3月</p>
+                        <tr>
+                          <td>一</td>
+                          <td>二</td>
+                          <td>三</td>
+                          <td>四</td>
+                          <td>五</td>
+                          <td>六</td>
+                          <td>日</td>
+                        </tr>
+                      </table>
+                    </div>
+                </div>
+              </li>
+              
+              <!-- <li><a id="calender"><img src="images/calender.png"></a></li> -->
+              <!-- Button calender -->
+
+              
+              <!-- DropDown Start-->
+              <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+              </li> -->
+              <!-- DropDown End-->
+            </ul>
+           </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>		
+		
+		<!-- header end -->
+		
+			
+			<!-- Banner Start -->
+			
+			<div class="banner padd">
+				<div class="container">
+					
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			
+			<!-- Banner End -->
+			
+			
+			
+			<!-- Inner Content -->
+			<div class="inner-page padd">
+			
+				<!-- Blog Start -->
+					
+				<div class="blog">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8">
+								<!-- The new post done by user's all in the post block -->
+								<div class="blog-post">
+									<!-- Entry is the one post for each user -->
+									<div class="entry">
+										<!-- Post Images -->
+										<div class="blog-img pull-left">
+											<img src="images/2015hackNTU-4.jpg" class="img-responsive img-thumbnail" alt="" />
+										</div>
+										<!-- Meta for this block -->
+										<div class="meta">
+											<i class="fa fa-calendar"></i>&nbsp; Jan 13, 2014
+											<span class="pull-right"><i class="fa fa-comment"></i> <a href="#">&nbsp;2 Comments</a></span>
+										</div>
+										<!-- Heading of the  post -->
+										<h3><a href="blog-single.ejs">Contrary to popular belief horem purse</a></h3>
+										<hr /><!-- Horizontal line -->
+										<!-- Paragraph -->
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse porttitor luctus imperdiet. <a href="#">Praesent ultricies</a> enim ac ipsum aliquet pellentesque. Nullam justo nunc, dignissim at convallis posuere, sodales eu orci. Duis a risus sed dolor placerat semper quis in urna. Ut <strong>commodo ullamcorper risus nec</strong> viverra, dignissim eget est.</p>
+										<div class="clearfix"></div>
+									</div>
+									<!-- Entry is the one post for each user -->
+									<div class="entry">
+										<!-- Post Images -->
+										<div class="blog-img pull-left">
+											<img src="images/2015hackNTU-4.jpg" class="img-responsive img-thumbnail" alt="" />
+										</div>
+										<!-- Meta for this block -->
+										<div class="meta">
+											<i class="fa fa-calendar"></i>&nbsp; Jan 29, 2014
+											<span class="pull-right"><i class="fa fa-comment"></i> <a href="#">&nbsp;0 Comments</a></span>
+										</div>
+										<!-- Heading of the  post -->
+										<h3><a href="/blog_id">Suspended portrait cretinous perimeter</a></h3>
+										<hr /><!-- Horizontal line -->
+										<!-- Paragraph -->
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse porttitor luctus imperdiet. <a href="#">Praesent ultricies</a> enim ac ipsum aliquet pellentesque. Nullam justo nunc, dignissim at convallis posuere, sodales eu orci. Duis a risus sed dolor placerat semper quis in urna. Ut <strong>commodo ullamcorper risus nec</strong> viverra, dignissim eget est.</p>
+										<div class="clearfix"></div>
+									</div>
+									<!-- Entry is the one post for each user -->
+									<div class="entry">
+										<!-- Post Images -->
+										<div class="blog-img pull-left">
+											<img src="images/2015hackNTU-4.jpg" class="img-responsive img-thumbnail" alt="" />
+										</div>
+										<!-- Meta for this block -->
+										<div class="meta">
+											<i class="fa fa-calendar"></i>&nbsp; Feb 14, 2014
+											<span class="pull-right"><i class="fa fa-comment"></i> <a href="#">&nbsp;0 Comments</a></span>
+										</div>
+										<!-- Heading of the  post -->
+										<h3><a href="blog-single.ejs">Placerat semper quis in urna risus</a></h3>
+										<hr /><!-- Horizontal line -->
+										<!-- Paragraph -->
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse porttitor luctus imperdiet. <a href="#">Praesent ultricies</a> enim ac ipsum aliquet pellentesque. Nullam justo nunc, dignissim at convallis posuere, sodales eu orci. Duis a risus sed dolor placerat semper quis in urna. Ut <strong>commodo ullamcorper risus nec</strong> viverra, dignissim eget est.</p>
+										<div class="clearfix"></div>
+									</div>
+									<!-- Pagination -->
+									<ul class="pagination">
+										<li class="disabled"><a href="#">&laquo;</a></li>
+										<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li><a href="#">4</a></li>
+										<li><a href="#">5</a></li>
+										<li><a href="#">&raquo;</a></li>
+									</ul>
+									<!-- Pagination end-->
+								</div>
+							</div> <!--/ Main blog column end -->
+							<div class="col-md-4">
+								<!-- Blog page sidebar -->
+								<div class="blog-sidebar">
+									<div class="row">
+										<div class="col-md-12 col-sm-6">
+											<!-- Blog sidebar page widget -->
+											<div class="sidebar-widget">
+												<!-- Widget Heading -->
+												<h4>Search</h4>
+												<!-- search button and input box -->
+												<form role="form" class="form-inline">
+													<div class="input-group">
+														<input type="text" class="form-control" placeholder="Type to search">
+														<span class="input-group-btn">
+															<button class="btn btn-danger" type="button"><i class="fa fa-search"></i></button>
+														</span>
+													</div>
+												</form><!--/ Form end -->
+											</div><!--/ Widget end -->
+										</div>
+										<div class="col-md-12 col-sm-6">
+											<!-- Blog sidebar page widget -->
+											<div class="sidebar-widget">
+												<!-- Widget Heading -->
+												<h4>Recent Post</h4>
+												<!-- Recent post list -->
+												<ul class="list-unstyled">
+													<li><i class="fa fa-angle-double-right"></i> <a href="#">Delicious Pizza recipe, soluta nobqual blame betum rutrum allongs to this est eligend.</a></li>
+													<li><i class="fa fa-angle-double-right"></i> <a href="#">Chicken recipe, luta nobisest hyelqual bltum rutrum alame belongs to thigend.</a></li>
+													<li><i class="fa fa-angle-double-right"></i> <a href="#">Hot Cake recipe, jueilqual blame belongs to thuta ntum rutrum alobist hyeleniurd.</a></li>
+													<li><i class="fa fa-angle-double-right"></i> <a href="#">French Food recipe, rsiqual blame belongs to thlutum rutrum alta nobniurd.</a></li>
+												</ul>
+											</div><!--/ Widget end -->
+										<!-- </div>
+										<div class="col-md-12 col-sm-6">
+											
+											<div class="sidebar-widget">
+												
+												<h4>Tags</h4>
+												<a href="#" class="btn btn-warning btn-sm">Dessert</a>
+												<a href="#" class="btn btn-danger btn-sm">Spicy Non-Veg</a>
+												<a href="#" class="btn btn-default btn-sm">Drinks</a>
+												<a href="#" class="btn btn-success btn-sm">Seafood</a>
+												<a href="#" class="btn btn-info btn-sm">Globalist</a>
+												<a href="#" class="btn btn-warning btn-sm">Cake</a>
+												<a href="#" class="btn btn-success btn-sm">French</a>
+												<a href="#" class="btn btn-info btn-sm">Indigent</a>
+												<a href="#" class="btn btn-success btn-sm">Strum</a>
+												<a href="#" class="btn btn-default btn-sm">Squalor</a>
+												<a href="#" class="btn btn-warning btn-sm">Nobelium</a>
+											</div> --><!--/ Widget end -->
+										</div>
+										
+									</div><!--/ Inner row end -->
+								</div><!--/ Page sidebar end -->
+							</div>
+						</div><!--/ Row end -->
+					</div>
+				</div>
+				
+				<!-- Blog End -->
+			
+				
+				
+			</div><!-- / Inner Page Content End -->	
+			
+			<!-- Footer Start -->
+			
+<div class="footer padd">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="logo"></div>
+            <h1>HackNTU</h1>
+            <p>We gather Hackers.</p>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="logo"></div>
+            <h1>HackNTU</h1>
+            <p>We gather Hackers.</p>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="logo"></div>
+            <h1>HackNTU</h1>
+            <p>We gather Hackers.</p>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="logo"></div>
+            <h1>I am a footer</h1>
+            <p>We gather Hackers.</p>
+        </div>
+
+          
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; Copyright 2015 <a href="#">HackNTU</a></p>
+      </div>
+    </div> 
+  </div>
+			
+			<!-- Footer End -->
+			
+		</div><!-- / Wrapper End -->
+		
+		
+		<!-- Scroll to top -->
+		<span class="totop"><a href="#"><i class="fa fa-angle-up"></i></a></span> 
+		
+		
+		
+		
+		
+	</body>	
+</html>
