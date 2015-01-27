@@ -8,11 +8,12 @@ var Users = mongoose.model('Users')
 exports.blogposts = function(req,res){
 	console.log(">>>> through blogposts.js <<<<<");
 	BlogPosts.find(function(error, blogposts){
-		res.json(blogposts);
+        res.send(blogposts.toString("utf8"))
+		//res.json(blogposts);
 	});	
 }
 exports.blogposts.newPosts =function(req,res){
-	res.render('newPosts',{
+	res.render('admin/newPosts',{
 		user : req.user
 	})
 }
@@ -41,7 +42,7 @@ exports.blogposts.create = function(req,res){
 exports.blogposts.edit = function(req,res){
 	BlogPosts.findById(req.params.id,function(err,posts){
 		console.log("GET:"+req.posts)
-		res.render('editPosts',{
+		res.render('admin/editPosts',{
 			posts : posts,
 			user : req.user
 		})
@@ -52,7 +53,7 @@ exports.blogposts.editUpdate = function(req,res){
 	BlogPosts.findById(req.params.id, function(err, posts){
 		Users.findById(req.body.user_id, function(err, user){
 			if(err)
-				res.redirect('error',{ message : err.message, err:{} })
+				res.redirect('client/error',{ message : err.message, err:{} })
 			// Update //
 			posts.user_id = req.body.user_id;
 			posts.title = req.body.title;
@@ -64,7 +65,7 @@ exports.blogposts.editUpdate = function(req,res){
 
 			posts.save(function(err, posts, count){
 				if(err)
-					res.render('error',{message:err.message, err:{}})
+					res.render('client/error',{message:err.message, err:{}})
 				res.redirect('/profile');
 			})
 		})
@@ -77,7 +78,7 @@ exports.blogposts.destroy = function(req,res){
 		blogposts.remove(function(err, blogposts){
 	        if(err){
 		        res.status(err.status || 500);
-	            res.render('error', {
+	            res.render('client/error', {
 	                message: err.message,
 	                err: err
 	            });

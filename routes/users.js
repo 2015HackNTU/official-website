@@ -11,7 +11,7 @@ exports.users = function (req, res){
     //Display on User Page//
     Users.find(function(error, users){
     tempUsers.find(function(err, tempUsers){
-        res.render('user', { 
+        res.render('admin/user', { 
         title : 'User test',
         users : users,
         tempUsers : tempUsers,
@@ -105,7 +105,7 @@ exports.users.authenticate = function(req,res){
   })
 };
 exports.users.edit =function(req,res){
-    res.render('profile',{ 
+    res.render('admin/profile',{ 
       user : req.user,
       posts : req.posts,
       news : req.news,

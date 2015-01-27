@@ -11,17 +11,19 @@ exports.breakingnews = function(req,res){
     BreakingNews.find(function(err, news){
         if(err){
             res.status(err.status || 500);
-            res.render('error', {
+            res.render('client/error', {
                 message: err.message,
                 err: err
             });
         }   
         //res.render('news',{title:'Breaking News', news: news});
-        res.json(news)
+        res.send(news.toString("utf8"))
+        //res.setEncoding('utf8');
+        //res.json(news.toString("UTF-8"))
     });
 };
 exports.breakingnews.newPosts =function(req,res){
-    res.render('newNews',{
+    res.render('admin/newNews',{
         user : req.user
     })
 }
@@ -40,7 +42,7 @@ exports.breakingnews.create = function(req,res){
     .save( function(err, news, count){
         if(err){
             res.status(err.status || 500);
-            res.render('error', {
+            res.render('client/error', {
                 message: err.message,
                 err: err
             });
@@ -52,7 +54,7 @@ exports.breakingnews.create = function(req,res){
 exports.breakingnews.edit = function(req,res){
     BreakingNews.findById(req.params.id,function(err,news){
         console.log("GET:"+req.news)
-        res.render('editNews',{
+        res.render('admin/editNews',{
             news : news,
             user : req.user
         })
@@ -75,7 +77,7 @@ exports.breakingnews.editUpdate = function(req,res){
 
             news.save(function(err, news, count){
                 if(err)
-                    res.render('error',{message:err.message, err:{}})
+                    res.render('client/error',{message:err.message, err:{}})
                 res.redirect('/profile');
             })
         })
@@ -105,7 +107,7 @@ exports.breakingnews.destroy = function(req,res){
     BreakingNews.findById(req.params.id, function(err, news){
         if(err){
             res.status(err.status || 500);    
-            res.render('error', {
+            res.render('client/error', {
                 message: err.message,
                 error: {}
             });
