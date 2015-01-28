@@ -37,29 +37,48 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 
-// Routes //
+/***** Routes *****/
 require('./config/passport')(passport); // pass passport for configuration
 require('./routes/login')(app,passport);
 require('./routes/frontEndTest')(app);
 
 app.get('/', index.index);
 
-app.get('/api/posts', blogposts.blogposts);
-app.get('/posts/new', blogposts.blogposts.newPosts);
-app.post('/posts/create', blogposts.blogposts.create);
-app.get('/posts/edit/:id',blogposts.blogposts.edit);
-app.post('/posts/edit/:id', blogposts.blogposts.editUpdate)
-app.get('/posts/delete/:id', blogposts.blogposts.destroy);
+// Posts //
+    /* Front */ 
+    app.get('/api/posts', blogposts.blogposts); // Get all Posts
+    app.get('/api/posts/:id', blogposts.findPosts); // Find specific post by sending _id
+    /* Back */
+    app.get('/posts/new', blogposts.newPosts); // Link to create posts page
+    app.post('/posts/create', blogposts.create); // Create new posts
+    app.get('/posts/edit/:id',blogposts.edit); // Link to Edit page
+    app.post('/posts/edit/:id', blogposts.editUpdate) // Save Edited posts
+    app.get('/posts/delete/:id', blogposts.destroy); // Delete posts
+// Posts //
 
 
-app.get('/api/news', news.breakingnews);
-app.post('/news/create', news.breakingnews.create);
-app.get('/news/new', news.breakingnews.newPosts);
-app.get('/news/edit/:id', news.breakingnews.edit);
-app.post('/news/edit/:id', news.breakingnews.editUpdate);
-app.get('/news/isImportant/:id', news.breakingnews.isImportant);
-app.get('/news/delete/:id', news.breakingnews.destroy);
-// Routes //
+// News //
+    /* Front */
+    app.get('/api/news', news.breakingnews); // Get all News
+    app.get('/api/news/:id',news.findNews); // Find specific news by sending _id
+    /* Back */
+    app.get('/news/new', news.newPosts); // Link to create news page
+    app.post('/news/create', news.create); // Create news
+    app.get('/news/edit/:id', news.edit); // Link to edit page
+    app.post('/news/edit/:id', news.editUpdate); //Save edited news
+    app.get('/news/isImportant/:id', news.isImportant); // Toggle importancy
+    app.get('/news/delete/:id', news.destroy); // Delete news
+// News //
+
+
+// Calendar //
+    
+    /* Front */
+    //app.post('/calendar',calendar.read)
+    /* Back */
+
+// Calendar //
+
 
 
 ////////////////////////////

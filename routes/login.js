@@ -7,11 +7,11 @@ module.exports = function(app,passport){
 
 	var users = require('./users');
 	app.get('/user', users.users);
-	app.post('/user/create', users.users.create)
-	app.get('/user/edit/:id',isLoggedIn, users.users.edit)
-	app.post('/user/edit/:id', isLoggedIn, users.users.modify);
-	app.get('/user/delete/:id', users.users.destroy);
-	app.get('/user/authenticate/:id', users.users.authenticate );
+	app.post('/user/create', users.create)
+	app.get('/user/edit/:id',isLoggedIn, users.edit)
+	app.post('/user/edit/:id', isLoggedIn, users.modify);
+	app.get('/user/delete/:id', users.destroy);
+	app.get('/user/authenticate/:id', users.authenticate );
 
 	// Basic routing 
 	app.get('/',function(req,res){

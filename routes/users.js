@@ -21,7 +21,7 @@ exports.users = function (req, res){
     });
     console.log('>>>>> route through users.js fn exports.user <<<<<');
 }
-exports.users.create = function (req,res){
+exports.create = function (req,res){
     console.log('>>>>> route through users.js fn exports.user.create <<<<<');
     // Applying 
     if(!req.user){
@@ -75,7 +75,7 @@ exports.users.create = function (req,res){
     });
     */
 };
-exports.users.authenticate = function(req,res){
+exports.authenticate = function(req,res){
   tempUsers.findById(req.params.id, function(err,tempUser){
     if(!tempUser.isAuthenticate) { // Avoid double authentication
       var newUser = new Users(); // New Users object
@@ -104,7 +104,7 @@ exports.users.authenticate = function(req,res){
     }
   })
 };
-exports.users.edit =function(req,res){
+exports.edit =function(req,res){
     res.render('admin/profile',{ 
       user : req.user,
       posts : req.posts,
@@ -119,7 +119,7 @@ exports.users.edit =function(req,res){
     })
     */
 }
-exports.users.modify = function(req,res){
+exports.modify = function(req,res){
   Users.findById(req.params.id, function(err, user){
     if(err){
       res.render('error',{
@@ -145,7 +145,7 @@ exports.users.modify = function(req,res){
 
 
 
-exports.users.destroy = function(req,res){
+exports.destroy = function(req,res){
     console.log(req.body.name + ' removed');
     console.log('>>>>> route through users.js fn exports.user.destroy <<<<<');
     // Delete //
