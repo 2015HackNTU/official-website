@@ -47,17 +47,14 @@ section {
 	top: 0;
 	background-color: #ffffff;
 }
-.navbar-nav li:nth-child(7) i{
+.navbar-nav li:nth-child(6) i{
 	width: 50px;
 	margin-left: 40px;
 	margin-top: 25px;
 	color: #cc0000;
 }
 
-.btn-calender-md .calender-dropdown img{
-	width: 100%;
-	height: 50px;
-}
+
 .btn-calender-md .calender-dropdown { 
 	position: absolute;
 	top: 100px;
@@ -76,9 +73,9 @@ section {
 }
 
 .navbar-nav li:first-child{
-	margin-left: 15.5%;
+	margin-left: 24.5%;
 }
-.navbar-nav li:nth-child(5){
+.navbar-nav li:nth-child(4){
 	margin-left: 2.5%;
 }
 

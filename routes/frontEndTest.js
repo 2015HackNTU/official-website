@@ -45,13 +45,15 @@ module.exports = function(app){
 		res.render('client/HackNTUMembers')
 	})
 	app.get('/testnew',function(req,res){
-		res.render('client/testnew')
+		res.render('client/testnew',{
+
+		})
 	})
 	app.get('/blog',function(req,res){
-		res.render('blog')
+		res.render('client/blog')
 	})
 	app.get('/blog-single',function(req,res){
-		res.render('blog-single')
+		res.render('client/blog-single')
 	})
 	app.get('/activitynew',function(req,res){
 		res.render('client/activitynew')
