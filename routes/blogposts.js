@@ -3,8 +3,11 @@ var mongoose = require('mongoose');
 var BreakingNews = mongoose.model('BreakingNews');
 var BlogPosts = mongoose.model('BlogPosts');
 var Users = mongoose.model('Users')
-/* Blog Posts Start */
-/* Blog Posts Start */
+
+
+
+
+
 exports.blogposts = function(req,res){
 	console.log(">>>> through blogposts.js <<<<<");
 	BlogPosts.find(function(error, blogposts){
@@ -12,12 +15,18 @@ exports.blogposts = function(req,res){
 		//res.json(blogposts);
 	});	
 }
-exports.blogposts.newPosts =function(req,res){
+exports.newPosts =function(req,res){
 	res.render('admin/newPosts',{
 		user : req.user
 	})
 }
-exports.blogposts.create = function(req,res){
+exports.findPosts = function(req,res){
+	BlogPosts.findById(req.params.id,function(err,post){
+		console.log(req.params.id + " " + post)
+		res.send(post.toString("utf8"))
+	})
+}
+exports.create = function(req,res){
 	console.log(">>>> through blogposts.js <<<<<");
 	new BlogPosts ({
 		user_id : req.body.user_id,
@@ -39,7 +48,7 @@ exports.blogposts.create = function(req,res){
 		res.redirect('/profile');
 	})
 }
-exports.blogposts.edit = function(req,res){
+exports.edit = function(req,res){
 	BlogPosts.findById(req.params.id,function(err,posts){
 		console.log("GET:"+req.posts)
 		res.render('admin/editPosts',{
@@ -48,7 +57,7 @@ exports.blogposts.edit = function(req,res){
 		})
 	})
 }
-exports.blogposts.editUpdate = function(req,res){
+exports.editUpdate = function(req,res){
 	console.log('update'+req.body.user_id)
 	BlogPosts.findById(req.params.id, function(err, posts){
 		Users.findById(req.body.user_id, function(err, user){
@@ -72,7 +81,7 @@ exports.blogposts.editUpdate = function(req,res){
 	})
 }
 
-exports.blogposts.destroy = function(req,res){
+exports.destroy = function(req,res){
 	console.log(">>>> through blogposts.js <<<<<");
 	BlogPosts.findById(req.params.id, function(err, blogposts){
 		blogposts.remove(function(err, blogposts){

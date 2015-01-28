@@ -134,6 +134,9 @@ section {
 	color:#9a9a9a;
 	text-align: center;
 }
+.blog-img {
+	width: 30%;
+}
 
 /*.month ul{
 	text-align: center;
