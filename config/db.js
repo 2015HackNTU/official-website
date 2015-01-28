@@ -92,6 +92,8 @@ var Users = mongoose.model('Users',User);
 var BreakingNews = mongoose.model('BreakingNews',BreakingNews);
 var BlogPosts = mongoose.model('BlogPosts',BlogPosts);
 var Calendar = mongoose.model('Calendar',Calendar);
+exports.BlogPosts = BlogPosts;
+
 /*
 mongoose.connect('mongodb://localhost/HackNTU-website',function(){
 	console.log("DB connected")

@@ -46,8 +46,31 @@ app.get('/', index.index);
 
 // Posts //
     /* Front */ 
-    app.get('/api/posts', blogposts.blogposts); // Get all Posts
-    app.get('/api/posts/:id', blogposts.findPosts); // Find specific post by sending _id
+    // app.get('/api/posts', blogposts.blogposts); // Get all Posts
+    // app.get('/api/posts/:id', blogposts.findPosts); // Find specific post by sending _id
+    //GET METHOD
+    app.get('/api/posts', function(req, res){
+        return db.BlogPosts.find(function(err, post){
+            if(!err){
+                return res.send(post);
+            }
+            else{
+                return res.send("Error!");
+            }
+        });
+    });
+    //GET METHOD BY ID.
+    app.get('/api/posts/:pid', function(req, res){
+        return db.BlogPosts.findOne({_id: req.params.id}, function(err, post){
+            if(!err){
+                return res.send(post);
+            }
+            else{
+                return res.send("Error!");
+            }
+        });
+    });
+
     /* Back */
     app.get('/posts/new', blogposts.newPosts); // Link to create posts page
     app.post('/posts/create', blogposts.create); // Create new posts

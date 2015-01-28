@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<head>	
+	<head ng-app="blog">	
 		<meta charset="utf-8">
 		<!-- Title here -->
 		<title>Blog - CakeFactory</title>
@@ -38,7 +38,7 @@
 		<!-- Respond JS for IE8 -->
 		<script src="/javascripts/respond.min.js"></script>
 		<!-- HTML5 Support for IE -->
-		<script src="/javascripts/html5shiv.js"></script>
+		<!-- <script src="/javascripts/html5shiv.js"></script> -->
 		<!-- Custom JS -->
 		<script src="/javascripts/custom.js"></script>
 		<!-- JS code for this page -->
@@ -58,9 +58,13 @@
   				});
 				});
 		</script>
+
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
+		<script src="js/blog.js"></script>
 	</head>
 	
-	<body>
+	<body ng-controller = "blogCtrl">
 		<!-- header start -->
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <!-- <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div> -->
@@ -70,8 +74,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="#">Activity <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Hackathon</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="/blog">Blog</a></li>
               <li>
                 <a class="navbar-brand" href="#">
                   <img alt="Brand" style = "margin-top:-45px"src="images/logo-small.png">
@@ -83,7 +86,7 @@
                 <div class="btn-calender-md">
                   <a class="calender-link" href="#">
                     <!-- <img class="img-responsive" id="calender" src="images/calender.png" alt="" /> -->
-                    <i class="fa fa-calendar fa-4x"></i>
+                    <i class="fa fa-calendar fa-3x"></i>
                     <div class="clearfix"></div>
                   </a>
                     <div class="small-triangle"></div>
@@ -155,21 +158,23 @@
 								<!-- The new post done by user's all in the post block -->
 								<div class="blog-post">
 									<!-- Entry is the one post for each user -->
-									<div class="entry">
-										<!-- Post Images -->
-										<div class="blog-img pull-left">
-											<img src="images/2015hackNTU-4.jpg" class="img-responsive img-thumbnail" alt="" />
-										</div>
+									<div class="entry" id="p_{{p._id}}">
 										<!-- Meta for this block -->
 										<div class="meta">
 											<i class="fa fa-calendar"></i>&nbsp; Jan 13, 2014
-											<span class="pull-right"><i class="fa fa-comment"></i> <a href="#">&nbsp;2 Comments</a></span>
+											<span><i class="fa fa-comment"></i> <a href="#">&nbsp;2 Comments</a></span>
 										</div>
 										<!-- Heading of the  post -->
-										<h3><a href="blog-single.html">Contrary to popular belief horem purse</a></h3>
+										<h3>{{p.title}}</h3>
 										<hr /><!-- Horizontal line -->
+										<!-- Post Images -->
+										<div class="blog-img">
+											<img src="images/2015hackNTU-4.jpg" class="img-responsive img-thumbnail" alt="" />
+										</div>
+										
+										
 										<!-- Paragraph -->
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nisi vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse porttitor luctus imperdiet. <a href="#">Praesent ultricies</a> enim ac ipsum aliquet pellentesque. Nullam justo nunc, dignissim at convallis posuere, sodales eu orci. Duis a risus sed dolor placerat semper quis in urna. Ut <strong>commodo ullamcorper risus nec</strong> viverra, dignissim eget est.</p>
+										<p>{{p.content}}</p>
 										<div class="clearfix"></div>
 									</div>
 									
