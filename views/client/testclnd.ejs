@@ -14,37 +14,24 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
     <script src="js/site.js"></script>
     <script src="js/service.js"></script>
+    <script src="js/bridge.js"></script>
     <script src="/javascripts/moment-2.8.3.js"></script>
     <script src="/javascripts/json2.js"></script>
     <script src="/javascripts/clndr.js"></script>
     <script>
-    $(document).ready(function() {
-      $('.btn-calender-md .calender-link').click(function(e){
-        e.preventDefault();
-    var $dd_menu = $('.btn-calender-md .calender-dropdown')
-    if ($dd_menu.hasClass('open')) {
-          $dd_menu.fadeOut();
-          $dd_menu.removeClass('open');
-    } 
-    else {
-      $dd_menu.fadeIn();
-      $dd_menu.addClass('open');
-    }
-  });
-});
-      
-    //   $(function () {
-    //     $('[data-toggle="dropdown"]').dropdown()
-    //   }) ;
-    //   $('.img-responsive').dropdown('show');
-
-    //   var backdrop = '.dropdown-backdrop'
-    //   var toggle   = '[data-toggle=dropdown]'
-    //   var Dropdown = function (element) {
-    //   $(element).on('click.bs.dropdown', this.toggle)
-
-    //   Dropdown($('#calender1'));
-    // }
+      $(document).ready(function() {
+        $('.btn-calender-md .calender-link').click(function(e){
+          e.preventDefault();
+          var $dd_menu = $('.btn-calender-md .calender-dropdown')
+          if ($dd_menu.hasClass('open')) {
+            $dd_menu.fadeOut();
+            $dd_menu.removeClass('open');
+          } else {
+            $dd_menu.fadeIn();
+            $dd_menu.addClass('open');
+          }
+        });
+      });
     </script>
 
     <script type="text/javascript">
@@ -66,18 +53,11 @@
         else {
           document.getElementById(i).style.display = "none";
         }
-      }
-      
+      }   
     }
-    </script>
-    
-    
-    
-    
+    </script>  
   </head>
-
   <body>
-
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <!-- <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div> -->
         <div class="container-fluid">
@@ -104,8 +84,7 @@
                     <div class="small-triangle"></div>
                     <div class="calender-dropdown" role="calender">
 <!-- ****************************** where clnd is ******************************-->
-                      <div class="cal">  
-                      </div>
+                      <div class="cal">  </div>
                     </div>
                 </div>
               </li>
@@ -137,164 +116,140 @@
   <!--  data-bleed="10" data-natural-width="1400" data-natural-height="900" style="height: 650px;"  -->
 
 
-  <div class = "inner-page padd">
-    <div class = "about-vedio padd">
-      <div class = "container" style="width: 100%">
-        <div class="row">
-          
-
-            <!-- <div class="gray">
-              <div class="triangle"></div>  
-            </div>-->
-          
-          <!-- <video width="100%" height="100%" controls>
-                    <source src="images/earth-2.mov" type="video/mp4">
-                    </video> -->
+    <div class = "inner-page padd">
+      <div class = "about-vedio padd">
+        <div class = "container" style="width: 100%">
+          <div class="row">
             
-            <div class="play-the-video">
-              <img src="images/2015hackNTU-3-black.jpg">
-              <div class="the-button">
-              <a class="btn btn-danger" type="button">
-              <i class="fa fa-play-circle fa-2x"></i>
-              Play the video</a>
+
+              <!-- <div class="gray">
+                <div class="triangle"></div>  
+              </div>-->
+            
+            <!-- <video width="100%" height="100%" controls>
+                      <source src="images/earth-2.mov" type="video/mp4">
+                      </video> -->
+              
+              <div class="play-the-video">
+                <img src="images/2015hackNTU-3-black.jpg">
+                <div class="the-button">
+                <a class="btn btn-danger" type="button">
+                <i class="fa fa-play-circle fa-2x"></i>
+                Play the video</a>
+                </div>
               </div>
-            </div>
-        </div>      
+          </div>      
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="inner-page pad">
-    <div class="introduction">
+    <div class="inner-page pad">
+      <div class="introduction">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-12">
+
+              <div class="col-md-4">
+                <div class="circle one" onclick="Print(0)">
+                  <i class="fa fa-dot-circle-o fa-2x"></i>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="circle two" onclick="Print(1)">
+                  <i class="fa fa-lightbulb-o fa-2x"></i>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="circle three" onclick="Print(2)">
+                  <i class="fa fa-wrench fa-2x"></i>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="1" style="display:block">
+              <div class="col-md-8 col-md-offset-2" >
+                <div class = "introduction-content" id = "why">
+                <h3>WHY WE DO THIS</h3>
+                  <p>When many hackers get together, we can make some impact.</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="0" style="display:none">
+
+              <div class="col-md-4">
+                <div class = "introduction-content" id = "what">
+                  <h3>WHAT DO WE DO</h3>
+                    <p>黑客松</p>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class = "introduction-content" id = "what">
+                  <h3>WHAT DO WE DO</h3>
+                    <p>小聚</p>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class = "introduction-content" id = "what">
+                  <h3>WHAT DO WE DO</h3>
+                    <p>Workshop</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="2" style="display:none"> 
+              <div class="col-md-8 col-md-offset-2">
+                <div class = "introduction-content" id = "why">
+                <h3>HOW DO WE DO THIS</h3>
+                  <p>聚集Hackers、培養Hackers</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="footer padd">
       <div class="container">
         <div class="row">
-
-          <div class="col-md-12">
-
-            <div class="col-md-4">
-              <div class="circle one" onclick="Print(0)">
-                <i class="fa fa-dot-circle-o fa-2x"></i>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="circle two" onclick="Print(1)">
-                <i class="fa fa-lightbulb-o fa-2x"></i>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="circle three" onclick="Print(2)">
-                <i class="fa fa-wrench fa-2x"></i>
-              </div>
-            </div>
-
+          <div class="col-md-3 col-sm-6">
+            <div class="logo"></div>
+              <h1>HackNTU</h1>
+              <p>We gather Hackers.</p>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="logo"></div>
+              <h1>HackNTU</h1>
+              <p>We gather Hackers.</p>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="logo"></div>
+              <h1>HackNTU</h1>
+              <p>We gather Hackers.</p>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="logo"></div>
+              <h1>I am a footer</h1>
+              <p>We gather Hackers.</p>
           </div>
 
-          <div id="1" style="display:block">
-            <div class="col-md-8 col-md-offset-2" >
-              <div class = "introduction-content" id = "why">
-              <h3>WHY WE DO THIS</h3>
-                <p>When many hackers get together, we can make some impact.</p>
-              </div>
-            </div>
-          </div>
-
-          <div id="0" style="display:none">
-
-            <div class="col-md-4">
-              <div class = "introduction-content" id = "what">
-                <h3>WHAT DO WE DO</h3>
-                  <p>黑客松</p>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class = "introduction-content" id = "what">
-                <h3>WHAT DO WE DO</h3>
-                  <p>小聚</p>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class = "introduction-content" id = "what">
-                <h3>WHAT DO WE DO</h3>
-                  <p>Workshop</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div id="2" style="display:none"> 
-            <div class="col-md-8 col-md-offset-2">
-              <div class = "introduction-content" id = "why">
-              <h3>HOW DO WE DO THIS</h3>
-                <p>聚集Hackers、培養Hackers</p>
-              </div>
-            </div>
-          </div>
-
-
+            
         </div>
-      </div>
+        <div class="footer-copyright">
+          <p>&copy; Copyright 2015 <a href="#">HackNTU</a></p>
+        </div>
+      </div> 
     </div>
-  </div>
-
-
-  <div class="footer padd">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>HackNTU</h1>
-            <p>We gather Hackers.</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>HackNTU</h1>
-            <p>We gather Hackers.</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>HackNTU</h1>
-            <p>We gather Hackers.</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>I am a footer</h1>
-            <p>We gather Hackers.</p>
-        </div>
-
-          
-      </div>
-      <div class="footer-copyright">
-        <p>&copy; Copyright 2015 <a href="#">HackNTU</a></p>
-      </div>
-    </div> 
-  </div>
-
-
-    <!-- <div name="Picture1" class="parallax-container" data-parallax="scroll" data-position="top" data-image-src="images/2015hackNTU.jpg" style="height: 650px;"></div>
-
-    <div name="Picture2" class="parallax-container" data-parallax="scroll" data-image-src="images/2015hackNTU_2.jpg" style="height: 650px;"></div>
-
-    <section>
-      <div class="container text-left" >
-        <h2 id ="title">Hello</h2>
-        <ul>
-          <li>We</li>
-          <li>are</li>
-          <li>Hack</li>
-          <li>NTU</li>
-        </ul>
-        <a class="text-right" href="https://www.facebook.com/hackNTU?fref=ts">follow us on Facebook</a>
-      </div>
-    </section>
-
-    <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="images/try_1.jpg" data-natural-width="578" data-natural-height="367" style="height: 650px;"></div> -->
-
-    
-    
-
   </body>
 </html>

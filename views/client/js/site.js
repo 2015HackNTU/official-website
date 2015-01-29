@@ -20,7 +20,19 @@ $(document).ready( function() {
   // direct click action callbacks come first: click, nextMonth, previousMonth, nextYear, previousYear, or today.
   // then onMonthChange (if the month changed).
   // finally onYearChange (if the year changed).
+
+  //get current month evt
   var events = [];
+  var cur_month = new Date().getMonth() + 1;
+  getCalender(cur_month, function(eventList) {
+    var evt;
+    for (evt in eventList) {
+      var date = Date.parse(evt.datetime);
+      var date_str = date.gerFullYear + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+       events.add({date: date_str, title: evt.name, url: '/activity/' + evt.id});
+     }
+  });
+
   calendars.clndr2 = $('.cal').clndr({
     events: eventArray,
     multiDayEvents: {
