@@ -40,6 +40,30 @@
     //   Dropdown($('#calender1'));
     // }
     </script>
+
+    <script type="text/javascript">
+      function HideContent(d) {
+      document.getElementById(d).style.display = "none";
+      }
+      function ShowContent(d) {
+      document.getElementById(d).style.display = "block";
+      }
+      function ReverseDisplay(d) {
+      if(document.getElementById(d).style.display == "none") { document.getElementById(d).style.display = "block"; }
+      else { document.getElementById(d).style.display = "none"; }
+      }
+      function Print(d){
+        for (var i = 0; i < 3; i++){
+          if (i==d){
+            document.getElementById(i).style.display = "block";
+          }
+        else {
+          document.getElementById(i).style.display = "none";
+        }
+      }
+      
+    }
+    </script>
     
     
     
@@ -151,30 +175,69 @@
           <div class="col-md-12">
 
             <div class="col-md-4">
-              <div class="circle one">
+              <div class="circle one" onclick="Print(0)">
                 <i class="fa fa-dot-circle-o fa-2x"></i>
               </div>
             </div>
 
             <div class="col-md-4">
-              <div class="circle two">
+              <div class="circle two" onclick="Print(1)">
                 <i class="fa fa-lightbulb-o fa-2x"></i>
               </div>
             </div>
 
             <div class="col-md-4">
-              <div class="circle three">
+              <div class="circle three" onclick="Print(2)">
                 <i class="fa fa-wrench fa-2x"></i>
               </div>
             </div>
 
           </div>
 
-
-          <div class="col-md-12">
-            
+          <div id="1">
+            <div class="col-md-8 col-md-offset-2">
+              <div class = "introduction-content" id = "why">
+              <h3>WHY WE DO THIS</h3>
+                <p>When many hackers get together, we can make some impact.</p>
+              </div>
+            </div>
           </div>
-        
+
+          <div id="0">
+
+            <div class="col-md-4">
+              <div class = "introduction-content" id = "what">
+                <h3>WHAT DO WE DO</h3>
+                  <p>黑客松</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class = "introduction-content" id = "what">
+                <h3>WHAT DO WE DO</h3>
+                  <p>小聚</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class = "introduction-content" id = "what">
+                <h3>WHAT DO WE DO</h3>
+                  <p>Workshop</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="2">
+            <div class="col-md-8 col-md-offset-2">
+              <div class = "introduction-content" id = "why">
+              <h3>HOW DO WE DO THIS</h3>
+                <p>聚集Hackers、培養Hackers</p>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>
