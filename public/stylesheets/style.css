@@ -194,7 +194,7 @@ section {
 .info{
 	position: relative;
 	width: 100%;
-	top: -500px;
+	top: 200px;
 	left: 0;
 	background: rgba(52, 27, 43, 0.5);
 	color: white;
@@ -216,6 +216,13 @@ section {
 	text-transform: uppercase;
 	color: white;
 	z-index: 900;
+}
+.history-about-us{
+	height: 600px;
+	width: 100%;
+}
+.history-about-us h3{
+	color: white;
 }
 
 /*.month ul{
