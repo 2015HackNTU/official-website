@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
     <title></title>
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -41,92 +40,8 @@
     //   Dropdown($('#calender1'));
     // }
     </script>
-    <script type="text/javascript">
-      var GO_LEFT = -1, GO_RIGHT = 1;
-      var middle_month;
-      var month_array = ['JAN', 'FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-      function createfunction(){
-        var today = new Date();
-        var month = today.getMonth() + 1 - 6;
-        var calender_parent = document.getElementsByClassName("monthbar");
-        middle_month = month;
-        for (var i = 0 ; i < 12; i++)
-        {
-          var elem = document.createElement("div");
-          elem.className = "position-" + i ;
-          elem.innerHTML = month_array[month - 1];
-          elem.onClick = swiftfunction;
-          calender_parent.appendChild(elem)
-          monthadd(month, 1);
-        }
-      }
-      function swiftfunction() {
-        var month = parseInt(getMonth(event.target.innerHTML));
-        var move = month - middle_month; // > 0 left, < 0 right
-        var direction = move > 0? GO_LEFT: GO_RIGHT;// -1 : left
-        if (move == 0)
-                return;
-        if (move < 0)
-          move *= -1;
-        else
-          move = 1;
-        //add buffer
-        for (var i = 0; i < move; i++) {
-          var position, add_month;
-          if (direction == GO_RIGHT) {//go right-> add at 
-            position = -1 - i;
-            add_month = monthmines(middle_month, 7+ i);
-          } else {//go left -> add at right
-            position = 12 + i;
-            add_month = monthadd(middle_month, 6+ i);
-          }
-          var elem = document.createElement("div");
-          elem.className = "position-" + i ;
-          elem.innerHTML = month_array[month - 1];
-          elem.onClick = swiftfunction;
-          if (direction == GO_RIGHT) {
-            calender_parent.insertBefore(elem, calender_parent.childNodes[0]);
-          } else {
-            calender_parent.insertChild(elem)
-          }
-        }
-        //move
-        var children = calender_parent.childNodes;
-        for (var i = 0; i < 12 + move; i++) {
-          var new_position = direction == GO_RIGHT? i, i - move;
-          children[i].className = "position-" + new_position + " swift-animation" + move;
-          window.setInterval(function () {children[i].className = "position-" + new_position;}, move * 1000);
-        }
-        //removebuffer
-        for (var i = 0; i < move; i++) {
-          if (direction == GO_RIGHT) {
-            calender_parent.removeChild(calender_parent.childNodes[0]);
-          } else {
-            calender_parent.removeChild(calender_parent.childNodes[12]);
-          }
-        }
-        //adjust middle month
-        middle_month = month;
-      }
-      function getMonth(monthString) {
-        for (i = 0; i < 12; i++) {
-          if (month_array[i] == monthString)
-            return i + 1;
-        }
-        return null;
-      }
-      function monthadd(cur_month, adder) {
-        return (cur_month + adder) % 12;
-      }
-      function monthmines(cur_month, minus) {
-        cur_month = cur_month - minus; 
-        while (cur_month <= 0) {
-          cur_month + 12;
-        }
-        return cur_month;
-      }
-    </script>
-
+    
+    
     
     
   </head>
@@ -134,24 +49,25 @@
   <body>
 
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div>
+        <!-- <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div> -->
         <div class="container-fluid">
     
     <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="#">Activity <span class="sr-only">(current)</span></a></li>
-              <li><a href="/blog">Blog</a></li>
+              <li><a href="#">Organization</a></li>
               <li>
                 <a class="navbar-brand" href="#">
-                  <img alt="Brand" src="images/logo.png">
+                  <img alt="Brand" style = "margin-top:-45px"src="images/logo-small.png">
                 </a>
               </li>
               <li><a href="#">Projects</a></li>
-              <li><a href="#">Organization</a></li>
+              <li><a href="/blog">Blog</a></li>
               <li>
                 <div class="btn-calender-md">
                   <a class="calender-link" href="#">
+                    <!-- <img class="img-responsive" id="calender" src="images/calender.png" alt="" /> -->
                     <i class="fa fa-calendar fa-3x"></i>
                     <div class="clearfix"></div>
                   </a>
@@ -194,44 +110,71 @@
             </ul>
            </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
-    </nav>
+    </nav>    
 
 
   <!--  data-bleed="10" data-natural-width="1400" data-natural-height="900" style="height: 650px;"  -->
 
 
-  <div class = "inner-page pad">
+  <div class = "inner-page padd">
     <div class = "about-vedio padd">
       <div class = "container" style="width: 100%">
         <div class="row">
-          <div class="col-md-12">
+          
 
-            <div class="gray">
+            <!-- <div class="gray">
               <div class="triangle"></div>  
-            </div>
-
-          </div>  
-
-
-            <div class="monthbar" onload=createfunction()>
-
-            </div>
-
-            <div class = "test-img">
-              <img src="images/2015hackNTU_2.jpg">
-            </div>
+            </div>-->
           
-          
-        </div>
+          <!-- <video width="100%" height="100%" controls>
+                    <source src="images/earth-2.mov" type="video/mp4">
+                    </video> -->
+            
+            <div class="play-the-video">
+              <img src="images/2015hackNTU-3-black.jpg">
+              <div class="the-button">
+              <a class="btn btn-danger" type="button">
+              <i class="fa fa-play-circle fa-2x"></i>
+              Play the video</a>
+              </div>
+            </div>
+        </div>      
       </div>
     </div>
   </div>
 
   <div class="inner-page pad">
-    <div class="container">
-      <div class="row">
-        <div class = "test-img">
-          <img src="images/2015hackNTU_2.jpg">
+    <div class="introduction">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <div class="col-md-4">
+              <div class="circle one">
+                <i class="fa fa-dot-circle-o fa-2x"></i>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="circle two">
+                <i class="fa fa-lightbulb-o fa-2x"></i>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="circle three">
+                <i class="fa fa-wrench fa-2x"></i>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="col-md-12">
+            
+          </div>
+        
         </div>
       </div>
     </div>
