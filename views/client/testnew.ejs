@@ -48,19 +48,21 @@
       function ShowContent(d) {
       document.getElementById(d).style.display = "block";
       }
-      function ReverseDisplay(d) {
-      if(document.getElementById(d).style.display == "none") { document.getElementById(d).style.display = "block"; }
-      else { document.getElementById(d).style.display = "none"; }
-      }
+      
       function Print(d){
         for (var i = 0; i < 3; i++){
           if (i==d){
             document.getElementById(i).style.display = "block";
+            document.getElementById(i+3).style.color = "#ff9933";
           }
         else {
           document.getElementById(i).style.display = "none";
+          document.getElementById(i+3).style.color = "black";
         }
       }
+      
+
+
       
     }
     </script>
@@ -155,7 +157,12 @@
                     </video> -->
             
             <div class="play-the-video">
-              <img src="images/2015hackNTU-3-black.jpg">
+              <!-- <img src="images/2015hackNTU-3-black.jpg"> -->
+              <video width="100%"  controls>
+                <source src="images/earth-2.mp4" type="video/mp4">
+                <!-- <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag. -->
+              </video>
               <div class="the-button">
               <a class="btn btn-danger" type="button">
               <i class="fa fa-play-circle fa-2x"></i>
@@ -167,7 +174,7 @@
     </div>
   </div>
 
-  <div class="inner-page pad">
+  <div class="inner-page padd">
     <div class="introduction">
       <div class="container">
         <div class="row">
@@ -175,20 +182,20 @@
           <div class="col-md-12">
 
             <div class="col-md-4">
-              <div class="circle one" onclick="Print(0)">
-                <i class="fa fa-dot-circle-o fa-2x"></i>
+              <div class="circle one" id = "3" onclick="Print(0)" >
+                <i class="fa fa-dot-circle-o fa-3x"></i>
               </div>
             </div>
 
             <div class="col-md-4">
-              <div class="circle two" onclick="Print(1)">
-                <i class="fa fa-lightbulb-o fa-2x"></i>
+              <div class="circle two" id = "4" onclick="Print(1)" style="color:#ff9933">
+                <i class="fa fa-lightbulb-o fa-3x"></i>
               </div>
             </div>
 
             <div class="col-md-4">
-              <div class="circle three" onclick="Print(2)">
-                <i class="fa fa-wrench fa-2x"></i>
+              <div class="circle three" id = "5" onclick="Print(2)">
+                <i class="fa fa-wrench fa-3x"></i>
               </div>
             </div>
 
@@ -242,6 +249,34 @@
       </div>
     </div>
   </div>
+
+
+<div class = "inner-page padd">
+    <div class = "go-to-hackathon padd">
+      <div class = "container" style="width: 100%">
+        <div class="row">
+          
+          <img src="images/2015hackNTU-3.jpg">
+
+          <div class="col-md-12">
+            <div class="info">
+              <h2>I Want to sign up!</h2>
+              <p>The hackathon in August</p>
+              <br>
+              <a><i class="fa fa-arrow-circle-o-right"></i>go to sign up page</a>
+
+            </div>  
+          </div>
+
+          
+            
+        </div>      
+      </div>
+    </div>
+  </div>
+
+
+
 
 
   <div class="footer padd">
