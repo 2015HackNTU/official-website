@@ -13,25 +13,6 @@ plase pass list of sth like this, if it isn't fit the current format, please tel
 }
 */
 
-function getActivitys(num, offset) {
-	sendAjax('/query', JASON.parse([GET_ACTIVITY, [num, offset]]), activitysHandler);
-}
-
-function getSpecificActivitys(activityId) {
-	var data = [GET_SPEC_ACTIVITY, [activityId]]
-	sendAjax('/query', [,[activityId]], activitysHandler);
-}
-
-function getProjects() {
-
-}
-
-
-///[GET_ACTIVITY, [ isSpecific, num, page, activityId]]
-function activitysHandler() {
-
-}
-
-function projectsHandler() {
-
+function getCalender(month, handler) {
+	sendAjax('/calender', JASON.parse([month]), handler);
 }
