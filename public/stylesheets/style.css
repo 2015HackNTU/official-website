@@ -119,7 +119,7 @@ section {
 .play-the-video img{
 	width: 100%;
 	left: 0;
-	max-height:700px;
+	height:600px;
 	z-index: 1000;
 }
 
