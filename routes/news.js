@@ -22,12 +22,18 @@ exports.breakingnews = function(req,res){
         //res.json(news.toString("UTF-8"))
     });
 };
-exports.breakingnews.newPosts =function(req,res){
+exports.newPosts =function(req,res){
     res.render('admin/newNews',{
         user : req.user
     })
 }
-exports.breakingnews.create = function(req,res){
+exports.findNews = function(req,res){
+    BreakingNews.findById(req.params.id,function(err,news){
+        res.send(news.toString("utf8"));
+    })
+
+}
+exports.create = function(req,res){
     console.log(">>>> through news.js hi <<<<<");
     new BreakingNews({
         user_id : req.body.user_id,
@@ -51,7 +57,7 @@ exports.breakingnews.create = function(req,res){
         res.redirect('/profile');
     })
 };
-exports.breakingnews.edit = function(req,res){
+exports.edit = function(req,res){
     BreakingNews.findById(req.params.id,function(err,news){
         console.log("GET:"+req.news)
         res.render('admin/editNews',{
@@ -60,7 +66,7 @@ exports.breakingnews.edit = function(req,res){
         })
     })
 }
-exports.breakingnews.editUpdate = function(req,res){
+exports.editUpdate = function(req,res){
     console.log('update'+req.body.user_id)
     BreakingNews.findById(req.params.id, function(err, news){
         Users.findById(req.body.user_id, function(err, user){
@@ -83,7 +89,7 @@ exports.breakingnews.editUpdate = function(req,res){
         })
     })
 }
-exports.breakingnews.isImportant = function(req,res){
+exports.isImportant = function(req,res){
     console.log(">>>> through news.js hi <<<<<");
     BreakingNews.findById(req.params.id, function(err, news){
 
@@ -100,9 +106,9 @@ exports.breakingnews.isImportant = function(req,res){
     })
 }
 
-exports.breakingnews.destroy = function(req,res){
+exports.destroy = function(req,res){
     console.log(req.body.title + ' removed');
-    console.log('>>>>> route through news.js fn exports.breakingnews.destroy <<<<<');
+    console.log('>>>>> route through news.js fn exports.destroy <<<<<');
     // Delete //
     BreakingNews.findById(req.params.id, function(err, news){
         if(err){

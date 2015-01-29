@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 
+
 // Schema
 var BreakingNews = new Schema({
 	user_id : String,
@@ -44,6 +45,15 @@ var tempUser = new Schema ({
 	authenticate_at : { type : Date }
 })
 
+var Calendar = new Schema({
+	id : String,
+	type : String,
+	name : String,
+	date : Date,
+	create_at : {type : Date, default : Date.now},
+	description : String
+})
+
 var BlogPosts = new Schema({
 	user_id : String,
 	title : String,
@@ -81,6 +91,9 @@ var tempUsers = mongoose.model('tempUsers',tempUser);
 var Users = mongoose.model('Users',User);
 var BreakingNews = mongoose.model('BreakingNews',BreakingNews);
 var BlogPosts = mongoose.model('BlogPosts',BlogPosts);
+var Calendar = mongoose.model('Calendar',Calendar);
+exports.BlogPosts = BlogPosts;
+
 /*
 mongoose.connect('mongodb://localhost/HackNTU-website',function(){
 	console.log("DB connected")
