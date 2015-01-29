@@ -22,7 +22,7 @@ $(document).ready( function() {
   // finally onYearChange (if the year changed).
 
   //get current month evt
-  var events = [];
+  var events = [{date:'2015-1-19', title:'haha', url:'http://www.google.com'}, {date:'2015-1-29', title:'haha', url:'http://www.google.com'}];
   var cur_month = new Date().getMonth() + 1;
   getCalender(cur_month, function(eventList) {
     var evt;
@@ -34,6 +34,7 @@ $(document).ready( function() {
   });
 
   calendars.clndr2 = $('.cal').clndr({
+    template: my_clndrTemplate,
     events: eventArray,
     multiDayEvents: {
       startDate: 'startDate',
@@ -41,26 +42,65 @@ $(document).ready( function() {
       singleDay: 'date'
     },
     startWithMonth: moment().add(0, 'month'),
+    // clickEvents: {
+    //   click: function(target) {
+    //     console.log(target);
+    //   }
+    //   // onMonthChange: function(month) {
+    //   //   console.log('you just went to ' + month.format('MMMM, YYYY'));
+    //   //   //send ajax
+    //   //   getCalender(month, function(eventList) {
+    //   //     var evt;
+    //   //     var newEventList = [];
+    //   //     for (evt in eventList) {
+    //   //       var date = Date.parse(evt.datetime);
+    //   //       var date_str = date.gerFullYear + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    //   //       newEventList.add({date: date_str, title: evt.name, url: '/activity/' + evt.id});
+    //   //     }
+    //   //     events = newEventList;
+    //   //   })
+    //   // }
+    // },   
     clickEvents: {
       click: function(target) {
-        console.log(target);
+        if(target.events.length) {
+          var daysContainer = $('.cal').find('.days-container');
+          daysContainer.toggleClass('show-events', true);
+          $('.cal').find('.x-button').click( function() {
+            daysContainer.toggleClass('show-events', false);
+          });
+        }
       }
-      // onMonthChange: function(month) {
-      //   console.log('you just went to ' + month.format('MMMM, YYYY'));
-      //   //send ajax
-      //   getCalender(month, function(eventList) {
-      //     var evt;
-      //     var newEventList = [];
-      //     for (evt in eventList) {
-      //       var date = Date.parse(evt.datetime);
-      //       var date_str = date.gerFullYear + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-      //       newEventList.add({date: date_str, title: evt.name, url: '/activity/' + evt.id});
-      //     }
-      //     events = newEventList;
-      //   })
-      // }
     },
     events: events,
+    adjacentDaysChangeMonth: true,
     forceSixRows: true
   });
+  // This is the default calendar template. This can be overridden.
+  var my_clndrTemplate = "<div class='clndr-controls'>" +
+    "<div class='clndr-control-button'><span class='clndr-previous-button'>&lsaquo;</span></div><div class='month'><%= month %> <%= year %></div><div class='clndr-control-button rightalign'><span class='clndr-next-button'>&rsaquo;</span></div>" +
+    "</div>" +
+    "<div class='clndr-grid'>" +
+      "<div class='days-of-the-week clearfix'>" +
+      "<% _.each(daysOfTheWeek, function(day) { %>" +
+      "<div class='header-day'><%= day %></div>" +
+      "<% }); %>" +
+    "</div>" +
+    "<div class='days clearfix'>" +
+      "<% _.each(days, function(day) { %>" +
+      "<div class='<%= day.classes %>' id='<%= day.id %>'>" +
+        "<span class='day-number'><%= day.day %></span>" +
+      "</div>" +
+      "<% }); %>" +
+      "</div>" +
+    "</div>" +
+    "<div class='event-listing'>" +
+      "<div class='event-listing-title'>EVENTS THIS MONTH</div>" +
+      "<% _.each(eventsThisMonth, function(event) { %>" +
+          "<div class='event-item'>" +
+            "<div class='event-item-name'><%= event.name %></div>" +
+            "<div class='event-item-location'><%= event.location %></div>" +
+          "</div>" +
+        "<% }); %>" +
+    "</div>";
 });

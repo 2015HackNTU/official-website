@@ -59,13 +59,48 @@
       "<% } %>" +
       "</tr>" +
     "<% } %>" +
+    '<tr><td class="clndr-today-button">Today<td></tr>'+
     "</tbody>" +
   "</table>";
+
+  var my_clndrTemplate = "<div class='clndr-controls clearfix'>" +
+    "<div class='clndr-control-button'><span class='clndr-previous-button'>&lsaquo;</span></div><div class='month'><%= month %> <%= year %></div><div class='clndr-control-button rightalign'><span class='clndr-next-button'>&rsaquo;</span></div>" +
+    "</div>" +
+    "<div class='days-container'>" +
+      "<div class='clndr-grid'>" +
+        "<div class='days-of-the-week clearfix'>" +
+        "<% _.each(daysOfTheWeek, function(day) { %>" +
+        "<div class='header-day'><%= day %></div>" +
+        "<% }); %>" +
+      "</div>" +
+      "<div class='days clearfix'>" +
+        "<% _.each(days, function(day) { %>" +
+        "<div class='<%= day.classes %>' id='<%= day.id %>'>" +
+          "<span class='day-number'><%= day.day %></span>" +
+        "</div>" +
+        "<% }); %>" +
+        "</div>" +
+      "</div>" +
+      "<div class='clndr-today-button'>Today</div>" +
+      "<div class='events'>" +
+        "<div class='headers'>" +
+          "<div class='x-button'>x</div>" +
+          "<div class='event-header'>EVENTS</div>" +
+        "</div>" +
+        "<div class='events-list'>" +
+        "<% _.each(eventsThisMonth, function(event) { %>" +
+          "<div class='event'>" +
+            "<a href='<%= event.url %>'><%= moment(event.date).format('MMMM Do') %>: <%= event.title %></a>" +
+          "</div>" +
+          "<% }); %>" +
+        "</div>" +
+      "</div>" + 
+    "</div>";
 
   var pluginName = 'clndr';
 
   var defaults = {
-    template: clndrTemplate,
+    template: my_clndrTemplate,
     weekOffset: 0,
     startWithMonth: null,
     clickEvents: {
