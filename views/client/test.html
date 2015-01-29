@@ -4,123 +4,48 @@
   <head>
     <meta charset="UTF-8" />
     <title></title>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/stylesheets/calender.css">
-    <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/parallax.min.js"></script>
+    <link rel="stylesheet" href="../../public/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/stylesheets/style.css">
+    <link rel="stylesheet" href="../../public/stylesheets/calender.css">
+    <script src="../../public/javascripts/jquery.min.js"></script>
+    <script src="../../public/javascripts/parallax.min.js"></script>
     <script src="http://code.angularjs.org/1.2.0-rc.2/angular-route.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.min.js"></script>
     <script>
-    $(document).ready(function() {
-  $('.btn-calender-md .calender-link').click(function(e){
-    e.preventDefault();
-    var $dd_menu = $('.btn-calender-md .calender-dropdown')
-    if ($dd_menu.hasClass('open')) {
-      $dd_menu.fadeOut();
-      $dd_menu.removeClass('open');
-    } else {
-      $dd_menu.fadeIn();
-      $dd_menu.addClass('open');
-    }
-  });
-});
-      
-    //   $(function () {
-    //     $('[data-toggle="dropdown"]').dropdown()
-    //   }) ;
-    //   $('.img-responsive').dropdown('show');
-
-    //   var backdrop = '.dropdown-backdrop'
-    //   var toggle   = '[data-toggle=dropdown]'
-    //   var Dropdown = function (element) {
-    //   $(element).on('click.bs.dropdown', this.toggle)
-
-    //   Dropdown($('#calender1'));
-    // }
+    $(function() {
+      $('.btn-calender-md .calender-link').click(function(e){
+        e.preventDefault();
+        var $dd_menu = $('.btn-calender-md .calender-dropdown')
+        if ($dd_menu.hasClass('open')) {
+          $dd_menu.fadeOut();
+          $dd_menu.removeClass('open');
+        } else {
+          $dd_menu.fadeIn();
+          $dd_menu.addClass('open');
+        }
+      });
+    });
     </script>
     <script type="text/javascript">
       var GO_LEFT = -1, GO_RIGHT = 1;
       var middle_month;
       var month_array = ['JAN', 'FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
       //onload -> create month bar
-      var calender_parent = $("monthbar");
       $(function createMonthbar(){
         for(var i = 0; i < 2; i++) {
-            monthbar.children().append(createLine(i));
-        } 
-
-        var today = new Date();
-        var month = today.getMonth() + 1 - 6;
-        middle_month = month;
-        for (var i = 0 ; i < 12; i++)
-        {
-          var elem = document.createElement("div");
-          elem.className = "position-" + i ;
-          elem.innerHTML = month_array[month - 1];
-          elem.onClick = swiftfunction;
-          calender_parent.appendChild(elem)
-          monthadd(month, 1);
+          $(".monthbar").append(createLine(i));
         }
       });
       //fuctions creating month bar used
       function createLine(line_pos) {
-        var lineStr = '<nav class="month-line-'+ line_pos + + ' ' + '<navbar navbar-default' + '"><div class="container">';
-        for (int i = 0; i< 12; i++) {
-          lineStr += '<div class="position-"' + j + ">" + month_array[j] + '</div>';
+        var lineStr = '<div class="month-line-'+ line_pos + '">';
+        for (var i = 0; i< 12; i++) {
+          lineStr += '<div class="position-' + i +' month-block">' + month_array[i] + '</div>';
         }
-        lineStr += '</div></nav>';
+        lineStr += '</div>';
         return lineStr;
       }
 
-      function swiftfunction() {
-        var month = parseInt(getMonth(event.target.innerHTML));
-        var move = month - middle_month; // > 0 left, < 0 right
-        var direction = move > 0? GO_LEFT: GO_RIGHT;// -1 : left
-        if (move == 0)
-                return;
-        if (move < 0)
-          move *= -1;
-        else
-          move = 1;
-        //add buffer
-        for (var i = 0; i < move; i++) {
-          var position, add_month;
-          if (direction == GO_RIGHT) {//go right-> add at 
-            position = -1 - i;
-            add_month = monthmines(middle_month, 7+ i);
-          } else {//go left -> add at right
-            position = 12 + i;
-            add_month = monthadd(middle_month, 6+ i);
-          }
-          var elem = document.createElement("div");
-          elem.className = "position-" + i ;
-          elem.innerHTML = month_array[month - 1];
-          elem.onClick = swiftfunction;
-          if (direction == GO_RIGHT) {
-            calender_parent.insertBefore(elem, calender_parent.childNodes[0]);
-          } else {
-            calender_parent.insertChild(elem)
-          }
-        }
-        //move
-        var children = calender_parent.childNodes;
-        for (var i = 0; i < 12 + move; i++) {
-          var new_position = direction == GO_RIGHT? i, i - move;
-          children[i].className = "position-" + new_position + " swift-animation" + move;
-          window.setInterval(function () {children[i].className = "position-" + new_position;}, move * 1000);
-        }
-        //removebuffer
-        for (var i = 0; i < move; i++) {
-          if (direction == GO_RIGHT) {
-            calender_parent.removeChild(calender_parent.childNodes[0]);
-          } else {
-            calender_parent.removeChild(calender_parent.childNodes[12]);
-          }
-        }
-        //adjust middle month
-        middle_month = month;
-      }
       function getMonth(monthString) {
         for (i = 0; i < 12; i++) {
           if (month_array[i] == monthString)
@@ -205,23 +130,14 @@
       <div class = "container">
         <div class="row">
           <div class="col-md-12">
-
             <div class="gray">
               <div class="triangle"></div>  
             </div>
-
           </div>  
-
-
-            <div class="monthbar">
-
-            </div>
-
-            <div class = "test-img">
-              <img src="images/2015hackNTU_2.jpg">
-            </div>
-          
-          
+          <div class="monthbar"></div>
+          <div class = "test-img">
+            <img src="images/2015hackNTU_2.jpg">
+          </div>
         </div>
       </div>
     </div>
