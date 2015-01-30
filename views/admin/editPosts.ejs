@@ -18,11 +18,11 @@
 	<form action="/posts/edit/<%= posts._id %>" method="post" enctype="multipart/form-data" >
 		<div class="form-group">
 			<label>Title</label>
-			<input type="text" class="form-control" name="title">
+			<input type="text" class="form-control" name="title" value="<%=posts.title%>">
 		</div>
 		<div class="form-group">
 			<label>Content</label>
-			<textarea type="text" class="form-control" name="content" rows="10">
+			<textarea type="text" class="form-control" name="content" rows="10" value=""><%=posts.content%>
 			</textarea>
 		</div>
 		<div class="form-group">
@@ -34,8 +34,7 @@
 			<input multiple="multiple" name="image" type="file">
 		</div>
 		<br>
-		<input type="hidden" name="user_id" value="<%= user._id %>">
-		<input type="hidden" name="department" value="<%= user.local.department %>">
+		<input type="hidden" name="user_id" value="<%= posts.user_id %>">
 		<button type="submit" class="btn btn-warning btn-lg">Submit</button>
 		<a href="/profile" class="btn btn-primary btn-lg">Back</a>
 

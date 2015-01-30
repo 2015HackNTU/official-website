@@ -94,7 +94,6 @@ exports.edit = function(req,res){
 		console.log("GET:"+req.posts)
 		res.render('admin/editPosts',{
 			posts : posts,
-			user : req.user
 		})
 	})
 }
