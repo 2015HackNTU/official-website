@@ -49,10 +49,11 @@ module.exports = function(app){
 
 		})
 	})
-	
-	app.get('/blog',function(req,res){
-		res.render('client/blog')
-	})
+	/* Move to routes/blogposts.js
+		app.get('/blog',function(req,res){
+			res.render('client/blog')
+		})
+	*/
 	app.get('/blog-single',function(req,res){
 		res.render('client/blog-single')
 	})

@@ -12,9 +12,12 @@ var bodyParser = require('body-parser');
 /* Read Start */
 exports.blogposts = function(req,res){
 	console.log(">>>> through blogposts.js <<<<<");
-	BlogPosts.find(function(error, blogposts){
-        res.send(blogposts.toString("utf8"))
-		//res.json(blogposts);
+	BlogPosts.find(function(error, posts){
+        // res.send(posts.toString("utf8"))
+		//res.json(posts);
+		res.render('client/blog',{
+			posts : posts
+		})
 	});	
 }
 exports.findPosts = function(req,res){
@@ -101,9 +104,9 @@ exports.editUpdate = function(req,res){
 	form.parse(req, function(err, fields, files) {
 		
 		console.log('update'+req.body.user_id)
-		
+
 		BlogPosts.findById(req.params.id, function(err, posts){
-			Users.findById(req.body.user_id, function(err, user){
+			Users.findById(fields.user_id, function(err, user){
 				if(err)
 					res.redirect('client/error',{ message : err.message, err:{} })
 				// Update //
