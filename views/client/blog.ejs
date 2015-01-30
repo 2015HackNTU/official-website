@@ -76,14 +76,14 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="#">Activity <span class="sr-only">(current)</span></a></li>
-              <li><a href="/blog">Blog</a></li>
+              <li><a href="#">Organization</a></li>
               <li>
                 <a class="navbar-brand" href="#">
                   <img alt="Brand" style = "margin-top:-45px"src="images/logo-small.png">
                 </a>
               </li>
               <li><a href="#">Projects</a></li>
-              <li><a href="#">Organization</a></li>
+              <li><a href="/blog">Blog</a></li>
               <li>
                 <div class="btn-calender-md">
                   <a class="calender-link" href="#">
@@ -159,7 +159,7 @@
 								<!-- The new post done by user's all in the post block -->
 								<div class="blog-post">
 									<!-- Entry is the one post for each user -->
-									<div ng-repeat="p in posts" id="p_{{p._id}}">
+									<div class = "a-post" ng-repeat="p in posts" id="p_{{p._id}}">
 										<!-- Post Images -->
 										<div class="blog-img pull-left">
 											<img src="images/2015hackNTU-4.jpg" class="img-responsive img-thumbnail" alt="" />
@@ -175,6 +175,7 @@
 										<!-- Paragraph -->
 										<p>{{p.content}}</p>
 										<div class="clearfix"></div>
+										<br>
 									</div>
 									
 									<!-- Pagination -->
