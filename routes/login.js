@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Users = mongoose.model('Users');
 var BreakingNews = mongoose.model('BreakingNews');
 var BlogPosts = mongoose.model('BlogPosts');
+var Calendar = mongoose.model('Calendar');
 
 module.exports = function(app,passport){
 
@@ -18,14 +19,17 @@ module.exports = function(app,passport){
 		res.render('client/index')
 	});
 	app.get('/profile', isLoggedIn, function(req,res){
-		BreakingNews.find(function(err, news){
-			BlogPosts.find(function(err, posts){
-				res.render('admin/profile',{
-					user : req.user,
-					posts : posts,
-					news : news,
-					message : req.flash('profileMessage')
-				});
+		BreakingNews.find().sort('create_at').exec(function(err, news){
+			BlogPosts.find().sort('create_at').exec(function(err, posts){
+				Calendar.find().sort('date').exec(function(err, cal){
+					res.render('admin/profile',{
+						user : req.user,
+						cal : cal,
+						posts : posts,
+						news : news,
+						message : req.flash('profileMessage')
+					});
+				})
 			})
 		})
 	});

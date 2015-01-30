@@ -1,19 +1,13 @@
-var mongoose = require('mongoose');
-var bcrypt   = require('bcrypt-nodejs');
-var Schema = mongoose.Schema;
+var mongoose = require('mongoose'),
+	bcrypt   = require('bcrypt-nodejs'),
+	Schema = mongoose.Schema,
+	autoIncrement = require('mongoose-auto-increment');
 
+//var connection = mongoose.createConnection("mongodb://admin:admin@ds063870.mongolab.com:63870/hackntu");
+ 
+//autoIncrement.initialize(connection);
 
 // Schema
-var BreakingNews = new Schema({
-	user_id : String,
-	title : String,
-	department : String,
-	author : String,
-	content : String,
-	isImportant : Boolean,
-	tag : Array,
-	create_at : {type : Date, default: Date.now}
-});
 
 var User = new Schema({
 	/* Authenticate Users */
@@ -46,15 +40,30 @@ var tempUser = new Schema ({
 })
 
 var Calendar = new Schema({
-	id : String,
-	type : String,
-	name : String,
-	date : Date,
+	user_id : String, 
+	type : String, //開發小聚、社課....
+	name : String, 
+	date : Date, 
+	time : String, 
+	month : String,
 	create_at : {type : Date, default : Date.now},
 	description : String
 })
 
+var BreakingNews = new Schema({
+	id : String,
+	user_id : String,
+	title : String,
+	department : String,
+	author : String,
+	content : String,
+	isImportant : Boolean,
+	tag : Array,
+	create_at : {type : Date, default: Date.now}
+});
+
 var BlogPosts = new Schema({
+	id : String,
 	user_id : String,
 	title : String,
 	department : String,
@@ -86,19 +95,23 @@ tempUser.methods.validPassword = function(password) {
      return bcrypt.compareSync(password, this.local.password);
     //return password;
 };
-
+/*
+Calendar.plugin(autoIncrement.plugin, 'Calendar');
+var Calendar = connection.model('Calendar',Calendar)
+*/
 var tempUsers = mongoose.model('tempUsers',tempUser);
 var Users = mongoose.model('Users',User);
 var BreakingNews = mongoose.model('BreakingNews',BreakingNews);
 var BlogPosts = mongoose.model('BlogPosts',BlogPosts);
 var Calendar = mongoose.model('Calendar',Calendar);
 exports.BlogPosts = BlogPosts;
-
+exports.Calendar = Calendar;
 /*
 mongoose.connect('mongodb://localhost/HackNTU-website',function(){
 	console.log("DB connected")
-})
+}
 */
+
 mongoose.connect('mongodb://admin:admin@ds063870.mongolab.com:63870/hackntu',function(){
 	console.log('Remote DB connect')
 })
