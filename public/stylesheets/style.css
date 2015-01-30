@@ -111,17 +111,10 @@ section {
 	max-height:700px;
 	z-index: 1000;
 }
-<<<<<<< HEAD
 .go-to-hackathon img{
 	width: 100%;
 	left: 0;
 	height:700px;
-=======
-.play-the-video img{
-	width: 100%;
-	left: 0;
-	height:600px;
->>>>>>> imgUpload
 	z-index: 1000;
 }
 
@@ -154,23 +147,14 @@ section {
 .the-button{
 	position: relative;
 	top: -300px;
-<<<<<<< HEAD
 	left: 800px;
-=======
-	left: 200px;
->>>>>>> imgUpload
 }
 .the-button a{
 	font-size: 30px;
 }
 .introduction{
-<<<<<<< HEAD
 	background-color: #ff9933;
 	height: 600px;
-=======
-	background-color: #cc0000;
-	height: 700px;
->>>>>>> imgUpload
 	width: 100%;
 }
 .circle{
@@ -182,26 +166,16 @@ section {
 	margin-left: 115px;
 }
 .circle i{
-<<<<<<< HEAD
 	margin-top: 20px;
 	margin-left: 25px;
-=======
-	margin-top: 30px;
-	margin-left: 35px;
->>>>>>> imgUpload
 }
 .introduction-content{
 	border: 5px dashed white;
 	border-radius: 6px;
 	position: relative;
 	width: 100%;
-<<<<<<< HEAD
 	height: 300px;
 	background-color: #ff9933;
-=======
-	height: 400px;
-	background-color: #cc0000;
->>>>>>> imgUpload
 	margin-top: 70px;
 
 }
@@ -215,7 +189,6 @@ section {
 	font-size: 20px;
 	color: white;
 }
-<<<<<<< HEAD
 
 .info{
 	position: relative;
@@ -250,15 +223,12 @@ section {
 .history-about-us h3{
 	color: white;
 }
-=======
->>>>>>> imgUpload
 
 /*.month ul{
 	text-align: center;
 	background-color: gray;
 	width: 100%;
 	height: 100px;
-
 }
 .month li{
 	color:#ffffff;
@@ -285,11 +255,9 @@ section {
 	margin-left: 5px;
 	margin-top: 40px;
 }
-
 #example .following .grid .column {
 	display: inline-block;
 }
-
 #example .following .grid{
 	border-bottom: 1px solid #DDDDDD;
 	box-shadow: 0px 2px 3px #888888;
@@ -310,5 +278,3 @@ section {
 	text-align: center;
 	background-position: 50% 50%;
 }*/
-
-
