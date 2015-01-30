@@ -115,7 +115,7 @@ app.get('/', index.index);
     });
     //GET METHOD BY month.
     app.get('/api/cal/:month', function(req, res){
-        return db.Calendar.find({"month": req.params.month-1}, function(err, cal){
+        return db.Calendar.find({"month": req.params.month}, function(err, cal){
             console.log(req.params.month + " : " + cal)
             if(!err){
                 return res.send(cal.toString("utf8"));
