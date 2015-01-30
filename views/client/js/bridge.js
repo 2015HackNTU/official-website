@@ -1,15 +1,16 @@
-function send_Ajax(uri, json, callbackfunction) {
+function send_Ajax(uri, callbackfunction) {
 	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("post", uri, true);
+	xmlhttp.open("GET", uri, true);
 	xmlhttp.onreadystatechange = function() {
 		var status = xmlhttp.status;
 		if (xmlhttp.readyState == 4) {
 			if (status >= 200 && status < 300) {
 				//handle json, and pass para to callbackfuciton
 				var val = xmlhttp.responseText;
-				callbackfunction.call(!val || val.length == 0? null: JSON.parse(val));
+				var data = JSON.parse(val);
+				callbackfunction(data);
 			}
 		}
   	}
-  	xmlhttp.send(json);
+  	xmlhttp.send();
 }

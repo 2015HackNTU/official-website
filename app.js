@@ -121,7 +121,7 @@ app.get('/', index.index);
         return db.Calendar.find({"month": req.params.month}, function(err, cal){
             console.log(req.params.month + " : " + cal)
             if(!err){
-                return res.send(cal) 
+                return res.send(cal);
             }
             else{
                 return res.send("Error!");
