@@ -4,6 +4,7 @@
 	<title>New Posts</title>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<script src="/javascripts/jquery.min.js"></script>
 	<style>
 		body 		{ padding-top:80px; }
 	</style>
@@ -35,11 +36,18 @@
 		</div>	
 		<br>
 		<input type="hidden" name="user_id" value="<%= user._id %>">
-		<input type="hidden" name="department" value="<%= user.local.department %>">
+		<input type="hidden" name="creat_at" id="create_at">
 		<input type="hidden" name="author" value="<%= user.local.name %>">
 		<button type="submit" class="btn btn-warning btn-lg">Submit</button>
 		<a href="/profile" class="btn btn-primary btn-lg">Back</a>
-
+		<script>
+			$('.btn').hover(function(){
+				var date = new Date(); // New Date object to store date value
+				
+				document.getElementById('create_at').value = date;
+				console.log(document.getElementById('create_at').value)
+			})
+		</script>
 	</form>
 
 	<hr>

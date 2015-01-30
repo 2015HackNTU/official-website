@@ -43,6 +43,7 @@ exports.create = function(req,res){
 	var form = new formidable.IncomingForm();
 	form.parse(req, function(err, fields, files) {
 		console.log(fields)
+		
 		new BlogPosts ({
 			user_id : fields.user_id,
 			title : fields.title,

@@ -37,7 +37,13 @@
 		<input type="hidden" name="user_id" value="<%= posts.user_id %>">
 		<button type="submit" class="btn btn-warning btn-lg">Submit</button>
 		<a href="/profile" class="btn btn-primary btn-lg">Back</a>
-
+		<script>
+			$('.btn').hover(function(){
+				var date = new Date(); // New Date object to store date value
+				document.getElementById('create_at').value = date.toDateString();
+				console.log(document.getElementById('create_at').value)
+			})
+		</script>
 	</form>
 
 	<hr>

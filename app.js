@@ -128,6 +128,17 @@ app.get('/', index.index);
             }
         });
     });
+    app.get('/api/cal/:id', function(req,res){
+        return db.Calendar.find({_id: req.params.id}, function(err, cal){
+            console.log(req.params.id + " : " + cal)
+            if(!err){
+                return res.send(cal);
+            }
+            else{
+                return res.send("Error!");
+            }
+        });
+    })
     /* Back */
     app.get('/cal/new', calendar.newCalender);
     app.post('/cal/create',calendar.create);
