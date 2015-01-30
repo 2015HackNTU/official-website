@@ -69,6 +69,7 @@ var BlogPosts = new Schema({
 	department : String,
 	author : String,
 	content : String,
+	photo : String,
 	tag : Array,
 	create_at : {type: Date, default: Date.now}
 });
@@ -110,8 +111,11 @@ exports.Calendar = Calendar;
 mongoose.connect('mongodb://localhost/HackNTU-website',function(){
 	console.log("DB connected")
 }
+mongoose.connect('mongodb://admin:admin@172.31.27.243:27017/testDB',function(){
+	console.log('Remote EB connect')
+})
 */
-
 mongoose.connect('mongodb://admin:admin@ds063870.mongolab.com:63870/hackntu',function(){
 	console.log('Remote DB connect')
 })
+

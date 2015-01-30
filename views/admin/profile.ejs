@@ -140,6 +140,7 @@
 							<table class="ui table">
 								<thead>
 								    <tr>
+								    	<th>Photo</th>
 										<th>Title</th>
 										<th>Content</th>
 										<!-- <th>Tags</th> -->
@@ -152,7 +153,8 @@
 									<% if(posts.user_id === user.id) {%>
 									  	<tbody>
 										    <tr>
-										      <td><%= posts.title %></td>
+										      <td class="photo<%=posts._id%>"><img src="<%=posts.photo%>" style="max-width: 100px;max-height: 100px;"alt=""></td>
+										      <td><%= posts.title  %></td>
 										      <td><%= posts.content %></td>
 										      <!-- <td><%= posts.tag %></td> -->
 										      <td><span class="posts_date<%= posts._id %>"></span></td>
@@ -164,6 +166,7 @@
 										<script>
 											var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 											$('.posts_date<%=posts._id%>').append(monthNames[<%= posts.create_at.getMonth() %>] + " " + <%= posts.create_at.getDate() %> + ", " + <%= posts.create_at.getYear()+1900 %> + " | "+ <%= (posts.create_at.getHours()%12) %> + ":" + <%= posts.create_at.getMinutes()%> )
+											//$('.photo<%=posts._id%>')
 										</script>
 									<% } %>
 								<% }) %>

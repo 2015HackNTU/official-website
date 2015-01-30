@@ -6,8 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash    = require('connect-flash');
-var session      = require('express-session');
+var session  = require('express-session');
+var qt   = require('quickthumb');
+
 var db = require('./config/db'); 
+
 
 //var routes = require('./routes');
 var index = require('./routes');
@@ -31,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views/client')));
 app.use(express.static(path.join(__dirname, 'upload')));
 
-
+app.use(qt.static(__dirname + '/'));
 
 // Setup Passport.js
 app.use(session({ secret: 'lulalachen' })); // session secret
@@ -106,7 +109,7 @@ app.get('/', index.index);
     app.get('/api/cal', function(req, res){
         return db.Calendar.find(function(err, cal){
             if(!err){
-                return res.send(cal.toString("utf8"));
+                return res.send(cal);
             }
             else{
                 return res.send("Error!");
@@ -118,7 +121,7 @@ app.get('/', index.index);
         return db.Calendar.find({"month": req.params.month}, function(err, cal){
             console.log(req.params.month + " : " + cal)
             if(!err){
-                return res.send(cal.toString("utf8"));
+                return res.send(cal) 
             }
             else{
                 return res.send("Error!");
