@@ -48,11 +48,19 @@
       function ShowContent(d) {
       document.getElementById(d).style.display = "block";
       }
+<<<<<<< HEAD
       
+=======
+      function ReverseDisplay(d) {
+      if(document.getElementById(d).style.display == "none") { document.getElementById(d).style.display = "block"; }
+      else { document.getElementById(d).style.display = "none"; }
+      }
+>>>>>>> imgUpload
       function Print(d){
         for (var i = 0; i < 3; i++){
           if (i==d){
             document.getElementById(i).style.display = "block";
+<<<<<<< HEAD
             document.getElementById(i+3).style.color = "#ff9933";
           }
         else {
@@ -64,6 +72,14 @@
 
 
       
+=======
+          }
+        else {
+          document.getElementById(i).style.display = "none";
+        }
+      }
+      
+>>>>>>> imgUpload
     }
     </script>
     
@@ -158,6 +174,7 @@
                     </video> -->
             
             <div class="play-the-video">
+<<<<<<< HEAD
               <!-- <img src="images/2015hackNTU-3-black.jpg"> -->
               <video width="100%" height = "100%" loop = "true" autoplay = "true">
                 <source src="images/earth-2.mp4" type="video/mp4">
@@ -168,6 +185,13 @@
               <a class="btn btn-danger" type="button">
               <i class="fa fa-play-circle fa-2x"></i>
               Watch the video</a>
+=======
+              <img src="images/2015hackNTU-3-black.jpg">
+              <div class="the-button">
+              <a class="btn btn-danger" type="button">
+              <i class="fa fa-play-circle fa-2x"></i>
+              Play the video</a>
+>>>>>>> imgUpload
               </div>
             </div>
         </div>      
@@ -175,7 +199,11 @@
     </div>
   </div>
 
+<<<<<<< HEAD
   <div class="inner-page padd">
+=======
+  <div class="inner-page pad">
+>>>>>>> imgUpload
     <div class="introduction">
       <div class="container">
         <div class="row">
@@ -183,18 +211,29 @@
           <div class="col-md-12">
 
             <div class="col-md-4">
+<<<<<<< HEAD
               <div class="circle one" id = "3" onclick="Print(0)" >
                 <i class="fa fa-dot-circle-o fa-3x"></i>
+=======
+              <div class="circle one" onclick="Print(0)">
+                <i class="fa fa-dot-circle-o fa-2x"></i>
+>>>>>>> imgUpload
               </div>
             </div>
 
             <div class="col-md-4">
+<<<<<<< HEAD
               <div class="circle two" id = "4" onclick="Print(1)" style="color:#ff9933">
                 <i class="fa fa-lightbulb-o fa-3x"></i>
+=======
+              <div class="circle two" onclick="Print(1)">
+                <i class="fa fa-lightbulb-o fa-2x"></i>
+>>>>>>> imgUpload
               </div>
             </div>
 
             <div class="col-md-4">
+<<<<<<< HEAD
               <div class="circle three" id = "5" onclick="Print(2)">
                 <i class="fa fa-wrench fa-3x"></i>
               </div>
@@ -290,6 +329,60 @@
 
             
         </div>      
+=======
+              <div class="circle three" onclick="Print(2)">
+                <i class="fa fa-wrench fa-2x"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="1" style="display:block">
+            <div class="col-md-8 col-md-offset-2" >
+              <div class = "introduction-content" id = "why">
+              <h3>WHY WE DO THIS</h3>
+                <p>When many hackers get together, we can make some impact.</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="0" style="display:none">
+
+            <div class="col-md-4">
+              <div class = "introduction-content" id = "what">
+                <h3>WHAT DO WE DO</h3>
+                  <p>黑客松</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class = "introduction-content" id = "what">
+                <h3>WHAT DO WE DO</h3>
+                  <p>小聚</p>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class = "introduction-content" id = "what">
+                <h3>WHAT DO WE DO</h3>
+                  <p>Workshop</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="2" style="display:none"> 
+            <div class="col-md-8 col-md-offset-2">
+              <div class = "introduction-content" id = "why">
+              <h3>HOW DO WE DO THIS</h3>
+                <p>聚集Hackers、培養Hackers</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+>>>>>>> imgUpload
       </div>
     </div>
   </div>

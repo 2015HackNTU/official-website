@@ -29,7 +29,10 @@
 			<label>Tags</label>
 			<input type="text" class="form-control" name="tag">
 		</div>
-	
+		<div class="form-froup">
+			<label for="upload">Photo Upload</label>
+			<input type="file" class="form-control" name="upload">
+		</div>	
 		<input type="hidden" name="user_id" value="<%= user._id %>">
 		<input type="hidden" name="department" value="<%= user.local.department %>">
 		<input type="hidden" name="author" value="<%= user.local.name %>">

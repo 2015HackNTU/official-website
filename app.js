@@ -10,9 +10,10 @@ var session      = require('express-session');
 var db = require('./config/db'); 
 
 //var routes = require('./routes');
-var index = require('./routes')
+var index = require('./routes');
 var blogposts = require('./routes/blogposts');
 var news = require('./routes/news');
+var calendar = require('./routes/calendar');
 
 var app = express();
 
@@ -28,6 +29,8 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views/client')));
+app.use(express.static(path.join(__dirname, 'upload')));
+
 
 
 // Setup Passport.js
@@ -41,6 +44,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 require('./config/passport')(passport); // pass passport for configuration
 require('./routes/login')(app,passport);
 require('./routes/frontEndTest')(app);
+require('./routes/imgUpload')(app); // img upload
 
 app.get('/', index.index);
 
@@ -52,7 +56,7 @@ app.get('/', index.index);
     app.get('/api/posts', function(req, res){
         return db.BlogPosts.find(function(err, post){
             if(!err){
-                return res.send(post);
+                return res.send(post.toString("utf8"));
             }
             else{
                 return res.send("Error!");
@@ -63,7 +67,7 @@ app.get('/', index.index);
     app.get('/api/posts/:pid', function(req, res){
         return db.BlogPosts.findOne({_id: req.params.id}, function(err, post){
             if(!err){
-                return res.send(post);
+                return res.send(post.toString("utf8"));
             }
             else{
                 return res.send("Error!");
@@ -97,11 +101,38 @@ app.get('/', index.index);
 // Calendar //
     
     /* Front */
-    //app.post('/calendar',calendar.read)
+    // app.post('/calendar',calendar.read);
+    //GET METHOD
+    app.get('/api/cal', function(req, res){
+        return db.Calendar.find(function(err, cal){
+            if(!err){
+                return res.send(cal.toString("utf8"));
+            }
+            else{
+                return res.send("Error!");
+            }
+        });
+    });
+    //GET METHOD BY month.
+    app.get('/api/cal/:month', function(req, res){
+        return db.Calendar.find({"month": req.params.month-1}, function(err, cal){
+            console.log(req.params.month + " : " + cal)
+            if(!err){
+                return res.send(cal.toString("utf8"));
+            }
+            else{
+                return res.send("Error!");
+            }
+        });
+    });
     /* Back */
+    app.get('/cal/new', calendar.newCalender);
+    app.post('/cal/create',calendar.create);
+    app.get('/cal/delete/:id', calendar.destroy); // Delete posts
 
 // Calendar //
 
+/*** Routes Ends ***/
 
 
 ////////////////////////////
