@@ -1,7 +1,20 @@
 // call this from the developer console and you can control both instances
 var calendars = {};
 
+//when document ready access event
+//tmp: access all evts, cause the number of evts is small
 $(document).ready( function() {
+    getCalender(null, function(data) {
+    var len = data.length;
+    var cal_events = new Array();
+    for (var i = 0; i < len; i++) {
+      cal_events[i] = {date: data[i].date, title: data[i].name, url: '/activity/' + data[i]._id};
+    }
+    create_calender(cal_events);
+  });
+});
+
+function create_calender(evts) {
 
   // assuming you've got the appropriate language files,
   // clndr will respect whatever moment's language is set to.
@@ -22,16 +35,8 @@ $(document).ready( function() {
   // finally onYearChange (if the year changed).
 
   //get current month evt
-  var events = [{date:'2015-1-19', title:'haha', url:'http://www.google.com'}, {date:'2015-1-29', title:'haha', url:'http://www.google.com'}];
+  var events = [];/* = [{date:'2015-1-19', title:'我是王大明', url:'http://www.google.com'}, {date:'2015-1-29', title:'hahahahahahahahahaha', url:'http://www.google.com'}];*/
   var cur_month = new Date().getMonth() + 1;
-  getCalender(cur_month, function(eventList) {
-    var evt;
-    for (evt in eventList) {
-      var date = Date.parse(evt.datetime);
-      var date_str = date.gerFullYear + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-       events.add({date: date_str, title: evt.name, url: '/activity/' + evt.id});
-     }
-  });
 
   calendars.clndr2 = $('.cal').clndr({
     template: my_clndrTemplate,
@@ -72,7 +77,7 @@ $(document).ready( function() {
         }
       }
     },
-    events: events,
+    events: evts,
     adjacentDaysChangeMonth: true,
     forceSixRows: true
   });
@@ -103,4 +108,5 @@ $(document).ready( function() {
           "</div>" +
         "<% }); %>" +
     "</div>";
-});
+}
+

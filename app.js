@@ -106,7 +106,7 @@ app.get('/', index.index);
     app.get('/api/cal', function(req, res){
         return db.Calendar.find(function(err, cal){
             if(!err){
-                return res.send(cal.toString("utf8"));
+                return res.send(cal);
             }
             else{
                 return res.send("Error!");
@@ -118,7 +118,7 @@ app.get('/', index.index);
         return db.Calendar.find({"month": req.params.month-1}, function(err, cal){
             console.log(req.params.month + " : " + cal)
             if(!err){
-                return res.send(cal.toString("utf8"));
+                return res.send(cal);
             }
             else{
                 return res.send("Error!");
