@@ -1,4 +1,4 @@
-var blog = angular.module("blog", []);
+var blog = angular.module("blog", ['ngRoute']);
 
 
 

@@ -49,6 +49,7 @@ module.exports = function(app){
 
 		})
 	})
+	
 	app.get('/blog',function(req,res){
 		res.render('client/blog')
 	})
@@ -63,6 +64,10 @@ module.exports = function(app){
 
 	app.get('/getUser', function(req,res){
 		res.render('client/getUser')
+    		
+	})
+	app.get('/clnd', function(req,res){
+		res.render('client/testclnd')
     		
 	})
 }
