@@ -110,6 +110,7 @@ section {
 	width: 100%;
 	max-height:700px;
 	z-index: 1000;
+<<<<<<< HEAD
 }
 <<<<<<< HEAD
 .go-to-hackathon img{
@@ -124,6 +125,15 @@ section {
 >>>>>>> imgUpload
 	z-index: 1000;
 }
+=======
+}
+.play-the-video img{
+	width: 100%;
+	left: 0;
+	height:600px;
+	z-index: 1000;
+}
+>>>>>>> imgUpload
 
 .monthbar{
 	top:100px;
@@ -155,7 +165,11 @@ section {
 	position: relative;
 	top: -300px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	left: 800px;
+=======
+	left: 200px;
+>>>>>>> imgUpload
 =======
 	left: 200px;
 >>>>>>> imgUpload
@@ -165,8 +179,13 @@ section {
 }
 .introduction{
 <<<<<<< HEAD
+<<<<<<< HEAD
 	background-color: #ff9933;
 	height: 600px;
+=======
+	background-color: #cc0000;
+	height: 700px;
+>>>>>>> imgUpload
 =======
 	background-color: #cc0000;
 	height: 700px;
@@ -183,8 +202,13 @@ section {
 }
 .circle i{
 <<<<<<< HEAD
+<<<<<<< HEAD
 	margin-top: 20px;
 	margin-left: 25px;
+=======
+	margin-top: 30px;
+	margin-left: 35px;
+>>>>>>> imgUpload
 =======
 	margin-top: 30px;
 	margin-left: 35px;
@@ -196,8 +220,13 @@ section {
 	position: relative;
 	width: 100%;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	height: 300px;
 	background-color: #ff9933;
+=======
+	height: 400px;
+	background-color: #cc0000;
+>>>>>>> imgUpload
 =======
 	height: 400px;
 	background-color: #cc0000;
@@ -215,6 +244,7 @@ section {
 	font-size: 20px;
 	color: white;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 .info{
@@ -250,6 +280,8 @@ section {
 .history-about-us h3{
 	color: white;
 }
+=======
+>>>>>>> imgUpload
 =======
 >>>>>>> imgUpload
 
