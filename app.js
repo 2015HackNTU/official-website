@@ -17,6 +17,7 @@ var calendar = require('./routes/calendar');
 
 var app = express();
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -50,16 +51,16 @@ app.get('/', index.index);
 
 // Posts //
     /* Front */ 
-    // app.get('/api/posts', blogposts.blogposts); // Get all Posts
+    //app.get('/api/posts', blogposts.blogposts); // Get all Posts
     // app.get('/api/posts/:id', blogposts.findPosts); // Find specific post by sending _id
     //GET METHOD
-    app.get('/api/posts', function(req, res){
+    app.get('/api/posts',function(req, res){
         return db.BlogPosts.find(function(err, post){
             if(!err){
-                return res.send(post.toString("utf8"));
+                 res.send(post);
             }
             else{
-                return res.send("Error!");
+                res.send("Error!");
             }
         });
     });

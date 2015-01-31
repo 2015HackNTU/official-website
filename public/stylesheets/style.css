@@ -159,8 +159,8 @@ section {
 	border-bottom: 1px dashed #ccc;
 }
 .the-button{
-	position: relative;
-	top: -300px;
+	position: absolute;
+	top: 400px;
 	left: 800px;
 }
 .the-button a{
@@ -246,6 +246,7 @@ section {
 .history-about-us p{
 	color: white;
 }
+
 /*.month ul{
 	text-align: center;
 	background-color: gray;

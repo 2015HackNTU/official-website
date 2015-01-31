@@ -166,27 +166,38 @@
 										</div>
 										<!-- Meta for this block -->
 										<div class="meta">
-											<i class="fa fa-calendar"></i>&nbsp; Jan 13, 2014
+											<i class="fa fa-calendar"></i>&nbsp; {{dateSplit(p.create_at,T)}}
 											<span class="pull-right"><i class="fa fa-comment"></i> <a href="#">&nbsp;2 Comments</a></span>
 										</div>
 										<!-- Heading of the  post -->
 										<h3><a href="posts/{{p._id}}">{{p.title}}</a></h3>
 										<hr /><!-- Horizontal line -->
 										<!-- Paragraph -->
-										<p>{{p.content}}</p>
+										<p>{{p.content | limitTo:numLimit}}...</p>
 										<div class="clearfix"></div>
 										<br>
 									</div>
 									
 									<!-- Pagination -->
 									<ul class="pagination">
-										<li class="disabled"><a href="#">&laquo;</a></li>
+										<li>
+										<a href="" ng-class="currentPage <= 0 ? 'btn disabled' : ''" aria-label="Previous" id="prevPage" ng-click="changePage(currentPage-1)"><span aria-hidden="true">&laquo;</span>
+										</a>
+										</li>
+    									<li ng-class="pageClass({{$index}})" ng-repeat="page in getNumber(numberOfPages()) track by $index">
+    									<a href="" ng-click="changePage($index)">{{$index+1}}</a>
+    									</li>
+    									<li>
+    									<a href="" ng-class="currentPage >= numberOfPages()-1 ? 'btn disabled' : ''" aria-label="Next" id="nextPage" ng-click="changePage(currentPage+1)"><span aria-hidden="true">&raquo;</span>
+    									</a>
+    									</li>
+										<!-- <li class="disabled"><a href="#">&laquo;</a></li>
 										<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
 										<li><a href="#">2</a></li>
 										<li><a href="#">3</a></li>
 										<li><a href="#">4</a></li>
 										<li><a href="#">5</a></li>
-										<li><a href="#">&raquo;</a></li>
+										<li><a href="#">&raquo;</a></li> -->
 									</ul>
 									<!-- Pagination end-->
 								</div>

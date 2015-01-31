@@ -1,29 +1,38 @@
 var blog = angular.module("blog", ['ngRoute']);
 
 
-
 blog.controller('blogListCtrl', ['$scope','$http',function ($scope, $http) {
-	
+
+	$scope.numLimit = 100;
 	$http.get('/api/posts').success(function(data) {
     	$scope.posts = data;//the variable is named posts,define by yourself
+    	$scope.theTime = 
     	
-	})
+	});
+
+	$scope.dateSplit = function(string, nb){
+
+		$scope.array = string.split(' ');
+		var result = $scope.array[nb];
+		return result;
+		}
+		
 	// the page control
-	// $scope.currentPage = 0;
-	// $scope.pageSize = 3;
-	// $scope.numberOfPages = function(){
-	// 	if (!$scope.posts || !$scope.posts.length) return;
-	// 	return Math.floor($scope.posts.length/$scope.pageSize)+1;
-	// };
-	// $scope.getNumber = function(num) {
-	//     return new Array(num);   
-	// };
-	// $scope.pageClass = function(page){
-	// 	return page == $scope.currentPage ? 'active' : '';
-	// };
-	// $scope.changePage = function(page){
-	// 	$scope.currentPage = page;
-	// };
+	$scope.currentPage = 0;
+	$scope.pageSize = 3;
+	$scope.numberOfPages = function(){
+		if (!$scope.posts || !$scope.posts.length) return;
+		return Math.floor($scope.posts.length/$scope.pageSize)+1;
+	};
+	$scope.getNumber = function(num) {
+	    return new Array(num);   
+	};
+	$scope.pageClass = function(page){
+		return page == $scope.currentPage ? 'active' : '';
+	};
+	$scope.changePage = function(page){
+		$scope.currentPage = page;
+	};
                
 }]);
 blog.controller('blogCtrl',function ($rootScope, $scope, $http,$location,$routeParams) {
