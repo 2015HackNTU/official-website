@@ -14,5 +14,8 @@ plase pass list of sth like this, if it isn't fit the current format, please tel
 */
 
 function getCalender(month, handler) {
-	send_Ajax('/calendar', JSON.stringify([month]), handler);
+	if (!month)
+		send_Ajax('/api/cal', handler);
+	else
+		send_Ajax('/api/cal' + month, handler);
 }

@@ -102,12 +102,21 @@
 .cal .clndr .clndr-grid .day.today {
   color: #cc0000;
 }
+
 .cal .clndr .clndr-grid .empty,
 .cal .clndr .clndr-grid .adjacent-month {
   float: left;
   width: 30px;
   height: 25px;
   color: #acacac;
+}
+
+.cal .clndr .clndr-grid .adjacent-month.event {
+  background-color: #ffcc77;
+}
+
+.cal .clndr .clndr-grid .adjacent-month.event:hover {
+  background-color: #ffdd88;
 }
 
 /* today bottun */

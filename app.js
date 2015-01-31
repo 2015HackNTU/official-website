@@ -6,8 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash    = require('connect-flash');
-var session      = require('express-session');
+var session  = require('express-session');
+var qt   = require('quickthumb');
+
 var db = require('./config/db'); 
+
 
 //var routes = require('./routes');
 var index = require('./routes');
@@ -32,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views/client')));
 app.use(express.static(path.join(__dirname, 'upload')));
 
-
+app.use(qt.static(__dirname + '/'));
 
 // Setup Passport.js
 app.use(session({ secret: 'lulalachen' })); // session secret
@@ -51,37 +54,38 @@ app.get('/', index.index);
 
 // Posts //
     /* Front */ 
-    //app.get('/api/posts', blogposts.blogposts); // Get all Posts
-    // app.get('/api/posts/:id', blogposts.findPosts); // Find specific post by sending _id
-    //GET METHOD
-    app.get('/api/posts',function(req, res){
-        return db.BlogPosts.find(function(err, post){
-            if(!err){
-                 res.send(post);
-            }
-            else{
-                res.send("Error!");
-            }
-        });
-    });
-    //GET METHOD BY ID.
-    app.get('/api/posts/:pid', function(req, res){
-        return db.BlogPosts.findOne({_id: req.params.id}, function(err, post){
-            if(!err){
-                return res.send(post.toString("utf8"));
-            }
-            else{
-                return res.send("Error!");
-            }
-        });
-    });
 
+        // app.get('/api/posts', blogposts.blogposts); // Get all Posts
+        // app.get('/api/posts/:id', blogposts.findPosts); // Find specific post by sending _id
+        //GET METHOD
+        app.get('/api/posts', function(req, res){
+            return db.BlogPosts.find(function(err, post){
+                if(!err){
+                    return res.send(post);
+                }
+                else{
+                    return res.send("Error!");
+                }
+            });
+        });
+        //GET METHOD BY ID.
+        app.get('/api/posts/:pid', function(req, res){
+            return db.BlogPosts.findOne({_id: req.params.id}, function(err, post){
+                if(!err){
+                    return res.send(post);
+                }
+                else{
+                    return res.send("Error!");
+                }
+            });
+        });
+        app.get('/blog',blogposts.blogposts)
     /* Back */
-    app.get('/posts/new', blogposts.newPosts); // Link to create posts page
-    app.post('/posts/create', blogposts.create); // Create new posts
-    app.get('/posts/edit/:id',blogposts.edit); // Link to Edit page
-    app.post('/posts/edit/:id', blogposts.editUpdate) // Save Edited posts
-    app.get('/posts/delete/:id', blogposts.destroy); // Delete posts
+        app.get('/posts/new', blogposts.newPosts); // Link to create posts page
+        app.post('/posts/create', blogposts.create); // Create new posts
+        app.get('/posts/edit/:id',blogposts.edit); // Link to Edit page
+        app.post('/posts/edit/:id', blogposts.editUpdate) // Save Edited posts
+        app.get('/posts/delete/:id', blogposts.destroy); // Delete posts
 // Posts //
 
 
@@ -107,7 +111,7 @@ app.get('/', index.index);
     app.get('/api/cal', function(req, res){
         return db.Calendar.find(function(err, cal){
             if(!err){
-                return res.send(cal.toString("utf8"));
+                return res.send(cal);
             }
             else{
                 return res.send("Error!");
@@ -116,16 +120,27 @@ app.get('/', index.index);
     });
     //GET METHOD BY month.
     app.get('/api/cal/:month', function(req, res){
-        return db.Calendar.find({"month": req.params.month-1}, function(err, cal){
+        return db.Calendar.find({"month": req.params.month}, function(err, cal){
             console.log(req.params.month + " : " + cal)
             if(!err){
-                return res.send(cal.toString("utf8"));
+                return res.send(cal);
             }
             else{
                 return res.send("Error!");
             }
         });
     });
+    app.get('/api/cal/:id', function(req,res){
+        return db.Calendar.find({_id: req.params.id}, function(err, cal){
+            console.log(req.params.id + " : " + cal)
+            if(!err){
+                return res.send(cal);
+            }
+            else{
+                return res.send("Error!");
+            }
+        });
+    })
     /* Back */
     app.get('/cal/new', calendar.newCalender);
     app.post('/cal/create',calendar.create);

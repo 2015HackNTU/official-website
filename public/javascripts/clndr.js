@@ -90,7 +90,7 @@
         "<div class='events-list'>" +
         "<% _.each(eventsThisMonth, function(event) { %>" +
           "<div class='event'>" +
-            "<a href='<%= event.url %>'><%= moment(event.date).format('MMMM Do') %>: <%= event.title %></a>" +
+            "<a href='<%= event.url %>'><%= moment(event.date).format('MMMM Do ddd') %>: <%= event.title %></a>" +
           "</div>" +
           "<% }); %>" +
         "</div>" +

@@ -9,8 +9,10 @@
 			<input multiple="multiple" name="image" type="file" /><br><br>
 			<input type="submit" value="Upload" />
 		</form>
+		<% if (img) { %>
 		<div>
-			<img src="<%= img  %>" alt=""> 
+			<img src="/<%= img %>" alt=""> 
 		</div>
+		<% }  %>
 	</body>
 </html>

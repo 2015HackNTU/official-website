@@ -15,14 +15,14 @@
 	<h1><span class="fa fa-pencil-square-o"></span> New Posts</h1>
 
 	<!-- LOGIN FORM -->
-	<form action="/posts/edit/<%= posts._id %>" method="post">
+	<form action="/posts/edit/<%= posts._id %>" method="post" enctype="multipart/form-data" >
 		<div class="form-group">
 			<label>Title</label>
-			<input type="text" class="form-control" name="title">
+			<input type="text" class="form-control" name="title" value="<%=posts.title%>">
 		</div>
 		<div class="form-group">
 			<label>Content</label>
-			<textarea type="text" class="form-control" name="content" rows="10">
+			<textarea type="text" class="form-control" name="content" rows="10" value=""><%=posts.content%>
 			</textarea>
 		</div>
 		<div class="form-group">
@@ -31,13 +31,19 @@
 		</div>
 		<div class="form-froup">
 			<label for="upload">Photo Upload</label>
-			<input type="file" class="form-control" name="upload">
+			<input multiple="multiple" name="image" type="file">
 		</div>
-		<input type="hidden" name="user_id" value="<%= user._id %>">
-		<input type="hidden" name="department" value="<%= user.local.department %>">
+		<br>
+		<input type="hidden" name="user_id" value="<%= posts.user_id %>">
 		<button type="submit" class="btn btn-warning btn-lg">Submit</button>
 		<a href="/profile" class="btn btn-primary btn-lg">Back</a>
-
+		<script>
+			$('.btn').hover(function(){
+				var date = new Date(); // New Date object to store date value
+				document.getElementById('create_at').value = date.toDateString();
+				console.log(document.getElementById('create_at').value)
+			})
+		</script>
 	</form>
 
 	<hr>

@@ -12,9 +12,14 @@ module.exports = function(app){
 	app.post('/upload', function (req, res){
 	  var form = new formidable.IncomingForm();
 	  form.parse(req, function(err, fields, files) {
+	  	//console.log(files)
+	  	//console.log(files.image)
+	    res.redirect('/upload/'+files.image.name) // send photo just uploaded
+	    /*
 	    res.writeHead(200, {'content-type': 'text/plain'});
 	    res.write('received upload:\n\n');
 	    res.end(util.inspect({fields: fields, files: files}));
+	    */
 	  });
 
 	  form.on('end', function(fields, files) {
@@ -36,7 +41,9 @@ module.exports = function(app){
 	});
 
 	app.get('/upload',function(req,res){
-		res.render('admin/upload')
+		res.render('admin/upload',{
+			img:""
+		})
 	})
 
 	/// Show files
@@ -45,7 +52,11 @@ module.exports = function(app){
 		console.log(file)
 		var img = fs.readFileSync( "./upload/" + file );
 		//res.writeHead(200, {'Content-Type': '' });
-		res.send(img);
+		//res.end(img);
+		res.render('admin/upload',{
+			img : file
+		})
+
 	});
 
 

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Node Authentication</title>
+	<title>Super User</title>
 	<link rel="stylesheet" href="/stylesheets/bootstrap.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<script src="/javascripts/jquery.min.js"></script>
@@ -20,7 +20,7 @@
 	<div class="container">
 
 		<div class="page-header text-center">
-			<h1><span class="fa fa-anchor"></span> Profile Page</h1>
+			<h1><span class="fa fa-anchor"></span>Welcome Back, superuser.</h1>
 				<h3><span class="fa fa-star"></span> Hello, <%= user.local.name %> Welcome back!</h3>
 				<% if (message.length > 0 && message!='edit' ) {%>
 					<div class="alert"> <%= message %></div>
@@ -150,7 +150,6 @@
 								    </tr>
 							  	</thead>
 			  					<% posts.forEach(function(posts){ %>
-									<% if(posts.user_id === user.id) {%>
 									  	<tbody>
 										    <tr>
 										      <td class="photo<%=posts._id%>"><img src="<%=posts.photo%>" style="max-width: 100px;max-height: 100px;"alt=""></td>
@@ -168,7 +167,6 @@
 											$('.posts_date<%=posts._id%>').append(monthNames[<%= posts.create_at.getMonth() %>] + " " + <%= posts.create_at.getDate() %> + ", " + <%= posts.create_at.getYear()+1900 %> + " | "+ <%= (posts.create_at.getHours()%12) %> + ":" + <%= posts.create_at.getMinutes()%> )
 											//$('.photo<%=posts._id%>')
 										</script>
-									<% } %>
 								<% }) %>
 							</table>	
 					<% }%>
@@ -194,7 +192,6 @@
 								    </tr>
 							  	</thead>
 			  					<% news.forEach(function(news){ %>
-									<% if(news.user_id === user.id) {%>
 									  	<tbody>
 										    <tr>
 										      <td><%= news.title %></td>
@@ -210,7 +207,6 @@
 											var monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 											$('.news_date<%=news._id%>').append(monthNames[<%= news.create_at.getMonth() %>] + " " + <%= news.create_at.getDate() %> + ", " + <%= news.create_at.getYear()+1900 %> + " | "+ <%= (news.create_at.getHours()%12) %> + ":" + <%= news.create_at.getMinutes()%> )
 										</script>
-									<% } %>
 								<% }) %>
 							</table>	
 					<% }%>
