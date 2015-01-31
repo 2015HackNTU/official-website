@@ -85,7 +85,7 @@
       "<div class='events'>" +
         "<div class='headers'>" +
           "<div class='x-button'>x</div>" +
-          "<div class='event-header'>EVENTS</div>" +
+          "<div class='event-header'>EVENTS IN THIS MONTH</div>" +
         "</div>" +
         "<div class='events-list'>" +
         "<% _.each(eventsThisMonth, function(event) { %>" +
