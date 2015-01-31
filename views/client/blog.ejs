@@ -162,11 +162,11 @@
 									<div class = "a-post" ng-repeat="p in posts" id="p_{{p._id}}">
 										<!-- Post Images -->
 										<div class="blog-img pull-left">
-											<img src="images/2015hackNTU-4.jpg" class="img-responsive img-thumbnail" alt="" />
+											<img src="{{p.photo}}" class="img-responsive img-thumbnail" alt="" />
 										</div>
 										<!-- Meta for this block -->
 										<div class="meta">
-											<i class="fa fa-calendar"></i>&nbsp; Jan 13, 2014
+											<i class="fa fa-calendar"></i>&nbsp; {{p.create_at}}
 											<span class="pull-right"><i class="fa fa-comment"></i> <a href="#">&nbsp;2 Comments</a></span>
 										</div>
 										<!-- Heading of the  post -->
@@ -176,6 +176,7 @@
 										<p>{{p.content}}</p>
 										<div class="clearfix"></div>
 										<br>
+
 									</div>
 									
 									<!-- Pagination -->

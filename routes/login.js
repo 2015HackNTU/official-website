@@ -33,6 +33,23 @@ module.exports = function(app,passport){
 			})
 		})
 	});
+
+	app.get('/superuser', isLoggedIn, function(req,res){
+		BreakingNews.find().sort('create_at').exec(function(err, news){
+			BlogPosts.find().sort('create_at').exec(function(err, posts){
+				Calendar.find().sort('date').exec(function(err, cal){
+					res.render('admin/superuser',{
+						user : req.user,
+						cal : cal,
+						posts : posts,
+						news : news,
+						message : req.flash('profileMessage')
+					});
+				})
+			})
+		})
+	});
+
 	app.get('/logout',function(req,res){
 		req.logout();
 		res.redirect('/login');
