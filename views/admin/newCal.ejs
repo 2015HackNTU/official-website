@@ -46,7 +46,8 @@
 
 			$('.btn').hover(function(){
 				var date = new Date(document.getElementById('date').value); // New Date object to store date value
-				//console.log(date.getMonth())
+				console.log(date.getMonth()+1);
+				console.log(date.getYear()+1900);
 				document.getElementById('month').value = date.getMonth()+1;
 
 			})

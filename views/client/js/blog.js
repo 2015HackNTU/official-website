@@ -1,23 +1,35 @@
 var blog = angular.module("blog", ['ngRoute']);
+var index = angular.module('index', ['ngRoute']);
 
+index.filter('object2Array', function() {
+  return function(input) {
+    var out = []; 
+    for(i in input){
+      out.push(input[i]);
+    }
+    return out;
+  }
+});
 
 blog.controller('blogListCtrl', ['$scope','$http',function ($scope, $http) {
 
-	$scope.numLimit = 100;
+	$scope.numLimit = 100;//output 100 character
 	$http.get('/api/posts').success(function(data) {
     	$scope.posts = data;//the variable is named posts,define by yourself
-    	$scope.theTime = 
+    	/* the date split */
+    	var len = data.length;
+    	var output = new Array();
+    	for (var i = 0; i < len;i++){
+    		var t = new Date(data[i].create_at); 
+    		//console.log(t);
+    		output[i] = t.getYear()+1900 + "-" + t.getMonth()+1 + "-" + t.getDate(); 
+    		data[i].create_at = output[i];
+    	}
     	
 	});
 
-	$scope.dateSplit = function(string, nb){
-
-		$scope.array = string.split(' ');
-		var result = $scope.array[nb];
-		return result;
-		}
 		
-	// the page control
+	/*the page control*/
 	$scope.currentPage = 0;
 	$scope.pageSize = 3;
 	$scope.numberOfPages = function(){

@@ -159,7 +159,7 @@
 								<!-- The new post done by user's all in the post block -->
 								<div class="blog-post">
 									<!-- Entry is the one post for each user -->
-									<div class = "a-post" ng-repeat="p in posts" id="p_{{p._id}}">
+									<div class = "a-post" ng-repeat="p in posts| filter: order_blogPosts | startFrom:currentPage*pageSize | limitTo:pageSize | orderBy: 'create_at'" id="p_{{p.id}}">
 										<!-- Post Images -->
 										<div class="blog-img pull-left">
 											<img src="{{p.photo}}" class="img-responsive img-thumbnail" alt="" />
@@ -170,7 +170,7 @@
 											<span class="pull-right"><i class="fa fa-comment"></i> <a href="#">&nbsp;2 Comments</a></span>
 										</div>
 										<!-- Heading of the  post -->
-										<h3><a href="posts/{{p._id}}">{{p.title}}</a></h3>
+										<h3><a href="posts/{{p.id}}">{{p.title}}</a></h3>
 										<hr /><!-- Horizontal line -->
 										<!-- Paragraph -->
 										<p>{{p.content | limitTo:numLimit}}...</p>
