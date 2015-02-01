@@ -33,6 +33,8 @@
 		<script src="/javascripts/jquery.min.js"></script>
 		<!-- Bootstrap JS -->
 		<script src="/javascripts/bootstrap.min.js"></script>
+		<!-- Bootstrap angular JS -->
+		<script src="/javascripts/UIbootstrap.js"></script>
 		<!-- Pretty Photo JS -->
 		<script src="/javascripts/jquery.prettyPhoto.js"></script>
 		<!-- Respond JS for IE8 -->
@@ -159,7 +161,7 @@
 								<!-- The new post done by user's all in the post block -->
 								<div class="blog-post">
 									<!-- Entry is the one post for each user -->
-									<div class = "a-post" ng-repeat="p in posts| filter: order_blogPosts | startFrom:currentPage*pageSize | limitTo:pageSize | orderBy: 'create_at'" id="p_{{p.id}}">
+									<div class = "a-post" ng-repeat="p in posts | filter:arrange_post | startFrom:currentPage*pageSize | limitTo:pageSize" id="p_{{p.id}}">
 										<!-- Post Images -->
 										<div class="blog-img pull-left">
 											<img src="{{p.photo}}" class="img-responsive img-thumbnail" alt="" />
@@ -185,7 +187,7 @@
 										<a href="" ng-class="currentPage <= 0 ? 'btn disabled' : ''" aria-label="Previous" id="prevPage" ng-click="changePage(currentPage-1)"><span aria-hidden="true">&laquo;</span>
 										</a>
 										</li>
-    									<li ng-class="pageClass({{$index}})" ng-repeat="page in getNumber(numberOfPages()) track by $index">
+    									<li ng-class="pageClass({{$index}})" ng-repeat="page in getNumber(numberOfPages()) track by $index ">
     									<a href="" ng-click="changePage($index)">{{$index+1}}</a>
     									</li>
     									<li>

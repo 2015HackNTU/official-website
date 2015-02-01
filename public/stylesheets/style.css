@@ -23,8 +23,8 @@ section {
 
 nav {
   background-color: #ffffff;
-  /*-webkit-box-shadow: 0 1px 0 3px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 0 3px rgba(0, 0, 0, 0.05);*/
+  -webkit-box-shadow: 0 1px 0 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 0 3px rgba(0, 0, 0, 0.05);
   text-align: center;
   position: relative;
   z-index: 10;
@@ -156,8 +156,8 @@ nav.sticky {
 }
 .footer{
 	background: black;
-	/*border-top: 1px solid #eaeaea;*/
-	/*margin-top: 20px;*/
+	/*border-top: 1px solid #eaeaea;
+	margin-top: 20px;*/
 }
 .footer .footer-copyright > p{
 	font-size: 13px;
@@ -260,7 +260,9 @@ nav.sticky {
 .history-about-us p{
 	color: white;
 }
-
+.pagination > li > a{
+	font-size: 15px;
+}
 /*.month ul{
 	text-align: center;
 	background-color: gray;
