@@ -70,7 +70,7 @@ app.get('/', index.index);
         });
         //GET METHOD BY ID.
         app.get('/api/posts/:id', function(req, res){
-            return db.BlogPosts.findOne({id: req.params.id}, function(err, post){
+            return db.BlogPosts.findOne({_id: req.params.id}, function(err, post){
                 if(!err){
                     return res.send(post);
                 }
