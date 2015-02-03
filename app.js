@@ -76,6 +76,7 @@ app.get('/', index.index);
                 }
                 else{
                     return res.send("Error!");
+                    console.log("I do not get it!");
                 }
             });
         });
