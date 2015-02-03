@@ -239,17 +239,17 @@
         shiftIndex = shiftIndex+rightLeft;
         document.getElementById(shiftIndex).style.display = "block";
         
-        for (var i = 1; i < 5; i++)
+        for (var i = 1; i < 4; i++)
         {
           if (i !== shiftIndex){
             document.getElementById(i).style.display = "none";
           }
         }
         
-        if((shiftIndex+rightLeft) === 5) 
+        if((shiftIndex+rightLeft) === 4) 
           shiftIndex = 0;
         if ((shiftIndex+rightLeft) === 0)
-          shiftIndex = 5;
+          shiftIndex = 4;
 
 
         
@@ -359,9 +359,12 @@
   <div class="inner-page padd activity">
   <div class="general">
     <div class="container" style="width:100%">
-      <div class="row">
 
+      <div class="row shifting" id = "1" style="display:block">
       <div class="col-md-8 col-sm-8 col-md-offset-2">
+        <div>
+          <h1>2015年1月</h1>
+        </div>
           <!-- General information content -->
           <div class="general-content">
             <!-- Navigation tab -->
@@ -371,6 +374,8 @@
               <li><a href="#tab2" data-toggle="tab">工作坊</a></li>
               
             </ul>
+
+
             <!-- Tab content -->
             <div class="tab-content">
               <!-- In "id", use the value which you used in above anchor tags -->
@@ -403,13 +408,187 @@
               </div> <!--/ tab-pane end --> 
                
             </div><!--/ Tab content end -->
+
+
           </div>
         </div>
         </div>
 
+
+      <div class="row" div class="row shifting" id = "2" style="display:none">
+      <div class="col-md-8 col-sm-8 col-md-offset-2">
+        <div>
+          <h1>2015年2月</h1>
+        </div>
+          <!-- General information content -->
+          <div class="general-content">
+            <!-- Navigation tab -->
+            <ul class="nav nav-tabs">
+              <!-- Navigation tabs (Job titles ). Use unique value for "href" in "anchor tags". -->
+              <li class="active"><a href="#tab1" data-toggle="tab">社群小聚</a></li>
+              <li><a href="#tab2" data-toggle="tab">工作坊</a></li>
+              
+            </ul>
+
+
+            <!-- Tab content -->
+            <div class="tab-content">
+              <!-- In "id", use the value which you used in above anchor tags -->
+              <div class="tab-pane active" id="tab1">
+                <!-- Heading -->
+                <h5>社群小聚</h5>
+                <!-- Paragraph -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nitusrpis egestas. Suspendisse porttitor luctus imperdiet. <a href="#">Praesent ultricies</a> enim ac ipsum aliquet pellentesque. Nullam justo nunc, dignissim at convallis posuere, sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis.</p>
+                <!-- Paragraph -->
+                <p>Fusce imperdiet, risus eget viverra faucibus, diam mi vestibulum libero, ut vestibulum tellus magna nec enim. Nunc dapibus varius interdum. Phasellus at lorem ut lectus fermentum convallis. Sed diam nisi, pulvinar vitae molestie hendrerit, venenatis eget mauris. Integer porta erat ac eros porta ultrices. Proin porttitor eros a ante molestie gravida commodo dui adipiscing. <a href="#">Morbi dictum nibh gravida</a> mi pretium dapibus. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimen laoreet justo ullamcorper.</p>
+                <!-- List content -->
+                <ul class="list-unstyled">
+                  <li><i class="fa fa-map-marker"></i> 台灣大學新生103</li>
+                  <li><i class="fa fa-clock-o"></i> 2015-03-22</li>
+                  <li><i class="fa fa-users"></i>HackNTU社員</li>
+                  <li><i class="fa fa-book"></i>JavaScript的未來</li>
+                  <li><i class="fa fa-facebook-square"></i> Follow HackNTU</li>
+                </ul>
+              </div> <!--/ tab-pane end --> 
+              <div class="tab-pane" id="tab2">
+                <!-- heading -->
+                <h5>工作坊</h5>
+                <!-- Paragraph -->
+                <p>HackNTU團隊來到位在加州聖塔芭芭拉的UCSB，參加最先在海灘舉辦的SBHACKS！現場有超過500位來自美國各大學的hackers一起參與這場在加州海灘的黑客盛事。<br>SBHACKS官網: http://www.ucsbhacks.com/<br>Get excited! More than 500 hackers gather together to participate SBHACKS, the first hackathon held on a beach!
+                <br>HackNTU is certainly not gonna miss it!</p>
+                <!-- Paragraph -->
+                <p>Fusce imperdiet, risus eget viverra faucibus, diam mi vestibulum libero, ut vestibulum tellus magna nec enim. Nunc dapibus variusam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. Sed a interdum mauris. Duis eget risus ac orci vulputate vestibul interdum. Phasellus at lorem ut lectus fermentum convallis. Sed diam nisi, pulvinar vitae molestiat laoreet justo ullamcorper.</p>
+                <!-- Paragraph -->
+                <p>ium dapibus. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. Sed a interdum mauris. Duis eget risus ac orci vulputate vestibulum sit amet id orci. Etiam ac ante at lorem ultrices elementum. Vestibulum quis elit odio, id hendrerit ipsum. Fusce consequat leo vitae velit interdum at laoreet justo ullamcorper.</p>
+              </div> <!--/ tab-pane end --> 
+               
+            </div><!--/ Tab content end -->
+
+
+          </div>
+        </div>
+        </div>
+
+
+
+
+      <div class="row shifting" id = "3" style="display:none">
+      <div class="col-md-8 col-sm-8 col-md-offset-2">
+        <div>
+          <h1>2015年3月</h1>
+        </div>
+          <!-- General information content -->
+          <div class="general-content">
+            <!-- Navigation tab -->
+            <ul class="nav nav-tabs">
+              <!-- Navigation tabs (Job titles ). Use unique value for "href" in "anchor tags". -->
+              <li class="active"><a href="#tab1" data-toggle="tab">社群小聚</a></li>
+              <li><a href="#tab2" data-toggle="tab">工作坊</a></li>
+              
+            </ul>
+
+
+            <!-- Tab content -->
+            <div class="tab-content">
+              <!-- In "id", use the value which you used in above anchor tags -->
+              <div class="tab-pane active" id="tab1">
+                <!-- Heading -->
+                <h5>社群小聚</h5>
+                <!-- Paragraph -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nitusrpis egestas. Suspendisse porttitor luctus imperdiet. <a href="#">Praesent ultricies</a> enim ac ipsum aliquet pellentesque. Nullam justo nunc, dignissim at convallis posuere, sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis.</p>
+                <!-- Paragraph -->
+                <p>Fusce imperdiet, risus eget viverra faucibus, diam mi vestibulum libero, ut vestibulum tellus magna nec enim. Nunc dapibus varius interdum. Phasellus at lorem ut lectus fermentum convallis. Sed diam nisi, pulvinar vitae molestie hendrerit, venenatis eget mauris. Integer porta erat ac eros porta ultrices. Proin porttitor eros a ante molestie gravida commodo dui adipiscing. <a href="#">Morbi dictum nibh gravida</a> mi pretium dapibus. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimen laoreet justo ullamcorper.</p>
+                <!-- List content -->
+                <ul class="list-unstyled">
+                  <li><i class="fa fa-map-marker"></i> 台灣大學新生103</li>
+                  <li><i class="fa fa-clock-o"></i> 2015-03-22</li>
+                  <li><i class="fa fa-users"></i>HackNTU社員</li>
+                  <li><i class="fa fa-book"></i>JavaScript的未來</li>
+                  <li><i class="fa fa-facebook-square"></i> Follow HackNTU</li>
+                </ul>
+              </div> <!--/ tab-pane end --> 
+              <div class="tab-pane" id="tab2">
+                <!-- heading -->
+                <h5>工作坊</h5>
+                <!-- Paragraph -->
+                <p>HackNTU團隊來到位在加州聖塔芭芭拉的UCSB，參加最先在海灘舉辦的SBHACKS！現場有超過500位來自美國各大學的hackers一起參與這場在加州海灘的黑客盛事。<br>SBHACKS官網: http://www.ucsbhacks.com/<br>Get excited! More than 500 hackers gather together to participate SBHACKS, the first hackathon held on a beach!
+                <br>HackNTU is certainly not gonna miss it!</p>
+                <!-- Paragraph -->
+                <p>Fusce imperdiet, risus eget viverra faucibus, diam mi vestibulum libero, ut vestibulum tellus magna nec enim. Nunc dapibus variusam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. Sed a interdum mauris. Duis eget risus ac orci vulputate vestibul interdum. Phasellus at lorem ut lectus fermentum convallis. Sed diam nisi, pulvinar vitae molestiat laoreet justo ullamcorper.</p>
+                <!-- Paragraph -->
+                <p>ium dapibus. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. Sed a interdum mauris. Duis eget risus ac orci vulputate vestibulum sit amet id orci. Etiam ac ante at lorem ultrices elementum. Vestibulum quis elit odio, id hendrerit ipsum. Fusce consequat leo vitae velit interdum at laoreet justo ullamcorper.</p>
+              </div> <!--/ tab-pane end --> 
+               
+            </div><!--/ Tab content end -->
+
+
+          </div>
+        </div>
+        </div>
+
+
+
+
+      <div class="row shifting" id = "4" style="display:none">
+      <div class="col-md-8 col-sm-8 col-md-offset-2">
+        <div>
+          <h1>2015年4月</h1>
+        </div>
+          <!-- General information content -->
+          <div class="general-content">
+            <!-- Navigation tab -->
+            <ul class="nav nav-tabs">
+              <!-- Navigation tabs (Job titles ). Use unique value for "href" in "anchor tags". -->
+              <li class="active"><a href="#tab1" data-toggle="tab">社群小聚</a></li>
+              <li><a href="#tab2" data-toggle="tab">工作坊</a></li>
+              
+            </ul>
+
+
+            <!-- Tab content -->
+            <div class="tab-content">
+              <!-- In "id", use the value which you used in above anchor tags -->
+              <div class="tab-pane active" id="tab1">
+                <!-- Heading -->
+                <h5>社群小聚</h5>
+                <!-- Paragraph -->
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nitusrpis egestas. Suspendisse porttitor luctus imperdiet. <a href="#">Praesent ultricies</a> enim ac ipsum aliquet pellentesque. Nullam justo nunc, dignissim at convallis posuere, sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis.</p>
+                <!-- Paragraph -->
+                <p>Fusce imperdiet, risus eget viverra faucibus, diam mi vestibulum libero, ut vestibulum tellus magna nec enim. Nunc dapibus varius interdum. Phasellus at lorem ut lectus fermentum convallis. Sed diam nisi, pulvinar vitae molestie hendrerit, venenatis eget mauris. Integer porta erat ac eros porta ultrices. Proin porttitor eros a ante molestie gravida commodo dui adipiscing. <a href="#">Morbi dictum nibh gravida</a> mi pretium dapibus. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimen laoreet justo ullamcorper.</p>
+                <!-- List content -->
+                <ul class="list-unstyled">
+                  <li><i class="fa fa-map-marker"></i> 台灣大學新生103</li>
+                  <li><i class="fa fa-clock-o"></i> 2015-03-22</li>
+                  <li><i class="fa fa-users"></i>HackNTU社員</li>
+                  <li><i class="fa fa-book"></i>JavaScript的未來</li>
+                  <li><i class="fa fa-facebook-square"></i> Follow HackNTU</li>
+                </ul>
+              </div> <!--/ tab-pane end --> 
+              <div class="tab-pane" id="tab2">
+                <!-- heading -->
+                <h5>工作坊</h5>
+                <!-- Paragraph -->
+                <p>HackNTU團隊來到位在加州聖塔芭芭拉的UCSB，參加最先在海灘舉辦的SBHACKS！現場有超過500位來自美國各大學的hackers一起參與這場在加州海灘的黑客盛事。<br>SBHACKS官網: http://www.ucsbhacks.com/<br>Get excited! More than 500 hackers gather together to participate SBHACKS, the first hackathon held on a beach!
+                <br>HackNTU is certainly not gonna miss it!</p>
+                <!-- Paragraph -->
+                <p>Fusce imperdiet, risus eget viverra faucibus, diam mi vestibulum libero, ut vestibulum tellus magna nec enim. Nunc dapibus variusam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. Sed a interdum mauris. Duis eget risus ac orci vulputate vestibul interdum. Phasellus at lorem ut lectus fermentum convallis. Sed diam nisi, pulvinar vitae molestiat laoreet justo ullamcorper.</p>
+                <!-- Paragraph -->
+                <p>ium dapibus. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. Sed a interdum mauris. Duis eget risus ac orci vulputate vestibulum sit amet id orci. Etiam ac ante at lorem ultrices elementum. Vestibulum quis elit odio, id hendrerit ipsum. Fusce consequat leo vitae velit interdum at laoreet justo ullamcorper.</p>
+              </div> <!--/ tab-pane end --> 
+               
+            </div><!--/ Tab content end -->
+
+
+          </div>
+        </div>
+        </div>
+
+
+
+
           
 
-          <div class="shifting" id = "1" style="display:block">
+          <!-- <div class="shifting" id = "1" style="display:block">
             <img src="images/2015hackNTU_2.jpg" alt="" style="width:100%" />
           </div>
           <div class="shifting" id = "2" style="display:none">
@@ -420,7 +599,7 @@
           </div>
           <div class="shifting" id = "4" style="display:none">
             <img src="images/hackLCD.jpg" alt="" style="width:100%"/>
-          </div>
+          </div> -->
 
           <div class="fullscreen-controls">
             <a class="img-prev" onclick="shift(-1)"></a>
