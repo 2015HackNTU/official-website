@@ -54,8 +54,8 @@ module.exports = function(app){
 			res.render('client/blog')
 		})
 	*/
-	app.get('/blog-single',function(req,res){
-		res.render('client/blog-single')
+	app.get('/blog1',function(req,res){
+		res.render('client/blog1')
 	})
 	app.get('/activitynew',function(req,res){
 		res.render('client/activitynew')
