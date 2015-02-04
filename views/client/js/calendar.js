@@ -8,7 +8,8 @@ $(document).ready( function() {
     var len = data.length;
     var cal_events = new Array();
     for (var i = 0; i < len; i++) {
-      cal_events[i] = {date: data[i].date, title: data[i].name, url: '/activity/' + data[i]._id};
+      //cal_events[i] = {date: data[i].date, title: data[i].name, url: '/activity/' + data[i]._id};
+      cal_events[i] = {date: data[i].date, title: data[i].name, url: '/activity'};
     }
     create_calender(cal_events);
   });
