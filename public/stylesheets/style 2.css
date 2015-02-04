@@ -1599,7 +1599,7 @@ div.ppt { display:none !important; }
 	text-align: justify;
 }
 
-.inner-page .blog .pagination { margin: 0; }
+.inner-page .blog .pagination { margin-top: 15px; }
 .inner-page .blog .sidebar-widget{
 	margin-bottom: 30px;
 	padding: 15px;

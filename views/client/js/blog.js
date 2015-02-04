@@ -17,6 +17,25 @@ blog.filter('startFrom', function() {
   	};
 });
 
+
+blog.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+	$routeProvider	
+
+	.when('/blog', {
+			templateUrl : 'client/blog',
+			controller  : 'blogListCtrl'
+	})
+    .when('posts/:id', {
+	      templateUrl : 'client/posts',
+	      controller  : 'blogCtrl'
+    })
+    
+	.otherwise({
+		redirectTo: '/client/blog'
+	});
+  $locationProvider.html5Mode(true);
+}]);
+
 blog.controller('blogListCtrl', ['$scope','$http',function ($scope, $http) {
 
 
@@ -68,68 +87,26 @@ blog.controller('blogListCtrl', ['$scope','$http',function ($scope, $http) {
 }]);
 blog.controller('blogCtrl',function ($rootScope, $scope, $http, $window, $location, $routeParams) {
 	
-	// $http.get('/api/posts/pid').success(function(data) {
- //    $scope.total = data.length;
+	
  	console.log("in blogCtrl");
-  //   $http.get('/api/posts/'+$routeParams.id).success(function(data) {
-  //   	console.log(data);
+    $http.get('/api/posts/'+$routeParams.id).success(function(data) {
+    	console.log(data);
 
-  //   if (data.length !== 0) $scope.p = data;
-  //   else $location.path("/posts");
+    if (data.length !== 0) $scope.p = data;
+    else $location.path("/posts");
 
-  //   $rootScope.title = $scope.p.id ;
-  //   $scope.formset($scope.p);
-  //   $http.get('api/posts/').success(function(data) {
-  //   $scope.p = data;
-  // });
+    // $rootScope.title = $scope.p.id ;
+    // $scope.formset($scope.p);
+    // $http.get('api/posts/').success(function(data) {
+    // $scope.p = data;
+  });
 	
 
-	console.log("I am in blogListCtrl");
-	$scope.numLimit = 100;//output 100 character
-	$http.get('/api/posts').success(function(data) {
-    	
-    	/* the date split */
-    	var len = data.length;
-    	var output = new Array();
-    	for (var i = 0; i < len;i++){
-    		var t = new Date(data[i].create_at); 
-    		//console.log(t);
-    		output[i] = t.getYear()+1900 + "-" + t.getMonth()+1 + "-" + t.getDate(); 
-    		data[i].create_at = output[i];
-    	}
-
-    	$scope.posts = data;//the variable is named posts,define by yourself
-    	
-	});
-
-		
-	/*the page control*/
-	$scope.recentpageStart = 0;
-	$scope.recentpageEnd = 2;
-	$scope.currentPage = 0;
-	$scope.pageSize = 3;
-	$scope.numberOfPages = function(){
-		if (!$scope.posts || !$scope.posts.length) return;
-		if (($scope.posts.length) % ($scope.pageSize) === 0)
-			return Math.floor($scope.posts.length/$scope.pageSize);
-		else if (($scope.posts.length) % ($scope.pageSize) !== 0) 
-			return Math.floor($scope.posts.length/$scope.pageSize)+1;
-	};
-	$scope.getNumber = function(num) {
-	    var page =  new Array(num);  
-	    for (var i = 0; i < num; i++) {
-	     	page[i] = i +1;
-	     }; 
-	     return page;
-	};
-	$scope.pageClass = function(page){
-		return page === $scope.currentPage ? 'active' : '';
-	};
-	$scope.changePage = function(page){
-		$scope.currentPage = page;
-	};
+	
                
 });
+
+
 
 
 

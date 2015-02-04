@@ -54,10 +54,10 @@ module.exports = function(app){
 			res.render('client/blog')
 		})
 	*/
-	app.get('/blog1',function(req,res){
-		res.render('client/blog1')
+	app.get('/posts/:id',function(req,res){
+		res.render('client/posts/:id')
 	})
-	app.get('/activitynew',function(req,res){
+	app.get('/activity',function(req,res){
 		res.render('client/activitynew')
 	})
 	// get will add somethind in URL 

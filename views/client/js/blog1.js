@@ -1,4 +1,4 @@
- var blog = angular.module("blog", ['ngRoute']);
+var blog = angular.module("blog", ['ngRoute']);
 
 
 blog.filter('object2Array', function() {

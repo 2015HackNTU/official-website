@@ -161,7 +161,7 @@
 								<!-- The new post done by user's all in the post block -->
 								<div class="blog-post">
 									<!-- Entry is the one post for each user -->
-									<div class = "a-post" ng-repeat="p in posts | filter:arrange_post | startFrom:currentPage*pageSize | limitTo:pageSize" id="p_{{p.id}}">
+									<div class = "a-post" ng-repeat="p in posts | filter:arrange_post | startFrom:currentPage*pageSize | limitTo:pageSize" id="p_{{p._id}}">
 										<!-- Post Images -->
 										<div class="blog-img pull-left">
 											<img src="{{p.photo}}" class="img-responsive img-thumbnail" alt="" />
@@ -174,7 +174,7 @@
 											</span> -->
 										</div>
 										<!-- Heading of the  post -->
-										<h3><a href="posts/{{p.id}}">{{p.title}}</a></h3>
+										<h3><a href="/posts/{{p._id}}">{{p.title}}</a></h3>
 										<hr /><!-- Horizontal line -->
 										<!-- Paragraph -->
 										<p>{{p.content | limitTo:numLimit}}...</p>
@@ -184,7 +184,7 @@
 									</div>
 									
 									<!-- Pagination -->
-									<ul class="pagination">
+									<ul class="pagination" style="margintop:20px">
 										<li>
 										<a href="" ng-class="currentPage <= 0 ? 'btn disabled' : ''" aria-label="Previous" id="prevPage" ng-click="changePage(currentPage-1)"><span aria-hidden="true">&laquo;</span>
 										</a>
