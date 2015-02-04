@@ -67,8 +67,8 @@ module.exports = function(app){
 		res.render('client/getUser')
     		
 	})
-	app.get('/clnd', function(req,res){
-		res.render('client/testclnd')
+	app.get('/clndr', function(req,res){
+		res.render('client/testclndr')
     		
 	})
 
