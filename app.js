@@ -69,16 +69,18 @@ app.get('/', index.index);
             });
         });
         //GET METHOD BY ID.
-        app.get('/api/posts/:pid', function(req, res){
+        app.get('/api/posts/:id', function(req, res){
             return db.BlogPosts.findOne({_id: req.params.id}, function(err, post){
                 if(!err){
                     return res.send(post);
                 }
                 else{
                     return res.send("Error!");
+                    console.log("I do not get it!");
                 }
             });
         });
+      
         app.get('/blog',blogposts.blogposts)
     /* Back */
         app.get('/posts/new', blogposts.newPosts); // Link to create posts page

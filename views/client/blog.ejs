@@ -34,7 +34,7 @@
 		<!-- Bootstrap JS -->
 		<script src="/javascripts/bootstrap.min.js"></script>
 		<!-- Bootstrap angular JS -->
-		<script src="/javascripts/UIbootstrap.js"></script>
+		<!-- <script src="/javascripts/UIbootstrap.js"></script> -->
 		<!-- Pretty Photo JS -->
 		<script src="/javascripts/jquery.prettyPhoto.js"></script>
 		<!-- Respond JS for IE8 -->
@@ -168,8 +168,10 @@
 										</div>
 										<!-- Meta for this block -->
 										<div class="meta">
-											<i class="fa fa-calendar"></i>&nbsp; {{p.create_at}}
-											<span class="pull-right"><i class="fa fa-comment"></i> <a href="#">&nbsp;2 Comments</a></span>
+											<i class="fa fa-calendar-o"></i>&nbsp; {{p.create_at}}
+											<!-- <span class="pull-right">
+											<i class="fa fa-comment"></i> <a href="#">&nbsp;2 Comments</a>
+											</span> -->
 										</div>
 										<!-- Heading of the  post -->
 										<h3><a href="posts/{{p.id}}">{{p.title}}</a></h3>
@@ -227,15 +229,12 @@
 										</div>
 										<div class="col-md-12 col-sm-6">
 											<!-- Blog sidebar page widget -->
-											<div class="sidebar-widget">
+											<div class="sidebar-widget" >
 												<!-- Widget Heading -->
 												<h4>Recent Post</h4>
 												<!-- Recent post list -->
-												<ul class="list-unstyled">
-													<li><i class="fa fa-angle-double-right"></i> <a href="#">Delicious Pizza recipe, soluta nobqual blame betum rutrum allongs to this est eligend.</a></li>
-													<li><i class="fa fa-angle-double-right"></i> <a href="#">Chicken recipe, luta nobisest hyelqual bltum rutrum alame belongs to thigend.</a></li>
-													<li><i class="fa fa-angle-double-right"></i> <a href="#">Hot Cake recipe, jueilqual blame belongs to thuta ntum rutrum alobist hyeleniurd.</a></li>
-													<li><i class="fa fa-angle-double-right"></i> <a href="#">French Food recipe, rsiqual blame belongs to thlutum rutrum alta nobniurd.</a></li>
+												<ul class="list-unstyled" ng-repeat="p in posts | filter:arrange_post | startFrom:recentpageStart | limitTo:recentpageEnd" id="p_{{p.id}}">
+													<li><i class="fa fa-angle-double-right"></i> <a href="#">{{p.title}}</a></li>
 												</ul>
 											</div><!--/ Widget end -->
 										
