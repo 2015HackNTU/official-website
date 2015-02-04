@@ -71,4 +71,9 @@ module.exports = function(app){
 		res.render('client/testclnd')
     		
 	})
+
+	app.get('/month', function(req,res){
+		res.render('client/testMonthBar')
+    		
+	})
 }
