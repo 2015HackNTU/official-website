@@ -1,0 +1,68 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+/*the line contain 12 month*/
+.month-line {
+	top: 0;
+	width: 92.4%;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+}
+
+.month-block {
+	top: 0;
+	width: 8.33%;
+	height: 100%;
+	margin: 0;
+
+	/*text-align: center;*/
+	padding-left: 18px;
+	padding-top: 59px;
+	font-size: 18px;
+	font-family: 'Droid Sans Mono';
+	color: #555555;
+	position: absolute;
+}
+
+.middle-block {
+	padding-top: 55px;
+	font-size: 22px;
+	color: #cc0000;
+}
+
+/* fixed block posstion*/
+.block-1 {
+	left: 0;
+}
+.block-2 {
+	left: 8.33%;
+}
+.block-3 {
+	left: 16.66%;
+}
+.block-4 {
+	left: 24.99%;
+}
+.block-5 {
+	left: 33.32%;
+}
+.block-6 {
+	left: 41.65%;
+}
+.block-7 {
+	left: 49.98%;
+}
+.block-8 {
+	left: 58.31%;
+}
+.block-9 {
+	left: 66.64%;
+}
+.block-10 {
+	left: 74.97%;
+}
+.block-11 {
+	left: 83.3%;
+}
+.block-12 {
+	left: 91.63%;
+}

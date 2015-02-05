@@ -141,14 +141,13 @@ nav.sticky {
 	z-index: 100;
 }
 
-.monthbar{
+.month-bar{
 	top:100px;
 	width: 100%;
-	height: 100px;
+	height: 90px;
 	position: fixed;
 	overflow: hidden;
-	background-color: #ff6600;
-	position: absolute;
+	background-color: #e0e0e0;
 }
 
 .footer .logo{
