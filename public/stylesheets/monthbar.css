@@ -66,3 +66,53 @@
 .block-12 {
 	left: 91.63%;
 }
+
+.transition-1 {
+	-webkit-transition: left 2s;
+	transition: left 2s;
+}
+.transition-2 {
+	-webkit-transition: left 4s;
+	transition: left 4s;
+}
+.transition-3 {
+	-webkit-transition: left 5s;
+	transition: left 5s;
+}
+.transition-4 {
+	-webkit-transition: left 6s;
+	transition: left 6s;
+}
+.transition-5 {
+	-webkit-transition: left 7s;
+	transition: left 7s;
+}
+.transition-6 {
+	-webkit-transition: left 8s;
+	transition: left 8s;
+}
+
+/*.transition-1 {
+	-webkit-transition: left 0.5s;
+	transition: left 0.5s;
+}
+.transition-2 {
+	-webkit-transition: left 1s;
+	transition: left 1s;
+}
+.transition-3 {
+	-webkit-transition: left 1.5s;
+	transition: left 1.5s;
+}
+.transition-4 {
+	-webkit-transition: left 1.5s;
+	transition: left 1.5s;
+}
+.transition-5 {
+	-webkit-transition: left 1.5s;
+	transition: left 1.5s;
+}
+.transition-6 {
+	-webkit-transition: left 1.5s;
+	transition: left 1.5s;
+}*/
