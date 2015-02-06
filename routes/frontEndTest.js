@@ -49,6 +49,9 @@ module.exports = function(app){
 
 		})
 	})
+	app.get('/project',function(req,res){
+		res.render('client/project')
+	})
 	/* Move to routes/blogposts.js
 		app.get('/blog',function(req,res){
 			res.render('client/blog')
