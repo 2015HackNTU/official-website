@@ -27,6 +27,8 @@
     <!--[if IE]><link rel="stylesheet" href="css/ie-style.css"><![endif]-->
     <link href="/stylesheets/style.css" rel="stylesheet">
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <!-- style of calendar -->
+    <link rel="stylesheet" href="/stylesheets/clndr.css">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="#">
@@ -45,126 +47,35 @@
     <!--<script src="/javascripts/html5shiv.js"></script> -->
     <!-- Custom JS -->
     <script src="/javascripts/custom.js"></script>
+    <!-- style of calendar -->
+    <link rel="stylesheet" href="/stylesheets/clndr.css">
+    <!-- send ajax to server -->
+    <script src="js/bridge.js"></script>
+    <script src="js/service.js"></script>
+    <!-- construct calender -->
+    <script src="/javascripts/underscore-min.js"></script>
+    <script src="/javascripts/moment-2.8.3.js"></script>
+    <script src="/javascripts/json2.js"></script>
+    <script src="/javascripts/clndr.js"></script>
+    <script src="js/calendar.js"></script>
     <script>
     $(document).ready(function() {
       $('.btn-calender-md .calender-link').click(function(e){
         e.preventDefault();
-    var $dd_menu = $('.btn-calender-md .calender-dropdown')
-    if ($dd_menu.hasClass('open')) {
+        var $dd_menu = $('.btn-calender-md .calender-dropdown')
+        if ($dd_menu.hasClass('open')) {
           $dd_menu.fadeOut();
           $dd_menu.removeClass('open');
-    } 
-    else {
-      $dd_menu.fadeIn();
-      $dd_menu.addClass('open');
-    }
-  });
-});
-      
-    //   $(function () {
-    //     $('[data-toggle="dropdown"]').dropdown()
-    //   }) ;
-    //   $('.img-responsive').dropdown('show');
-
-    //   var backdrop = '.dropdown-backdrop'
-    //   var toggle   = '[data-toggle=dropdown]'
-    //   var Dropdown = function (element) {
-    //   $(element).on('click.bs.dropdown', this.toggle)
-
-    //   Dropdown($('#calender1'));
-    // }
-    </script>
-
-    <!-- This is the js for timeline -->
-    <script type="text/javascript">
-      var GO_LEFT = -1, GO_RIGHT = 1;
-      var middle_month;
-      var month_array = ['JAN', 'FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-      function createfunction(){
-        var today = new Date();
-        var month = today.getMonth() + 1 - 6;
-        var calender_parent = document.getElementsByClassName("monthbar");
-        middle_month = month;
-        for (var i = 0 ; i < 12; i++)
-        {
-          var elem = document.createElement("div");
-          elem.className = "position-" + i ;
-          elem.innerHTML = month_array[month - 1];
-          elem.onClick = swiftfunction;
-          calender_parent.appendChild(elem)
-          monthadd(month, 1);
+        } else {
+          $dd_menu.fadeIn();
+          $dd_menu.addClass('open');
         }
-      }
-      function swiftfunction() {
-        var month = parseInt(getMonth(event.target.innerHTML));
-        var move = month - middle_month; // > 0 left, < 0 right
-        var direction = move > 0? GO_LEFT: GO_RIGHT;// -1 : left
-        if (move == 0)
-                return;
-        if (move < 0)
-          move *= -1;
-        else
-          move = 1;
-        //add buffer
-        for (var i = 0; i < move; i++) {
-          var position, add_month;
-          if (direction == GO_RIGHT) {//go right-> add at 
-            position = -1 - i;
-            add_month = monthmines(middle_month, 7+ i);
-          } else {//go left -> add at right
-            position = 12 + i;
-            add_month = monthadd(middle_month, 6+ i);
-          }
-          var elem = document.createElement("div");
-          elem.className = "position-" + i ;
-          elem.innerHTML = month_array[month - 1];
-          elem.onClick = swiftfunction;
-          if (direction == GO_RIGHT) {
-            calender_parent.insertBefore(elem, calender_parent.childNodes[0]);
-          } else {
-            calender_parent.insertChild(elem)
-          }
-        }
-        //move
-        var children = calender_parent.childNodes;
-        for (var i = 0; i < 12 + move; i++) {
-          var new_position = direction == GO_RIGHT? i, i - move;
-          children[i].className = "position-" + new_position + " swift-animation" + move;
-          window.setInterval(function () {children[i].className = "position-" + new_position;}, move * 1000);
-        }
-        //removebuffer
-        for (var i = 0; i < move; i++) {
-          if (direction == GO_RIGHT) {
-            calender_parent.removeChild(calender_parent.childNodes[0]);
-          } else {
-            calender_parent.removeChild(calender_parent.childNodes[12]);
-          }
-        }
-        //adjust middle month
-        middle_month = month;
-      }
-      function getMonth(monthString) {
-        for (i = 0; i < 12; i++) {
-          if (month_array[i] == monthString)
-            return i + 1;
-        }
-        return null;
-      }
-      function monthadd(cur_month, adder) {
-        return (cur_month + adder) % 12;
-      }
-      function monthmines(cur_month, minus) {
-        cur_month = cur_month - minus; 
-        while (cur_month <= 0) {
-          cur_month + 12;
-        }
-        return cur_month;
-      }
+      });
+    });
     </script>
     <!-- This is the js for shifting sliders and not yet finish-->
     <script type="text/javascript">
         $(document).ready(function(){
-
 
           if (!$('#home').hasClass('static')) {
               var scrolled = $(window).scrollTop();
@@ -189,18 +100,15 @@
                   next: '.img-next'
               }
           });
-
           return this;
-
-
-          //Fade the .home-wrapper
+        
+        //Fade the .home-wrapper
         var ws = $(window).scrollTop(),
             offset = ws / 2;
         $('.home-wrapper, .fullscreen-controls').css({
             transform: 'translateY(' + offset + 'px)',
             opacity: 1 - (ws / 700)
         });
-
 
         windowHeight = $(window).height();
         windowWidth = $(window).width();
@@ -252,8 +160,6 @@
           shiftIndex = 4;   
     }
     </script>
-    
-    
   </head>
 
   <body>
@@ -282,18 +188,7 @@
                   </a>
                     <div class="small-triangle"></div>
                     <div class="calender-dropdown" role="calender">
-                      <table>
-                      <p>2015年 3月</p>
-                        <tr>
-                          <td>一</td>
-                          <td>二</td>
-                          <td>三</td>
-                          <td>四</td>
-                          <td>五</td>
-                          <td>六</td>
-                          <td>日</td>
-                        </tr>
-                      </table>
+                      <div class="cal"></div>
                     </div>
                 </div>
               </li>
