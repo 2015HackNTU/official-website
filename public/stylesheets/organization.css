@@ -25,6 +25,7 @@
 .department-circuit img {
 	width: 100px;
 	position: absolute;
+	cursor: pointer;
 	transition: transform .5s, box-shadow .5s;
 	-webkit-transition: -webkit-transform .5s, -webkit-box-shadow .5s;
 }
