@@ -258,7 +258,7 @@
 
   <body>
 
-      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-default" role="navigation" id = "main">
         <!-- <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div> -->
         <div class="container-fluid">
     
@@ -266,10 +266,10 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="/activity">Activity <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Organization</a></li>
+              <li><a href="/org">Organization</a></li>
               <li>
                 <a class="navbar-brand" href="/">
-                  <img alt="Brand" src="images/logo-small.png">
+                  <img alt="Brand" style = "margin-top:-45px"src="images/logo-small.png">
                 </a>
               </li>
               <li><a href="/project">Projects</a></li>
@@ -277,23 +277,14 @@
               <li>
                 <div class="btn-calender-md">
                   <a class="calender-link" href="#">
+                    <!-- <img class="img-responsive" id="calender" src="images/calender.png" alt="" /> -->
                     <i class="fa fa-calendar fa-3x"></i>
                     <div class="clearfix"></div>
                   </a>
                     <div class="small-triangle"></div>
                     <div class="calender-dropdown" role="calender">
-                      <table>
-                      <p>2015年 3月</p>
-                        <tr>
-                          <td>一</td>
-                          <td>二</td>
-                          <td>三</td>
-                          <td>四</td>
-                          <td>五</td>
-                          <td>六</td>
-                          <td>日</td>
-                        </tr>
-                      </table>
+                      <!-- ************ where clnd is ***************-->
+                      <div class="cal"></div>
                     </div>
                 </div>
               </li>

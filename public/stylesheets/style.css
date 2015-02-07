@@ -1,3 +1,8 @@
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+
 section {
   padding: 25px 0 35px;
   background: #fff;
@@ -46,7 +51,7 @@ nav.sticky {
 	border: 0px;
 	background-color: #ffffff;
 	width: 100%;
-	height: 100px;
+	height: 120px;
 }
 .navbar-default .navbar-nav > li > a {
 	color:#cc0000;
@@ -161,6 +166,9 @@ nav.sticky {
 .footer .footer-copyright > p{
 	font-size: 13px;
 	color:#9a9a9a;
+	text-align: center;
+}
+.footer .col-md-4{
 	text-align: center;
 }
 .blog-img {
@@ -508,7 +516,7 @@ nav.sticky {
  * General page CSS 
  */
 
-.inner-page .general { margin-top: 100px; }
+/*.inner-page .general { margin-top: 50px; }*/
 .inner-page .general .general-content { 
 	background: #fff; 
 	border: 1px solid #eee;
@@ -551,4 +559,167 @@ nav.sticky {
 	border-top-left-radius: 15px;
 }
 
+/* 
+ * Basic CSS starts
+ */
 
+body{
+	background: #fff url('../img/crossword.png') repeat;
+	font-family: 'Open Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Droid Serif', serif;
+	font-weight: 400;
+}
+
+p{
+	margin:0;
+	padding:0;
+	font-size: 14px;
+	line-height: 23px;
+}
+
+a{
+
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+a:hover,a:active,a:focus {
+	outline: 0;
+	text-decoration: none;
+}
+
+hr{
+	border-top: 1px solid #777777;
+}
+
+:focus {
+	outline:none;
+}
+
+::-moz-focus-inner {
+	border:0;
+}
+
+form label { font-weight: normal; color: #9a9a9a; }
+form select { padding-left: 7px !important }
+form select, form textarea { color: #9a9a9a !important; }
+form input[type="text"], form input[type="password"], form input[type="email"],
+form select, form textarea{ box-shadow: none !important; }
+.table-responsive { border-radius: 4px; }
+table { background: #fff; }
+
+.padd{
+	padding: 50px 0;
+}
+
+.social a i{
+	display:inline-block;
+	width:40px;
+	height:40px;
+	font-size:15px;
+	line-height:40px;
+	text-decoration:none;
+	text-align:center;
+	color:#fff;
+	-webkit-transition: background 2s ease;
+	-moz-transition: background 2s ease;
+	-o-transition: background 2s ease;
+	-ms-transition: background 2s ease;
+	transition: background 2s ease;
+}
+
+.social a, .social a:hover{
+	border:0px;
+	text-decoration:none;
+}
+
+/*
+ * Blog page CSS 
+ */
+
+.inner-page .blog { margin-top: 40px; margin-bottom: 20px; }
+.inner-page .blog .blog-post .entry {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px dashed #ccc;
+}
+
+.inner-page .blog .blog-post .entry .blog-img { max-width: 250px; }
+.inner-page .blog .blog-post .entry .meta {
+	margin-left: 270px;
+	text-transform: uppercase;
+	font-size: 13px;
+	line-height: 35px;
+}
+
+.inner-page .blog .blog-post .entry h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 270px;
+	font-size: 24px;
+	line-height: 30px;
+}
+
+.inner-page .blog .blog-post .entry hr {
+	width: 70px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	margin-left: 270px;
+}
+
+.inner-page .blog .blog-post .entry p {
+	margin-left: 270px;
+	font-size: 14px;
+	line-height: 26px;
+	color: #9a9a9a;
+	text-align: justify;
+}
+
+.inner-page .blog .pagination { margin-top: 15px; }
+.inner-page .blog .sidebar-widget{
+	margin-bottom: 30px;
+	padding: 15px;
+	background: #fff;
+	border: 1px solid #eee;
+	border-radius: 4px;
+}
+
+.inner-page .blog .sidebar-widget h4 {
+	margin-top: 0;
+	margin-bottom: 13px;
+	padding-bottom: 8px;
+	border-bottom: 4px double #eee
+}
+
+.inner-page .blog .sidebar-widget ul li { margin-top: 10px; }
+.inner-page .blog .sidebar-widget ul li i {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	margin-right: 3px;
+	font-size: 16px;
+}
+	
+.inner-page .blog .sidebar-widget ul li a { font-size: 13px;	line-height: 20px; }
+.inner-page .blog .sidebar-widget p { font-size: 13px; color: #9a9a9a; }
+.inner-page .blog .sidebar-widget .social { margin-top: 9px; }
+.inner-page .blog .sidebar-widget .social a i {
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	margin: 0;
+	margin-right: 2px;
+	font-size: 14px;
+	border-radius: 50px;
+}
+
+.inner-page .blog .sidebar-widget a.btn{
+	margin-right: 5px;
+	margin-bottom: 10px;
+}
