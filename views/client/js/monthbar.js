@@ -29,7 +29,7 @@ function monthBar(elem) {
       this._move($('.month-line').eq(0).children().eq(this.currentMonth), -1, this.currentMonth - 6, -1, false);
     } else if (this.currentMonth < 6) {
       this._prepend();
-      this._move($('.month-line').eq(1).children().eq(this.currentMonth), 1, 6 - this.currentMonth, 0, true);
+      this._move($('.month-line').eq(1).children().eq(this.currentMonth), 1, 6 - this.currentMonth, 0, false);
       this._remove(2);
     }
   }
