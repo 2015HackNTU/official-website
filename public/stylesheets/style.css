@@ -119,7 +119,7 @@ nav.sticky {
 }
 .triangle{
 	position: fixed;
-	margin-top: 100px;
+	margin-top: -100px;
 	left: 43%;
 	width: 0;
 	height: 0;
@@ -131,6 +131,17 @@ nav.sticky {
 	z-index: 1000;
 }
 .small-triangle{
+	position: fixed;
+	margin-top: -17px;
+	right: 19.75%;
+	width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-bottom: 30px solid #cc0000;
+	text-align: center;
+	background-color: transparent;
+	z-index: 1000;
 
 }
 .play-the-video{
@@ -192,7 +203,13 @@ nav.sticky {
 	font-size: 15px;
 }
 .footer form{ margin-top: 15px; }
-
+.footer a {
+	color: #cfe6ff;
+}
+.footer a:hover{
+	color: #0ea8e3;
+	border-bottom: 1px solid #0ea8e3;
+}
 .blog-img {
 	width: 30%;
 	margin-right: 10px;
@@ -213,6 +230,12 @@ nav.sticky {
 	background-color: #ff9933;
 	height: 600px;
 	width: 100%;
+}
+.introduction .col-md-12{
+	margin-top: 30px;
+}
+.introduction .introduction-content p{
+	margin: 45px;
 }
 .text{
 	margin-top: 15%;
@@ -302,7 +325,12 @@ nav.sticky {
 	z-index: 900;
 }
 .info a{
-	color: #c6e2ff;
+	color: #ffffff;
+}
+.info a:hover{
+	color: #ffffff;
+	border-bottom: 2px solid #ffffff;
+	cursor: pointer;
 }
 .info h3{
 	color: #ffffff;
