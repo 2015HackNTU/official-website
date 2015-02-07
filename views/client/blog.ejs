@@ -25,6 +25,8 @@
 		<!--[if IE]><link rel="stylesheet" href="css/ie-style.css"><![endif]-->
 		<link href="/stylesheets/style.css" rel="stylesheet">
 		<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    	<!-- style of calendar -->
+    	<link rel="stylesheet" href="/stylesheets/clndr.css">
 		
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="#">
@@ -43,6 +45,15 @@
 		<!--<script src="/javascripts/html5shiv.js"></script> -->
 		<!-- Custom JS -->
 		<script src="/javascripts/custom.js"></script>
+		<!-- send ajax to server -->
+	    <script src="js/bridge.js"></script>
+	    <script src="js/service.js"></script>
+	    <!-- construct calender -->
+    	<script src="/javascripts/underscore-min.js"></script>
+	    <script src="/javascripts/moment-2.8.3.js"></script>
+	    <script src="/javascripts/json2.js"></script>
+	    <script src="/javascripts/clndr.js"></script>
+	    <script src="js/calendar.js"></script>
 		<!-- JS code for this page -->
 		<script type="text/javascript">
 
@@ -95,18 +106,7 @@
                   </a>
                     <div class="small-triangle"></div>
                     <div class="calender-dropdown" role="calender">
-                      <table>
-                      <p>2015年 3月</p>
-                        <tr>
-                          <td>一</td>
-                          <td>二</td>
-                          <td>三</td>
-                          <td>四</td>
-                          <td>五</td>
-                          <td>六</td>
-                          <td>日</td>
-                        </tr>
-                      </table>
+                      <div class="cal"></div>
                     </div>
                 </div>
               </li>
