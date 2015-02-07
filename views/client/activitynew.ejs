@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link href="/stylesheets/less-style.css" rel="stylesheet"> 
     <script src="/javascripts/jquery.min.js"></script>
     <script src="/javascripts/parallax.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
@@ -147,17 +148,17 @@
         shiftIndex = shiftIndex+rightLeft;
         document.getElementById(shiftIndex).style.display = "block";
         
-        for (var i = 1; i < 4; i++)
+        for (var i = 1; i < 5; i++)
         {
           if (i !== shiftIndex){
             document.getElementById(i).style.display = "none";
           }
         }
         
-        if((shiftIndex+rightLeft) === 4) 
+        if((shiftIndex+rightLeft) === 5) 
           shiftIndex = 0;
         if ((shiftIndex+rightLeft) === 0)
-          shiftIndex = 4;   
+          shiftIndex = 5;   
     }
     </script>
   </head>
@@ -330,7 +331,7 @@
               <!-- In "id", use the value which you used in above anchor tags -->
               <div class="tab-pane active" id="tab1">
                 <!-- Heading -->
-                <h5>社群小聚</h5>
+                <h5>WorkShop</h5>
                 <!-- Paragraph -->
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate eros nec odio egestas in dictum nitusrpis egestas. Suspendisse porttitor luctus imperdiet. <a href="#">Praesent ultricies</a> enim ac ipsum aliquet pellentesque. Nullam justo nunc, dignissim at convallis posuere, sit amet blandit viverra, dignissim eget est. Ut <strong>commodo ullamcorper risus nec</strong> mattis.</p>
                 <!-- Paragraph -->
@@ -542,7 +543,7 @@
               <ul>
               <li><i class="fa fa-map-marker br-red"></i> <span>National Taiwan University </span></li>
               <div class="clearfix"></div>
-              <li><i class="fa fa-envelope-o br-blue"></i> <span>hackntu@gmail.com</span></li>
+              <li><i class="fa fa-envelope-o br-green"></i> <span>hackntu@gmail.com</span></li>
               <div class="clearfix"></div>
               <li><i class = "fa fa-facebook br-blue"></i><span><a href="#">HackNTU</a></span></li>
               <div class="clearfix"></div>

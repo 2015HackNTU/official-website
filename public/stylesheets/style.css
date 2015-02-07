@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+@import url(http://fonts.googleapis.com/css?family=Tangerine:bold,bolditalic|Inconsolata:bold|Droid+Sans)
 
 section {
   padding: 25px 0 35px;
@@ -137,6 +138,10 @@ nav.sticky {
 }
 .play-the-video h1{
 	color: white;
+}
+.about-video{
+	font-family:Inconsolata ;
+	font-weight:500px;
 }
 
 .go-to-hackathon img{
@@ -295,6 +300,12 @@ nav.sticky {
 	text-transform: uppercase;
 	color: white;
 	z-index: 900;
+}
+.info a{
+	color: #c6e2ff;
+}
+.info h3{
+	color: #ffffff;
 }
 .history-about-us{
 	height: 600px;
@@ -589,7 +600,7 @@ body{
 }
 
 h1,h2,h3,h4,h5,h6{
-	font-family: 'Droid Serif', serif;
+	font-family: 'Inconsolata','Droid Serif', serif;
 	font-weight: 400;
 }
 
