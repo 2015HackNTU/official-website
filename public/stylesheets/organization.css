@@ -3,8 +3,9 @@
 	width: 500px;
 	height: 500px;
 	border-radius: 250px;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	position: absolute;
+	left: 28.5%
 }
 
 .department-circuit .dispaly {
