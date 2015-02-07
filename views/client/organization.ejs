@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/stylesheets/clndr.css">
+    <link rel="stylesheet" href="/stylesheets/organization.css">
     <script src="/javascripts/jquery.min.js"></script>
     <script src="/javascripts/parallax.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
@@ -34,18 +35,6 @@
     }
       });
     });
-    //   $(function () {
-    //     $('[data-toggle="dropdown"]').dropdown()
-    //   }) ;
-    //   $('.img-responsive').dropdown('show');
-
-    //   var backdrop = '.dropdown-backdrop'
-    //   var toggle   = '[data-toggle=dropdown]'
-    //   var Dropdown = function (element) {
-    //   $(element).on('click.bs.dropdown', this.toggle)
-
-    //   Dropdown($('#calender1'));
-    // }
     </script>
 
     <!-- This is the js for project dropdown -->
@@ -64,10 +53,7 @@
     }
       });
     });
-    
     </script>
-
-    
     <!-- send ajax to server -->
     <script src="js/bridge.js"></script>
     <script src="js/service.js"></script>
@@ -84,24 +70,42 @@
       function ShowContent(d) {
       document.getElementById(d).style.display = "block";
       }
-
     </script>
-    
 
-    
-    
+    <!-- circle organization -->
+    <script type="text/javascript">
+    $('document').ready(function() {
+      var c0 = 250, c1 = 250, radius = 250;//propety of circle
+      var p0 = 50, p1 = 50;//center of picture
+      for(var i = 0; i < 8; i++) {
+        var height = Math.cos((i / 8) * Math.PI * 2) * radius;
+        var width = Math.sin((i / 8) * Math.PI * 2) * radius;
+        $('.pic-' + (i + 1)).css("top", c1 - height - p1);
+        $('.pic-' + (i + 1)).css("left", c0 - width - p0);
+      }
+      $('.department-circuit img').click(function(evt) {
+        var text = ["Cooperative Development<br>洽談贊助與合作，為HackNTU網羅企業、政府、媒體等。",
+          "Performance Management<br>參與各部門的討論，了解、追蹤、協調各部門的運作進程。",
+          "Digital Marketing<br>運用各種新奇創意的方式行銷，推拉式並重，未來的我們會在各大社群與媒體活躍，例如PTT、Facebook、Inside、TechOrange、TVBS等等。",
+          "Hackathon Competition<br>主要負責各種競賽的活動設計、志工管理訓練、海外協辦合作",
+          "School Club<br>經營Hack NTU社團，與學校溝通，保障社團權益。",
+          "Brand Design<br>為Hack NTU設計一套視覺語言，以影像、圖像等方式展現黑客精神。",
+          "Technology Development<br>開發與維護官網，橫跨技術與藝術領域。",
+          "Community Relations<br>規畫各種聚會活動，如工作坊、開發小聚、演講等。"];
+        for(var i = 0; i < 8; i++) {
+          $(".department-circuit .selected").removeClass('selected');
+          if ($(".pic-" + (i + 1)).is(evt.target)) {
+            $(evt.target).addClass('selected');
+            $(".department-circuit .dispaly").html(text[i]);
+          }
+        }
+      });
+    });
+    </script>
   </head>
 
   <body>
   <div class="wrapper">
-
-
-
-
-
-
-
-
       <nav class="navbar navbar-default" role="navigation" id = "main">
         <!-- <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div> -->
         <div class="container-fluid">
@@ -132,42 +136,28 @@
                     </div>
                 </div>
               </li>
-              
-              <!-- <li><a id="calender"><img src="images/calender.png"></a></li> -->
-              <!-- Button calender -->
-
-              
-              <!-- DropDown Start-->
-              <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-              </li> -->
-              <!-- DropDown End-->
             </ul>
            </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>   
-
-
   <!--  data-bleed="10" data-natural-width="1400" data-natural-height="900" style="height: 650px;"  -->
-
-
- 
-
-
-    
-
-
-
-
+  <div class="inner-page padd activity">
+    <div class="general">
+      <div class="container" style="width:100%">
+        <div class="department-circuit">
+          <img src="images/CD.png" class="pic-1 selected">
+          <img src="images/PM.png" class="pic-2">
+          <img src="images/DM.png" class="pic-3">
+          <img src="images/HC.png" class="pic-4">
+          <img src="images/SC.png" class="pic-5">
+          <img src="images/BD.png" class="pic-6">
+          <img src="images/TD.png" class="pic-7">
+          <img src="images/CR.png" class="pic-8">
+          <div class="dispaly">"Cooperative Development<br>洽談贊助與合作，為HackNTU網羅企業、政府、媒體等。"</div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="footer padd">
     <div class="container">
       <div class="row">
@@ -194,9 +184,6 @@
               <i class="fa fa-envelope-o br-lblue"></i> <span><a href="#">abc@example.com</a></span>
               <div class="clearfix"></div>
         </div>
-        
-
-          
       </div>
       <hr />
       <div class="footer-copyright">
@@ -204,11 +191,6 @@
       </div>
     </div> 
   </div>
-
-
-   
-    
-   </div> 
-
+  </div> 
   </body>
 </html>

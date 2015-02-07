@@ -68,26 +68,26 @@
 }
 
 .transition-1 {
-	-webkit-transition: left 0.5s;
-	transition: left 0.5s;
+	-webkit-transition: left 0.3s;
+	transition: left 0.3s;
 }
 .transition-2 {
-	-webkit-transition: left 1s;
-	transition: left 1s;
+	-webkit-transition: left .6s;
+	transition: left .6s;
 }
 .transition-3 {
-	-webkit-transition: left 1.5s;
-	transition: left 1.5s;
+	-webkit-transition: left .9s;
+	transition: left .9s;
 }
 .transition-4 {
-	-webkit-transition: left 1.5s;
-	transition: left 1.5s;
+	-webkit-transition: left 1.2s;
+	transition: left 1.2s;
 }
 .transition-5 {
 	-webkit-transition: left 1.5s;
 	transition: left 1.5s;
 }
 .transition-6 {
-	-webkit-transition: left 1.5s;
-	transition: left 1.5s;
+	-webkit-transition: left 1.8s;
+	transition: left 1.8s;
 }

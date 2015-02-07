@@ -1,53 +1,54 @@
-function monthBar(elem) {
-  var monthStr = ['JAN', 'FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-  var lineTemplate = "<div class='month-line'>" +
-    "<% for(var i = 0; i < 12; i++) { %>" +
-        "<div class='month-block block-<%= i + 1%>'><%= month[i]%></div>" + 
-    "<% } %>" +
-    "</div>";
-  this.currentMonth = new Date().getMonth();
-  this.parent = elem;
-  this.lineHtml;
+var monthStr = ['JAN', 'FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+var lineTemplate = "<div class='month-line'>" +
+  "<% for(var i = 0; i < 12; i++) { %>" +
+      "<div class='month-block block-<%= i + 1%>'><%= month[i]%></div>" + 
+  "<% } %>" +
+  "</div>";
+var currentMonth = new Date().getMonth();
+var lineHtml, parent;
 
-  //init 2 line
-  this.init = function () {
+//init 2 line
+function init() {
+  parent = $('.month-bar');
     //start with 1 2 3 4 5 6 7 8 9 10 11 12 1
     var htmlStr = lineTemplate + lineTemplate;
     if (typeof _ === 'undefined') {
         throw new Error("Underscore was not found. Please include underscore.js OR provide a custom render function.");
     } else {
       // we're just going ahead and using underscore here if no render method has been supplied.
-      this.lineHtml = _.template(lineTemplate + lineTemplate);
+      lineHtml = _.template(lineTemplate + lineTemplate);
     }
-    this.parent.html(this.lineHtml({month: monthStr}));
+    parent.html(lineHtml({month: monthStr}));
     $('.month-line').eq(0).addClass('position-18');
     $('.month-line').eq(1).addClass('position-30');
     $('.month-line').eq(0).children().eq(6).addClass('middle-block');
     //move to current month
-    if (this.currentMonth > 6) {
+    if (currentMonth > 6) {
       //after July
-      this._move($('.month-line').eq(0).children().eq(this.currentMonth), -1, this.currentMonth - 6, -1, false);
-    } else if (this.currentMonth < 6) {
-      this._prepend();
-      this._move($('.month-line').eq(1).children().eq(this.currentMonth), 1, 6 - this.currentMonth, 0, false);
-      this._remove(2);
+      _move($('.month-line').eq(0).children().eq(currentMonth), -1, currentMonth - 6, -1, false);
+    } else if (currentMonth < 6) {
+      _prepend();
+      _move($('.month-line').eq(1).children().eq(currentMonth), 1, 6 - currentMonth, 0, false);
+      _remove(2);
     }
-  }
+}
 
-  this._move = function (targetElem, direction, movement, addition, animation) {//0:front, 1:end
-    this.parent.find('.month-line .middle-block').removeClass('middle-block');
+function _move(targetElem, direction, movement, addition, animation) {//0:front, 1:end
+    parent.find('.month-line .middle-block').removeClass('middle-block');
     targetElem.addClass('middle-block');
+    if(animation)
+      sleep(1000);
     for(var i = 0; i < 12; i++) {
-      if (this.parent.find('.month-line').eq(0).hasClass('position-' + i)){
+      if (parent.find('.month-line').eq(0).hasClass('position-' + i)){
         var index = 0;
         var pos = i;
         for (var j = 0; j < 3; j++) {
           if (j == 2 && (addition != 0 && addition != 1))
             break;
           if(animation) 
-            this.parent.find('.month-line').eq(index).addClass('transition-' + movement);
-          this.parent.find('.month-line').eq(index).addClass('position-' + (pos + direction * movement));
-          this.parent.find('.month-line').eq(index).removeClass('position-' + pos);
+            parent.find('.month-line').eq(index).addClass('transition-' + movement);
+          parent.find('.month-line').eq(index).addClass('position-' + (pos + direction * movement));
+          parent.find('.month-line').eq(index).removeClass('position-' + pos);
           index++;
           pos += 12;
         }
@@ -58,33 +59,33 @@ function monthBar(elem) {
               if (addition == 0 || addition == 1) {
                 $('.month-line').eq(2).removeClass('transition-' + movement);
               }
-            }, 5000 * movement);
+            }, 300 * movement);
         break;
       }
     }
-  }
+}
 
-  this._prepend = function () {
-    this.parent.prepend(_.template(lineTemplate)({month: monthStr}));
+function _prepend () {
+    parent.prepend(_.template(lineTemplate)({month: monthStr}));
     for(var i = 0; i < 12; i++) {
-      if (this.parent.find('.month-line').eq(1).hasClass('position-' + (18 - i)))
-        this.parent.find('.month-line').eq(0).addClass('position-' + (6 - i));
+      if (parent.find('.month-line').eq(1).hasClass('position-' + (18 - i)))
+        parent.find('.month-line').eq(0).addClass('position-' + (6 - i));
     }
-  }
+}
 
-  this._append = function () {
-    this.parent.append(_.template(lineTemplate)({month: monthStr}));    
+function _append () {
+    parent.append(_.template(lineTemplate)({month: monthStr}));    
     for(var i = 0; i < 12; i++) {
-      if (this.parent.find('.month-line').eq(1).hasClass('position-' + (30 - i)))
-        this.parent.find('.month-line').eq(2).addClass('position-' + (36 - i));
+      if (parent.find('.month-line').eq(1).hasClass('position-' + (30 - i)))
+        parent.find('.month-line').eq(2).addClass('position-' + (36 - i));
     }
-  }
+}
 
-  this._remove = function (index) {
-    this.parent.find('.month-line').eq(index).remove();
-  }
+function _remove (index) {
+    parent.find('.month-line').eq(index).remove();
+}
 
-  this._clickedfunct = function (evt) {   
+function _clickedfunct(evt) {   
     var targetElem, targetX, targetY, middleX, middleY;
       //find target and midle block
       for (var i = 0; i < 2; i++) {
@@ -107,39 +108,63 @@ function monthBar(elem) {
       //counpute movement -> 4type
       var direction, GORIGHT = 1, GOLEFT = -1;
       var movement = (targetX * 12 + targetY) - (middleX * 12 + middleY);
+      console.log(movement);
       if (movement < 0) {
         direction = GORIGHT;
         movement *= -1;
+      console.log(movement);
       } else {
         direction = GOLEFT;
       }
+      console.log(targetX + ', ' + targetY + ', ' + middleX + ', ' + middleY);
+      console.log(movement);
       switch(direction) {
         case GORIGHT://add to left
         if (middleX == 1) {
-          this._move(targetElem, direction, movement, -1, true);
+console.log('go right');
+          _move(targetElem, direction, movement, -1, true);
         } else {
-          this._prepend();
-          this._move(targetElem, direction, movement, 0, true);
-          this._remove(0);
+          if (movement >= middleY - 6) {
+console.log('go right: add 0');
+            _prepend();
+            _move(targetElem, direction, movement, 0, true);
+            _remove(2);
+          } else {
+console.log('go right');
+          _move(targetElem, direction, movement, -1, true);
+          }
         }
         break;
         case GOLEFT:
         if (middleX == 0) {
-          this._move(targetElem, direction, movement, -1, true);
+console.log('go left');
+          _move(targetElem, direction, movement, -1, true);
         } else {
-          this._append();
-          this._move(targetElem, direction, movement, 1, true);
-          this._remove(2);
+          if (movement >= 5 - middleY) {
+console.log('go left: add 2');
+            _append();
+            _move(targetElem, direction, movement, 1, true);
+            _remove(0);
+          } else {
+console.log('go left');
+            _move(targetElem, direction, movement, -1, true);
+          }
         }
         break;
       }
-  }
-
-  this.init();
 }
 
 
 $('document').ready(function () {
-  var monthbar = new monthBar($('.month-bar'));
-  $('.month-block').click(monthbar._clickedfunct);
+  init();
+  $('.month-block').click(_clickedfunct);
 });
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
