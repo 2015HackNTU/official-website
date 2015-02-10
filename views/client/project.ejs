@@ -27,6 +27,7 @@
     <script src="/javascripts/json2.js"></script>
     <script src="/javascripts/clndr.js"></script>
     <script src="js/calendar.js"></script>
+    <!--<script src="/javascripts/grid.js"></script>-->
 
     <!-- This is the js for calendar dropdown -->
     <script>
@@ -63,8 +64,9 @@
     $(document).ready(function() {
       $('.project-item-container .dropdown-link').click(function(e){
         e.preventDefault();
-    var $dd_menu = $('.popout')
+    var $dd_menu = $('.og-expander')
     if ($dd_menu.hasClass('open')) {
+
           $dd_menu.fadeOut();
           $dd_menu.removeClass('open');
     } 
@@ -75,9 +77,24 @@
       });
     });
     
-    </script>-->
+    </script> -->
 
-    
+    <!--<script type="text/javascript">
+      $(document).ready(function(element) {
+        element = element !== undefined ? element : "#portfolio";
+        $(element).mixitup({
+            targetSelector: ".portfolio-item",
+            effects: ['fade', 'rotateX'],
+            onMixStart: function() {
+                $('.portfolio-item').css('height', '');
+                $('.portfolio-item').removeClass('og-expanded');
+                $('.portfolio-item .og-expander').fadeOut('fast').remove();
+            }
+        });
+
+        return this;
+      });
+    </script>    -->
     <!-- send ajax to server -->
     <script src="js/bridge.js"></script>
     <script src="js/service.js"></script>
@@ -131,7 +148,7 @@
                 </a>
               </li>
               <li><a href="/project">Projects</a></li>
-              <li><a href="/blog">Blog</a></li>
+              <!-- <li><a href="/blog">Blog</a></li> -->
               <li>
                 <div class="btn-calender-md">
                   <a class="calender-link" href="#">
@@ -175,28 +192,66 @@
   <!--  data-bleed="10" data-natural-width="1400" data-natural-height="900" style="height: 650px;"  -->
 
 
+
  <!-- Project Start -->
-          
+<section id="portfolio">         
 <div class="project padd">
   <div class="container">
-    <!-- Default Heading -->
+    
     <div class="border" style="height:50px"></div>
     <div class="row">
-      <div class="col-md-3 col-sm-6"> 
+
+
+
+
+
+
+
+
+      <!-- <div id="portfolio-items" class="portfolio-grid" data-animate="fadeIn">
+
+          <div class="portfolio-item webdesign video" data-title="Natural Food" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." data-largesrc="images/IMG_9030.jpg">
+            <div class="portfolio-item-inner">
+              <div class="portfolio-image">
+                <div class="portfolio-overlay">
+                  <div class="portfolio-details">
+                    <h3>HackLCD</h3>
+                    <h6>We enlights you</h6>
+                  </div>
+                </div>
+                <img src="images/hackLCD-2.jpg" alt="" />
+              </div>
+            </div>
+
+            <div class="og-expander">
+              <div class="og-expander-inner">
+                <span class = "og-close"></span>
+                <div class="og-fullimg"></div>
+                <div class="og-details"></div>
+              </div>
+            </div>
+
+          </div>
+
+
+      </div> -->
+
+
+
+      <div class="col-md-3 col-sm-6" > 
         <div class="project-item-container">
-          <!-- Image Frame -->
+          
           <div class="img-frame">
             <a class="dropdown-link" style="cursor: pointer">
-            <!-- Image -->
-            <img src="images/hackLCD-2.jpg" class="img-responsive" alt=""  onclick="ShowContent(200)" />
-            <!-- Block for on hover effect to image -->
             
+            <img src="images/hackLCD-2.jpg" class="img-responsive" alt=""  onclick="ShowContent(200)" />
+
           </div>
-          <!-- Project Details -->
+          
           <div class="project-details">
-            <!-- Heading -->
+            
             <h3>HackLCD</h3> </a>
-            <!-- Paragraph -->
+            
             <p>We enlights you.</p>
             
           </div>
@@ -205,18 +260,18 @@
       <div class="col-md-3 col-sm-6">
         <div class="project-item-container">
           <a class="dropdown-link" style="cursor: pointer">
-          <!-- Image Frame -->
+          
           <div class="img-frame">
-            <!-- Image -->
+            
             <img src="images/hackNTU-2.jpg" class="img-responsive" alt="" />
-            <!-- Block for on hover effect to image -->
+            
             
           </div>
-          <!-- Project Details -->
+         
           <div class="project-details">
-            <!-- Heading -->
+            
             <h3>HackCampus</h3></a>
-            <!-- Paragraph -->
+            
             <p>We change Campus</p>
             
           </div>
@@ -225,18 +280,18 @@
       <div class="col-md-3 col-sm-6">
         <div class="project-item-container">
           <a class="dropdown-link" style="cursor: pointer">
-          <!-- Image Frame -->
+          
           <div class="img-frame">
-            <!-- Image -->
+            
             <img src="images/2015hackNTU-5.jpg" class="img-responsive" alt="" />
-            <!-- Block for on hover effect to image -->
+            
             
           </div>
-          <!-- project Details -->
+          
           <div class="project-details">
-            <!-- Heading -->
+            
             <h3>HackCampus</h3></a>
-            <!-- Paragraph -->
+            
             <p>We change Campus</p>
             
           </div>
@@ -245,18 +300,18 @@
       <div class="col-md-3 col-sm-6">
         <div class="project-item-container">
           <a class="dropdown-link" style="cursor: pointer">
-          <!-- Image Frame -->
+          
           <div class="img-frame">
-            <!-- Image -->
+            
             <img src="images/hackNTU-4.jpg" class="img-responsive" alt="" />
-            <!-- Block for on hover effect to image -->
+            
             
           </div>
-          <!-- project Details -->
+          
           <div class="project-details">
-            <!-- Heading -->
+            
             <h3>HackCampus</h3></a>
-            <!-- Paragraph -->
+            
             <p>We change Campus</p>
             
           </div>
@@ -270,46 +325,48 @@
     <div class="border" style="height:70px"></div>
   </div>          
 </div>
-
+</section> 
 <!-- Project End --> 
 
 
-    <!-- <div class="popout" style="display:none" id="200">
+    <div class="og-expander" style="display:none" id="200">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 col-sm-5">
-          
-          <img class="img-responsive img-thumbnail" src="img/shopping/shop-single.jpg" alt="" />
-        </div>
-        <div class="col-md-8 col-sm-7">
-          
-          <h3>Plan Butter Cake</h3>
-          <div class="row">
-            <div class="col-md-12 col-sm-12">
-              
-              <div class="item-details">
-                
-                <p class="text-justify">HackCampus是一個具有強烈企圖心，想要改變校園的台大學生團隊，我們深信好的校園環境是由學生打造出來的。因此與其抱怨目前台大校園環境不夠完善，不如自己動手改造，一起Hack a better campus。近期HackCampus將會與校內的合作夥伴，解決校園內可解決但是卻沒有人動手執行的問題，藉由解決校內問題以及改善既有體制，發揮正面影響力。未來Hackcampus將會邀請校內學生一起參與問題解決的過程，以群眾智慧的力量來進行校園改造的一連串專案，並藉由專案的運行讓台大校園環境不斷提升。   一個月前，HackNTU內部首場Hackathon，主題是行銷HackNTU。「校內車宣很好但不夠特別，如果能讓車宣發光，一定超酷！」Santo興奮地說。於是，五個大男生從零出發，發揮Hacker spirit，努力突破各種技術與成本上的難題。光鮮亮麗的車宣背後，是無數個爆肝的夜晚與trial and error的過程。</p>
-                
+          <div class="og-inner">
+            <span class = "og-close" onclick="HideContent(200)"></span>
+            <div class="col-md-4 col-sm-5">
+              <img class="img-responsive img-thumbnail" src="img/shopping/shop-single.jpg" alt="" />
+            </div>
+            <div class="col-md-8 col-sm-7">
+            
+              <h3 class="text-justify">HackLCD-台大最酷炫的車宣</h3>
+              <div class="row">
+                <div class="col-md-12 col-sm-12">
+                  
+                  <div class="item-details">
+                    
+                    <p class="text-justify">一個月前，HackNTU內部首場Hackathon，主題是行銷HackNTU。「校內車宣很好但不夠特別，如果能讓車宣發光，一定超酷！」Santo興奮地說。於是，五個大男生從零出發，發揮Hacker spirit，努力突破各種技術與成本上的難題。光鮮亮麗的車宣背後，是無數個爆肝的夜晚與trial and error的過程。</p>
+                    
+                  </div>
+                </div>
+
+
+                <!-- <div class="col-md-10">
+                    <div class="background">
+                      <img src="images/2015hackNTU.jpg" >
+                      <h1 class="title pull-left">HackCampus</h1>
+                      <p class="content pull-right">HackCampus是一群相信好的校園環境是由學生打造出來的台大學生團隊。傳統學生組織能解決許多學生的校園問題，但因科技日益進步，出現了許多校園問題是包含資訊層面，導致傳統學生組織在解決這些問題上面臨到一些困境。因此HackCampus聚集許多科技相關背景的學生，並規劃用專案形式解決以下兩點問題：<br />1.解決現有校園內相關問題特別是包含IT部分<br />2.如何讓校內現有IT系統更好<br />藉由解決校內問題以及改善既有系統，提升校園環境。未來Hackcampus將會邀請校內學生一起參與問題解決的過程，以群眾智慧的力量來進行校園改造的一連串專案，並藉由專案的運行讓台大校園環境不斷提升，一起Hack a Better Campus！</p>
+                    </div>
+                </div> -->
+
+
+
               </div>
             </div>
-
-
-          <div class="col-md-10">
-              <div class="background">
-                <img src="images/2015hackNTU.jpg" >
-                <h1 class="title pull-left">HackCampus</h1>
-                <p class="content pull-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-              </div>
           </div>
-
-
-
-        </div>
-      </div>
     </div>
     </div>
-    </div> -->
+    </div>
 
   
 
