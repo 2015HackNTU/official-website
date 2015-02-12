@@ -266,6 +266,9 @@ nav.sticky {
 	/*text-rendering: auto;
 	-webkit-font-smoothing:antialiased;*/
 }
+.circle{
+	margin-left: 20px;
+}
 
 .introduction{
 	background-color: #f9f9f9;/*#ff9933*/
@@ -329,6 +332,9 @@ nav.sticky {
 	text-align: center;
 	margin-top: 20px;
 	font-size: 20px;
+	color: #331e0a;
+}
+.intro-ele h3{
 	color: #331e0a;
 }
 /*introduction pad end*/
