@@ -49,6 +49,12 @@ module.exports = function(app){
 
 		})
 	})
+	app.get('/project',function(req,res){
+		res.render('client/project')
+	})
+	app.get('/org',function(req,res){
+		res.render('client/organization')
+	})
 	/* Move to routes/blogposts.js
 		app.get('/blog',function(req,res){
 			res.render('client/blog')
@@ -69,8 +75,8 @@ module.exports = function(app){
 		res.render('client/getUser')
     		
 	})
-	app.get('/clnd', function(req,res){
-		res.render('client/testclnd')
+	app.get('/clndr', function(req,res){
+		res.render('client/testclndr')
     		
 	})
 

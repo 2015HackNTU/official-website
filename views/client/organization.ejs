@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/clndr.css">
+    <link rel="stylesheet" href="/stylesheets/organization.css">
+    <link href="/stylesheets/less-style.css" rel="stylesheet"> 
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/parallax.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+
+    <!-- waypoint-a jquery plugin-->
+    <script src="/javascripts/waypoints.min.js"></script>
+    <script src="/javascripts/waypoints.sticky.js"></script>
+
+    <!-- This is the js for calendar dropdown -->
+    <script>
+    $(document).ready(function() {
+      $('.btn-calender-md .calender-link').click(function(e){
+        e.preventDefault();
+    var $dd_menu = $('.btn-calender-md .calender-dropdown')
+    if ($dd_menu.hasClass('open')) {
+          $dd_menu.fadeOut();
+          $dd_menu.removeClass('open');
+    } 
+    else {
+      $dd_menu.fadeIn();
+      $dd_menu.addClass('open');
+    }
+      });
+    });
+    </script>
+
+    <!-- This is the js for project dropdown -->
+    <script>
+    $(document).ready(function() {
+      $('.project-item-container .dropdown-link').click(function(e){
+        e.preventDefault();
+    var $dd_menu = $('.popout')
+    if ($dd_menu.hasClass('open')) {
+          $dd_menu.fadeOut();
+          $dd_menu.removeClass('open');
+    } 
+    else {
+      $dd_menu.fadeIn();
+      $dd_menu.addClass('open');
+    }
+      });
+    });
+    </script>
+    <!-- send ajax to server -->
+    <script src="js/bridge.js"></script>
+    <script src="js/service.js"></script>
+    <!-- construct calender -->    
+    <script src="/javascripts/moment-2.8.3.js"></script>
+    <script src="/javascripts/json2.js"></script>
+    <script src="/javascripts/clndr.js"></script>
+    <script src="js/calendar.js"></script>
+    
+    <script type="text/javascript">
+      function HideContent(d) {
+      document.getElementById(d).style.display = "none";
+      }
+      function ShowContent(d) {
+      document.getElementById(d).style.display = "block";
+      }
+    </script>
+
+    <!-- circle organization -->
+    <script type="text/javascript">
+    $('document').ready(function() {
+      var c0 = 250, c1 = 250, radius = 250;//propety of circle
+      var p0 = 50, p1 = 50;//center of picture
+      for(var i = 0; i < 8; i++) {
+        var height = Math.cos((i / 8) * Math.PI * 2) * radius;
+        var width = Math.sin((i / 8) * Math.PI * 2) * radius;
+        $('.pic-' + (i + 1)).css("top", c1 - height - p1);
+        $('.pic-' + (i + 1)).css("left", c0 - width - p0);
+      }
+      $('.department-circuit img').click(function(evt) {
+        var text = ["Cooperative Development<br>洽談贊助與合作，為HackNTU網羅企業、政府、媒體等。",
+          "Performance Management<br>參與各部門的討論，了解、追蹤、協調各部門的運作進程。",
+          "Digital Marketing<br>運用各種新奇創意的方式行銷，推拉式並重，未來的我們會在各大社群與媒體活躍，例如PTT、Facebook、Inside、TechOrange、TVBS等等。",
+          "Hackathon Competition<br>主要負責各種競賽的活動設計、志工管理訓練、海外協辦合作",
+          "School Club<br>經營Hack NTU社團，與學校溝通，保障社團權益。",
+          "Brand Design<br>為Hack NTU設計一套視覺語言，以影像、圖像等方式展現黑客精神。",
+          "Technology Development<br>開發與維護官網，橫跨技術與藝術領域。",
+          "Community Relations<br>規畫各種聚會活動，如工作坊、開發小聚、演講等。"];
+        for(var i = 0; i < 8; i++) {
+          $(".department-circuit .selected").removeClass('selected');
+          if ($(".pic-" + (i + 1)).is(evt.target)) {
+            $(evt.target).addClass('selected');
+            $(".department-circuit .dispaly").html(text[i]);
+          }
+        }
+      });
+    });
+    </script>
+  </head>
+
+  <body>
+  <div class="wrapper">
+      <%- include navbar%>
+  <!--  data-bleed="10" data-natural-width="1400" data-natural-height="900" style="height: 650px;"  -->
+
+
+
+  <div class="inner-page padd activity">
+    <div class="container" style="width:100%">
+      <div class="row">
+        <div >
+          <div class="general" style="height:700px">
+            <div>
+              <div class="department-circuit">
+                <img src="images/CD.png" class="pic-1 selected">
+                <img src="images/PM.png" class="pic-2">
+                <img src="images/DM.png" class="pic-3">
+                <img src="images/HC.png" class="pic-4">
+                <img src="images/SC.png" class="pic-5">
+                <img src="images/BD.png" class="pic-6">
+                <img src="images/TD.png" class="pic-7">
+                <img src="images/CR.png" class="pic-8">
+                <div class="dispaly">"Cooperative Development<br>洽談贊助與合作，為HackNTU網羅企業、政府、媒體等。"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <%- include footer%>
+  </div> 
+  </body>
+</html>

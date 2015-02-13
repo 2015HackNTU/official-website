@@ -25,6 +25,8 @@
 		<!--[if IE]><link rel="stylesheet" href="css/ie-style.css"><![endif]-->
 		<link href="/stylesheets/style.css" rel="stylesheet">
 		<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    	<!-- style of calendar -->
+    	<link rel="stylesheet" href="/stylesheets/clndr.css">
 		
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="#">
@@ -43,6 +45,15 @@
 		<!--<script src="/javascripts/html5shiv.js"></script> -->
 		<!-- Custom JS -->
 		<script src="/javascripts/custom.js"></script>
+		<!-- send ajax to server -->
+	    <script src="js/bridge.js"></script>
+	    <script src="js/service.js"></script>
+	    <!-- construct calender -->
+    	<script src="/javascripts/underscore-min.js"></script>
+	    <script src="/javascripts/moment-2.8.3.js"></script>
+	    <script src="/javascripts/json2.js"></script>
+	    <script src="/javascripts/clndr.js"></script>
+	    <script src="js/calendar.js"></script>
 		<!-- JS code for this page -->
 		<script type="text/javascript">
 
@@ -66,76 +77,15 @@
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
 		<script src="js/blog.js"></script>
+		<style type="text/css">
+	      .padd{
+	      padding: 50px 0;
+	      }
+	    </style>
 	</head>
 	
 	<body ng-controller = "blogListCtrl">
-		<!-- header start -->
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <!-- <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div> -->
-        <div class="container-fluid">
-    
-    <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li><a href="#">Activity <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Organization</a></li>
-              <li>
-                <a class="navbar-brand" href="#">
-                  <img alt="Brand" style = "margin-top:-45px"src="images/logo-small.png">
-                </a>
-              </li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li>
-                <div class="btn-calender-md">
-                  <a class="calender-link" href="#">
-                    <!-- <img class="img-responsive" id="calender" src="images/calender.png" alt="" /> -->
-                    <i class="fa fa-calendar fa-3x"></i>
-                    <div class="clearfix"></div>
-                  </a>
-                    <div class="small-triangle"></div>
-                    <div class="calender-dropdown" role="calender">
-                      <table>
-                      <p>2015年 3月</p>
-                        <tr>
-                          <td>一</td>
-                          <td>二</td>
-                          <td>三</td>
-                          <td>四</td>
-                          <td>五</td>
-                          <td>六</td>
-                          <td>日</td>
-                        </tr>
-                      </table>
-                    </div>
-                </div>
-              </li>
-              
-              <!-- <li><a id="calender"><img src="images/calender.png"></a></li> -->
-              <!-- Button calender -->
-
-              
-              <!-- DropDown Start-->
-              <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-              </li> -->
-              <!-- DropDown End-->
-            </ul>
-           </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>		
-		
-		<!-- header end -->
-		
+		<%- include navbar%>
 			
 			<!-- Banner Start -->
 			
@@ -255,37 +205,7 @@
 			
 			<!-- Footer Start -->
 			
-<div class="footer padd">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>HackNTU</h1>
-            <p>We gather Hackers.</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>HackNTU</h1>
-            <p>We gather Hackers.</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>HackNTU</h1>
-            <p>We gather Hackers.</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>I am a footer</h1>
-            <p>We gather Hackers.</p>
-        </div>
-
-          
-      </div>
-      <div class="footer-copyright">
-        <p>&copy; Copyright 2015 <a href="#">HackNTU</a></p>
-      </div>
-    </div> 
-  </div>
+<%- include footer%>
 			
 			<!-- Footer End -->
 			

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/stylesheets/clndr.css">
+    <link href="/stylesheets/less-style.css" rel="stylesheet"> 
     <script src="/javascripts/jquery.min.js"></script>
     <script src="/javascripts/parallax.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
@@ -17,6 +18,15 @@
     <!-- waypoint-a jquery plugin-->
     <script src="/javascripts/waypoints.min.js"></script>
     <script src="/javascripts/waypoints.sticky.js"></script>
+    <!-- send ajax to server -->
+    <script src="js/bridge.js"></script>
+    <script src="js/service.js"></script>
+    <!-- construct calender -->
+    <script src="/javascripts/underscore-min.js"></script>
+    <script src="/javascripts/moment-2.8.3.js"></script>
+    <script src="/javascripts/json2.js"></script>
+    <script src="/javascripts/clndr.js"></script>
+    <script src="js/calendar.js"></script>
 
     <!-- This is the js for calendar dropdown -->
     <script>
@@ -73,7 +83,7 @@
     </script>
 
     <!-- This is the js for WHY WHAT HOW -->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
       function HideContent(d) {
       document.getElementById(d).style.display = "none";
       }
@@ -85,17 +95,17 @@
         for (var i = 0; i < 3; i++){
           if (i==d){
             document.getElementById(i).style.display = "block";
-            document.getElementById(i+3).style.color = "#ff9933";
-            document.getElementById(i+6).style.color= "white";
+            document.getElementById(i+3).style.color = "#fff4ea";
+            document.getElementById(i+6).style.color= "#fff4ea";
           }
         else {
           document.getElementById(i).style.display = "none";
-          document.getElementById(i+3).style.color = "black";
-          document.getElementById(i+6).style.color= "black";
+          document.getElementById(i+3).style.color = "#331e0a";
+          document.getElementById(i+6).style.color= "#331e0a";
         }
       }
     }
-    </script>
+    </script>-->
     <!-- send ajax to server -->
     <script src="js/bridge.js"></script>
     <script src="js/service.js"></script>
@@ -122,15 +132,15 @@
             <div class="play-the-video">
               <!-- <img src="images/2015hackNTU-3-black.jpg"> -->
               <video width=100% height = 100% loop = "true" autoplay = "true">
-                <source src="images/final.mp4" type="video/mp4">
+                <source src="images/start.mp4" type="video/mp4">
                 <!-- <source src="movie.ogg" type="video/ogg">
                 Your browser does not support the video tag. -->
               </video>
               <div class="the-button">
-              <h1>HackNTU,<br>We Rock This World!</h1>
-              <a class="btn btn-danger" type="button">
+              <h1>HackNTU,<br>Where Change Happens!</h1>
+              <!-- <a class="btn btn-danger" type="button">
               <i class="fa fa-play-circle fa-2x"></i>
-              Watch the video</a>
+              Watch the video</a> -->
               </div>
             </div>
         </div>      
@@ -138,71 +148,9 @@
     </div>
   </div>
 
-
-
-
-
-
-      <nav class="navbar navbar-default" role="navigation" id = "main">
-        <!-- <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div> -->
-        <div class="container-fluid">
+    <%- include navbar%>
     
-    <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li><a href="#">Activity <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Organization</a></li>
-              <li>
-                <a class="navbar-brand" href="#">
-                  <img alt="Brand" style = "margin-top:-45px"src="images/logo-small.png">
-                </a>
-              </li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li>
-                <div class="btn-calender-md">
-                  <a class="calender-link" href="#">
-                    <!-- <img class="img-responsive" id="calender" src="images/calender.png" alt="" /> -->
-                    <i class="fa fa-calendar fa-3x"></i>
-                    <div class="clearfix"></div>
-                  </a>
-                    <div class="small-triangle"></div>
-                    <div class="calender-dropdown" role="calender">
-                      <!-- ************ where clnd is ***************-->
-                      <div class="cal"></div>
-                    </div>
-                </div>
-              </li>
-              
-              <!-- <li><a id="calender"><img src="images/calender.png"></a></li> -->
-              <!-- Button calender -->
-
-              
-              <!-- DropDown Start-->
-              <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-              </li> -->
-              <!-- DropDown End-->
-            </ul>
-           </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>    
-
-
   <!--  data-bleed="10" data-natural-width="1400" data-natural-height="900" style="height: 650px;"  -->
-
-
-  
-
   <div class="inner-page padd">
     <div class="introduction">
       <div class="container">
@@ -210,29 +158,29 @@
 
           <div class="col-md-12">
 
-            <div class="col-md-4">
+            <div class="intro-ele col-md-4">
               <div class="text" id = "6" onclick="Print(0)" style="cursor:pointer">
-                <h3>WHAT DO WE DO</h3>
+                <h3>WHAT</h3>
               </div>
-              <div class="circle one" id = "3" onclick="Print(0)" style="cursor:pointer">
+              <div class="circle one" id = "3" onclick="Print(0)" style="color:#331e0a; cursor:pointer">
                 <i class="fa fa-dot-circle-o fa-3x"></i>
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="intro-ele col-md-4">
               <div class="text" id = "7" onclick="Print(1)" style="color:white">
-                <h3>WHY WE DO THIS</h3>
+                <h3>WHY</h3>
               </div>
-              <div class="circle two" id = "4" onclick="Print(1)" style="color:#ff9933">
+              <div class="circle two" id = "4" onclick="Print(1)" style="color:#331e0a ; cursor:pointer">
                 <i class="fa fa-lightbulb-o fa-3x"></i>
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="intro-ele col-md-4">
               <div class="text" id = "8" onclick="Print(2)" style="cursor:pointer">
-                <h3>HOW DO WE DO THIS</h3>
+                <h3>HOW</h3>
               </div>
-              <div class="circle three" id = "5" onclick="Print(2)" style="cursor:pointer">
+              <div class="circle three" id = "5" onclick="Print(2)" style="color:#331e0a; cursor:pointer">
                 <i class="fa fa-wrench fa-3x"></i>
               </div>
             </div>
@@ -240,18 +188,18 @@
           </div>
 
           <div id="1" style="display:block">
-            <div class="col-md-8 col-md-offset-2" >
+            <div class="col-md-4" >
               <div class = "introduction-content" id = "why">
-                <p>We believe by gathering hackers and providing the just right environment will help bring about innovative ideas and great impact to change the world.</p>
+                <p>Our works include courses, hackathons, hacker community, and hackcampus.For the courses, there’re going to be iOS/Android development, hardware , Website and User Interface and User experience.</p>
               </div>
             </div>
           </div>
 
-          <div id="0" style="display:none">
-            <div class="col-md-8 col-md-offset-2" >
+          <div id="0" style="display:block">
+            <div class="col-md-4" >
               <div class = "introduction-content" id = "what">
 
-            <p>Our works include courses, hackathons, hacker community, and hackcampus.For the courses, there’re going to be iOS/Android development, hardware , Website and User Interface and User experience.</p>
+            <p>We believe by gathering hackers and providing the just right environment will help bring about innovative ideas and great impact to change the world.</p>
               </div>
             </div>
 
@@ -275,8 +223,8 @@
 
           </div>
 
-          <div id="2" style="display:none"> 
-            <div class="col-md-8 col-md-offset-2">
+          <div id="2" style="display:block"> 
+            <div class="col-md-4">
               <div class = "introduction-content" id = "why">
                 <p>By collaborating the resources from both school and businesses we’re able to provide the best environment for hackers.</p>
               </div>
@@ -291,7 +239,7 @@
 
 
 <div class = "inner-page padd">
-    <div class = "go-to-hackathon padd" style="background-image:url(images/library.jpg) ; height: 600px" >
+    <div class = "go-to-hackathon padd" style="background-image:url(images/IMG_9030.jpg) ;height:600px ;width:100%" >
       <div class = "container">
         <div class="row">
           
@@ -300,9 +248,9 @@
           <div class="col-md-12">
             <div class="info">
               <h2>I Want to sign up!</h2>
-              <p>The hackathon in August</p>
+              <h3>The hackathon in August</h3>
               <br>
-              <a><i class="fa fa-arrow-circle-o-right"></i>go to sign up page</a>
+              <a href="http://2015.hackntu.com/" target="_blank"><i class="fa fa-arrow-circle-o-right"></i>  go to sign up page</a>
 
             </div>  
           </div>
@@ -358,38 +306,8 @@ Community Relations
 
 
 
-
-  <div class="footer padd">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>HackNTU</h1>
-            <p>We gather Hackers.</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>HackNTU</h1>
-            <p>We gather Hackers.</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>HackNTU</h1>
-            <p>We gather Hackers.</p>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="logo"></div>
-            <h1>I am a footer</h1>
-            <p>We gather Hackers.</p>
-        </div>
-
-          
-      </div>
-      <div class="footer-copyright">
-        <p>&copy; Copyright 2015 <a href="#">HackNTU</a></p>
-      </div>
-    </div> 
-  </div>
+<%- include footer%>
+  
 
 
    
