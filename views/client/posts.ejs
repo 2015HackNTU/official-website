@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-	<head ng-app="blog">	
+<html ng-app="blog">
+	<head >	
 		<meta charset="utf-8">
 		<!-- Title here -->
 		<title>Blog</title>
@@ -61,7 +61,7 @@
 
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
-		<script src="js/blog.js"></script>
+		<script src="/js/blog.js"></script>
 	</head>
 	
 	<body ng-controller ="blogCtrl">
@@ -157,7 +157,7 @@
 							<div class="col-md-8">
 								<!-- The new post done by user's all in the post block -->
 								<div class="blog-post">
-									<!-- Entry is the one post for each user -->
+									<!-- Entry is the one post for each user -->{{title}}{{posts}}
 									<div class="entry" id="p_{{p._id}}">
 										<!-- Meta for this block -->
 										<!-- <div class="meta">

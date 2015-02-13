@@ -22,6 +22,7 @@ module.exports = function(app,passport){
 		BreakingNews.find().sort('create_at').exec(function(err, news){
 			BlogPosts.find().sort('create_at').exec(function(err, posts){
 				Calendar.find().sort('date').exec(function(err, cal){
+					
 					res.render('admin/profile',{
 						user : req.user,
 						cal : cal,

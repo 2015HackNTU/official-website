@@ -1,5 +1,5 @@
 var blog = angular.module("blog", ['ngRoute']);
-
+// var test = angular.module("test")
 
 blog.filter('object2Array', function() {
   return function(input) {
@@ -35,14 +35,19 @@ blog.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
 	});
   $locationProvider.html5Mode(true);
 }]);
+blog.service('postId',function sendId(){
+	var postId = this;
+	postId.id = "testing"
+})
+blog.controller('blogListCtrl', ['$scope','$http','postId',function (postId, $scope, $http) {
+	var post = this;
 
-blog.controller('blogListCtrl', ['$scope','$http',function ($scope, $http) {
-
+	console.log(post)
 
 	console.log("I am in blogListCtrl");
 	$scope.numLimit = 100;//output 100 character
 	$http.get('/api/posts').success(function(data) {
-    	
+    	console.log(data)
     	/* the date split */
     	var len = data.length;
     	var output = new Array();
@@ -57,6 +62,13 @@ blog.controller('blogListCtrl', ['$scope','$http',function ($scope, $http) {
     	
 	});
 
+	// View single post
+	$scope.viewSinglePost = function(id){
+		// console.log("test" + id )
+		$http.get('/api/posts/'+id).success(function(data){
+			console.log(data)
+		})
+	}
 		
 	/*the page control*/
 	$scope.recentpageStart = 0;
@@ -85,26 +97,32 @@ blog.controller('blogListCtrl', ['$scope','$http',function ($scope, $http) {
 	};
                
 }]);
-blog.controller('blogCtrl',function ($rootScope, $scope, $http, $window, $location, $routeParams) {
-	
-	
+
+
+blog.controller('blogCtrl',['$scope', '$http', 'postId', function (postId,$rootScope, $scope, $http, $window, $location, $routeParams) {
+	var post = this;
+
+	console.log(post.id)
+ 	
  	console.log("in blogCtrl");
-    $http.get('/api/posts/'+$routeParams.id).success(function(data) {
-    	console.log(data);
+ 	$scope.title = "test"
+	console.log($scope.title)
+ //    $http.get('/api/posts').success(function(data) {
+ //    	console.log(data);
 
-    if (data.length !== 0) $scope.p = data;
-    else $location.path("/posts");
+	//     if (data.length !== 0) 
+	//     	$scope.p = data;
+	//     else 
+	//     	$location.path("/posts");
 
-    // $rootScope.title = $scope.p.id ;
-    // $scope.formset($scope.p);
-    // $http.get('api/posts/').success(function(data) {
-    // $scope.p = data;
-  });
-	
-
-	
+ // //    // $rootScope.title = $scope.p.id ;
+ // //    // $scope.formset($scope.p);
+ // //    // $http.get('api/posts/').success(function(data) {
+ // //    // $scope.p = data;
+	// });
+		
                
-});
+}]);
 
 
 

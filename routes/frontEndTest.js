@@ -55,7 +55,9 @@ module.exports = function(app){
 		})
 	*/
 	app.get('/posts/:id',function(req,res){
-		res.render('client/posts/:id')
+		res.render('client/posts',{
+			id : req.params.id
+		})
 	})
 	app.get('/activity',function(req,res){
 		res.render('client/activitynew')
