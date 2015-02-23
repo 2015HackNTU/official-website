@@ -13,10 +13,10 @@ var startPos = 17;
  * line-2: 29 - 18
  * total: 0 - 35
  */
-var leftPos = [ '-130.9%', '-123.2%', '-115.5%', '-107.8%', '-100.1%', '-92.4%','-84.7%', '-77%',
-                '-69.3%', '-61.6%', '-53.9%','-46.2%', '-38.5%', '-30.8%', '-23.1%', '-15.4%', '-7.7%',
-                '0','7.7%', '15.4%', '23.1%', '30.8%', '38.5%', '46.2%', '53.9%', '61.6%', '69.3%',
-                '77%', '84.7%', '92.4%', '100%', '107.7%%', '115.4%', '123.1%', '130.8%', '138.5%'
+var leftPos = [ -130.9, -123.2, -115.5, -107.8, -100.1, -92.4,-84.7, -77,
+                -69.3, -61.6, -53.9,-46.2, -38.5, -30.8, -23.1, -15.4, -7.7,
+                0,7.7, 15.4, 23.1, 30.8, 38.5, 46.2, 53.9, 61.6, 69.3,
+                77, 84.7, 92.4, 100, 107.7, 115.4, 123.1, 130.8, 138.5
               ];
 
 //init 2 line
@@ -33,8 +33,8 @@ function init() {
     lineHtml = _.template(lineTemplate + lineTemplate);
   }
   parent.html(lineHtml({month: monthStr}));
-  $('.month-line').eq(0).css('left', leftPos[startPos]);
-  $('.month-line').eq(1).css('left', leftPos[startPos + 12]);
+  $('.month-line').eq(0).css('left', leftPos[startPos] + '%');
+  $('.month-line').eq(1).css('left', leftPos[startPos + 12] + '%');
   $('.month-line').eq(0).children().eq(6).addClass('middle-block');
   //move to current month
   if (currentMonth > 6) {
@@ -59,7 +59,7 @@ function _move(targetElem, direction, movement, addition, animation) {//0:front,
     for (var j = 0; j < 3; j++) {
       if (j == 2 && (addition != 0 && addition != 1)) 
         break;
-      parent.find('.month-line').eq(index).css('left', leftPos[pos]);
+      parent.find('.month-line').eq(index).css('left', leftPos[pos] + '%');
       index++;
       pos += 12;
     }
@@ -69,12 +69,12 @@ function _move(targetElem, direction, movement, addition, animation) {//0:front,
 function _prepend () {
   parent.prepend(_.template(lineTemplate)({month: monthStr}));
   startPos -= 12;
-  parent.find('.month-line').eq(0).css('left', leftPos[startPos]);
+  parent.find('.month-line').eq(0).css('left', leftPos[startPos] + '%');
 }
 
 function _append () {
   parent.append(_.template(lineTemplate)({month: monthStr}));
-  parent.find('.month-line').eq(2).css('left', leftPos[startPos + 24]);
+  parent.find('.month-line').eq(2).css('left', leftPos[startPos + 24] + '%');
 }
 
 function _remove (index) {
