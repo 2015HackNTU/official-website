@@ -16,8 +16,8 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 
     <!-- waypoint-a jquery plugin-->
-    <script src="/javascripts/waypoints.min.js"></script>
-    <script src="/javascripts/waypoints.sticky.js"></script>
+    <!--<script src="/javascripts/waypoints.min.js"></script>
+    <script src="/javascripts/waypoints.sticky.js"></script> -->
     <!-- send ajax to server -->
     <script src="js/bridge.js"></script>
     <script src="js/service.js"></script>
@@ -59,7 +59,7 @@
     </script>
 
     <!-- This is the js for sticky nav bar -->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         $(document).ready(function() {
           $('nav').waypoint('sticky', {
               stuckClass: 'sticky'
@@ -80,7 +80,7 @@
           });
           this.toggleMenu();
         });
-    </script>
+    </script>-->
 
     <!-- This is the js for WHY WHAT HOW -->
     <!--<script type="text/javascript">
@@ -125,9 +125,15 @@
   <body>
   <div class="wrapper">
 
+
+<%- include navbar%>
+
+
+
+
 <div class = "inner-page padd">
     <div class = "about-vedio padd">
-      <div class = "container" style="width:100%">
+      <div class = "container-fluid" style="width:100%">
         <div class="row">
             <div class="play-the-video">
               <!-- <img src="images/2015hackNTU-3-black.jpg"> -->
@@ -148,70 +154,17 @@
     </div>
   </div>
 
-    <nav class="navbar navbar-default" role="navigation" id = "main">
-        <!-- <div class = "warning disappear navbar-fixed-top"><span id warning-text></span><span class = x pull lft></span></div> -->
-        <div class="container-fluid">
     
-    <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li><a href="/activity">Activity <span class="sr-only">(current)</span></a></li>
-              <li><a href="/org">Organization</a></li>
-              <li>
-                <a class="navbar-brand" href="/">
-                  <img alt="Brand" style = "margin-top:-45px"src="images/logo-small.png">
-                </a>
-              </li>
-              <li><a href="/project">Projects</a></li>
-              <!-- <li><a href="/blog">Blog</a></li> -->
-              <li>
-                <div class="btn-calender-md">
-                  <a class="calender-link" href="#">
-                    <!-- <img class="img-responsive" id="calender" src="images/calender.png" alt="" /> -->
-                    <i class="fa fa-calendar fa-3x"></i>
-                    <div class="clearfix"></div>
-                  </a>
-                    
-                    <div class="calender-dropdown" role="calender">
-                    <div class="small-triangle"></div>
-                      <!-- ************ where clnd is ***************-->
-                      <div class="cal"></div>
-                    </div>
-                </div>
-              </li>
-              
-              <!-- <li><a id="calender"><img src="images/calender.png"></a></li> -->
-              <!-- Button calender -->
-
-              
-              <!-- DropDown Start-->
-              <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-              </li> -->
-              <!-- DropDown End-->
-            </ul>
-           </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
- </nav>
     
   <!--  data-bleed="10" data-natural-width="1400" data-natural-height="900" style="height: 650px;"  -->
   <div class="inner-page padd">
     <div class="introduction">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
 
           <div class="col-md-12">
 
-            <div class="intro-ele col-md-4">
+            <div class="intro-ele col-md-4 col-xs-6">
               <div class="text" id = "6" onclick="Print(0)">
                 <h3>WHAT</h3>
               </div>
@@ -220,7 +173,7 @@
               </div>
             </div>
 
-            <div class="intro-ele col-md-4">
+            <div class="intro-ele col-md-4 col-xs-6">
               <div class="text" id = "7" onclick="Print(1)">
                 <h3>WHY</h3>
               </div>
@@ -229,7 +182,7 @@
               </div>
             </div>
 
-            <div class="intro-ele col-md-4">
+            <div class="intro-ele col-md-4 col-xs-6">
               <div class="text" id = "8" onclick="Print(2)">
                 <h3>HOW</h3>
               </div>
@@ -241,7 +194,7 @@
           </div>
 
           <div id="1" style="display:block">
-            <div class="col-md-4" >
+            <div class="col-md-4 col-xs-6" >
               <div class = "introduction-content" id = "why">
                 <p>Our works include courses, hackathons, hacker community, and hackcampus.For the courses, there’re going to be iOS/Android development, hardware , Website and User Interface and User experience.</p>
               </div>
@@ -249,7 +202,7 @@
           </div>
 
           <div id="0" style="display:block">
-            <div class="col-md-4" >
+            <div class="col-md-4 col-xs-6" >
               <div class = "introduction-content" id = "what">
 
             <p>We believe by gathering hackers and providing the just right environment will help bring about innovative ideas and great impact to change the world.</p>
@@ -277,7 +230,7 @@
           </div>
 
           <div id="2" style="display:block"> 
-            <div class="col-md-4">
+            <div class="col-md-4 col-xs-6">
               <div class = "introduction-content" id = "why">
                 <p>By collaborating the resources from both school and businesses we’re able to provide the best environment for hackers.</p>
               </div>
@@ -292,8 +245,9 @@
 
 
 <div class = "inner-page padd">
+  <div class = "container-fluid">
     <div class = "go-to-hackathon padd" style="background-image:url(images/IMG_9030.jpg) ;height:600px ;width:100%" >
-      <div class = "container">
+      
         <div class="row">
           
           <!-- <img src="images/2015hackNTU-3.jpg"> -->
