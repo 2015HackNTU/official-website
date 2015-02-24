@@ -2,13 +2,21 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
-@import url(http://fonts.googleapis.com/css?family=Tangerine:bold,bolditalic|Inconsolata:bold|Droid+Sans)
+@import url(http://fonts.googleapis.com/css?family=Tangerine:bold,bolditalic|Inconsolata:bold|Droid+Sans);
+
+
+@font-face {
+    font-family: "VideoPhreak";
+    src: url("font/VideoPhreak.ttf");
+}
+
 
 section {
   padding: 25px 0 35px;
   background: #fff;
   height: 700px;
 }
+
 /*.disappear{
 	display: none;
 }*/
@@ -243,15 +251,14 @@ nav.sticky {
 }*/
 .one i{
 	margin-top: 20%;
-	margin-left: 26.5%;
 }
 .two i{
 	margin-top: 20%;
-	margin-left: 31%;
+	
 }
 .three i{
 	margin-top: 20%;
-	margin-left: 26.5%;
+	
 }
 .circle .fa{
 	background-color: #ffcc66;
@@ -266,8 +273,14 @@ nav.sticky {
 	/*text-rendering: auto;
 	-webkit-font-smoothing:antialiased;*/
 }
-.circle{
-	margin-left: 20px;
+.one{
+	text-align: center;
+}
+.two{
+	text-align: center;
+}
+.three{
+	text-align: center;
 }
 
 .introduction{
@@ -350,7 +363,7 @@ nav.sticky {
 	opacity: 70;
 	padding: 3em;
 	text-align: center;
-	z-index: 200;
+	z-index: 9;
 }
 .info h2 {
 	border-bottom: solid 2px;
@@ -678,10 +691,11 @@ p{
 	padding:0;
 	font-size: 14px;
 	line-height: 23px;
+	font-family: sans-serif;
 }
 
 a{
-
+	font-family: sans-serif;
 }
 
 a:hover{
