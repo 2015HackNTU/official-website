@@ -51,8 +51,49 @@ function _move(targetElem, direction, movement, addition, animation) {//0:front,
   parent.find('.month-line .middle-block').removeClass('middle-block');
   targetElem.addClass('middle-block');
   // if(aniation) {
-  if (false) {
+  if (animation) {
     animating = true;
+    var from = startPos, to =  startPos + movement * direction;
+    var start = null;
+    var times = 0;
+    var step = function (timestamp) {
+      if (!start) // init 
+        start = timestamp;
+      var progress = timestamp - start;
+      if (times == 2) {
+        times = 0;
+        var index = 0, posF = from, posT = to, end = false;
+        for (var j = 0; j < 3; j++) {
+          if (j == 2 && (addition != 0 && addition != 1)) 
+            break;
+          var newPercentage = leftPos[posF] + (leftPos[posT] - leftPos[posF]) * (progress / ( movement * 500));
+          if (direction < 0)
+            parent.find('.month-line').eq(index).css('left', Math.max(newPercentage, leftPos[posT]) + '%');
+          else
+            parent.find('.month-line').eq(index).css('left', Math.min(newPercentage, leftPos[posT]) + '%');
+
+          if (newPercentage * direction > leftPos[posT] * direction)
+            end = true;
+          index++;
+          posF += 12;
+          posT += 12;
+        }
+        if (!end) {
+          window.requestAnimationFrame(step);
+        } else { // animation stop
+          startPos += movement * direction;
+          if (addition == 0)
+            _remove(2)
+          else if (addition == 1)
+            _remove(0);
+          animating = false;
+        }
+      } else {
+          times++;
+          window.requestAnimationFrame(step);
+      }
+    }
+    window.requestAnimationFrame(step);
   } else { 
     startPos += movement * direction
     var index = 0, pos = startPos;
@@ -74,7 +115,7 @@ function _prepend () {
 
 function _append () {
   parent.append(_.template(lineTemplate)({month: monthStr}));
-  parent.find('.month-line').eq(2).css('left', leftPos[startPos + 24] + '%');
+  parent.find('.month-line').eq(2).css('left', l[startPos + 24] + '%');
 }
 
 function _remove (index) {
@@ -107,52 +148,52 @@ function _clickedfunct(evt) {
   //counpute movement -> 4type
   var direction, GORIGHT = 1, GOLEFT = -1;
   var movement = (targetX * 12 + targetY) - (middleX * 12 + middleY);
-console.log(movement);
   if (movement < 0) {
     direction = GORIGHT;
     movement *= -1;
-console.log(movement);
   } else {
     direction = GOLEFT;
   }
-console.log(targetX + ', ' + targetY + ', ' + middleX + ', ' + middleY);
-console.log(movement);
   switch(direction) {
     case GORIGHT://add to left
     if (middleX == 1) {
-console.log('go right');
       _move(targetElem, direction, movement, -1, true);
     } else {
       if (movement >= middleY - 6) {
-console.log('go right: add 0');
         _prepend();
         _move(targetElem, direction, movement, 0, true);
-        _remove(2);
       } else {
-console.log('go right');
         _move(targetElem, direction, movement, -1, true);
       }
     }
     break;
     case GOLEFT:
     if (middleX == 0) {
-console.log('go left');
       _move(targetElem, direction, movement, -1, true);
     } else {
       if (movement >= 5 - middleY) {
-console.log('go left: add 2');
         _append();
         _move(targetElem, direction, movement, 1, true);
-        _remove(0);
       } else {
-console.log('go left');
         _move(targetElem, direction, movement, -1, true);
       }
     }
     break;
   }
 }
+//b: start
+function easeOutBack(x, t, b, c, d, s) {
+  if (s == undefined) s = 1.70158;
+  return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+}
 
+function easeOutElastic(x, t, b, c, d) {
+  var s=1.70158;var p=0;var a=c;
+  if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+  if (a < Math.abs(c)) { a=c; var s=p/4; }
+  else var s = p/(2*Math.PI) * Math.asin (c/a);
+  return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
+}
 
 $('document').ready(function () {
   init();
