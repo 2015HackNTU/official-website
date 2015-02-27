@@ -16,8 +16,8 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 
     <!-- waypoint-a jquery plugin-->
-    <script src="/javascripts/waypoints.min.js"></script>
-    <script src="/javascripts/waypoints.sticky.js"></script>
+    <!--<script src="/javascripts/waypoints.min.js"></script>
+    <script src="/javascripts/waypoints.sticky.js"></script> -->
     <!-- send ajax to server -->
     <script src="js/bridge.js"></script>
     <script src="js/service.js"></script>
@@ -59,7 +59,7 @@
     </script>
 
     <!-- This is the js for sticky nav bar -->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         $(document).ready(function() {
           $('nav').waypoint('sticky', {
               stuckClass: 'sticky'
@@ -80,7 +80,7 @@
           });
           this.toggleMenu();
         });
-    </script>
+    </script>-->
 
     <!-- This is the js for WHY WHAT HOW -->
     <!--<script type="text/javascript">
@@ -125,9 +125,15 @@
   <body>
   <div class="wrapper">
 
+
+<%- include navbar%>
+
+
+
+
 <div class = "inner-page padd">
     <div class = "about-vedio padd">
-      <div class = "container" style="width:100%">
+      <div class = "container-fluid" style="width:100%">
         <div class="row">
             <div class="play-the-video">
               <!-- <img src="images/2015hackNTU-3-black.jpg"> -->
@@ -148,17 +154,17 @@
     </div>
   </div>
 
-    <%- include navbar%>
+    
     
   <!--  data-bleed="10" data-natural-width="1400" data-natural-height="900" style="height: 650px;"  -->
   <div class="inner-page padd">
     <div class="introduction">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
 
           <div class="col-md-12">
 
-            <div class="intro-ele col-md-4">
+            <div class="intro-ele col-md-4 col-xs-6">
               <div class="text" id = "6" onclick="Print(0)">
                 <h3>WHAT</h3>
               </div>
@@ -167,7 +173,7 @@
               </div>
             </div>
 
-            <div class="intro-ele col-md-4">
+            <div class="intro-ele col-md-4 col-xs-6">
               <div class="text" id = "7" onclick="Print(1)">
                 <h3>WHY</h3>
               </div>
@@ -176,7 +182,7 @@
               </div>
             </div>
 
-            <div class="intro-ele col-md-4">
+            <div class="intro-ele col-md-4 col-xs-6">
               <div class="text" id = "8" onclick="Print(2)">
                 <h3>HOW</h3>
               </div>
@@ -188,7 +194,7 @@
           </div>
 
           <div id="1" style="display:block">
-            <div class="col-md-4" >
+            <div class="col-md-4 col-xs-6" >
               <div class = "introduction-content" id = "why">
                 <p>Our works include courses, hackathons, hacker community, and hackcampus.For the courses, there’re going to be iOS/Android development, hardware , Website and User Interface and User experience.</p>
               </div>
@@ -196,7 +202,7 @@
           </div>
 
           <div id="0" style="display:block">
-            <div class="col-md-4" >
+            <div class="col-md-4 col-xs-6" >
               <div class = "introduction-content" id = "what">
 
             <p>We believe by gathering hackers and providing the just right environment will help bring about innovative ideas and great impact to change the world.</p>
@@ -224,7 +230,7 @@
           </div>
 
           <div id="2" style="display:block"> 
-            <div class="col-md-4">
+            <div class="col-md-4 col-xs-6">
               <div class = "introduction-content" id = "why">
                 <p>By collaborating the resources from both school and businesses we’re able to provide the best environment for hackers.</p>
               </div>
@@ -239,8 +245,9 @@
 
 
 <div class = "inner-page padd">
+  <div class = "container-fluid">
     <div class = "go-to-hackathon padd" style="background-image:url(images/IMG_9030.jpg) ;height:600px ;width:100%" >
-      <div class = "container">
+      
         <div class="row">
           
           <!-- <img src="images/2015hackNTU-3.jpg"> -->
@@ -250,7 +257,7 @@
               <h2>I Want to sign up!</h2>
               <h3>The hackathon in August</h3>
               <br>
-              <a href="http://2015.hackntu.com/" target="_blank"><i class="fa fa-arrow-circle-o-right"></i>  go to sign up page</a>
+              <a href="http://2015.hackntu.com/" target="_blank" style="font-size:30px;font-family:Inconsolata"><i class="fa fa-arrow-circle-o-right"></i>  go to sign up page</a>
 
             </div>  
           </div>
@@ -266,35 +273,22 @@
       <div class = "container">
         <div class="row">
           
-          <div class="col-md-12">
-            <div>
+          <div class="col-md-12" style="margin-top:40px">
+            <div class="col-md-3">
               <h3>History</h3>
               <p>HackNTU的發起人，也是共同創辦人之一的張凱迪，在與夥伴們參加Yahoo的Hack day之後，發覺國外很多知名企業與一流大學都有自己的Hackthon，而台灣各大專院校卻都沒有類似活動，於是成立了HackNTU。</p>
-              <h3>About Us</h3>
-              <p>
-Cooperative Development
-洽談贊助與合作，為HackNTU網羅企業、政府、媒體等。
-<br>
-Performance Management
-參與各部門的討論，了解、追蹤、協調各部門的運作進程。
-<br>
-Digital Marketing
-運用各種新奇創意的方式行銷，推拉式並重，未來的我們會在各大社群與媒體活躍，例如PTT、Facebook、Inside、TechOrange、TVBS等等。
-<br>
-Hackathon Competition
-主要負責各種競賽的活動設計、志工管理訓練、海外協辦合作
-<br>
-School Club
-經營Hack NTU社團，與學校溝通，保障社團權益。
-<br>
-Brand Design
-為Hack NTU設計一套視覺語言，以影像、圖像等方式展現黑客精神。
-<br>
-Technology Development
-開發與維護官網，橫跨技術與藝術領域。
-<br>
-Community Relations
-規畫各種聚會活動，如工作坊、開發小聚、演講等。
+            </div>
+            <div class="col-md-3">
+              <h3>Hacker spirit</h3>
+              <p>獨⽴思考，⾃由探索，發揮創意，解決問題The spirit represents thinking independently, discovering questions andsolving them with creativity.
+            </div>
+            <div class="col-md-3">
+              <h3>What’s Hackathon？</h3>
+              <p>Hackathon = Hack + Marathon Hack 的原意是解決問題、創意程式設計，⽽⾮蓄意破壞或竊取機密⽂件。</p>
+            </div>
+            <div class="col-md-3">
+              <h3>Code X Design X Food</h3>
+              <p>由三⾄五⼈組成團隊，在數天的活動期間，提出⽣活中注意到的問題與解決⽅法，並透過技術執⾏，創造出有⽤⽽創新的產品。</p>
             </p>
             </div>
           </div>
