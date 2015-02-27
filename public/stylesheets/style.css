@@ -178,6 +178,11 @@ nav.sticky {
 	overflow: hidden;
 	background-color: #e0e0e0;
 	cursor: default;
+	z-index: 100;
+}
+
+.container .acts {
+	top: 100px;
 }
 
 .footer .logo{

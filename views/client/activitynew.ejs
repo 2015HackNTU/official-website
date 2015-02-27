@@ -59,6 +59,12 @@
     <script src="/javascripts/json2.js"></script>
     <script src="/javascripts/clndr.js"></script>
     <script src="js/calendar.js"></script>
+    
+    <!-- file for monthbar-->
+    <link rel="stylesheet" href="/stylesheets/monthbar.css">
+    <script src="js/monthBar_tmp.js"></script>
+
+
     <script>
     $(document).ready(function() {
       $('.btn-calender-md .calender-link').click(function(e){
@@ -165,47 +171,25 @@
 
   <body>
       
-      <%- include navbar %>
-  <!--  data-bleed="10" data-natural-width="1400" data-natural-height="900" style="height: 650px;"  -->
-
-
-  <!-- <div class = "inner-page padd">
-    <div class = "timeline padd">
-      <div class = "container" style="width: 100%">
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="gray">
-              <div class="triangle"></div>  
-            </div>
-
-          </div>  
-
-
-            <div class="monthbar" onload=createfunction()>
-            <p>This is month bar</p>
-            </div>
-
-            <div class = "test-img">
-              <img src="images/2015hackNTU_2.jpg">
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
-
+  <%- include navbar %>
   <div class="inner-page padd activity">
   <div class="general">
     <div class="container" style="width:100%">
+    </div>
+      <div class="row" style="top: 0;height:100px;">
+          <div class="col-md-12">
+<!--             <div class="gray">
+              <div class="triangle"></div>  
+            </div> -->
+          </div>  
+        <div class="month-bar"></div>
+    </div>
 
       <div class="row shifting" id = "1" style="display:block">
       <div class="col-md-8 col-sm-8 col-md-offset-2">
-        <div>
+<!--         <div>
           <h1>2015年1月</h1>
-        </div>
+        </div> -->
           <!-- General information content -->
           <div class="general-content">
             <!-- Navigation tab -->
@@ -370,7 +354,7 @@
 
 
 
-      <div class="row shifting" id = "4" style="display:none">
+    <div class="row shifting" id = "4" style="display:none">
       <div class="col-md-8 col-sm-8 col-md-offset-2">
         <div>
           <h1>2015年4月</h1>
@@ -441,11 +425,11 @@
           <div class="shifting" id = "4" style="display:none">
             <img src="images/hackLCD.jpg" alt="" style="width:100%"/>
           </div> -->
-
+<!-- 
           <div class="fullscreen-controls">
             <a class="img-prev" onclick="shift(-1)"></a>
             <a class="img-next" onclick="shift(1)"></a>
-          </div>
+          </div> -->
 
 
         <!-- <div class = "test-img">
