@@ -78,22 +78,22 @@
     $('document').ready(function() {
       var c0 = 250, c1 = 250, radius = 250;//propety of circle
       var p0 = 50, p1 = 50;//center of picture
-      for(var i = 0; i < 8; i++) {
-        var height = Math.cos((i / 8) * Math.PI * 2) * radius;
-        var width = Math.sin((i / 8) * Math.PI * 2) * radius;
+      for(var i = 0; i < 7; i++) {
+        var height = Math.cos((i / 7) * Math.PI * 2) * radius;
+        var width = Math.sin((i / 7) * Math.PI * 2) * radius;
         $('.pic-' + (i + 1)).css("top", c1 - height - p1);
         $('.pic-' + (i + 1)).css("left", c0 - width - p0);
       }
       $('.department-circuit img').hover(function(evt) {
-        var text = ["Cooperative Development<br>洽談贊助與合作，為HackNTU網羅企業、政府、媒體等。",
-          "Performance Management<br>參與各部門的討論，了解、追蹤、協調各部門的運作進程。",
-          "Digital Marketing<br>運用各種新奇創意的方式行銷，推拉式並重，未來的我們會在各大社群與媒體活躍，例如PTT、Facebook、Inside、TechOrange、TVBS等等。",
-          "Hackathon Competition<br>主要負責各種競賽的活動設計、志工管理訓練、海外協辦合作",
-          "School Club<br>經營Hack NTU社團，與學校溝通，保障社團權益。",
-          "Brand Design<br>為Hack NTU設計一套視覺語言，以影像、圖像等方式展現黑客精神。",
-          "Technology Development<br>開發與維護官網，橫跨技術與藝術領域。",
-          "Community Relations<br>規畫各種聚會活動，如工作坊、開發小聚、演講等。"];
-        for(var i = 0; i < 8; i++) {
+        var text = ["Cooperative Development<br>洽談贊助與合作,為HackNTU 網羅企業、政府等。",
+          "Performance Management<br>參與各部⾨門的討論,了解、追蹤、協調各部⾨門的運作進程。",
+          "Digital Marketing<br>運⽤用各種新奇創意的⽅方式⾏行銷。未來將在各⼤大社群與媒體活躍,例如PTT、 Facebook、PunNode、TechOrange。",
+          "Hackathon Competition<br>主辦Hackathon,負責活動設計、志⼯工管理訓練、海外協辦合作。",
+          // "School Club<br>經營Hack NTU社團，與學校溝通，保障社團權益。",
+          "Brand Design<br>為Hack NTU 設計⼀一套視覺語⾔言,以影像、圖像等⽅方式展現⿊黑客精神。",
+          "Technology Development<br>開發產品與維護官網,橫跨技術與藝術領域。",
+          "Community Relations<br>規畫各種聚會活動,如⼯工作坊、開發⼩小聚、演講等。"];
+        for(var i = 0; i < 7; i++) {
           $(".department-circuit .selected").removeClass('selected');
           if ($(".pic-" + (i + 1)).is(evt.target)) {
             $(evt.target).addClass('selected');
@@ -123,10 +123,10 @@
                 <img src="images/PM.png" class="pic-2">
                 <img src="images/DM.png" class="pic-3">
                 <img src="images/HC.png" class="pic-4">
-                <img src="images/SC.png" class="pic-5">
-                <img src="images/BD.png" class="pic-6">
-                <img src="images/TD.png" class="pic-7">
-                <img src="images/CR.png" class="pic-8">
+                <!-- <img src="images/SC.png" class="pic-5"> -->
+                <img src="images/BD.png" class="pic-5">
+                <img src="images/TD.png" class="pic-6">
+                <img src="images/CR.png" class="pic-7">
                 <div class="dispaly">"Cooperative Development<br>洽談贊助與合作，為HackNTU網羅企業、政府、媒體等。"</div>
               </div>
             </div>
