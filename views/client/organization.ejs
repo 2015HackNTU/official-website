@@ -66,10 +66,10 @@
     
     <script type="text/javascript">
       function HideContent(d) {
-      document.getElementById(d).style.display = "none";
+        document.getElementById(d).style.display = "none";
       }
       function ShowContent(d) {
-      document.getElementById(d).style.display = "block";
+        document.getElementById(d).style.display = "block";
       }
     </script>
 
@@ -84,7 +84,7 @@
         $('.pic-' + (i + 1)).css("top", c1 - height - p1);
         $('.pic-' + (i + 1)).css("left", c0 - width - p0);
       }
-      $('.department-circuit img').click(function(evt) {
+      $('.department-circuit img').hover(function(evt) {
         var text = ["Cooperative Development<br>洽談贊助與合作，為HackNTU網羅企業、政府、媒體等。",
           "Performance Management<br>參與各部門的討論，了解、追蹤、協調各部門的運作進程。",
           "Digital Marketing<br>運用各種新奇創意的方式行銷，推拉式並重，未來的我們會在各大社群與媒體活躍，例如PTT、Facebook、Inside、TechOrange、TVBS等等。",
