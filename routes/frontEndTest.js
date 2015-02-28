@@ -55,6 +55,9 @@ module.exports = function(app){
 	app.get('/org',function(req,res){
 		res.render('client/organization')
 	})
+	app.get('/aboutus',function(req,res){
+		res.render('client/aboutus')
+	})
 	/* Move to routes/blogposts.js
 		app.get('/blog',function(req,res){
 			res.render('client/blog')
