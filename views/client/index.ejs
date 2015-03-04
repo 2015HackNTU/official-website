@@ -127,6 +127,24 @@
 
 <%- include navbar%>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1554520938139633',
+      xfbml      : true,
+      version    : 'v2.2'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 
 
@@ -173,7 +191,13 @@
       <div class="row">
         <div class="col-md-12">
           <h1 style="margin-left:50px">How we do?</h1>
-
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+<img src="http://graph.facebook.com/100001968982237/picture"></img>
         </div>
       </div>
     </div>
