@@ -24,6 +24,12 @@ module.exports = function(app){
 
 	==================================== */
 
+	app.get('/course',function(req,res){
+		res.render('client/course', { 
+			
+		});
+	})
+
 	app.get('/example',function(req,res){
 		res.render('client/example', { message : 'example.ejs' }); // You can also pass something to the front
 	});
