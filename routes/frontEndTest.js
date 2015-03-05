@@ -30,6 +30,18 @@ module.exports = function(app){
 		});
 	})
 
+	app.get('/community',function(req,res){
+		res.render('client/community', { 
+			
+		});
+	})
+
+	app.get('/hackcampus',function(req,res){
+		res.render('client/hackcampus', { 
+			
+		});
+	})
+
 	app.get('/example',function(req,res){
 		res.render('client/example', { message : 'example.ejs' }); // You can also pass something to the front
 	});

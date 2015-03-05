@@ -2,4 +2,3 @@ node_modules
 .elasticbeanstalk/
 */.DS_Store
 *.pem
-node_modules
