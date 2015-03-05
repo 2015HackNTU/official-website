@@ -37,11 +37,11 @@ app.use(express.static(path.join(__dirname, 'upload')));
 
 app.use(qt.static(__dirname + '/'));
 
-// Setup Passport.js
-app.use(session({ secret: 'lulalachen' })); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session
+// // Setup Passport.js
+// app.use(session({ secret: 'lulalachen' })); // session secret
+// app.use(passport.initialize());
+// app.use(passport.session()); // persistent login sessions
+// app.use(flash()); // use connect-flash for flash messages stored in session
 
 
 /***** Routes *****/
