@@ -8,92 +8,6 @@
 
 	<body>
 		<%- include navbar%>
-<!-- <div class="ui move reveal">
-  <img class="visible content" src="http://art.ngfiles.com/images/278000/278678_rennis5_luigi-dick.jpg">
-  <img class="hidden content" src="https://i.ytimg.com/vi/1WczsQxr3eQ/hqdefault.jpg">
-</div>
-
-
-<div class="ui page dimmer">
-  <div class="content">
-    <div class="center">Hello</div>
-  </div>
-</div>
-
-
-<div class="ui special cards">
-  <div class="card">
-    <div class="dimmable image">
-      <div class="ui dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui inverted button">Add Friend</div>
-          </div>
-        </div>
-      </div>
-      <img src="http://art.ngfiles.com/images/278000/278678_rennis5_luigi-dick.jpg">
-    </div>
-    <div class="content">
-      <a class="header">Team Fu</a>
-      <div class="meta">
-        <span class="date">Create in Sep 2014</span>
-      </div>
-    </div>
-    <div class="extra content">
-      <a>
-        <i class="users icon"></i>
-        2 Members
-      </a>
-    </div>
-  </div>
-  <div class="card">
-    <div class="dimmable image">
-      <div class="ui inverted dimmer">
-        <div class="content">
-          <div class="center">
-            <div class="ui primary button">Add Friend</div>
-          </div>
-        </div>
-      </div>
-      <img src="http://art.ngfiles.com/images/278000/278678_rennis5_luigi-dick.jpg">
-    </div>
-    <div class="content">
-      <a class="header">Team Hess</a>
-      <div class="meta">
-        <span class="date">Create in Aug 2014</span>
-      </div>
-    </div>
-    <div class="extra content">
-      <a>
-        <i class="users icon"></i>
-        2 Members
-      </a>
-    </div>
-  </div>
-
-  <div class="ui card">
-  <div class="ui slide masked reveal image">
-    <img src="http://art.ngfiles.com/images/278000/278678_rennis5_luigi-dick.jpg" class="visible content">
-    <img src="https://i.ytimg.com/vi/1WczsQxr3eQ/hqdefault.jpg" class="hidden content">
-  </div>
-  <div class="content">
-    <a class="header">Team Fu &amp; Hess</a>
-    <div class="meta">
-      <span class="date">Create in Sep 2014</span>
-    </div>
-  </div>
-  <div class="extra content">
-    <a>
-      <i class="users icon"></i>
-      2 Members
-    </a>
-  </div>
-</div> -->
-  <script>
-	// $('.special.cards .image').dimmer({
-	//   on: 'hover'
-	// });
-  </script>
 
     <div class="ui segment">
       <div class="ui vertical segment" style="width: 40%; margin: 20px auto;">
@@ -147,44 +61,501 @@
           </div>
         </div>
       </div>
-      <div class="ui vertical segment" style="width: 80%; margin: 40px auto 20px auto;">
-        <div class="ui top attached tabular menu">
-          <a class="active item" onclick="changeContent(1)" id="syllabus">
-            <i class="announcement icon"></i> Syllabus
-          </a>
-          <a class="item" onclick="changeContent(2)" id="teacher">
-            <i class="university icon"></i> Teacher
-          </a>
-          <a class="item" onclick="changeContent(3)" id="lecture">
-            <i class="file text outline icon"></i> Lecture
-          </a>
-          <a class="item" onclick="changeContent(4)" id="video">
-            <i class="film icon"></i> Video
-          </a>
-          <a class="item" onclick="changeContent(5)" id="comment">
-            <i class="comments icon"></i> Discuss
-          </a>
+      <div class="ui vertical segment" style="width: 80%; margin: 80px auto 40px auto;">
+        <div id="web_teacher" style="width: 40%; margin: 20px auto;" class="hidden">
+          <center>
+            <h1>Web Development</h1>
+            <h4>
+              講者 : <a class="item" href="https://www.facebook.com/eddiekao?fref=ts">高見龍</a>
+            </h4>
+            <h4>
+              Email : abcde1234@gmail.com
+            </h4>
+            <h4>
+              上課時間 : 星期一晚上 6:30 ~ 9:30
+            </h4>
+            <h4>
+              上課地點 : 新生305(x)
+            </h4>
+            <h4>
+              <a class="item">課後討論社團</a>
+            </h4>
+          </center>
         </div>
-        <div class="ui bottom attached segment">
-          <div id="syllabus_content">
-            aaa
-          </div>
-          <div id="teacher_content">
-            bbb
-          </div>
-          <div id="lecture_content">
-            ccc
-          </div>
-          <div id="video_content">
-            ddd
-          </div>
-          <div id="comment_content">
-            eee
-          </div>
+        <div id="iot_teacher" style="width: 40%; margin: 20px auto;" class="hidden">
+          <center>
+            <h1>Internet of Things</h1>
+            <h4>
+              講者 : <a class="item">???</a>
+            </h4>
+            <h4>
+              Email : abcde1234@gmail.com
+            </h4>
+            <h4>
+              上課時間 : 星期一晚上 6:30 ~ 9:30
+            </h4>
+            <h4>
+              上課地點 : 新生304(x)
+            </h4>
+            <h4>
+              <a class="item">課後討論社團</a>
+            </h4>
+          </center>
         </div>
+        <div id="app_teacher" style="width: 40%; margin: 20px auto;" class="hidden">
+          <center>
+            <h1>App Development</h1>
+            <h4>
+              講者 : <a class="item" href="https://www.facebook.com/jingtw?fref=ts">張景隆</a>
+            </h4>
+            <h4>
+              Email : abcde1234@gmail.com
+            </h4>
+            <h4>
+              上課時間 : 星期二晚上 6:30 ~ 9:30
+            </h4>
+            <h4>
+              上課地點 : 新生305(x)
+            </h4>
+            <h4>
+              <a class="item">課後討論社團</a>
+            </h4>
+          </center>
+        </div>
+        <div id="uiux_teacher" style="width: 40%; margin: 20px auto;" class="hidden">
+          <center>
+            <h1>UI/UX Design</h1>
+            <h4>
+              講者 : <a class="item">歐陽佩君</a>
+            </h4>
+            <h4>
+              Email : abcde1234@gmail.com
+            </h4>
+            <h4>
+              上課時間 : 星期二晚上 6:30 ~ 9:30
+            </h4>
+            <h4>
+              上課地點 : 新生304(x)
+            </h4>
+            <h4>
+              <a class="item">課後討論社團</a>
+            </h4>
+          </center>
+        </div>
+
+        <table class="ui table hidden" id="web_slide">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Slide</th>
+              <th>Video</th>
+              <th>Homework</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>03/16</td>
+              <td>HTML, CSS</td>
+              <td>HTML tags, syntax, document structure. CSS basics.</td>
+              <td>Lecture1</td>
+              <td>Video1</td>
+              <td>HW1</td>
+            </tr>
+            <tr>
+              <td>03/23</td>
+              <td>CSS, g0v Intro</td>
+              <td>Selectors, specificity, box model, positioning. Introduction to g0v by Kirby Wu.</td>
+              <td>Lecture2</td>
+              <td>Video2</td>
+              <td>HW2</td>
+            </tr>
+            <tr>
+              <td>03/30</td>
+              <td>Design Thinking</td>
+              <td>Gaining insight into all possible directions for improving our society using websites.</td>
+              <td>Lecture3</td>
+              <td>Video3</td>
+              <td>HW3</td>
+            </tr>
+            <tr>
+              <td>04/13</td>
+              <td>Design Thinking</td>
+              <td>Gaining insight into all possible directions for improving our society using websites.</td>
+              <td>Lecture4</td>
+              <td>Video4</td>
+              <td>HW4</td>
+            </tr>
+            <tr>
+              <td>04/27</td>
+              <td>Design Thinking</td>
+              <td>Gaining insight into all possible directions for improving our society using websites.</td>
+              <td>Lecture5</td>
+              <td>Video5</td>
+              <td>HW5</td>
+            </tr>
+            <tr>
+              <td>05/04</td>
+              <td>Design Thinking</td>
+              <td>Gaining insight into all possible directions for improving our society using websites.</td>
+              <td>Lecture6</td>
+              <td>Video6</td>
+              <td>HW6</td>
+            </tr>
+            <tr>
+              <td>05/11</td>
+              <td>Design Thinking</td>
+              <td>Gaining insight into all possible directions for improving our society using websites.</td>
+              <td>Lecture7</td>
+              <td>Video7</td>
+              <td>HW7</td>
+            </tr>
+            <tr>
+              <td>05/18</td>
+              <td>Design Thinking</td>
+              <td>Gaining insight into all possible directions for improving our society using websites.</td>
+              <td>Lecture8</td>
+              <td>Video8</td>
+              <td>HW8</td>
+            </tr>
+            <tr>
+              <td>05/25</td>
+              <td>Design Thinking</td>
+              <td>Gaining insight into all possible directions for improving our society using websites.</td>
+              <td>Lecture9</td>
+              <td>Video9</td>
+              <td>HW9</td>
+            </tr>
+            <tr>
+              <td>06/01</td>
+              <td>Design Thinking</td>
+              <td>Gaining insight into all possible directions for improving our society using websites.</td>
+              <td>Lecture10</td>
+              <td>Video10</td>
+              <td>HW10</td>
+            </tr>
+            <tr>
+              <td>06/08</td>
+              <td>Demo Day</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="ui table hidden" id="iot_slide">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Slide</th>
+              <th>Video</th>
+              <th>Homework</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>03/16</td>
+              <td>iot</td>
+              <td>what is iot?</td>
+              <td>Lecture1</td>
+              <td>Video1</td>
+              <td>HW1</td>
+            </tr>
+            <tr>
+              <td>03/23</td>
+              <td></td>
+              <td></td>
+              <td>Lecture2</td>
+              <td>Video2</td>
+              <td>HW2</td>
+            </tr>
+            <tr>
+              <td>03/30</td>
+              <td></td>
+              <td></td>
+              <td>Lecture3</td>
+              <td>Video3</td>
+              <td>HW3</td>
+            </tr>
+            <tr>
+              <td>04/13</td>
+              <td></td>
+              <td></td>
+              <td>Lecture4</td>
+              <td>Video4</td>
+              <td>HW4</td>
+            </tr>
+            <tr>
+              <td>04/27</td>
+              <td></td>
+              <td></td>
+              <td>Lecture5</td>
+              <td>Video5</td>
+              <td>HW5</td>
+            </tr>
+            <tr>
+              <td>05/04</td>
+              <td></td>
+              <td></td>
+              <td>Lecture6</td>
+              <td>Video6</td>
+              <td>HW6</td>
+            </tr>
+            <tr>
+              <td>05/11</td>
+              <td></td>
+              <td></td>
+              <td>Lecture7</td>
+              <td>Video7</td>
+              <td>HW7</td>
+            </tr>
+            <tr>
+              <td>05/18</td>
+              <td></td>
+              <td></td>
+              <td>Lecture8</td>
+              <td>Video8</td>
+              <td>HW8</td>
+            </tr>
+            <tr>
+              <td>05/25</td>
+              <td></td>
+              <td></td>
+              <td>Lecture9</td>
+              <td>Video9</td>
+              <td>HW9</td>
+            </tr>
+            <tr>
+              <td>06/01</td>
+              <td></td>
+              <td></td>
+              <td>Lecture10</td>
+              <td>Video10</td>
+              <td>HW10</td>
+            </tr>
+            <tr>
+              <td>06/08</td>
+              <td>Demo Day</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="ui table hidden" id="app_slide">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Slide</th>
+              <th>Video</th>
+              <th>Homework</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>03/17</td>
+              <td>Apple Developer, Xcode</td>
+              <td>Teach how to use Xcode to develop an IOS app.</td>
+              <td>Lecture1</td>
+              <td>Video1</td>
+              <td>HW1</td>
+            </tr>
+            <tr>
+              <td>03/24</td>
+              <td></td>
+              <td></td>
+              <td>Lecture2</td>
+              <td>Video2</td>
+              <td>HW2</td>
+            </tr>
+            <tr>
+              <td>03/31</td>
+              <td></td>
+              <td></td>
+              <td>Lecture3</td>
+              <td>Video3</td>
+              <td>HW3</td>
+            </tr>
+            <tr>
+              <td>04/13</td>
+              <td></td>
+              <td></td>
+              <td>Lecture4</td>
+              <td>Video4</td>
+              <td>HW4</td>
+            </tr>
+            <tr>
+              <td>04/28</td>
+              <td></td>
+              <td></td>
+              <td>Lecture5</td>
+              <td>Video5</td>
+              <td>HW5</td>
+            </tr>
+            <tr>
+              <td>05/05</td>
+              <td></td>
+              <td></td>
+              <td>Lecture6</td>
+              <td>Video6</td>
+              <td>HW6</td>
+            </tr>
+            <tr>
+              <td>05/12</td>
+              <td></td>
+              <td></td>
+              <td>Lecture7</td>
+              <td>Video7</td>
+              <td>HW7</td>
+            </tr>
+            <tr>
+              <td>05/19</td>
+              <td></td>
+              <td></td>
+              <td>Lecture8</td>
+              <td>Video8</td>
+              <td>HW8</td>
+            </tr>
+            <tr>
+              <td>05/26</td>
+              <td></td>
+              <td></td>
+              <td>Lecture9</td>
+              <td>Video9</td>
+              <td>HW9</td>
+            </tr>
+            <tr>
+              <td>06/02</td>
+              <td></td>
+              <td></td>
+              <td>Lecture10</td>
+              <td>Video10</td>
+              <td>HW10</td>
+            </tr>
+            <tr>
+              <td>06/09</td>
+              <td>Demo Day</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="ui table hidden" id="uiux_slide">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Slide</th>
+              <th>Video</th>
+              <th>Homework</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>03/17</td>
+              <td>UI/UX</td>
+              <td>Why is UI/UX important?</td>
+              <td>Lecture1</td>
+              <td>Video1</td>
+              <td>HW1</td>
+            </tr>
+            <tr>
+              <td>03/24</td>
+              <td></td>
+              <td></td>
+              <td>Lecture2</td>
+              <td>Video2</td>
+              <td>HW2</td>
+            </tr>
+            <tr>
+              <td>03/31</td>
+              <td></td>
+              <td></td>
+              <td>Lecture3</td>
+              <td>Video3</td>
+              <td>HW3</td>
+            </tr>
+            <tr>
+              <td>04/13</td>
+              <td></td>
+              <td></td>
+              <td>Lecture4</td>
+              <td>Video4</td>
+              <td>HW4</td>
+            </tr>
+            <tr>
+              <td>04/28</td>
+              <td></td>
+              <td></td>
+              <td>Lecture5</td>
+              <td>Video5</td>
+              <td>HW5</td>
+            </tr>
+            <tr>
+              <td>05/05</td>
+              <td></td>
+              <td></td>
+              <td>Lecture6</td>
+              <td>Video6</td>
+              <td>HW6</td>
+            </tr>
+            <tr>
+              <td>05/12</td>
+              <td></td>
+              <td></td>
+              <td>Lecture7</td>
+              <td>Video7</td>
+              <td>HW7</td>
+            </tr>
+            <tr>
+              <td>05/19</td>
+              <td></td>
+              <td></td>
+              <td>Lecture8</td>
+              <td>Video8</td>
+              <td>HW8</td>
+            </tr>
+            <tr>
+              <td>05/26</td>
+              <td></td>
+              <td></td>
+              <td>Lecture9</td>
+              <td>Video9</td>
+              <td>HW9</td>
+            </tr>
+            <tr>
+              <td>06/02</td>
+              <td></td>
+              <td></td>
+              <td>Lecture10</td>
+              <td>Video10</td>
+              <td>HW10</td>
+            </tr>
+            <tr>
+              <td>06/09</td>
+              <td>Demo Day</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       
-      </div>
 
 
 
