@@ -4,7 +4,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var passport = require('passport');
+// var passport = require('passport');
 var flash    = require('connect-flash');
 var session  = require('express-session');
 var qt   = require('quickthumb');
@@ -45,8 +45,8 @@ app.use(qt.static(__dirname + '/'));
 
 
 /***** Routes *****/
-require('./config/passport')(passport); // pass passport for configuration
-require('./routes/login')(app,passport);
+// require('./config/passport')(passport); // pass passport for configuration
+// require('./routes/login')(app,passport);
 require('./routes/frontEndTest')(app);
 require('./routes/imgUpload')(app); // img upload
 
