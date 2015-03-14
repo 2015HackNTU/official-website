@@ -1,284 +1,230 @@
 <!DOCTYPE html>
-<html>
+<html>    
+<head>
+  <%- include header%>
+      <!-- bun test for fb api -->
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '1554520938139633',
+            xfbml      : true,
+            version    : 'v2.2'
+          });
+        };
 
-  <meta charset="UTF-8" />
-    <title></title>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/stylesheets/clndr.css">
-    <link href="/stylesheets/less-style.css" rel="stylesheet"> 
-    <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/parallax.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
-    <script src="js/blog.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-
-    <!-- waypoint-a jquery plugin-->
-    <!--<script src="/javascripts/waypoints.min.js"></script>
-    <script src="/javascripts/waypoints.sticky.js"></script> -->
-    <!-- send ajax to server -->
-    <script src="js/bridge.js"></script>
-    <script src="js/service.js"></script>
-    <!-- construct calender -->
-    <script src="/javascripts/underscore-min.js"></script>
-    <script src="/javascripts/moment-2.8.3.js"></script>
-    <script src="/javascripts/json2.js"></script>
-    <script src="/javascripts/clndr.js"></script>
-    <script src="js/calendar.js"></script>
-
-    <!-- This is the js for calendar dropdown -->
-    <script>
-    $(document).ready(function() {
-      $('.btn-calender-md .calender-link').click(function(e){
-        e.preventDefault();
-        var $dd_menu = $('.btn-calender-md .calender-dropdown')
-        if ($dd_menu.hasClass('open')) {
-          $dd_menu.fadeOut();
-          $dd_menu.removeClass('open');
-        } 
-        else {
-          $dd_menu.fadeIn();
-          $dd_menu.addClass('open');
-        }
-      });
-    });
-
-    </script>
-
-    
-    <!-- send ajax to server -->
-    <script src="js/bridge.js"></script>
-    <script src="js/service.js"></script>
-    <!-- construct calender -->    
-    <script src="/javascripts/moment-2.8.3.js"></script>
-    <script src="/javascripts/json2.js"></script>
-    <script src="/javascripts/clndr.js"></script>
-    <script src="js/calendar.js"></script>
-    
-    <%- include header%>
-
-    
-    
-  </head>
-
-  <body>
-
-
-<%- include navbar%>
-
-<!-- bun test for fb api -->
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1554520938139633',
-      xfbml      : true,
-      version    : 'v2.2'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
-
-<div class="ui segment">
-
-  <div class="ui vertical segment">
-    <div class="col-md-12">
-      <div class="ui grid">
-        <div class="ten wide column">
-          <div class="play-the-video" style="padding: 10%;">
-            <iframe class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/w4xjxO2crp4" frameborder="0"></iframe>
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+      </script>
+      <script>
+      $(function() {
+        $(".typewriter").typewriter({
+           'speed':100 // default: 300
+          });
+        });
+      </script>
+      <!--
+      <script src="public/javascripts/jquery-1.11.2.min.js"></script>
+      <script src="public/javascripts/jquery.mousewheel.min.js"></script>
+      -->
+      <script src="public/javascripts/hackstreet.js"></script>
+      <link href="/stylesheets/hackstreet.css" rel="stylesheet">
+</head>
+<body>
+  <%- include navbar%>
+  <div class="ui segment">
+    <div class="ui vertical segment">
+      <div class="col-md-12">
+        <div class="ui grid">
+          <div class="ten wide column">
+            <div class="play-the-video" style="padding: 10%;">
+              <iframe class="youtube-player" type="text/html" width="485px" height="300px" src="http://www.youtube.com/embed/w4xjxO2crp4" frameborder="0"></iframe>
+            </div>
           </div>
-        </div>
-        <div class="six wide column">
-          <div style="font-size=250%; padding: 15%;">
-            <h1>HackNTU,<br>Make Changes Happen!</h1>
+          <div class="six wide column">
+            <div style="padding: 15%; margin:20% auto auto;">
+              <h1 class="typewriter"> HackNTU,<br>Make Changes Happen!</h1>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="ui vertical segment">
-    <div class="col-md-12">
-      <h1 style="margin-left:5%;">Why we do?</h1>
-      <div class="ui piled segment" style="padding:5%;">
-        <img class="ui small left floated circular image" src="public/images/hackcampus_temp.jpg">
-        <p style="font-size: 120%;">我們相信將一群hacker聚集在一起,可以創造出影響世界的產品或服務。</p>
-        <p style="font-size: 120%;">
-          我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
-        </p>
-        <p style="font-size: 120%;">
-          我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
-        </p>
-        <p style="font-size: 120%;">
-          我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
-        </p>
+    
+    <div class="ui vertical segment">
+      <div class="col-md-12">
+        <%- include hackstreet%>
+        <!-- <div class="ui piled segment" style="padding:5%;"> -->
+          <!-- <img class="ui small left floated circular image" src="public/images/hackcampus_temp.jpg">
+          <p style="font-size: 120%;">我們相信將一群hacker聚集在一起,可以創造出影響世界的產品或服務。</p>
+          <p style="font-size: 120%;">
+            我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
+          </p>
+          <p style="font-size: 120%;">
+            我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
+          </p>
+          <p style="font-size: 120%;">
+            我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
+          </p> -->
+        <!-- </div> -->
       </div>
     </div>
-  </div>
 
-  <div class="ui vertical segment">
-    <div class="col-md-12">
-      <h1 style="margin-left:5%;">How we do?</h1>
-      <!-- <div
-        class="fb-like"
-        data-share="true"
-        data-width="450"
-        data-show-faces="true">
-      </div>
-      <img src="http://graph.facebook.com/anny.chen.94/picture"></img> -->
-      <div class="ui piled segment" style="padding:5%;">
-        <img class="ui small left floated circular image" src="public/images/fuckathon_temp.jpg">
-        <p style="font-size: 120%;">我們致力於推廣Hacker Spirit,這是一種追求創新,且強調大家自己動手解決問題的精神。藉由打造一個連結校園、業界、世界的創新生態系,讓擁有Hacker Spirit的青年們可以在這個平台彼此碰撞、競爭、交流。</p>
-        <p style="font-size: 120%;">
-          我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
-        </p>
-        <p style="font-size: 120%;">
-          我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
-        </p>
-        <p style="font-size: 120%;">
-          我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
-        </p>
+    <div class="ui vertical segment">
+      <div class="col-md-12">
+        <h1 style="margin-left:5%;">How we do?</h1>
+        <!-- <div
+          class="fb-like"
+          data-share="true"
+          data-width="450"
+          data-show-faces="true">
+        </div>
+        <img src="http://graph.facebook.com/anny.chen.94/picture"></img> -->
+        <!-- <div class="ui piled segment" style="padding:5%;"> -->
+          <img class="ui small left floated circular image" src="public/images/fuckathon_temp.jpg">
+          <p style="font-size: 120%;">我們致力於推廣Hacker Spirit,這是一種追求創新,且強調大家自己動手解決問題的精神。藉由打造一個連結校園、業界、世界的創新生態系,讓擁有Hacker Spirit的青年們可以在這個平台彼此碰撞、競爭、交流。</p>
+          <p style="font-size: 120%;">
+            我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
+          </p>
+          <p style="font-size: 120%;">
+            我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
+          </p>
+          <p style="font-size: 120%;">
+            我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
+          </p>
+        <!-- </div> -->
       </div>
     </div>
-  </div>
 
-  <div class="ui vertical segment">
-
-        <div class="col-md-12">
-          <h1 style="margin-left:5%;">What we do?</h1>
-          
-          <div class="ui piled segment">
-            <div class="ui grid">
-              <div class="eight wide column" style="padding: 20px 60px;">
-                <div class="ui items">
-                  <div class="item">
-                    <div class="image">
-                      <img class="ui medium circular image" src="public/images/course_temp.jpg"></img>
-                    </div>
-                    <div class="content">
-                      <a class="header" style="font-size:180%;">HackClasses</a>
-                      <div class="meta">
-                        <span>課程</span>
+    <div class="ui vertical segment">
+          <div class="col-md-12">
+            <h1 style="margin-left:5%;">What we do?</h1>
+            
+            <!-- <div class="ui piled segment"> -->
+              <div class="ui grid">
+                <div class="eight wide column" style="padding: 20px 60px;">
+                  <div class="ui items">
+                    <div class="item">
+                      <div class="image">
+                        <img class="ui medium circular image" src="public/images/course_temp.jpg"></img>
                       </div>
-                      <div class="description">
-                        <p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HackClasses藉由校園社課的方式,提供學生一般較少接觸到的實作機會。目前共有四大方向,分別為<br>
-                          <div class="ui bulleted list">
-                            <div class="item">
-                              <a>週一晚上19:00 - 21:30</a>
-                              <div class="list">
-                                <a class="item">Ruby on Rails Web Development網站開發與設計</a>
-                                <a class="item">IoT Application Development物聯網應用開發</a>
+                      <div class="content">
+                        <a class="header" style="font-size:180%;">HackClasses</a>
+                        <div class="meta">
+                          <span>課程</span>
+                        </div>
+                        <div class="description">
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HackClasses藉由校園社課的方式,提供學生一般較少接觸到的實作機會。目前共有四大方向,分別為<br>
+                            <div class="ui bulleted list">
+                              <div class="item">
+                                <a>週一晚上19:00 - 21:30</a>
+                                <div class="list">
+                                  <a class="item">Ruby on Rails Web Development網站開發與設計</a>
+                                  <a class="item">IoT Application Development物聯網應用開發</a>
+                                </div>
+                              </div>
+                              <div class="item">
+                                <a>週二晚上19:00 - 21:30</a>
+                                <div class="list">
+                                  <a class="item">iOS App Development行動裝置應用程式設計</a>
+                                  <a class="item">UI/UX Design使用者介面及經驗設計</a>
+                                </div>
                               </div>
                             </div>
-                            <div class="item">
-                              <a>週二晚上19:00 - 21:30</a>
-                              <div class="list">
-                                <a class="item">iOS App Development行動裝置應用程式設計</a>
-                                <a class="item">UI/UX Design使用者介面及經驗設計</a>
-                              </div>
-                            </div>
-                          </div>
-                        </p>
-                        <p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主要將以小組專案的模式進行,透過點子的發想以及技術的學習,在講師以及助教的引導下,在一個學期中從無到有完成一個屬於自己的作品。
-                        </p>
+                          </p>
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主要將以小組專案的模式進行,透過點子的發想以及技術的學習,在講師以及助教的引導下,在一個學期中從無到有完成一個屬於自己的作品。
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="eight wide column" style="padding: 20px 60px;">
+                  <div class="ui items">
+                    <div class="item">
+                      <div class="image">
+                        <img class="ui medium circular image" src="public/images/meetup_temp.jpg"></img>
+                      </div>
+                      <div class="content">
+                        <a class="header" style="font-size:180%;">Hackers’Community</a>
+                        <div class="meta">
+                          <span>社群</span>
+                        </div>
+                        <div class="description">
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hackers’Community致力於以工作坊跟開發小聚的形式,發展社群網絡。
+                          </p>
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;工作坊希望能夠藉由短時間的課程與活動,啟發參與者動手實作的精神。開發小聚則是以技術作為導向,藉由一些短講,來對不同的主題有更深V一層的介紹,並集結該方面的開發 者和感興趣的參與者進行交流,激盪出更多的火花。
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="eight wide column" style="padding: 20px 60px;">
-                <div class="ui items">
-                  <div class="item">
-                    <div class="image">
-                      <img class="ui medium circular image" src="public/images/meetup_temp.jpg"></img>
-                    </div>
-                    <div class="content">
-                      <a class="header" style="font-size:180%;">Hackers’Community</a>
-                      <div class="meta">
-                        <span>社群</span>
-                      </div>
-                      <div class="description">
-                        <p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hackers’Community致力於以工作坊跟開發小聚的形式,發展社群網絡。
-                        </p>
-                        <p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;工作坊希望能夠藉由短時間的課程與活動,啟發參與者動手實作的精神。開發小聚則是 以技術作為導向,藉由一些短講,來對不同的主題有更深V一層的介紹,並集結該方面的開發 者和感興趣的參與者進行交流,激盪出更多的火花。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div class="ui grid">
-              <div class="eight wide column" style="padding: 20px 60px;">
-                <div class="ui items">
-                  <div class="item">
-                    <div class="image">
-                      <img class="ui medium circular image" src="public/images/hackcampus_temp.jpg"></img>
-                    </div>
-                    <div class="content">
-                      <a class="header" style="font-size:180%;">HackCampus</a>
-                      <div class="meta">
-                        <span>平台</span>
+              <div class="ui grid">
+                <div class="eight wide column" style="padding: 20px 60px;">
+                  <div class="ui items">
+                    <div class="item">
+                      <div class="image">
+                        <img class="ui medium circular image" src="public/images/hackcampus_temp.jpg"></img>
                       </div>
-                      <div class="description">
-                        <p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HackCampus將致力於解決校園內可解決但卻沒有人去動手執行的問題,藉由TD部門的技術,親自帶動校園內解決問題的風氣。
-                        </p>
-                        <p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未來HackCampus將會邀請校內學生一起參與問題解決的過程,以群眾智慧的力量來進行一連串的校園改造,提升台大校園環境的素質。
-                        </p>
-                        <p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hack a better campus.
-                        </p>
+                      <div class="content">
+                        <a class="header" style="font-size:180%;">HackCampus</a>
+                        <div class="meta">
+                          <span>平台</span>
+                        </div>
+                        <div class="description">
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HackCampus將致力於解決校園內可解決但卻沒有人去動手執行的問題,藉由TD部門的技術,親自帶動校園內解決問題的風氣。
+                          </p>
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未來HackCampus將會邀請校內學生一起參與問題解決的過程,以群眾智慧的力量來進行一連串的校園改造,提升台大校園環境的素質。
+                          </p>
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hack a better campus.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="eight wide column" style="padding: 20px 60px;">
+                  <div class="ui items">
+                    <div class="item">
+                      <div class="image">
+                        <img class="ui medium circular image" src="public/images/fuckathon_temp.jpg"></img>
+                      </div>
+                      <div class="content">
+                        <a class="header" style="font-size:180%;">Hackathon</a>
+                        <div class="meta">
+                          <span>競賽</span>
+                        </div>
+                        <div class="description">
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hackathon是由「Hack」和馬拉松「Marathon」所組成的複合字,其中Hack原指解決問題、設計程式的意思,Marathon指參賽者必須在一定的時間內不斷的進行腦力激盪以達成目的。
+                          </p>
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而舉辦Hackathon這是國外十分流行的創意發想方式,如Facebook、Yahoo、Evernote、紐約大學等等皆舉辦過類似的活動,在活動中參賽者們會激盪出各種解決問題的創意,透過程式設計以及問題發想者的合作,在有限的時間內實作出作品並進行成果 展示。
+                          </p>
+                          <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今年的Hackathon將在八月底舉行於台大新體,在活動中我們會提供參賽者一個輕鬆的環境,有食物、飲料、甚至音樂,讓參賽者可以發揮出最大的創意。
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="eight wide column" style="padding: 20px 60px;">
-                <div class="ui items">
-                  <div class="item">
-                    <div class="image">
-                      <img class="ui medium circular image" src="public/images/fuckathon_temp.jpg"></img>
-                    </div>
-                    <div class="content">
-                      <a class="header" style="font-size:180%;">Hackathon</a>
-                      <div class="meta">
-                        <span>競賽</span>
-                      </div>
-                      <div class="description">
-                        <p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hackathon是由「Hack」和馬拉松「Marathon」所組成的複合字,其中Hack原指解決問題、設計程式的意思,Marathon指參賽者必須在一定的時間內不斷的進行腦力激盪以達成目的。
-                        </p>
-                        <p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;而舉辦Hackathon這是國外十分流行的創意發想方式,如Facebook、Yahoo、Evernote、紐約大學等等皆舉辦過類似的活動,在活動中參賽者們會激盪出各種解決問題的創意,透過程式設計以及問題發想者的合作,在有限的時間內實作出作品並進行成果 展示。
-                        </p>
-                        <p>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今年的Hackathon將在八月底舉行於台大新體,在活動中我們會提供參賽者一個輕鬆的環境,有食物、飲料、甚至音樂,讓參賽者可以發揮出最大的創意。
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-  </div>
+            <!-- </div> -->
+    </div>
 
 
 </div>
