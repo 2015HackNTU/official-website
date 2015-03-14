@@ -27,10 +27,15 @@
           });
         });
       </script>
+      <!--
+      <script src="public/javascripts/jquery-1.11.2.min.js"></script>
+      <script src="public/javascripts/jquery.mousewheel.min.js"></script>
+      -->
+      <script src="public/javascripts/hackstreet.js"></script>
+      <link href="/stylesheets/hackstreet.css" rel="stylesheet">
 </head>
 <body>
   <%- include navbar%>
-
   <div class="ui segment">
     <div class="ui vertical segment">
       <div class="col-md-12">
@@ -48,12 +53,12 @@
         </div>
       </div>
     </div>
-
+    
     <div class="ui vertical segment">
       <div class="col-md-12">
-        <h1 style="margin-left:5%;">Why we do?</h1>
+        <%- include hackstreet%>
         <!-- <div class="ui piled segment" style="padding:5%;"> -->
-          <img class="ui small left floated circular image" src="public/images/hackcampus_temp.jpg">
+          <!-- <img class="ui small left floated circular image" src="public/images/hackcampus_temp.jpg">
           <p style="font-size: 120%;">我們相信將一群hacker聚集在一起,可以創造出影響世界的產品或服務。</p>
           <p style="font-size: 120%;">
             我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
@@ -63,7 +68,7 @@
           </p>
           <p style="font-size: 120%;">
             我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字，我需要更多文字。
-          </p>
+          </p> -->
         <!-- </div> -->
       </div>
     </div>
