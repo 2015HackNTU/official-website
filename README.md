@@ -33,7 +33,7 @@ Repository Branches
 Directory Structure
 -------------------
 * `views` : Contains all the `ejs` views (organized by each page) for server render.
-* `routes`: Contains all the page routers and api routers (organized by each page).
+* `routes`: Contains all the `page routers` and `api routers` (organized by each page).
 * `public` : Contains all non-compiled assets, such as css, js, imgs etc.
 * `config` : Configurations.
 * `node_module` : Contains all the node packages installed from `npm install`.
