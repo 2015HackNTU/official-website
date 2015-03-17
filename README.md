@@ -38,3 +38,10 @@ Directory Structure
 * `config` : Configurations.
 * `node_module` : Contains all the node packages installed from `npm install`.
 * `*/shared` : `shared` folders within each type of directory contain those files which are commonly included/used, for example, `navbar` and `footer` would be put into the `shared` folder in views.
+
+
+Url Usage
+---------
+* `/` : home page.
+* `/'page_name'` : 'page_name' page.
+* `/api/'page_name'` : api for 'page_name' page.
