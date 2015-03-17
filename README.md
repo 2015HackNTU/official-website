@@ -37,7 +37,7 @@ Directory Structure
 * `public` : Contains all non-compiled assets, such as css, js, imgs etc.
 * `config` : Configurations.
 * `node_module` : Contains all the node packages installed from `npm install`.
-* `*/shared` : `shared` folders within each type of directory contain those files which are commonly included/used, for example, `navbar` and `footer` would be put into the `shared` folder in views.
+* `*/shared` : `shared` folders within each type of directory contain those files which are commonly included/used, for example, `navbar` and `footer` would be put into the `shared` folder in views, or `jQuery` and `angularJS` in `shared` folder in `public/js` etc.
 
 
 Url Usage
