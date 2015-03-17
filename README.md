@@ -25,7 +25,7 @@ Do not forget `--save` argument, which saves new module to `package.json` for de
 
 Repository Branches
 -------------------
-* `master`: Main development Branch
+* `master`: Main development branch.
 * `old-version`: Backup for old-version official website.
 * `<other branches>`: Feature branches.
 
