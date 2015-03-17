@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<title>Edit Posts</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		body 		{ padding-top:80px; }
+	</style>
+</head>
+<body>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+	
+	<h1><span class="fa fa-pencil-square-o"></span>Edit</h1>
+
+	<!-- LOGIN FORM -->
+	<form action="/news/edit/<%= news._id %>" method="post">
+		<div class="form-group">
+			<label>Title</label>
+			<input type="text" class="form-control" name="title" value="<%=news.title%>">
+		</div>
+		<div class="form-group">
+			<label>Content</label>
+			<textarea type="text" class="form-control" name="content" rows="10"><%=news.content%>
+			</textarea>
+		</div>
+		<div class="form-group">
+			<label>Tags</label>
+			<input type="text" class="form-control" name="tag" value="<%=news.tag%>">
+		</div>
+		<input type="hidden" name="user_id" value="<%= user._id %>">
+		<input type="hidden" name="department" value="<%= user.local.department %>">
+		<button type="submit" class="btn btn-warning btn-lg">Submit</button>
+		<a href="/profile" class="btn btn-primary btn-lg">Back</a>
+
+	</form>
+
+	<hr>
+
+	<div class="text-center">
+		<p>- Hack NTU -</p>
+	</div>
+
+</div>
+</div>
+</body>
+</html>

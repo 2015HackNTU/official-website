@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<title>New Calendar</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<script src="/javascripts/jquery.min.js"></script>
+	<style>
+		body 		{ padding-top:80px; }
+	</style>
+</head>
+<body>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+	
+	<h1><span class="fa fa-pencil-square-o"></span> New Calendar</h1>
+
+	<!-- LOGIN FORM -->
+	<form action="/cal/create" method="post">
+		<div class="form-group">
+			<label>Type</label>
+			<input type="text" class="form-control" name="type" placeholder="開發小聚、黑客松、拉拉拉～">
+		</div>
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" class="form-control" name="name">
+		</div>
+		<div class="form-group">
+			<label>Description</label>
+			<textarea type="text" class="form-control" name="description" rows="10">
+			</textarea>
+		</div>
+		<div class="form-froup">
+			<label for="date">Date</label>
+			<input type="date" class="form-control" name="date" id='date' value="">
+			<label for="time">Time</label>
+			<input type="time" class="form-control" name="time" id="time">
+			<input type="text" class="hidden" name="month" id="month">
+		</div>	<br>
+		<input type="hidden" name="user_id" value="<%= user._id %>">
+		<input type="hidden" name="department" value="<%= user.local.department %>">
+		<input type="hidden" name="author" value="<%= user.local.name %>">
+		<button type="submit" class="btn btn-warning btn-lg">Submit</button>
+		<a href="/profile" class="btn btn-primary btn-lg">Back</a>
+		<script>
+
+			$('.btn').hover(function(){
+				var date = new Date(document.getElementById('date').value); // New Date object to store date value
+				console.log(date.getMonth()+1);
+				console.log(date.getYear()+1900);
+				document.getElementById('month').value = date.getMonth()+1;
+
+			})
+			
+		</script>
+	</form>
+
+	<hr>
+
+	<div class="text-center">
+		<p>- Hack NTU -</p>
+	</div>
+
+</div>
+</div>
+</body>
+</html>
