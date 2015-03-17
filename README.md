@@ -20,7 +20,7 @@ Installation of New Node Module
 npm install 'module_name' --save
 ```
 
-Do not forget `--save` argument, which saves new module to `package.json` for dependency. 
+Do not forget `--save` argument, which saves new module to `package.json` for dependency use. 
 
 
 Repository Branches
