@@ -1,3 +1,13 @@
+<<<<<<< HEAD
 .elasticbeanstalk/
 */.DS_Store
 *.pem
+=======
+node_modules/*
+.DS_Store
+.elasticbeanstalk/
+*/.DS_Store
+*.pem
+npm-debug.log
+.idea/*
+>>>>>>> 48c60d3e4a88051b107c31f6139ccaf85fc30ccb
