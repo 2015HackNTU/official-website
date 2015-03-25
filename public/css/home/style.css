@@ -1,0 +1,148 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    padding: 0em;
+    margin: 0em;
+}
+
+p {
+    font-size: 1em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.0em;
+}
+
+/*******************************/
+/*      header   section       */
+/*******************************/
+
+.full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+.header-background-pic {
+    width: 100%;
+    background-image: url('/imgs/home/index/mainpic_clear2.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+    overflow: hidden;
+}
+
+
+
+/*******************************/
+/*      about us section       */
+/*******************************/
+
+/*
+ *  Background
+ */
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 120%;
+}
+
+.background-red {
+    background-color: rgb(192, 23, 51);
+}
+
+.background-orange {
+    background-color: rgb(242, 148, 26);
+}
+
+.background-yellow {
+    background-color: rgb(255, 223, 34);
+}
+
+/*
+ *  For why, how, what
+ */
+
+.title-huge {
+    font-size: 5.5em;
+}
+
+.title-div {
+    padding-left: 35%;
+    margin-bottom: -5.25em;
+}
+
+.title-width {
+    width: 20%;
+}
+
+.title-left {
+    margin: 0 24%;
+}
+
+.title-center {
+    margin: 0 41%;
+}
+
+.title-right {
+    margin: 0 57%;
+}
+
+.font-red {
+    color: rgb(192, 23, 51);
+}
+
+.font-orange {
+    color: rgb(242, 148, 26);
+}
+
+.font-yellow {
+    color: rgb(255, 223, 34);
+}
+
+.font-shadow {
+    text-shadow: 0em 0.001em 0.05em black;
+}
+
+/*
+ *  Trapezoid
+ */
+
+.trapezoid-red {
+    height: 0;
+    width: 100%;
+
+    border-left:2em solid transparent;
+    border-right:2em solid transparent;
+    border-bottom:3.5em solid rgb(192, 23, 51);
+}
+.trapezoid-orange {
+    height: 0;
+    width: 100%;
+
+    border-left:2em solid transparent;
+    border-right:2em solid transparent;
+    border-bottom:3.5em solid rgb(242, 148, 26);
+}
+.trapezoid-yellow {
+    height: 0;
+    width: 100%;
+
+    border-left:2em solid transparent;
+    border-right:2em solid transparent;
+    border-bottom:3.5em solid rgb(255, 223, 34);
+}
