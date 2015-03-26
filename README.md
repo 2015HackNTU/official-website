@@ -1,15 +1,47 @@
-#HackNTU official website
+# official-website
 
-##How to lauch server?
-###### Of course first you need to have [Node.js](http://nodejs.org/download/), [NPM](http://blog.npmjs.org/post/85484771375/how-to-install-npm),and[Mongodb](http://www.mongodb.org/downloads) installed
-##### Before starting you need to launch MongoDB
-`` mongod ``
-##### Then open another shell page 
-`` git clone https://github.com/2015HackNTU/official-website `` <br>
-``cd official-website`` <br>
-``npm install`` <br>
-``node app.js``<br>
+HackNTU 2015 Official Website
 
-###Front-end Modification should be in ./Views/ folder
-###Routes Modification should be ./Routes/ folder
-###Database Setting should be in db.js file
+
+Environment Setup
+-----------------
+
+```
+$ sudo npm install
+$ npm start
+```
+
+The server will listen on the port 3000
+
+Installation of New Node Module
+-------------------------------
+
+```
+npm install 'module_name' --save
+```
+
+Do not forget `--save` argument, which saves new module to `package.json` for dependency use. 
+
+
+Repository Branches
+-------------------
+* `master`: Main development branch.
+* `old-version`: Backup for old-version official website.
+* `<other branches>`: Feature branches.
+
+
+Directory Structure
+-------------------
+* `views` : Contains all the `ejs` views (organized by each page) for server render.
+* `routes`: Contains all the `page routers` and `api routers` (organized by each page).
+* `public` : Contains all non-compiled assets, such as css, js, imgs etc.
+* `config` : Configurations.
+* `node_module` : Contains all the node packages installed from `npm install`.
+* `*/shared` : `shared` folders within each type of directory contain those files which are commonly included/used, for example, `navbar` and `footer` would be put into the `shared` folder in views, or `jQuery` and `angularJS` in `shared` folder would be in `public/js` etc.
+
+
+Url Usage
+---------
+* `/` : home page.
+* `/'page_name'` : 'page_name' page.
+* `/api/'page_name'` : api for 'page_name' page.

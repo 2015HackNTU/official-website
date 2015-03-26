@@ -1,5 +1,7 @@
-node_modules
+node_modules/*
+.DS_Store
 .elasticbeanstalk/
 */.DS_Store
 *.pem
-node_modules
+npm-debug.log
+.idea/*
