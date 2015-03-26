@@ -1,0 +1,105 @@
+.frameset {
+	width: 854px;
+	margin: 0 auto;
+}
+
+.frame {
+	width: 400px;
+	height: 400px;
+	margin: 50px 0;
+	display: inline-block;
+}
+
+.frame .frame-outer {
+	width: 100%;
+	height: 100%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+}
+
+.frame-left {
+	margin-right: 50px;
+}
+
+.frame-left .frame-outer {
+	background-image: url(../../imgs/community/workshopno.png);
+}
+
+.frame-left .frame-outer:hover {
+	background-image: url(../../imgs/community/workshopcolor.png);
+}
+
+.frame-right .frame-outer {
+	background-image: url(../../imgs/community/meetupno.png);
+}
+
+.frame-right .frame-outer:hover {
+	background-image: url(../../imgs/community/meetupcolor.png);
+}
+
+.frame .frame-inner {
+	width: 100%;
+	height: 100%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	display: none;
+}
+
+.frame-left .frame-inner {
+	background-image: url(../../imgs/community/workshopinner.png);
+}
+
+.frame-inner span {
+	position: absolute;
+	top: 60px;
+	left: 40px;
+	font-size: 30px;
+	font-family: sans-serif;
+}
+
+.timeline-group {
+	position: relative;
+	margin: 0 auto;
+	width: 854px;
+	height: 110px;
+}
+
+.timeline {
+	width: 100%;
+	height: 35px;
+	position: absolute;
+	bottom: 3px;
+	z-index: -1;
+	background-image: url(../../imgs/community/timeline.svg);
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.timeline-tag-today {
+	width: 60px;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+}
+
+.timeline-tag {
+	width: 20px;
+	height: 41px;
+	position: absolute;
+	bottom: 0;
+}
+
+#tag-1 {
+	left: 320px;
+	background: #BF1920;
+}
+
+#tag-2 {
+	left: 530px;
+	background: #F29417;
+}
