@@ -1,3 +1,14 @@
+html,
+body {
+	position: relative;
+	height: 100%;
+}
+
+@font-face {
+	font-family: 'BebasNeue';
+	src: url(../../fonts/BebasNeue-webfont.woff) format('woff');
+}
+
 .frameset {
 	width: 854px;
 	margin: 0 auto;
@@ -57,7 +68,8 @@
 	position: absolute;
 	top: 60px;
 	left: 40px;
-	font-size: 30px;
+	font-size: 25px;
+	line-height: 1.5em;
 	font-family: sans-serif;
 }
 
@@ -92,6 +104,20 @@
 	height: 41px;
 	position: absolute;
 	bottom: 0;
+	cursor: pointer;
+}
+
+.timeline-tag img {
+	width: 130px;
+	;
+	height: auto;
+	margin-top: -100px;
+	margin-left: -53px;
+	display: none;
+}
+
+.timeline-tag:hover > img {
+	display: block;
 }
 
 #tag-1 {
@@ -102,4 +128,127 @@
 #tag-2 {
 	left: 530px;
 	background: #F29417;
+}
+
+.span-date {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	font-size: 20px;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	background: #F29417;
+	color: aliceblue;
+	margin: 5px 0;
+}
+
+.span-date div {
+	text-align: center;
+	margin-top: 11px;
+}
+
+.activity {
+	width: 900px;
+	height: 660px;
+	position: absolute;
+	bottom: -700px;
+	left: 50%;
+	margin-left: -450px;
+	font-family: 'BebasNeue';
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.activity > span {
+	color: #fff;
+	font-size: 100px;
+	margin-left: 40px;
+	line-height: 1.5em;
+}
+
+.activity aside {
+	background: rgba(195, 195, 196, 0.5);
+	width: 335px;
+	height: 400px;
+	position: absolute;
+	left: 40px;
+	top: 140px;
+	padding-top: 20px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.activity aside span {
+	font-size: 35px;
+	margin-left: 30px;
+	line-height: 1.5em;
+}
+
+.activity aside span b {
+	font-size: 45px;
+}
+
+.activity aside span b:after {
+	content: " ";
+}
+
+.activity article {
+	position: absolute;
+	top: 140px;
+	left: 400px;
+	width: 450px;
+	height: 400px;
+}
+
+.activity article > span {
+	font-size: 50px;
+	color: #fff;
+}
+
+.activity article section h2 {
+	margin: 10px 0 10px 30px;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+.activity article section div {
+	position: absolute;
+	left: 0px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 15px 0 15px 25px;
+	border-color: transparent transparent transparent #ffee00;
+}
+
+.activity article section p {
+	font-size: 17px;
+}
+
+.activity#workshop {
+	background: #c94b52;
+}
+
+.cross {
+	width: 50px;
+	height: 50px;
+	background: #ff9200;
+	border-radius: 25px;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	cursor: pointer;
+}
+
+.cross div {
+	margin-top: -9px;
+	margin-left: 13px;
+	font-family: sans-serif;
+	font-size: 50px;
+	color: #fff;
 }
