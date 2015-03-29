@@ -13,7 +13,7 @@ $(document).ready(function () {
 	});
 	$('.timeline-tag').click(function () {
 		tag = $(this).attr('tag');
-		$('.activity#' + tag).animate({
+		$('.activity#' + tag).show().animate({
 			bottom: '-20px'
 		}, 1000);
 	});
@@ -21,6 +21,8 @@ $(document).ready(function () {
 		tag = $(this).attr('tag');
 		$('.activity#' + tag).animate({
 			bottom: '-700px'
-		}, 1000);
+		}, 1000, function () {
+			$(this).hide();
+		});
 	});
 });
