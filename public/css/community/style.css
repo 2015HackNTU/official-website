@@ -97,6 +97,7 @@ body {
 	position: absolute;
 	left: 50%;
 	margin-left: -30px;
+	cursor: move;
 }
 
 .timeline-tag {
@@ -130,6 +131,52 @@ body {
 	background: #F29417;
 }
 
+#tag-3 {
+	left: 200px;
+	background: #000;
+}
+
+#tag-4 {
+	left: 250px;
+	background: #000;
+}
+
+#tag-5 {
+	left: 600px;
+	background: #000;
+}
+
+.month-tag {
+	color: #BDB9B0;
+	font-family: 'BebasNeue';
+	font-size: 40px;
+}
+
+.month-tag > div {
+	position: absolute;
+	top: 25px;
+}
+
+.month-tag div div {
+	margin-top: -1px;
+	margin-left: 5px;
+	height: 35px;
+	width: 5px;
+	background: #fff;
+}
+
+#month-1 {
+	left: 270px;
+}
+
+#month-2 {
+	left: 460px;
+}
+
+#month-3 {
+	left: 660px;
+}
+
 .span-date {
 	display: inline-block;
 	width: 60px;
@@ -159,6 +206,7 @@ body {
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	display: none;
 }
 
 .activity > span {
