@@ -7,75 +7,83 @@
 </head>
 <body>
 
-<% include ../shared/navbar.ejs%>
-
 <section>
-    <div class="full-screen header-background-pic">
-        <!--<div>-->
-        <!--<img src="imgs/index/main-pic.jpg" style="width: 100%">-->
-        <!--</div>-->
-        <!--<div style="top: 0px; z-index: 10;">-->
-        <!--<img src="imgs/index/inde_logo.png">-->
-
-        <!--</div>-->
+    <div class="width-100">
+        <img src="imgs/home/index/mainpic_clear3.png" class="width-100" style="z-index: -999;">
     </div>
 </section>
 
+<div data-0="position: relative; top: 0; left: 0; margin-top: -3em;" data-600="position: fixed; top: -5em; left: 0;" data-700="position: fixed; top: 0; left: 0; margin-top: 0;" class="width-100 position-relative" style="z-index: 999; background-color: white">
+    <% include ../shared/navbar.ejs %>
+</div>
+
+
+<!-- Film -->
 <section>
-    <!-- Why -->
-    <div data-0="top:86.5%" data-1000="top:-20%" class="scene-default">
+    <div style="text-align: center; padding-top: 10em">
+        <iframe width="70%" height="7%" src="https://www.youtube.com/embed/w4xjxO2crp4" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+<!-- Why -->
+<section>
+    <div data-800="top:100%" data-850="top:86.5%" data-1850="top:-20%" class="scene-default">
         <div class="title-width title-left">
-            <img src="imgs/home/why/why.png" class="width-100" style="margin-bottom: -0.9em">
+            <img src="imgs/home/why/why.png" class="width-100" style="margin-bottom: -1.1em">
         </div>
         <div class="background background-red">
-            <div class="position-absolute" style="top: 5em; left: 2em">
-                <img src="imgs/home/why/why_content.png">
+            <div class="position-absolute" style="top: 8em; left: 4em">
+                <img src="imgs/home/why/why_content.png" class="width-90">
             </div>
             <div>
-                <div class="position-absolute" style="top: 5em; right: 6em">
+                <div class="position-absolute" style="top: 8em; right: 6em">
                     <img src="imgs/home/why/why_idea.png" class="width-75">
                 </div>
-                <div data-1000="bottom: 13em" data-3000="bottom: 17em" class="position-absolute" style="bottom: 13em; right: 5em">
+                <div data-850="bottom: 10em" data-2850="bottom: 14em" class="position-absolute" style="bottom: 13em; right: 5em">
                     <img src="imgs/home/why/why_role.png" class="width-75">
                 </div>
-                <div class="position-absolute" style="bottom: 10em; right: 2em">
+                <div class="position-absolute" style="bottom: 7em; right: 2em">
                     <img src="imgs/home/why/why_ground.png">
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- How -->
-    <div data-2000="top:86.5%" data-3000="top:-20%" class="scene-default">
+<!-- How -->
+<section>
+    <div data-800="top:100%" data-850="top:86.5%" data-2350="top:86.5%" data-3350="top:-20%" class="scene-default">
         <div class="title-width title-center">
-            <img src="imgs/home/how/how.png" class="width-100" style="margin-bottom: -0.6em">
+            <img src="imgs/home/how/how.png" class="width-100" style="margin-bottom: -0.7em">
         </div>
         <div class="background background-orange">
-            <div class="position-absolute" style="top: 5em; left: 2em">
-                <img src="imgs/home/how/how_content.png">
+            <div class="position-absolute" style="top: 8em; left: 4em">
+                <img src="imgs/home/how/how_content.png" class="width-90">
             </div>
             <div>
-                <div class="position-absolute" style="bottom: 5em; right: -10em">
+                <div class="position-absolute" style="bottom: 6em; right: -10em">
                     <img src="imgs/home/how/how_role.png" class="width-75">
                 </div>
-                <div data-3000="transform: scale(0.7);" data-5000="transform: scale(1.4);" class="position-absolute" style="bottom: 25em; right: 14em">
+                <div data-2350="transform: scale(0.7);" data-4350="transform: scale(1.4);" class="position-absolute" style="bottom: 26em; right: 13em">
                     <img src="imgs/home/how/how_idea.png" class="width-50">
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- What -->
-    <div data-4000="top:87.3%" data-5000="top:-20%" data-5500="top: -20%" data-6500="top: -120%" class="scene-default">
+<!-- What -->
+<section>
+    <div data-800="top:100%" data-850="top:87.3%" data-3850="top:87.3%" data-4850="top:-20%" data-5350="top: -20%" data-6350="top: -120%" class="scene-default">
         <div class="title-width title-right">
-            <img src="imgs/home/what/what.png" class="width-100" style="margin-bottom: -0.8em">
+            <img src="imgs/home/what/what.png" class="width-100" style="margin-bottom: -1em">
         </div>
         <div class="background background-yellow">
-            <div class="position-absolute" style="top: 2em; left: 2em">
-                <img src="imgs/home/what/what_content.png">
+            <div class="position-absolute" style="top: 6.5em; left: 4em">
+                <img src="imgs/home/what/what_content.png" class="width-90">
             </div>
             <div>
-                <div data-4000="left: -10em" data-6000="left: 8em;" class="position-absolute" style="bottom: 3em; left: -10em">
+                <div data-3850="left: -10em" data-5850="left: 8em;" class="position-absolute" style="bottom: 3em; left: -10em">
                     <img src="imgs/home/what/what_role.png" class="width-75">
                 </div>
                 <div class="position-absolute" style="bottom: 25em; left: 25em">
@@ -84,9 +92,11 @@
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Final -->
-    <div data-5500="top:100%" data-6500="top:0%" class="scene-default">
+<!-- Final -->
+<section>
+    <div data-5350="top:100%" data-6350="top:0%" class="scene-default">
         <div class="background background-black">
             <div class="position-absolute width-100" style="text-align: center">
                 <img src="imgs/home/final/final_idea.png" class="margin-top">
