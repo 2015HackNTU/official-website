@@ -1,5 +1,6 @@
 html {
     font-size: 16px;
+    font-size: 90%;
 }
 
 body {
@@ -27,9 +28,16 @@ h4 {
     font-size: 1.0em;
 }
 
+
 /*******************************/
 /*      header   section       */
 /*******************************/
+
+
+/*
+ *  General
+ */
+
 
 .full-screen {
     width: 100%;
@@ -45,15 +53,17 @@ h4 {
     overflow: hidden;
 }
 
-
+.scene-default {
+    position: fixed;
+    top: 95%;
+    left: 0em;
+    width: 100%;
+}
 
 /*******************************/
 /*      about us section       */
 /*******************************/
 
-/*
- *  Background
- */
 
 .background {
     position: fixed;
@@ -71,6 +81,10 @@ h4 {
 
 .background-yellow {
     background-color: rgb(255, 223, 34);
+}
+
+.background-black {
+    background-color: rgb(22, 22, 22);
 }
 
 /*
@@ -145,4 +159,77 @@ h4 {
     border-left:2em solid transparent;
     border-right:2em solid transparent;
     border-bottom:3.5em solid rgb(255, 223, 34);
+}
+
+/*******************************/
+/*          General            */
+/*******************************/
+
+/*
+ *  Layout Setting
+ */
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/*
+ *  width
+ */
+
+.width-100 {
+    width: 100%;
+}
+
+.width-75 {
+    width: 75%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+/*
+ *  Margin
+ */
+
+.margin-top {
+    margin-top: 5em;
+}
+
+.margin-left {
+    margin-left: 5em;
+}
+
+.margin-bottom {
+    margin-bottom: 5em;
+}
+
+.margin-right {
+    margin-right: 5em;
+}
+
+.margin-all {
+    margin: 5em;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.position-relative {
+    position: relative;
 }
