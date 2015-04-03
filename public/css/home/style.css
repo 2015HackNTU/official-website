@@ -1,5 +1,6 @@
 html {
-    font-size: 16px;
+    font-size: 18px;
+    /*font-size: 90%;*/
 }
 
 body {
@@ -27,33 +28,41 @@ h4 {
     font-size: 1.0em;
 }
 
+
 /*******************************/
 /*      header   section       */
 /*******************************/
 
-.full-screen {
+
+/*
+ *  General
+ */
+
+
+/*.full-screen {*/
+    /*width: 100%;*/
+/*}*/
+
+/*.header-background-pic {*/
+    /*width: 100%;*/
+    /*background-image: url('/imgs/home/index/mainpic_clear2.png');*/
+    /*background-size: 100% auto;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center top;*/
+    /*overflow: hidden;*/
+/*}*/
+
+.scene-default {
+    position: fixed;
+    top: 95%;
+    left: 0em;
     width: 100%;
-    height: 100%;
 }
-
-.header-background-pic {
-    width: 100%;
-    background-image: url('/imgs/home/index/mainpic_clear2.png');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: center top;
-    overflow: hidden;
-}
-
-
 
 /*******************************/
 /*      about us section       */
 /*******************************/
 
-/*
- *  Background
- */
 
 .background {
     position: fixed;
@@ -62,15 +71,23 @@ h4 {
 }
 
 .background-red {
-    background-color: rgb(192, 23, 51);
+    background-color: rgba(192, 23, 51, 1);
 }
 
 .background-orange {
-    background-color: rgb(242, 148, 26);
+    background-color: rgba(242, 148, 26, 1);
 }
 
 .background-yellow {
-    background-color: rgb(255, 223, 34);
+    background-color: rgba(255, 223, 34, 1);
+}
+
+.background-black {
+    background-color: rgba(22, 22, 22, 1);
+}
+
+.background-white {
+    background-color: rgba(255, 255, 255, 1);
 }
 
 /*
@@ -145,4 +162,85 @@ h4 {
     border-left:2em solid transparent;
     border-right:2em solid transparent;
     border-bottom:3.5em solid rgb(255, 223, 34);
+}
+
+/*******************************/
+/*          General            */
+/*******************************/
+
+/*
+ *  Layout Setting
+ */
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/*
+ *  width
+ */
+
+.width-100 {
+    width: 100%;
+}
+
+.width-90 {
+    width: 90%;
+}
+
+.width-75 {
+    width: 75%;
+}
+
+.width-66 {
+    width: 66%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+/*
+ *  Margin
+ */
+
+.margin-top {
+    margin-top: 5em;
+}
+
+.margin-left {
+    margin-left: 5em;
+}
+
+.margin-bottom {
+    margin-bottom: 5em;
+}
+
+.margin-right {
+    margin-right: 5em;
+}
+
+.margin-all {
+    margin: 5em;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.position-relative {
+    position: relative;
 }

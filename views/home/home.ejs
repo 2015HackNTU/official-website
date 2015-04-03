@@ -1,60 +1,129 @@
 <html>
 <head>
     <tltle></tltle>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/shared/navbar/navbar_style.css">
     <link rel="stylesheet" href="css/home/style.css">
 </head>
 <body>
-<section>
-    <div class="full-screen header-background-pic">
-        <!--<div>-->
-        <!--<img src="imgs/index/main-pic.jpg" style="width: 100%">-->
-        <!--</div>-->
-        <!--<div style="top: 0px; z-index: 10;">-->
-        <!--<img src="imgs/index/inde_logo.png">-->
 
-        <!--</div>-->
+<section>
+    <div class="width-100">
+        <img src="imgs/home/index/mainpic_clear3.png" class="width-100" style="z-index: -999;">
     </div>
 </section>
 
+<div data-0="position: relative; top: 0; left: 0; margin-top: -3em;" data-650="position: fixed; top: -1em; left: 0;" data-700="position: fixed; top: 0; left: 0; margin-top: 0;" class="width-100 position-relative" style="z-index: 999; background-color: white">
+    <% include ../shared/navbar.ejs %>
+</div>
+
+
+<!-- Film -->
 <section>
-    <div data-0="top:86.5%" data-1000="top:-20%" style="position: fixed; top: 95%; left: 0em; width: 100%;">
+    <div style="text-align: center; padding-top: 10em">
+        <iframe width="70%" height="7%" src="https://www.youtube.com/embed/w4xjxO2crp4" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>
+
+<!-- Why -->
+<section>
+    <div data-800="top:100%; display: block" data-850="top:86.5%" data-1850="top:-20%" data-3350="display: none;" class="scene-default">
         <div class="title-width title-left">
-            <!--<div class="title-div">-->
-            <!--<h1 class="title-huge font-red font-shadow">why</h1>-->
-            <!--</div>-->
-            <!--<div class="trapezoid-red"></div>-->
-            <img src="imgs/home/scene_one/why.png" style="width: 100%; margin-bottom: -0.9em">
+            <img src="imgs/home/why/why.png" class="width-100" style="margin-bottom: -1.1em">
         </div>
-        <div class="background background-red"></div>
+        <div class="background background-red">
+            <div class="position-absolute" style="top: 20%; left: 15%">
+                <img src="imgs/home/why/why_content.png" class="width-75">
+            </div>
+            <div>
+                <div class="position-absolute" style="top: 15%; right: 15%">
+                    <img src="imgs/home/why/why_idea.png" class="width-66">
+                </div>
+                <div data-850="bottom: 25%" data-2850="bottom: 35%" class="position-absolute" style="bottom: 13em; right: 15%">
+                    <img src="imgs/home/why/why_role.png" class="width-66">
+                </div>
+                <div class="position-absolute" style="bottom: 25%; right: 8%">
+                    <img src="imgs/home/why/why_ground.png" class="width-66">
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div data-2000="top:86.5%" data-3000="top:-20%" style="position: fixed; top: 95%; left: 0em; width: 100%;">
+<!-- How -->
+<section>
+    <div data-800="top:100%; display: block" data-850="top:86.5%" data-2350="top:86.5%" data-3350="top:-20%" data-4850="display: none" class="scene-default">
         <div class="title-width title-center">
-            <!--<div class="title-div">-->
-            <!--<h1 class="title-huge font-orange font-shadow">how</h1>-->
-            <!--</div>-->
-            <!--<div class="trapezoid-orange"></div>-->
-            <img src="imgs/home/scene_two/how.png" style="width: 100%; margin-bottom: -0.6em">
+            <img src="imgs/home/how/how.png" class="width-100" style="margin-bottom: -0.7em">
         </div>
-        <div class="background background-orange"></div>
+        <div class="background background-orange">
+            <div class="position-absolute" style="top: 20%; left: 15%">
+                <img src="imgs/home/how/how_content.png" class="width-75">
+            </div>
+            <div>
+                <div class="position-absolute" style="bottom: 15%; right: -10%">
+                    <img src="imgs/home/how/how_role.png" class="width-66">
+                </div>
+                <div data-2350="transform: scale(0.7);" data-4350="transform: scale(1.4);" class="position-absolute" style="bottom: 55%; right: 26%">
+                    <img src="imgs/home/how/how_idea.png" class="width-50">
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div data-4000="top:87.3%" data-5000="top:-20%" style="position: fixed; top: 95%; left: 0em; width: 100%;">
+<!-- What -->
+<section>
+    <div data-800="top:100%" data-850="top:87.3%" data-3850="top:87.3%" data-4850="top:-20%" data-5350="top: -20%" data-6350="top: -120%" class="scene-default">
         <div class="title-width title-right">
-            <!--<div class="title-div" style="padding-left: 28%">-->
-            <!--<h1 class="title-huge font-yellow font-shadow">what</h1>-->
-            <!--</div>-->
-            <!--<div class="trapezoid-yellow"></div>-->
-            <img src="imgs/home/scene_three/what.png" style="width: 100%; margin-bottom: -0.8em">
+            <img src="imgs/home/what/what.png" class="width-100" style="margin-bottom: -1em">
         </div>
-        <div class="background background-yellow"></div>
+        <div class="background background-yellow">
+            <div class="position-absolute" style="top: 20%; left: 20%">
+                <img src="imgs/home/what/what_content.png" class="width-75">
+            </div>
+            <div>
+                <div data-3850="left: -10%" data-5850="left: 10%;" class="position-absolute" style="bottom: 8%; left: -10%">
+                    <img src="imgs/home/what/what_role.png" class="width-66">
+                </div>
+                <div class="position-absolute" style="bottom: 55%; left: 35%">
+                    <img src="imgs/home/what/what_idea.png" class="width-50">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final -->
+<section>
+    <div data-5350="top:100%" data-6350="top:0%" class="scene-default">
+        <div class="background background-black">
+            <div class="position-absolute width-100" style="text-align: center; top: 20%; left: 0%">
+                <img src="imgs/home/final/final_idea.png" style="width: 15%">
+            </div>
+            <div class="position-absolute" style="top: 10%; right: 10%;">
+                <img src="imgs/home/final/final_checkit.png" class="width-75">
+            </div>
+            <div class="position-absolute width-100" style="text-align: center; bottom: 25%; ">
+                <img src="imgs/home/final/final_history.png" style="width: 15%">
+            </div>
+        </div>
     </div>
 </section>
 
 
 </body>
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/home/skrollr.js"></script>
 <script>
     var s = skrollr.init();
+    var w = window,
+            d = document,
+            e = d.documentElement,
+            g = d.getElementsByTagName('body')[0],
+            x = w.innerWidth || e.clientWidth || g.clientWidth,
+            y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+//    alert(x + ' × ' + y);
 </script>
 </html>
