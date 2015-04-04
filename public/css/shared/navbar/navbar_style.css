@@ -52,7 +52,7 @@ nav div {
 }
 
 .nav-shadow {
-    -moz-box-shadow: 0px 1px 5px rgba(20%,20%,40%,0.7);
-    -webkit-box-shadow: 0px 1px 5px rgba(20%,20%,40%,0.7);
-    box-shadow: 0px 1px 5px rgba(20%,20%,40%,0.7);
+    -moz-box-shadow: 0px 5px 5px -5px rgba(20%,20%,40%,0.7);
+    -webkit-box-shadow: 0px 5px 5px -5px rgba(20%,20%,40%,0.7);
+    box-shadow: 0px 5px 5px -5px rgba(20%,20%,40%,0.7);
 }
