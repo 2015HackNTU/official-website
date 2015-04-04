@@ -1,5 +1,5 @@
 @font-face {
-    font-family: SourceCodePro;
+    font-family: Montserrat-Light;
     src: url('/fonts/Montserrat-Light.otf');
 }
 
@@ -23,7 +23,7 @@ nav div {
 }
 
 .navbar-page>a {
-    font-family: SourceCodePro;
+    font-family: Montserrat-Light;
     text-decoration: none;
     color: black;
     padding: 0.5em;

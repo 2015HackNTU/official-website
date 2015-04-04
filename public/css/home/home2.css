@@ -8,13 +8,18 @@
 }
 
 @font-face {
-    font-family: AdobeFanHeitiStdB;
+    font-family: Adobe-Fan-Heiti-Std-B;
     src: url('/fonts/Adobe-Fan-Heiti-Std-B.otf');
 }
 
 @font-face {
     font-family: STHeiti;
     src: url('/fonts/STHeiti.ttf');
+}
+
+@font-face {
+    font-family: Montserrat-Hairline;
+    src: url('/fonts/Montserrat-Hairline');
 }
 
 /*******************************/
@@ -161,7 +166,7 @@ i {
 }
 
 .content-block .block-content {
-    font-family: AdobeFanHeitiStdB;
+    font-family: Adobe-Fan-Heiti-Std-B;
 }
 
 /*******************************/
@@ -191,6 +196,7 @@ figure > figcaption {
     opacity: 0;
     color: #ffffff;
     overflow: hidden;
+    font-family: Montserrat-Hairline;
 
     -webkit-transform: translateY(120%);
     -moz-transform: translateY(120%);
