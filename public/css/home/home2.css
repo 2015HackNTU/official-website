@@ -156,16 +156,18 @@ i {
 }
 
 .content-block {
-    padding: 3% 30%;
+    padding: 3% 20%;
     height: 30%;
 }
 
 .content-block .block-header {
+    font-size: 3em;
     font-family: STXihei;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .content-block .block-content {
+    font-size: 1.2em;
     font-family: Adobe-Fan-Heiti-Std-B;
 }
 
@@ -197,6 +199,7 @@ figure > figcaption {
     color: #ffffff;
     overflow: hidden;
     font-family: Montserrat-Hairline;
+    letter-spacing: 1.4;
 
     -webkit-transform: translateY(120%);
     -moz-transform: translateY(120%);
