@@ -1,36 +1,58 @@
 @font-face {
-    font-family: SourceCodePro;
-    src: url('/fonts/navbar/SourceCodePro-Regular.ttf');
+    font-family: Montserrat-Light;
+    src: url('/fonts/Montserrat-Light.otf');
 }
 
-a {
+nav {
+    width: 100%;
+    height: 6%;
+    background-color: white;
+    padding: 0.5em;
+}
+
+nav div {
+    text-align: center;
+}
+
+.navbar-logo {
+    width: 25%;
+}
+
+.navbar-page {
+    width: 50%;
+}
+
+.navbar-page>a {
+    font-family: Montserrat-Light;
     text-decoration: none;
-    color: #000000;
-    cursor: pointer;
+    color: black;
+    padding: 0.5em;
 }
 
-.table {
+.navbar-link {
+    width: 25%;
+}
+
+.navbar-link>a {
+    margin: 0 0.3em;
+}
+
+.nav-table {
     display: table;
 }
 
-.table-row {
+.nav-table-row {
     display: table-row;
 }
 
-.table-cell {
+.nav-table-cell {
     display: table-cell;
     vertical-align: middle;
-    text-align: center;
-    padding: 0.5em;
-    padding-top: 0.6em;
-    padding-bottom: 0.6em;
-    font-size: 1em;
-    font-family: SourceCodePro;
-    letter-spacing: 1.4;
+    height: 100%;
 }
 
-.shadow {
-    -moz-box-shadow: 0px 4px 3px rgba(20%,20%,40%,0.7);
-    -webkit-box-shadow: 0px 4px 3px rgba(20%,20%,40%,0.7);
-    box-shadow: 0px 4px 3px rgba(20%,20%,40%,0.7);
+.nav-shadow {
+    -moz-box-shadow: 0px 5px 5px -5px rgba(20%,20%,40%,0.7);
+    -webkit-box-shadow: 0px 5px 5px -5px rgba(20%,20%,40%,0.7);
+    box-shadow: 0px 5px 5px -5px rgba(20%,20%,40%,0.7);
 }
