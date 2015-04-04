@@ -1,7 +1,6 @@
 html,
 body {
 	position: relative;
-	height: 100%;
 }
 
 @font-face {
@@ -12,6 +11,7 @@ body {
 .frameset {
 	width: 854px;
 	margin: 0 auto;
+	margin-top: 40px;
 }
 
 .frame {
@@ -181,18 +181,27 @@ body {
 	display: inline-block;
 	width: 60px;
 	height: 60px;
-	font-size: 20px;
+	font-size: 16px;
 	border-radius: 30px;
 	-moz-border-radius: 30px;
 	-webkit-border-radius: 30px;
 	background: #F29417;
 	color: aliceblue;
 	margin: 5px 0;
+	position: relative;
 }
 
 .span-date div {
 	text-align: center;
-	margin-top: 11px;
+	margin-top: 12px;
+}
+
+.span-date span {
+	font-size: 22px;
+	margin-top: -46px;
+	margin-left: 24px;
+	width: 260px;
+	color: #000;
 }
 
 .activity {
