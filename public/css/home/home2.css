@@ -1,4 +1,23 @@
 /*******************************/
+/*           Fonts             */
+/*******************************/
+
+@font-face {
+    font-family: STXihei;
+    src: url('/fonts/STXiHei.ttf');
+}
+
+@font-face {
+    font-family: AdobeFanHeitiStdB;
+    src: url('/fonts/Adobe-Fan-Heiti-Std-B.otf');
+}
+
+@font-face {
+    font-family: STHeiti;
+    src: url('/fonts/STHeiti.ttf');
+}
+
+/*******************************/
 /*          Default            */
 /*******************************/
 
@@ -58,11 +77,11 @@ i {
 
 #top-nav {
     background-color: #ffffff;
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -ms-transition: all 0.6s;
-    -o-transition: all 0.6s;
-    transition: all 0.6s;
+    -webkit-transition: all 0.6s, opacity 1ms;
+    -moz-transition: all 0.6s, opacity 1ms;
+    -ms-transition: all 0.6s, opacity 1ms;
+    -o-transition: all 0.6s, opacity 1ms;
+    transition: all 0.6s, opacity 1ms;
 }
 
 #top-nav-logo, #top-nav-hackntu {
@@ -81,6 +100,7 @@ i {
 
 .navbar-hide {
     display: none;
+    background-color: transparent;
 }
 
 .navbar-show {
@@ -136,11 +156,12 @@ i {
 }
 
 .content-block .block-header {
-
+    font-family: STXihei;
+    margin-bottom: 2em;
 }
 
 .content-block .block-content {
-
+    font-family: AdobeFanHeitiStdB;
 }
 
 /*******************************/
@@ -277,6 +298,7 @@ figure > .svg-container {
 
 .slogan {
     font-size: 5em;
+    font-family: STHeiti;
 }
 
 

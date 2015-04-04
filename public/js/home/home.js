@@ -23,6 +23,7 @@ $(document).ready(function(){
             }
         },
         offset: '-1%'
+
     });
     $('#bot-nav').waypoint({
         handler: function(direction){
@@ -36,4 +37,12 @@ $(document).ready(function(){
             }
         }
     })
+
+//    $('#nav-anchor').waypoint({
+//        handler: function(direction){
+//            if(direction === "up"){
+//                $('#top-nav').removeClass('navbar-hide');
+//            }
+//        }
+//    })
 });
