@@ -46,16 +46,21 @@
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
+            <div class="item">
                 <img src="imgs/home2/mainpic3.jpg">
             </div>
 
             <div class="item">
                 <img src="imgs/home2/mainpic2.png">
+            </div>
+
+            <div class="item active">
+                <img src="imgs/home2/mainpic_course5.png">
             </div>
         </div>
 
@@ -75,10 +80,10 @@
             <div class="nav-table-cell navbar-logo"></div>
             <div class="nav-table-cell navbar-page">
                 <a href="">About Us</a>
-                <a href="">Hackathon</a>
-                <a href="">Community</a>
-                <a href="">Course</a>
-                <a href="">HackCampus</a>
+                <a href="http://2015.hackntu.com" target="_blank">Hackathon</a>
+                <a href="/community">Community</a>
+                <a href="/course">Course</a>
+                <a href="/hackcampus">HackCampus</a>
             </div>
             <div class="nav-table-cell navbar-link"></div>
         </div>
@@ -148,14 +153,10 @@
                                             <div class="svg-container">
                                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                      width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
-                                                <path fill="#CECECE" d="M89.592,86.777c1.89-0.509,3.008-2.441,2.499-4.322c-0.507-1.891-2.44-3-4.314-2.5
-	c-1.89,0.506-3.005,2.441-2.5,4.322C85.778,86.161,87.71,87.284,89.592,86.777z"/>
-                                                <path fill="#CECECE" d="M110.403,86.777c1.878,0.507,3.813-0.617,4.319-2.5c0.512-1.881-0.613-3.816-2.498-4.322
-	c-1.872-0.5-3.813,0.606-4.325,2.491C107.401,84.336,108.52,86.269,110.403,86.777z"/>
-                                                <path fill="#CECECE" d="M128.412,92.182c-1.375,1.384-1.375,3.608,0,4.991c1.387,1.384,3.616,1.384,4.996,0
-	c1.37-1.382,1.37-3.606,0-4.991C132.028,90.8,129.799,90.8,128.412,92.182z"/>
-                                                <path fill="#CECECE" d="M143.133,117.69c1.893-0.503,3.008-2.449,2.502-4.323c-0.502-1.881-2.431-3.003-4.318-2.501
-	c-1.889,0.511-2.997,2.44-2.504,4.329C139.325,117.084,141.258,118.188,143.133,117.69z"/>
+                                                <path fill="#CECECE" d="M89.592,86.777c1.89-0.509,3.008-2.441,2.499-4.322c-0.507-1.891-2.44-3-4.314-2.5 c-1.89,0.506-3.005,2.441-2.5,4.322C85.778,86.161,87.71,87.284,89.592,86.777z"/>
+                                                <path fill="#CECECE" d="M110.403,86.777c1.878,0.507,3.813-0.617,4.319-2.5c0.512-1.881-0.613-3.816-2.498-4.322 c-1.872-0.5-3.813,0.606-4.325,2.491C107.401,84.336,108.52,86.269,110.403,86.777z"/>
+                                                <path fill="#CECECE" d="M128.412,92.182c-1.375,1.384-1.375,3.608,0,4.991c1.387,1.384,3.616,1.384,4.996,0 c1.37-1.382,1.37-3.606,0-4.991C132.028,90.8,129.799,90.8,128.412,92.182z"/>
+                                                <path fill="#CECECE" d="M143.133,117.69c1.893-0.503,3.008-2.449,2.502-4.323c-0.502-1.881-2.431-3.003-4.318-2.501 c-1.889,0.511-2.997,2.44-2.504,4.329C139.325,117.084,141.258,118.188,143.133,117.69z"/>
                                                 <path fill="#CECECE" d="M143.141,133.493c-1.883-0.499-3.815,0.616-4.332,2.502c-0.492,1.886,0.615,3.815,2.507,4.325
 	c1.883,0.508,3.812-0.607,4.315-2.502C146.141,135.945,145.024,133.999,143.141,133.493z"/>
                                                 <path fill="#CECECE" d="M128.412,154.018c-1.375,1.369-1.375,3.609,0,4.984c1.387,1.385,3.616,1.385,4.996,0
@@ -621,6 +622,10 @@
             </div>
     </div>
 </section>
+
+<div>
+    <% include ../shared/footer.ejs %>
+</div>
 
 </body>
 

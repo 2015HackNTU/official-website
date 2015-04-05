@@ -1,0 +1,33 @@
+footer {
+    background-color: #000000;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+}
+
+footer, footer i {
+    color: rgba(230, 230, 230, 0.9);
+    font-weight: bold;
+}
+
+footer i {
+    font-size: 1.5em;
+}
+
+footer div {
+    margin: 0.5em auto;
+}
+
+.footer-table {
+    display: table;
+}
+
+.footer-table-row {
+    display: table-row;
+}
+
+.footer-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
