@@ -2,7 +2,7 @@
  * Created by pilagod on 4/4/15.
  */
 $(document).ready(function(){
-    $('#top-nav').waypoint({
+    $('#top-anchor').waypoint({
         handler: function(direction){
             if(direction === "down"){
 //                $('#top-nav').removeClass('top-nav-before');
@@ -21,8 +21,7 @@ $(document).ready(function(){
                 $('#top-nav-hackntu').removeClass('top-nav-hackntu-after');
 //                $('#top-nav').addClass('top-nav-before');
             }
-        },
-        offset: '-1%'
+        }
 
     });
     $('#bot-nav').waypoint({
@@ -36,7 +35,9 @@ $(document).ready(function(){
                 $('#navbar').addClass('navbar-hide');
             }
         }
-    })
+    });
+
+    $.waypoints('refresh');
 
 //    $('#nav-anchor').waypoint({
 //        handler: function(direction){

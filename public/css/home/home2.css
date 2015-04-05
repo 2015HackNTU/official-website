@@ -105,7 +105,6 @@ i {
 
 .navbar-hide {
     display: none;
-    background-color: transparent;
 }
 
 .navbar-show {
@@ -120,21 +119,21 @@ i {
 /* Logo */
 
 .top-nav-logo-before {
-    width: 1.5em;
+    width: 1.8em;
 }
 
 .top-nav-logo-after {
-    width: 1.1em;
+    width: 1.2em;
 }
 
 /* Hackntu */
 
 .top-nav-hackntu-before {
-    width: 6em;
+    width: 7em;
 }
 
 .top-nav-hackntu-after {
-    width: 5.2em;
+    width: 5.6em;
 }
 
 /* Nav Bar */
@@ -307,7 +306,7 @@ figure > .svg-container {
 
 .slogan {
     font-size: 5em;
-    font-family: STHeiti;
+    font-family: STXihei;
 }
 
 
