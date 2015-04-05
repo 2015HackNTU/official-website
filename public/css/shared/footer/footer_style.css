@@ -1,7 +1,7 @@
 footer {
-    background-color: #000000;
+    background-color: #282828;
     text-align: center;
-    height: 20%;
+    height: 10%;
     width: 100%;
 }
 
@@ -15,7 +15,7 @@ footer i {
 }
 
 footer div {
-    margin: 0.5em auto;
+    margin: 0.2em auto;
 }
 
 .footer-table {
