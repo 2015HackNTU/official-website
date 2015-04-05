@@ -176,7 +176,7 @@ i {
 
 
 .top-block {
-    height: 50%;
+    height: 42.5%;
     background-image: url('/imgs/home2/mainpic2.png');
     background-attachment: fixed;
     background-position: center;
@@ -185,7 +185,7 @@ i {
 }
 
 .bottom-block {
-    height: 50%;
+    height: 57.5%;
     background-color: white;
 }
 
@@ -287,7 +287,7 @@ figure > .svg-container {
 }
 
 .slogan {
-    font-size: 5em;
+    font-size: 4.5em;
     font-family: STXihei;
 }
 
