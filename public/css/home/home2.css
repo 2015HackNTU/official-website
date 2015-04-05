@@ -256,12 +256,6 @@ figure > .svg-container {
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
     transform: scale(1.1);
-
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -ms-transition: all 0.6s;
-    -o-transition: all 0.6s;
-    transition: all 0.6s;
 }
 
 .bottom-block div.block:hover figure > .svg-container{
@@ -270,12 +264,6 @@ figure > .svg-container {
     -ms-transform: translateY(-20%);
     -o-transform: translateY(-20%);
     transform: translateY(-20%);
-
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -ms-transition: all 0.6s;
-    -o-transition: all 0.6s;
-    transition: all 0.6s;
 }
 
 .bottom-block div.block:hover figure > figcaption{
@@ -286,12 +274,6 @@ figure > .svg-container {
     -ms-transform: translateY(30%);
     -o-transform: translateY(30%);
     transform: translateY(30%);
-
-    -webkit-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    -ms-transition: all 0.6s;
-    -o-transition: all 0.6s;
-    transition: all 0.6s;
 }
 
 .bottom-block div.block:hover figure > .svg-container > svg *{
