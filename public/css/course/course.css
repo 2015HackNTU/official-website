@@ -19,7 +19,7 @@ a {
 
 @font-face {
     font-family: Megalopolis;
-    src: url(../../fonts/Megalopolis.ttf);
+    src: url('/fonts/Megalopolis.tff')
 }
 
 #panels {
