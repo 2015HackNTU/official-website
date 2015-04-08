@@ -7,19 +7,20 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
 
-    <!-- Home -->
-    <link rel="stylesheet" href="css/home/home2.css">
-
     <!-- Nav Bar -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/shared/navbar/navbar_style.css">
+
+    <!-- Home -->
+    <link rel="stylesheet" href="css/home/home2.css">
 </head>
 <body>
 
-<div id="navbar" class="position-fixed put-to-top-left width-100 navbar-hide top-layer">
+
+
+<div id="navbar" class="position-fixed put-to-top-left width-100 top-layer" style="height: auto;">
     <% include ../shared/navbar.ejs %>
 </div>
-
 
 <!-- Nav -->
 <section class="position-relative top-middle-layer" >
@@ -28,20 +29,20 @@
     <nav id="top-nav" class="nav-table position-fixed put-to-top-left top-middle-layer top-nav-before">
         <div class="nav-table-row">
             <div class="nav-table-cell navbar-logo">
-                <a href="">
+                <a href="/">
                     <img id="top-nav-logo" src="imgs/shared/navbar/navbar_logo.png" class="top-nav-logo-before">
                     <img id="top-nav-hackntu" src="imgs/shared/navbar/navbar_hackntu.png" class="top-nav-hackntu-before">
                 </a>
             </div>
             <div class="nav-table-cell navbar-page"></div>
             <div class="nav-table-cell navbar-link">
-                <a href=""><i id="fb" class="fa fa-facebook-square" style="font-size: 2em;"></i></a>
-                <a href=""><i id="youtube" class="fa fa-youtube-play" style="font-size: 2em;"></i></a>
+                <a href="https://www.facebook.com/hackNTU" target="_blank"><i id="fb-icon" class="fa fa-facebook-square" style="font-size: 2em;"></i></a>
+                <a><i id="youtube-icon" class="fa fa-youtube-play" style="font-size: 2em;" onclick="youtubeOnClick()"></i></a>
             </div>
         </div>
     </nav>
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000" data-pause="false" style="height: 85%; overflow: hidden">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000" data-pause="false">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -140,10 +141,10 @@
             <div class="bottom-block">
                 <div class="container-fluid full-wrapper">
                     <div class="height-100 row">
-                        <div class="block col-sm-12 col-md-3 height-100">
+                        <div class="block col-xs-6 col-sm-6 col-md-3 height-100">
                             <div class="table full-wrapper">
                                 <div class="table-cell text-center text-vertical-center">
-                                    <a href="">
+                                    <a href="http://2015.hackntu.com" target="_blank">
                                         <figure class="position-relative">
                                             <div class="svg-container">
                                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -193,10 +194,10 @@
                             </div>
                         </div>
 
-                        <div class="block col-sm-12 col-md-3 height-100">
+                        <div class="block col-xs-6 col-sm-6 col-md-3 height-100">
                             <div class="table full-wrapper">
                                 <div class="table-cell text-center text-vertical-center">
-                                    <a href="">
+                                    <a href="/community">
                                         <figure class="position-relative">
                                             <div class="svg-container">
                                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -232,10 +233,10 @@
                             </div>
                         </div>
 
-                        <div class="block col-sm-12 col-md-3 height-100">
+                        <div class="block col-xs-6 col-sm-6 col-md-3 height-100">
                             <div class="table full-wrapper">
                                 <div class="table-cell text-center text-vertical-center">
-                                    <a href="">
+                                    <a href="/course">
                                         <figure class="position-relative">
                                         <div class="svg-container">
                                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -584,10 +585,10 @@
                             </div>
                         </div>
 
-                        <div class="block col-sm-12 col-md-3 height-100">
+                        <div class="block col-xs-6 col-sm-6 col-md-3 height-100">
                             <div class="table full-wrapper">
                                 <div class="table-cell text-center text-vertical-center">
-                                    <a href="">
+                                    <a href="/hackcampus">
                                         <figure class="position-relative">
                                             <div class="svg-container">
                                             <svg version="1.1" id="Campus_Building" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
