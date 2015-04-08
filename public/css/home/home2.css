@@ -26,7 +26,7 @@
 /*          Default            */
 /*******************************/
 
-html {
+html, body {
     font-size: 18px;
     /*font-size: 90%;*/
 }
@@ -82,6 +82,7 @@ i {
 
 #top-nav {
     background-color: #ffffff;
+    height: 9%;
     -webkit-transition: all 0.6s, opacity 1ms;
     -moz-transition: all 0.6s, opacity 1ms;
     -ms-transition: all 0.6s, opacity 1ms;
@@ -101,10 +102,14 @@ i {
     height: 6%;
 }
 
+#myCarousel {
+    height: 85%;
+    overflow: hidden;
+}
 /* Display */
 
 .navbar-hide {
-    display: none;
+    display: none !important;
 }
 
 .navbar-show {
@@ -155,18 +160,18 @@ i {
 }
 
 .content-block {
-    padding: 3% 20%;
+    padding: 3% 10%;
     height: 30%;
 }
 
 .content-block .block-header {
-    font-size: 3em;
+    font-size: 2.5em;
     font-family: STXihei;
     margin-bottom: 1em;
 }
 
 .content-block .block-content {
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: Adobe-Fan-Heiti-Std-B;
 }
 
@@ -198,7 +203,8 @@ figure > figcaption {
     color: #ffffff;
     overflow: hidden;
     font-family: Montserrat-Hairline;
-    letter-spacing: 1.4;
+    letter-spacing: 0.1em;
+    font-size: 1em;
 
     -webkit-transform: translateY(120%);
     -moz-transform: translateY(120%);
@@ -269,11 +275,11 @@ figure > .svg-container {
 .bottom-block div.block:hover figure > figcaption{
     opacity: 1;
     
-    -webkit-transform: translateY(30%);
-    -moz-transform: translateY(30%);
-    -ms-transform: translateY(30%);
-    -o-transform: translateY(30%);
-    transform: translateY(30%);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+    transform: translateY(50%);
 }
 
 .bottom-block div.block:hover figure > .svg-container > svg *{
@@ -287,7 +293,7 @@ figure > .svg-container {
 }
 
 .slogan {
-    font-size: 4.5em;
+    font-size: 3.5em;
     font-family: STXihei;
 }
 
@@ -395,3 +401,39 @@ figure > .svg-container {
     left: 0;
 }
 
+@media only screen and (max-width: 956px) {
+    html, body {
+        font-size: 14px;
+    }
+    #myCarousel {
+        height: 30em;
+    }
+}
+
+@media only screen and (max-width: 744px) {
+    html, body {
+        font-size: 12px;
+    }
+    #myCarousel {
+        height: 25em;
+    }
+    .content-block {
+        padding: 0 0;
+    }
+    /*.content-block .block-header {*/
+        /*margin-bottom: 0.3em;*/
+    /*}*/
+}
+
+@media only screen and (max-width: 638px) {
+    #myCarousel {
+        height: 22em;
+    }
+    .content-block .block-header {
+        margin-bottom: 0.35em;
+    }
+    figure > .svg-container > svg{
+        width: 180px;
+        height: 180px;
+    }
+}
