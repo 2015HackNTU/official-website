@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>HackNTU</title>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap -->
@@ -16,14 +16,12 @@
 </head>
 <body>
 
-
-
 <div id="navbar" class="position-fixed put-to-top-left width-100 top-layer" style="height: auto;">
     <% include ../shared/navbar.ejs %>
 </div>
 
 <!-- Nav -->
-<section class="position-relative top-middle-layer" >
+<section id="nav" class="position-relative top-middle-layer" >
     <div class="top-nav-before"></div>
     <div id="top-anchor"></div>
     <nav id="top-nav" class="nav-table position-fixed put-to-top-left top-middle-layer top-nav-before">
@@ -37,7 +35,7 @@
             <div class="nav-table-cell navbar-page"></div>
             <div class="nav-table-cell navbar-link">
                 <a href="https://www.facebook.com/hackNTU" target="_blank"><i id="fb-icon" class="fa fa-facebook-square" style="font-size: 2em;"></i></a>
-                <a><i id="youtube-icon" class="fa fa-youtube-play" style="font-size: 2em;" onclick="youtubeOnClick()"></i></a>
+                <i id="youtube-icon" class="fa fa-youtube-play" style="font-size: 2em;" onclick="youtubeOnClick()"></i>
             </div>
         </div>
     </nav>
@@ -71,15 +69,26 @@
         </a>
     </div>
 
+    <div id="bot-anchor"></div>
     <nav id="bot-nav" class="nav-table nav-shadow position-relative top-layer" style="background-color: transparent !important;">
         <div class="nav-table-row">
             <div class="nav-table-cell navbar-logo"></div>
             <div class="nav-table-cell navbar-page">
+                <!--<i class="fa fa-bars">-->
+
+                <!--</i>-->
+                <ul>
+                    <li><a href="http://2015.hackntu.com" target="_blank">Hackathon</a></li>
+                    <li><a href="/community">Community</a></li>
+                    <li><a href="/course">Course</a></li>
+                    <li><a href="/hackcampus">HackCampus</a></li>
+                    <!--<li><i class="fa fa-bars"></i></li>-->
+                </ul>
                 <!--<a href="">About Us</a>-->
-                <a href="http://2015.hackntu.com" target="_blank">Hackathon</a>
-                <a href="/community">Community</a>
-                <a href="/course">Course</a>
-                <a href="/hackcampus">HackCampus</a>
+                <!--<a href="http://2015.hackntu.com" target="_blank">Hackathon</a>-->
+                <!--<a href="/community">Community</a>-->
+                <!--<a href="/course">Course</a>-->
+                <!--<a href="/hackcampus">HackCampus</a>-->
             </div>
             <div class="nav-table-cell navbar-link"></div>
         </div>
@@ -87,11 +96,10 @@
 </section>
 
 
-<div id="nav-anchor"></div>
 
 
 <!-- Why How What-->
-<section class="position-relative">
+<section id="why-how-what" class="position-relative">
     <div class="bottom-layer">
         <img src="imgs/home2/bg.png" class="width-100">
     </div>
@@ -131,7 +139,7 @@
 </section>
 
 <!-- Four Main Stream -->
-<section class="position-relative">
+<section id="four-main-stream" class="position-relative">
     <div class="full-wrapper">
             <div class="top-block table">
                 <div class="table-cell full-wrapper text-center text-vertical-center text-white">
@@ -619,14 +627,13 @@
     </div>
 </section>
 
-<div>
+<div id="footer">
     <% include ../shared/footer.ejs %>
 </div>
 
 </body>
 
 <!-- Libs Js-->
-<script type="text/javascript" src="libs/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="libs/jquery.waypoints.min.js"></script>
 

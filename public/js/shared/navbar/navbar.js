@@ -1,6 +1,26 @@
 /**
  * Created by pilagod on 4/7/15.
  */
+
+$(document).ready(function(){
+    $('#nav-button').on('click', function(){
+        if($('#nav-button + ul').hasClass('show')){
+            $('#nav-button + ul').removeClass('show');
+        }
+        else{
+            $('#nav-button + ul').addClass('show');
+        }
+    });
+
+    if(location.pathname === "/community"){
+        $('.navbar-page ul>li:nth-child(2)>a').addClass('active');
+    }
+    else if(location.pathname === "/course"){
+        $('.navbar-page ul>li:nth-child(3)>a').addClass('active');
+    }
+
+});
+
 function youtubeOnClick(){
     $('#youtube-div').addClass('show');
     $('#youtube-div').append('<i class="fa fa-times" style="color: white !important;"></i>');

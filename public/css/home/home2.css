@@ -82,7 +82,7 @@ i {
 
 #top-nav {
     background-color: #ffffff;
-    height: 9%;
+    /*height: 9%;*/
     -webkit-transition: all 0.6s, opacity 1ms;
     -moz-transition: all 0.6s, opacity 1ms;
     -ms-transition: all 0.6s, opacity 1ms;
@@ -98,7 +98,11 @@ i {
     transition: all 0.6s;
 }
 
-#navbar, #bot-nav {
+#top-nav, #bot-nav {
+    display: table;
+}
+
+#bot-nav {
     height: 6%;
 }
 
@@ -414,26 +418,87 @@ figure > .svg-container {
     html, body {
         font-size: 12px;
     }
+
     #myCarousel {
         height: 25em;
     }
+
     .content-block {
-        padding: 0 0;
+        padding: 3% 0;
     }
+
     /*.content-block .block-header {*/
         /*margin-bottom: 0.3em;*/
     /*}*/
 }
 
 @media only screen and (max-width: 638px) {
+    p {
+        margin: 0;
+    }
+
     #myCarousel {
-        height: 22em;
+        height: 20em;
     }
+
+    #top-nav, #bot-nav {
+        display: none;
+    }
+
+    #navbar>nav {
+        display: table !important;
+    }
+
+    #why-how-what>div.bottom-layer>img {
+        width: 100%;
+        height: 65%;
+    }
+
+    .top-nav-before, .top-nav-after{
+        height: 3em;
+    }
+
     .content-block .block-header {
-        margin-bottom: 0.35em;
+        font-size: 1.5em;
+        margin-bottom: 0.1em;
     }
+
     figure > .svg-container > svg{
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .bottom-block div.block.height-100 {
+        height: 75% !important;
+    }
+
+    figure > figcaption {
+        opacity: 1;
+        color: #5b5b5b;
+
+        -webkit-transform: translateY(100%);
+        -moz-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        -o-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+
+    figure > .svg-container > svg * {
+        fill: #5b5b5b;
+    }
+
+    .bottom-block div.block:hover figure > figcaption {
+        color: white;
+    }
+
+    .bottom-block div.block a:active figure > .svg-container > svg * {
+        fill: rgba(192, 25, 32, 0.85);
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+    #myCarousel {
+        height: 15em;
     }
 }
