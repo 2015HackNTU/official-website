@@ -5,13 +5,13 @@ footer {
     width: 100%;
 }
 
+#footer-fb-icon, #footer-youtube-icon  {
+    display: none;
+}
+
 footer, footer i {
     color: rgba(230, 230, 230, 0.9);
     font-weight: bold;
-}
-
-footer i {
-    font-size: 1.5em;
 }
 
 footer div {
@@ -30,4 +30,10 @@ footer div {
     display: table-cell;
     vertical-align: middle;
     height: 100%;
+}
+
+@media only screen and (max-width: 638px) {
+    #footer-fb-icon, #footer-youtube-icon {
+        display: inline-block;
+    }
 }

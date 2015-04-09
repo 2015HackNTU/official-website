@@ -3,9 +3,23 @@
  */
 $(document).ready(function(){
 
-    $('#navbar>nav').addClass('navbar-hide');
+    $(window).resize(function(){
+        //alert(window.document.width);
+        if(window.document.width <= 638){
+            top_anchor_waypoint.disable();
+            bot_anchor_waypoint.disable();
+        }
+        else{
+            if(!$('#navbar').hasClass('navbar-hide')){
+                $('#navbar>nav').addClass('navbar-hide');
+            }
+            top_anchor_waypoint.enable();
+            bot_anchor_waypoint.enable();
+        }
+    });
 
-    $('#top-anchor').waypoint({
+    var top_anchor_waypoint = new Waypoint({
+        element: $('#top-anchor'),
         handler: function(direction){
             if(direction === "down"){
 //                $('#top-nav').removeClass('top-nav-before');
@@ -14,7 +28,6 @@ $(document).ready(function(){
                 $('#top-nav-logo').addClass('top-nav-logo-after');
                 $('#top-nav-hackntu').addClass('top-nav-hackntu-after');
                 $('#top-nav').addClass('top-nav-after');
-
             }
             else{
                 $('#top-nav').removeClass('top-nav-after');
@@ -25,9 +38,10 @@ $(document).ready(function(){
 //                $('#top-nav').addClass('top-nav-before');
             }
         }
-
     });
-    $('#bot-nav').waypoint({
+
+    var bot_anchor_waypoint = new Waypoint({
+        element: $('#bot-anchor'),
         handler: function(direction){
             if(direction === "down"){
                 $('#top-nav').addClass('navbar-hide');
@@ -43,13 +57,13 @@ $(document).ready(function(){
         }
     });
 
-    //$.waypoints('refresh');
+    if(window.document.width > 638) {
+        $('#navbar>nav').addClass('navbar-hide');
+    }
+    else {
+        top_anchor_waypoint.disable();
+        bot_nav_waypoint.disable();
+    }
 
-//    $('#nav-anchor').waypoint({
-//        handler: function(direction){
-//            if(direction === "up"){
-//                $('#top-nav').removeClass('navbar-hide');
-//            }
-//        }
-//    })
+
 });
