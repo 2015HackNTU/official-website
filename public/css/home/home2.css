@@ -298,8 +298,8 @@ figure > .svg-container {
 
 .slogan {
     font-size: 3.5em;
-    font-family: STXihei;
 }
+
 
 
 /*******************************/
@@ -325,6 +325,23 @@ figure > .svg-container {
     height: 100%;
 }
 
+/* Fonts */
+
+.font-STXihei {
+    font-family: STXihei;
+}
+
+.font-Adobe-Fan-Heiti-Std-B {
+    font-family: Adobe-Fan-Heiti-Std-B;
+}
+
+.font-STHeiti {
+    font-family: STHeiti;
+}
+
+.font-Montserrat-Hairline {
+    font-family: Montserrat-Hairline;
+}
 
 /* Color */
 
