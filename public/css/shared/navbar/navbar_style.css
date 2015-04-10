@@ -188,7 +188,7 @@ nav a {
 
     #nav-button {
         display: inline-block;
-        font-size: 1.5em !important;
+        font-size: 1.8em !important;
     }
 
     #navbar-logo {
@@ -196,16 +196,19 @@ nav a {
     }
 
     #navbar-hackntu {
-        width: 7em !important;
+        width: 8em !important;
     }
 
     .navbar-logo {
-        width: 30%;
+        width: 50%;
+        text-align: left;
+        padding-left: 1em;
     }
 
     .navbar-page {
-        width: 70%;
+        width: 50%;
         text-align: right;
+        padding-right: 1em;
     }
 
     .navbar-page>ul {
