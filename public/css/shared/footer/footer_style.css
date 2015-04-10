@@ -1,0 +1,46 @@
+footer {
+    background-color: #282828;
+    text-align: center;
+    height: 10%;
+    width: 100%;
+}
+
+#footer-fb-icon, #footer-youtube-icon  {
+    display: none;
+}
+
+footer, footer i {
+    color: rgba(230, 230, 230, 0.9);
+    font-weight: bold;
+    padding: 0.3em;
+}
+
+footer div {
+    margin: 0.2em auto;
+}
+
+.footer-table {
+    display: table;
+}
+
+.footer-table-row {
+    display: table-row;
+}
+
+.footer-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
+
+@media only screen and (max-width: 638px) {
+    #footer-fb-icon, #footer-youtube-icon {
+        display: inline-block;
+    }
+    #footer-gmail {
+        display: none;
+    }
+    #footer-fb-icon, #footer-youtube-icon, #footer-mail-icon {
+        font-size: 2.5em !important;
+    }
+}
