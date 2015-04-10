@@ -73,7 +73,6 @@ $(document).ready(function(){
     if($(window).width() > 638) {
         //alert(navigator.userAgent.toLowerCase().indexOf('chrome'));
         if(navigator.userAgent.toLowerCase().indexOf('chrome') > -1){
-            alert('chrome');
             if(window.pageYOffset < $('#bot-anchor').offset().top){
                 alert('test');
                 $('#navbar>nav').addClass('navbar-hide');
@@ -82,6 +81,7 @@ $(document).ready(function(){
                 $('#navbar>nav').removeClass('navbar-hide');
             }
         }else{
+            alert('hide');
             $('#navbar>nav').addClass('navbar-hide');
         }
     }else {
