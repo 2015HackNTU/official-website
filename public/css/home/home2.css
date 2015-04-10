@@ -207,7 +207,7 @@ figure > figcaption {
     color: #ffffff;
     overflow: hidden;
     font-family: Montserrat-Hairline;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     font-size: 1em;
 
     -webkit-transform: translateY(120%);
