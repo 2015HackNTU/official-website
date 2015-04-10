@@ -3,19 +3,36 @@
  */
 $(document).ready(function(){
 
-    $(window).resize(function(){
-        //alert(window.document.width);
-        if(window.document.width <= 638){
-            top_anchor_waypoint.disable();
-            bot_anchor_waypoint.disable();
+    var windowResize={
+        width:0,
+        init:function() {
+            this.width=$(window).width();
+        },
+        checkResize:function(callback) {
+            if( this.width!=$(window).width() ) {
+                callback.apply();
+            }
         }
-        else{
-            if(!$('#navbar').hasClass('navbar-hide')){
+    };
+
+    windowResize.init();
+
+    $(window).on('resize', function(){
+        //alert(window.document.width);
+        windowResize.checkResize(function(){
+            if($('body').scrollTop() < $('#bot-anchor').offset().top){
                 $('#navbar>nav').addClass('navbar-hide');
             }
-            top_anchor_waypoint.enable();
-            bot_anchor_waypoint.enable();
-        }
+
+            if($(window).width() <= 638){
+                top_anchor_waypoint.disable();
+                bot_anchor_waypoint.disable();
+            }
+            else{
+                top_anchor_waypoint.enable();
+                bot_anchor_waypoint.enable();
+            }
+        })
     });
 
     var top_anchor_waypoint = new Waypoint({
@@ -57,13 +74,27 @@ $(document).ready(function(){
         }
     });
 
-    if(window.document.width > 638) {
-        $('#navbar>nav').addClass('navbar-hide');
-    }
-    else {
+    if($(window).width() > 638) {
+        //alert(navigator.userAgent.toLowerCase().indexOf('chrome'));
+        if(navigator.userAgent.toLowerCase().indexOf('chrome') > -1){
+            if(window.pageYOffset < $('#bot-anchor').offset().top){
+                $('#navbar>nav').addClass('navbar-hide');
+            }
+            else{
+                $('#navbar>nav').removeClass('navbar-hide');
+            }
+        }else{
+            $('#navbar>nav').addClass('navbar-hide');
+        }
+    }else {
         top_anchor_waypoint.disable();
-        bot_nav_waypoint.disable();
+        bot_anchor_waypoint.disable();
     }
+
+
+
+
+
 
 
 });
