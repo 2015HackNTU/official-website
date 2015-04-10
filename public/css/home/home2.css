@@ -472,11 +472,11 @@ figure > .svg-container {
     }
 
     .top-nav-before, .top-nav-after{
-        height: 3em;
+        height: 4em;
     }
 
     .content-block {
-        height: 7em;
+        height: 7.4em;
     }
 
     .content-block .block-header {

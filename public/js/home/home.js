@@ -20,6 +20,10 @@ $(document).ready(function(){
     $(window).on('resize', function(){
         //alert(window.document.width);
         windowResize.checkResize(function(){
+            if($('body').scrollTop() < $('#bot-anchor').offset().top){
+                $('#navbar>nav').addClass('navbar-hide');
+            }
+
             if($(window).width() <= 638){
                 top_anchor_waypoint.disable();
                 bot_anchor_waypoint.disable();
@@ -74,14 +78,12 @@ $(document).ready(function(){
         //alert(navigator.userAgent.toLowerCase().indexOf('chrome'));
         if(navigator.userAgent.toLowerCase().indexOf('chrome') > -1){
             if(window.pageYOffset < $('#bot-anchor').offset().top){
-                alert('test');
                 $('#navbar>nav').addClass('navbar-hide');
             }
             else{
                 $('#navbar>nav').removeClass('navbar-hide');
             }
         }else{
-            alert('hide');
             $('#navbar>nav').addClass('navbar-hide');
         }
     }else {
