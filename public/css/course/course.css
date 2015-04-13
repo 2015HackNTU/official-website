@@ -137,6 +137,38 @@ a {
     z-index: 2;
 	top: 50%;
 }
+.inlineTitle {
+  font-size: 60px;
+  margin: ;
+  display: block;
+  color: black;
+  left: 0;
+  opacity: 1;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  text-align: center;
+  /* width: 100%; */
+  /* margin: 0 10%; */
+  z-index: 2;
+  top: 10%;
+}
+.inlineText {
+  font-size: 30px;
+  display: block;
+  color: black;
+  left: 0;
+  opacity: 1;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  text-align: center;
+  /* width: 100%; */
+  min-height: 100px;
+  z-index: 2;
+  margin: 0 10%;
+  top: 50%;
+}
 
 .dark-orange .content {
 	margin-top: -120px;

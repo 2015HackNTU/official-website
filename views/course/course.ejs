@@ -13,33 +13,41 @@
 	<div id="panels" class="panels">
 		<a href="" class="panel dark-orange" ng-click="clickOn('ror')"
 		ng-class="{'panelNow': section=='ror', 'panelHide': section!='ror'&&section!=''}">
-			<div class="content" ng-hide="section!='ror' && section!=''">{{content || 'ROR'}}</div>
-			<div class="color">
+			<div class="content" ng-hide="section!=''">ROR</div>
+			<div class="inlineTitle" ng-show="section=='ror'">{{content.title}}</div>
+			<div class="inlineText"  ng-show="section=='ror'">{{content.text}}</div>
+			<!-- <div class="color">
 				<div class="footer"></div>
-			</div>
+			</div> -->
 		</a>
 		<a href="" class="panel yellow" ng-click="clickOn('ios')"
 		ng-class="{panelNow: section==='ios', 'panelHide': section!='ios'&&section!=''}">
-			<div class="content" ng-hide="section!='ios' && section!=''">{{content || 'IOS'}}</div>
-			<div class="color">
+			<div class="content" ng-hide="section!=''">IOS</div>
+			<div class="inlineTitle" ng-show="section=='ios'">{{content.title}}</div>
+			<div class="inlineText"  ng-show="section=='ios'">{{content.text}}</div>
+			<!-- <div class="color">
 				<div class="footer"></div>
-			</div>
+			</div> -->
 		</a>
 
 		<a href="" class="panel light-orange" ng-click="clickOn('uiux')" 
 		ng-class="{panelNow: section==='uiux', 'panelHide': section!='uiux'&&section!=''}">
-			<div class="content" ng-hide="section!='uiux' && section!=''">{{ content || 'UI\nUX'}}</div>
-			<div class="color">
+			<div class="content" ng-hide="section!=''">UI<br>UX</div>
+			<div class="inlineTitle" ng-show="section=='uiux'">{{content.title}}</div>
+			<div class="inlineText" ng-show="section=='uiux'">{{content.text}}</div>
+			<!-- <div class="color">
 				<div class="footer"></div>
-			</div>
+			</div> -->
 		</a>
 
 		<a href="" class="panel red" ng-click="clickOn('iot')" 
 		ng-class="{panelNow: section==='iot', 'panelHide': section!='iot'&&section!=''}">
-			<div class="content" ng-hide="section!='iot' && section!=''">{{content || 'IOT'}}</div>
-			<div class="color">
+			<div class="content" ng-hide="section!=''">IOT</div>
+			<div class="inlineTitle" ng-show="section=='iot'">{{content.title}}</div>
+			<div class="inlineText"  ng-show="section=='iot'">{{content.text}}</div>
+			<!-- <div class="color">
 				<div class="footer"></div>
-			</div>
+			</div> -->
 		</a>
 
 		<div class="panels-black"></div>
