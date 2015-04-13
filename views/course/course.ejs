@@ -1,39 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="courseApp">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>HackCourse</title>
 
 	<link rel="stylesheet" type="text/css" href="css/course/course.css">
 </head>
-<body>
+<body ng-controller="courseCtrl">
 	<div style="position: fixed; top: 0; left: 0; z-index: 999; width: 100%; height: auto;">
 		<% include ../shared/navbar.ejs %>
 	</div>
 	<div id="panels" class="panels">
-		<a href="" class="panel dark-orange">
-			<div class="content"><span>ROR</span></div>
+		<a href="" class="panel dark-orange" ng-click="clickOn('ror')"
+		ng-class="{'panelNow': section=='ror', 'panelHide': section!='ror'&&section!=''}">
+			<div class="content" ng-hide="section!='ror' && section!=''">{{content || 'ROR'}}</div>
+			<div class="color">
+				<div class="footer"></div>
+			</div>
+		</a>
+		<a href="" class="panel yellow" ng-click="clickOn('ios')"
+		ng-class="{panelNow: section==='ios', 'panelHide': section!='ios'&&section!=''}">
+			<div class="content" ng-hide="section!='ios' && section!=''">{{content || 'IOS'}}</div>
 			<div class="color">
 				<div class="footer"></div>
 			</div>
 		</a>
 
-		<a href="" class="panel yellow">
-			<div class="content">IOS</div>
+		<a href="" class="panel light-orange" ng-click="clickOn('uiux')" 
+		ng-class="{panelNow: section==='uiux', 'panelHide': section!='uiux'&&section!=''}">
+			<div class="content" ng-hide="section!='uiux' && section!=''">{{ content || 'UI\nUX'}}</div>
 			<div class="color">
 				<div class="footer"></div>
 			</div>
 		</a>
 
-		<a href="" class="panel light-orange">
-			<div class="content">UI<br>UX</div>
-			<div class="color">
-				<div class="footer"></div>
-			</div>
-		</a>
-
-		<a href="" class="panel red">
-			<div class="content">IOT</div>
+		<a href="" class="panel red" ng-click="clickOn('iot')" 
+		ng-class="{panelNow: section==='iot', 'panelHide': section!='iot'&&section!=''}">
+			<div class="content" ng-hide="section!='iot' && section!=''">{{content || 'IOT'}}</div>
 			<div class="color">
 				<div class="footer"></div>
 			</div>
@@ -43,6 +46,9 @@
 	</div>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+	<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.js"></script>
+	<script type="text/javascript" src="js/course/angular-animate.js"></script>
 	<script src="js/course/course.js"></script>
 </body>
 </html>

@@ -54,8 +54,9 @@ a {
 	height: 100%;
     z-index: 2;
 	padding-bottom: 0;
-    -webkit-transition: background-color .3s ease-in-out .05s, margin 0 linear .3s, -webkit-transform .3s, top .3s, opacity .3s;
-    transition: background-color .3s ease-in-out .05s, margin 0s linear .3s, transform .3s, top .3s, opacity .3s;
+
+    -webkit-transition: width 0.5s background-color .3s ease-in-out .05s, margin 0 linear .3s, -webkit-transform .3s, top .3s, opacity .3s;
+    transition: width 0.5s background-color .3s ease-in-out .05s, margin 0s linear .3s, transform .3s, top .3s, opacity .3s;
 }
 
 .panel:hover .color {
@@ -66,6 +67,26 @@ a {
 	transform: scaleX(1.15625);
 }
 
+.panelNow {
+    /*-webkit-transition: 1s linear all; Chrome */
+    -moz-transform: ease-in-out 0.5s;
+    -webkit-transform: ease-in-out 0.5s;
+    -o-transform: ease-in-out 0.5s;
+    -ms-transform: ease-in-out 0.5s;
+    transition: ease-in-out 0.5s;
+    width: 100% ;
+    clear: both;
+    z-index: 7;
+}
+.panelHide {
+    -moz-transform: ease-in-out 0.5s;
+    -webkit-transform: ease-in-out 0.5s;
+    -o-transform: ease-in-out 0.5s;
+    -ms-transform: ease-in-out 0.5s;
+    transition:  ease-in-out 0.5s;
+    color: rgba(0,0,0,0);
+    width: 0;
+}
 .panel:hover .content {
     z-index: 6;
 }
@@ -81,6 +102,7 @@ a {
 .panel a {
     position: relative;
 }
+
 
 .color {
     background-color: inherit;
