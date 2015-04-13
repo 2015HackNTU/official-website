@@ -141,7 +141,7 @@ a {
   font-size: 60px;
   margin: ;
   display: block;
-  color: black;
+  color: white;
   left: 0;
   opacity: 1;
   overflow: hidden;
@@ -156,7 +156,7 @@ a {
 .inlineText {
   font-size: 30px;
   display: block;
-  color: black;
+  color: white;
   left: 0;
   opacity: 1;
   overflow: hidden;
@@ -167,7 +167,7 @@ a {
   min-height: 100px;
   z-index: 2;
   margin: 0 10%;
-  top: 50%;
+  top: 30%;
 }
 
 .dark-orange .content {
