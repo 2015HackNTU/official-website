@@ -1,0 +1,136 @@
+{
+  "course_panel_data": [
+    {"id": "ror", "title": "/imgs/course/ror_b.png", "backgroundColorClass": "background-dark-orange", "footer": "/imgs/course/RORicon.png"},
+    {"id": "ios", "title": "/imgs/course/ios_b.png", "backgroundColorClass": "background-yellow", "footer": "/imgs/course/iOSicon.png"},
+    {"id": "ui", "title": "/imgs/course/ui_b.png", "backgroundColorClass": "background-orange", "footer": "/imgs/course/UIicon.png"},
+    {"id": "iot", "title": "/imgs/course/iot_b.png", "backgroundColorClass": "background-red", "footer": "/imgs/course/IoTicon.png"}
+  ],
+
+  "course_content_data":{
+    "ror": {
+      "introduction": {
+        "content": [
+          {"paragraph": "如果每個人都能夠擁有屬於自己的網站，這個世界會有什麼不一樣？從九零年代HTML的出現以來，網站開發（Web Development）就一直是一項火紅的能力，各種相應的技術推陳出新，不斷的進步。其中，Ruby on Rails可以說是一個穩定的靠山，在這十年的持續發展下，孕育出無限個成功的網站。"}
+        ]
+
+      },
+      "syllabus": {
+        "table_data": [
+          {"date": "week1(3/16)", "description": "環境設定 + 第一個 Rails 應用程式 ", "link": "", "homework": ""},
+          {"date": "week2(3/23)", "description": "Git 基礎", "link": "", "homework": ""},
+          {"date": "week3(3/30)", "description": "Ruby for Rails、MVC", "link": "", "homework": ""},
+          {"date": "week4(4/6)", "description": "休假", "link": "", "homework": ""},
+          {"date": "week5(4/13)", "description": "View + Twitter Bootstrap", "link": "", "homework": ""},
+          {"date": "week6(4/20)", "description": "休假", "link": "", "homework": ""},
+          {"date": "week7(4/27)", "description": "Active Record", "link": "", "homework": ""},
+          {"date": "week8(5/4)", "description": "寄發 email + 背景工作處理", "link": "", "homework": ""},
+          {"date": "week9(5/11)", "description": "會員系統 + 網站後台 + 商品上架", "link": "", "homework": ""},
+          {"date": "week10(5/18)", "description": "購物車", "link": "", "homework": ""},
+          {"date": "week11(5/25)", "description": "Test-Driven Development", "link": "", "homework": ""},
+          {"date": "week12(6/1)", "description": "部署應用程式到 Heroku", "link": "", "homework": ""},
+          {"date": "week13(6/8)", "description": "Final week 6/8 Demo day", "link": "", "homework": ""}
+        ]
+      },
+      "lecturer": {
+        "image": "",
+        "content": [
+          {"paragraph": "本學期課程講師我們邀請到擁有豐富經驗的高見龍-龍哥。擁有15年以上開發經驗的他，不但是五倍紅寶石(5xRuby)的共同創辦人之一，同時也是WebConf Taiwan、PHPConf Taiwan、Rails Girl Taipei等活動的發起人及主辦人，現在持續為台灣的各界進行教育訓練。"},
+          {"paragraph": "＊講者Facebook Link：https://www.facebook.com/eddiekao?fref=ts"}
+        ]
+      }
+    },
+    "ios": {
+      "introduction": {
+        "content": [
+          {"paragraph": "萬眾期待的技術課程終於來了，首先介紹的是超潮的iOS課程！iOS為Apple公司開發的iPhone/iPad的手機作業系統，本期社課將要教大家如何寫出iPhone/iPad的App！"}
+        ]
+      },
+      "syllabus": {
+        "table_data": [
+          {"date": "week1(3/17)", "description": "Apple Developer 網站資源介紹、Xcode 開發環境學習", "link": "", "homework": ""},
+          {"date": "week2(3/24)", "description": "Playground 的互動與魅力、Swift 語言基礎", "link": "", "homework": "任務一：調色盤"},
+          {"date": "week3(3/31)", "description": "CocoaTouch Framework 介紹、MVC 架構介紹、ViewController Lifecycle、iOS Application Lifecycle", "link": "", "homework": ""},
+          {"date": "week4(4/7)", "description": "休假", "link": "", "homework": ""},
+          {"date": "week5(4/14)", "description": "UIKit 介紹、資料儲存方式與種類", "link": "", "homework": "任務二：TODO 打造自己的任務管理工具"},
+          {"date": "week6(4/21)", "description": "休假", "link": "", "homework": ""},
+          {"date": "week7(4/28)", "description": "Storyboard 全貌暸解", "link": "", "homework": ""},
+          {"date": "week8(5/5)", "description": "Location 應用與說明", "link": "", "homework": ""},
+          {"date": "week9(5/12)", "description": "如何控制相機、錄音與播放", "link": "", "homework": ""},
+          {"date": "week10(5/19)", "description": "簡易網路應用、運用 BaaS (Backend as a service) 打造雲端 App", "link": "", "homework": "任務三：打造在地即時天氣資訊 App"},
+          {"date": "week11(5/26)", "description": "Swift 與 Objective-C 互通整合", "link": "", "homework": ""},
+          {"date": "week12(6/2)", "description": "自我學習與方法、Apple Tech Talk 心得、問題討論", "link": "", "homework": ""}
+        ]
+      },
+      "lecturer": {
+        "image": "",
+        "content": [
+          {"paragraph": "＊iOS課程講者為張景隆學長 '\n'- 曾於2013年參加蘋果官方主辦Tech Talk '\n'- CodeData 作者 '\n'- iOS Dev Club 講者 '\n'- Cocoahead Taichung 講者 '\n'- 麥克自由聚(Apple, Mac, iOS 相關) 講師"},
+          {"paragraph": "＊其iOS Apps 作品包括 : '\n'- CWMoney：臺灣AppStore 最受歡迎記帳軟體及財經類App第一名 '\n'- biiChat：全臺第一個電子商務即時通訊軟體，整合電子商務與訊息 '\n'- BTWCar：藍牙軟硬整合應用App"},
+          {"paragraph": "＊講者Facebook link：https://www.facebook.com/jingtw?fref=ts"}
+        ]
+      }
+    },
+    "ui": {
+      "introduction": {
+        "content": [
+          {"paragraph": "一項好的產品可以不用太高深新奇的技術，卻少不了貼合使用者需求的設計。UX（User Experience，使用者經驗）是現今任何產品成功的關鍵之一，這次的課程你將實際體驗從創意的發想一路到成品的實現的產品開發的過程。"}
+        ]
+      },
+      "syllabus": {
+        "table_data": [
+          {"date": "week1(3/17)", "description": "", "link": "", "homework": ""},
+          {"date": "week2(3/24)", "description": "", "link": "", "homework": ""},
+          {"date": "week3(3/31)", "description": "", "link": "", "homework": ""},
+          {"date": "week4(4/7)", "description": "", "link": "", "homework": ""},
+          {"date": "week5(4/14)", "description": "", "link": "", "homework": ""},
+          {"date": "week6(4/21)", "description": "", "link": "", "homework": ""},
+          {"date": "week7(4/28)", "description": "", "link": "", "homework": ""},
+          {"date": "week8(5/5)", "description": "", "link": "", "homework": ""},
+          {"date": "week9(5/12)", "description": "", "link": "", "homework": ""},
+          {"date": "week10(5/19)", "description": "", "link": "", "homework": ""},
+          {"date": "week11(5/26)", "description": "", "link": "", "homework": ""},
+          {"date": "week12(6/2)", "description": "", "link": "", "homework": ""},
+          {"date": "", "description": "", "link": "", "homework": ""}
+        ]
+      },
+      "lecturer": {
+        "image": "",
+        "content": [
+          {"paragraph": "HackNTU這次請到的兩位講師之一崔德昕，曾在創新策略顧問公司Pebbo擔任使用者研究員，但比起顧問動腦動口性質，更喜歡自己動手做產品，於是一腳踏入創業的圈子，在各新創公司間游走只為了讓產品的價值能更直接的傳遞給使用者，打造更好的使用體驗、更好的產品。"},
+          {"paragraph": "另一位講師歐陽佩君則曾任許多新創公司的UI/UX設計師，曾在多次的競賽中獲得獎項。她對新創、產品及創意有著強烈的熱情，希望能夠透過業界的經驗，和大家分享現實世界產品開發的流程與技巧。"}
+        ]
+      }
+    },
+    "iot": {
+      "introduction": {
+        "content": [
+          {"paragraph": "物聯網正在發酵，想搭上這波浪潮嗎？IoT(Internet of Things，物聯網)透過軟硬體的整合，期望能打造更有智慧的生活。透過與Arduino相容的MTK LinkIt One板子，我們將學習如何透過各種元件及電路與軟體相互配合，讓科技實際解決生活中的問題。"}
+        ]
+      },
+      "syllabus": {
+        "table_data": [
+          {"date": "week1(3/16)", "description": "嵌入式開發板歷史沿革", "link": "", "homework": ""},
+          {"date": "week2(3/23)", "description": "基礎I/O 與程式教學 - 1：各類電子元件", "link": "", "homework": ""},
+          {"date": "week3(3/30)", "description": "基礎I/O 與程式教學 - 2：各類電子元件", "link": "", "homework": ""},
+          {"date": "week4(4/6)", "description": "休假", "link": "", "homework": ""},
+          {"date": "week5(4/13)", "description": "通訊：Wifi / GPRS", "link": "", "homework": ""},
+          {"date": "week6(4/20)", "description": "休假", "link": "", "homework": ""},
+          {"date": "week7(4/27)", "description": "App Inventor 結合藍牙教學、提出專題計畫書", "link": "", "homework": ""},
+          {"date": "week8(5/4)", "description": "機器人控制 - 馬達控制晶片", "link": "", "homework": ""},
+          {"date": "week9(5/11)", "description": "結合 MCS - 雲端控制繼電器", "link": "", "homework": ""},
+          {"date": "week10(5/18)", "description": "結合 MCS - 氣象站", "link": "", "homework": ""},
+          {"date": "week11(5/25)", "description": "結合 MCS - 路徑追蹤器", "link": "", "homework": ""},
+          {"date": "week12(6/1)", "description": "部署應用程式到 Heroku", "link": "", "homework": ""},
+          {"date": "week13(6/8)", "description": "專題展示", "link": "", "homework": ""}
+        ]
+      },
+      "lecturer": {
+        "image": "/imgs/course/iot_lecturer_image.png",
+        "content": [
+          {"paragraph": "本次課程的講者將由Cavedu專業教育團隊授課。Cavedu在機器人、軟硬整合的領域中已有十年以上的教學經驗，近年提供全台各地校園研習課程，同時亦有出版相關書籍。"},
+          {"paragraph": "a. 曾吉弘，CAVEDU 創辦人，專長：Android、Arduino、物聯網、樂高機器人 \n b. 徐豐智，CAVEDU 專業講師，專長：Raspberry Pi , openCV 視覺辨識 \n c. 鄭建彥，CAVEDU 創辦人，專長：市場策略，產品開發流程"}
+        ]
+      }
+    }
+  }
+}
