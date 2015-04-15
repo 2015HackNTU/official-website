@@ -8,4 +8,8 @@ router.get('/', function(req, res){
     res.render('course/course');
 });
 
+router.get('/2', function(req, res){
+    res.render('course/course2');
+});
+
 module.exports = router;

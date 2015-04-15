@@ -11,7 +11,17 @@
 /*          Default            */
 /*******************************/
 
+* {
+    -webkit-transition-timing-function: ease-in-out;
+    -mos-transition-timing-function: ease-in-out;
+    -ms-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
 html, body {
+    width: 100%;
+    height: 100%;
     font-size: 18px;
     letter-spacing: 0.05em;
     /*font-size: 90%;*/
@@ -46,6 +56,10 @@ img {
     width: 100%;
 }
 
+table th {
+    text-align: center;
+}
+
 /*
  *  Main
  */
@@ -54,67 +68,264 @@ img {
     position: relative;
     width: 100%;
     height: 100%;
+    z-index: 0;
     white-space: nowrap;
     overflow-x: hidden;
     /*overflow: hidden;*/
 }
 
+/*.main:hover .course-panel:not(:hover) {*/
+    /*-webkit-filter: brightness(0.5);*/
+    /*-moz-filter: brightness(0.5);*/
+    /*-ms-filter: brightness(0.5);*/
+    /*-o-filter: brightness(0.5);*/
+    /*filter: brightness(0.5);*/
+/*}*/
+
 /*******************************/
 /*        Course Panel         */
 /*******************************/
 
-
 .course-panel {
     position: relative;
+    /*background-color: #000000;*/
+    z-index: 0;
     width: 25%;
     height: 100%;
+    text-align: center;
+    overflow: hidden;
+
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -ms-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.course-panel.list {
+    background-color: #000000;
+}
+
+
+.course-panel .color {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -ms-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.main:hover .course-panel.list:not(:hover) .color{
+    opacity: 0.5;
+}
+
+.course-panel.list:hover {
+    z-index: 999;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.course-panel.list:first-child:hover {
+    margin-right: -1%;
+    width: 26%;
+}
+
+.course-panel.list:nth-child(2):hover {
+    margin-left: -1%;
+    margin-right: -1%;
+    width: 27%;
+}
+
+.course-panel.list:nth-child(3):hover {
+    margin-left: -1%;
+    margin-right: -1%;
+    width: 27%;
+}
+
+.course-panel.list:last-child:hover {
+    margin-left: -1%;
+    width: 26%;
+}
+
+.course-panel.list:first-child:hover .course-panel-header {
+    padding-left: 0.5em;
+}
+
+.course-panel.list:nth-child(2):hover .course-panel-header {
+    padding-left: 0.5em;
+}
+
+.course-panel.list:nth-child(3):hover .course-panel-header {
+    padding-right: 0.5em;
+}
+
+.course-panel.list:nth-child(4):hover .course-panel-header {
+    padding-left: 0.5em;
 }
 
 .course-panel-header {
-    font-family: Megalopolis;
-    font-size: 4em;
+    position: relative;
+    width: 100%;
+    font-size: 3.8em;
     overflow: hidden;
-    color: black;
+
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -ms-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
 }
+
+/*.course-panel-header img {*/
+    /*width: auto !important;*/
+/*}*/
 
 .course-panel-footer {
     position: absolute;
     width: 100%;
-    bottom: 0;
+    bottom: -100%;
     left: 0;
+
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
 }
+
+.course-panel.list:hover>.course-panel-footer{
+    bottom: 0;
+}
+
+/*
+ *  Course Panel General
+ */
+
+/*.course-panel.expand {*/
+    /*width: 30%;*/
+/*}*/
+
+/*.course-panel.shrink {*/
+    /*width: 23.5%;*/
+/*}*/
+
+/*.course-panel.shade {*/
+    /*-webkit-filter: brightness(0.5);*/
+    /*-moz-filter: brightness(0.5);*/
+    /*-ms-filter: brightness(0.5);*/
+    /*-o-filter: brightness(0.5);*/
+    /*filter: brightness(0.5);*/
+/*}*/
 
 /*******************************/
 /*     Course Panel Content    */
 /*******************************/
 
+/*#ror.hide {*/
+    /*margin-left: -25%;*/
+/*}*/
+/*#ios.hide {*/
+    /*margin-left: -50%;*/
+/*}*/
+/*#ui.hide{*/
+    /*margin-right: -50%;*/
+/*}*/
+
+.course-panel.ror_content,
+.course-panel.ios_content,
+.course-panel.ui_content,
+.course-panel.iot_content {
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    position: relative;
+    width: 100%;
+    z-index: 100;
+}
+
+/*.course-panel.ror_content .color,*/
+/*.course-panel.ios_content .color,*/
+/*.course-panel.ui_content .color,*/
+/*.course-panel.iot_content .color{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+/*}*/
+
+.course-panel.ror_content .course-panel-header, .course-panel.ror_content .course-panel-footer,
+.course-panel.ios_content .course-panel-header, .course-panel.ios_content .course-panel-footer,
+.course-panel.ui_content .course-panel-header, .course-panel.ui_content .course-panel-footer,
+.course-panel.iot_content .course-panel-header, .course-panel.iot_content .course-panel-footer{
+    /*display: none;*/
+    opacity: 0;
+    z-index: -999;
+}
+
+
+
+
+/*.course-panel.ror_content {*/
+    /*margin-left: 0;*/
+    /*padding-left: 0;*/
+/*}*/
+/*.course-panel.ios_content {*/
+    /*margin-left: -25%;*/
+    /*padding-left: -25%;*/
+/*}*/
+/*.course-panel.ui_content {*/
+    /*margin-left: -50%;*/
+    /*padding-left: -50%;*/
+/*}*/
+/*.course-panel.iot_content {*/
+    /*margin-left: -75%;*/
+    /*padding-left: -75%;*/
+/*}*/
+
 .course-panel-content {
+    /*margin-bottom: -100%;*/
+    /*margin-top: 10em;*/
     background-color: white;
+    text-align: left;
     width: 960px;
     margin: 0 auto;
-    padding: 0.5em 8em;
+    padding: 0.5em 6em;
     -webkit-box-shadow: 0px 0px 3px rgba(20%,20%,40%,0.5);
     z-index: 50;
+    white-space: normal;
 }
 
 .section-header {
     font-size: 1.4em;
     text-align: center;
+    margin-bottom: 0.5em;
 }
 
 .section-content {
-    padding: 1em 0;
+    padding: 0.5em 0;
     margin-bottom: 2em;
 }
 
 .section-content>.section-inner-content {
     margin: 0.5em 0;
-    padding: 0.5em 0;
+    padding: 0.1em 0;
 }
 
 /*******************************/
 /*          General            */
 /*******************************/
+
+.margin-25 {
+    margin-left: -25%;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
 
 .text-vertical-center {
     display: -webkit-inline-flex;

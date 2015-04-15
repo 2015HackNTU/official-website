@@ -12,9 +12,14 @@
         "content": [
           {"paragraph": "如果每個人都能夠擁有屬於自己的網站，這個世界會有什麼不一樣？從九零年代HTML的出現以來，網站開發（Web Development）就一直是一項火紅的能力，各種相應的技術推陳出新，不斷的進步。其中，Ruby on Rails可以說是一個穩定的靠山，在這十年的持續發展下，孕育出無限個成功的網站。"}
         ]
-
       },
       "syllabus": {
+        "header_data": [
+          {"col_name": "Date"},
+          {"col_name": "Description"},
+          {"col_name": "Link"},
+          {"col_name": "Homework"}
+        ],
         "table_data": [
           {"date": "week1(3/16)", "description": "環境設定 + 第一個 Rails 應用程式 ", "link": "", "homework": ""},
           {"date": "week2(3/23)", "description": "Git 基礎", "link": "", "homework": ""},
@@ -32,7 +37,7 @@
         ]
       },
       "lecturer": {
-        "image": "",
+        "image": "/imgs/course/ror_lecturer_image.jpg",
         "content": [
           {"paragraph": "本學期課程講師我們邀請到擁有豐富經驗的高見龍-龍哥。擁有15年以上開發經驗的他，不但是五倍紅寶石(5xRuby)的共同創辦人之一，同時也是WebConf Taiwan、PHPConf Taiwan、Rails Girl Taipei等活動的發起人及主辦人，現在持續為台灣的各界進行教育訓練。"},
           {"paragraph": "＊講者Facebook Link：https://www.facebook.com/eddiekao?fref=ts"}
@@ -46,6 +51,12 @@
         ]
       },
       "syllabus": {
+        "header_data": [
+          {"col_name": "Date"},
+          {"col_name": "Description"},
+          {"col_name": "Link"},
+          {"col_name": "Homework"}
+        ],
         "table_data": [
           {"date": "week1(3/17)", "description": "Apple Developer 網站資源介紹、Xcode 開發環境學習", "link": "", "homework": ""},
           {"date": "week2(3/24)", "description": "Playground 的互動與魅力、Swift 語言基礎", "link": "", "homework": "任務一：調色盤"},
@@ -62,10 +73,10 @@
         ]
       },
       "lecturer": {
-        "image": "",
+        "image": "/imgs/course/ios_lecturer_image.jpg",
         "content": [
-          {"paragraph": "＊iOS課程講者為張景隆學長 '\n'- 曾於2013年參加蘋果官方主辦Tech Talk '\n'- CodeData 作者 '\n'- iOS Dev Club 講者 '\n'- Cocoahead Taichung 講者 '\n'- 麥克自由聚(Apple, Mac, iOS 相關) 講師"},
-          {"paragraph": "＊其iOS Apps 作品包括 : '\n'- CWMoney：臺灣AppStore 最受歡迎記帳軟體及財經類App第一名 '\n'- biiChat：全臺第一個電子商務即時通訊軟體，整合電子商務與訊息 '\n'- BTWCar：藍牙軟硬整合應用App"},
+          {"paragraph": "＊iOS課程講者為張景隆學長 \n - 曾於2013年參加蘋果官方主辦Tech Talk \n - CodeData 作者 \n - iOS Dev Club 講者 \n - Cocoahead Taichung 講者 \n - 麥克自由聚(Apple, Mac, iOS 相關) 講師"},
+          {"paragraph": "＊其iOS Apps 作品包括 : \n - CWMoney：臺灣AppStore 最受歡迎記帳軟體及財經類App第一名 \n - biiChat：全臺第一個電子商務即時通訊軟體，整合電子商務與訊息 \n - BTWCar：藍牙軟硬整合應用App"},
           {"paragraph": "＊講者Facebook link：https://www.facebook.com/jingtw?fref=ts"}
         ]
       }
@@ -77,6 +88,12 @@
         ]
       },
       "syllabus": {
+        "header_data": [
+          {"col_name": "Date"},
+          {"col_name": "Description"},
+          {"col_name": "Link"},
+          {"col_name": "Homework"}
+        ],
         "table_data": [
           {"date": "week1(3/17)", "description": "", "link": "", "homework": ""},
           {"date": "week2(3/24)", "description": "", "link": "", "homework": ""},
@@ -94,7 +111,7 @@
         ]
       },
       "lecturer": {
-        "image": "",
+        "image": "/imgs/course/ui_lecturer_image.png",
         "content": [
           {"paragraph": "HackNTU這次請到的兩位講師之一崔德昕，曾在創新策略顧問公司Pebbo擔任使用者研究員，但比起顧問動腦動口性質，更喜歡自己動手做產品，於是一腳踏入創業的圈子，在各新創公司間游走只為了讓產品的價值能更直接的傳遞給使用者，打造更好的使用體驗、更好的產品。"},
           {"paragraph": "另一位講師歐陽佩君則曾任許多新創公司的UI/UX設計師，曾在多次的競賽中獲得獎項。她對新創、產品及創意有著強烈的熱情，希望能夠透過業界的經驗，和大家分享現實世界產品開發的流程與技巧。"}
@@ -108,6 +125,12 @@
         ]
       },
       "syllabus": {
+        "header_data": [
+          {"col_name": "Date"},
+          {"col_name": "Description"},
+          {"col_name": "Link"},
+          {"col_name": "Homework"}
+        ],
         "table_data": [
           {"date": "week1(3/16)", "description": "嵌入式開發板歷史沿革", "link": "", "homework": ""},
           {"date": "week2(3/23)", "description": "基礎I/O 與程式教學 - 1：各類電子元件", "link": "", "homework": ""},

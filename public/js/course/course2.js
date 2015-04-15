@@ -7,9 +7,12 @@
  *  Course Panel
  */
 
+//onMouseOver={onMouseOver} onMouseOut={onMouseOut}
 var CoursePanel = React.createClass({
     getInitialState: function() {
-        return {data: []};
+        return {
+            data: []
+        };
     },
     componentDidMount: function() {
         $.ajax({
@@ -23,19 +26,46 @@ var CoursePanel = React.createClass({
             }.bind(this)
         });
     },
+    handleClick: function(page){
+
+        $('#' + page).addClass(page + '_content');
+        $('#' + page).removeClass('list');
+        $('#' + page).prevAll().addClass('margin-25');
+        //$('#' + page).prev().addClass('margin-75');
+        //$('#' + page).siblings().addClass('hide');
+        setTimeout(function(){
+            React.render(
+                <CoursePanelContent url="/json/course/course.json" page={page}/>,
+                $('#' + page + ">.color")[0]
+            );
+            $('#' + page).addClass('overflow-visible');
+        }, 700);
+
+    },
+    onMouseOver: function(page){
+        $("#" + page + ".list>.course-panel-header>img").attr('src', '/imgs/course/' + page + '_w.png');
+    },
+    onMouseOut: function(page){
+        $("#" + page + ".list>.course-panel-header>img").attr('src', '/imgs/course/' + page + '_b.png');
+    },
     render: function(){
-        var coursePanelNodeClassDefault = "course-panel text-vertical-center";
+        var coursePanelNodeClassDefault = "course-panel text-vertical-center list";
+        var handleClick = this.handleClick;
+        var onMouseOver = this.onMouseOver;
+        var onMouseOut = this.onMouseOut;
         var coursePanelNode = this.state.data.map(function(data){
-            var coursePanelNodeClass = coursePanelNodeClassDefault + (data.backgroundColorClass? " " + data.backgroundColorClass: "");
+            var coursePanelNodeClass = coursePanelNodeClassDefault ;//+ (data.backgroundColorClass? " " + data.backgroundColorClass: "");
+            var colorClass = "color " + data.backgroundColorClass;
             return (
-                <div id={data.id} className={coursePanelNodeClass}>
+                <div id={data.id} className={coursePanelNodeClass} onClick={handleClick.bind(null, data.id)} onMouseOver={onMouseOver.bind(null, data.id)} onMouseOut={onMouseOut.bind(null, data.id)}>
+                    <div className={colorClass}></div>
                     <CoursePanelHeader title={data.title}/>
                     <CoursePanelFooter footer={data.footer}/>
                 </div>
             );
         });
         return (
-            <div className="main">
+            <div id="main" className="main" onClick={this.handleClick}>
                 {coursePanelNode}
             </div>
         );
@@ -97,13 +127,16 @@ var CoursePanelContent = React.createClass({
         console.log(this.state.data);
         if (this.state.data.length == 0) {
             console.log('loading');
-            return <div>Loading...</div>;
+            return <div></div>;
         }
         var coursePanelNodeContentClass = "course-panel-content";
+
+        console.log(this.state.data);
 
         return (
             <div className={coursePanelNodeContentClass}>
                 <CoursePanelContentIntroduction data={this.state.data.introduction}/>
+                <CoursePanelContentSyllabus data={this.state.data.syllabus}/>
                 <CoursePanelContentLecturer data={this.state.data.lecturer} />
             </div>
         );
@@ -139,6 +172,35 @@ var SectionContent = React.createClass({
     }
 });
 
+var SectionTable = React.createClass({
+    render: function(){
+        var headerNode = this.props.header.map(function(column) {
+            return (
+                <th>{column.col_name}</th>
+            )
+        });
+        var tableHeader = <tr>{headerNode}</tr>;
+        var tableBody = this.props.data.map(function(row){
+            return (
+                <tr>
+                    <td>{row.date}</td>
+                    <td>{row.description}</td>
+                    <td>{row.link}</td>
+                    <td>{row.homework}</td>
+                </tr>
+            )
+        });
+        return (
+            <div className="section-content">
+                <table className="table table-striped table-bordered">
+                    <thead>{tableHeader}</thead>
+                    <tbody>{tableBody}</tbody>
+                </table>
+            </div>
+        )
+    }
+});
+
 // Course Panel Content Layout
 var CoursePanelContentIntroduction = React.createClass({
     render: function(){
@@ -160,6 +222,7 @@ var CoursePanelContentSyllabus = React.createClass({
         return (
             <section>
                 <SectionHeader title="Syllabus"/>
+                <SectionTable data={this.props.data.table_data} header={this.props.data.header_data}/>
             </section>
         );
     }
@@ -183,6 +246,6 @@ var CoursePanelContentLecturer = React.createClass({
 
 React.render(
     <CoursePanel url="/json/course/course.json"/>,
-    //<CoursePanelContent url="/json/course/course.json" page="iot" pollInterval="2000" />,
+    //<CoursePanelContent url="/json/course/course.json" page="ios" />,
     $('body')[0]
 );
