@@ -28,7 +28,7 @@ var CoursePanel = React.createClass({
     },
     handleClick: function(page){
 
-        $('#' + page).addClass(page + '_content');
+        $('#' + page).addClass('content');
         $('#' + page).removeClass('list');
         $('#' + page).prevAll().addClass('margin-25');
         //$('#' + page).prev().addClass('margin-75');
@@ -75,13 +75,13 @@ var CoursePanel = React.createClass({
 // Course Panel Header
 var CoursePanelHeader = React.createClass({
     render: function(){
-        var imgStyle = {
-            marginLeft: '-0.9em',
-            width: '8em'
-        };
+        //var imgStyle = {
+        //    marginLeft: '-0.9em',
+        //    width: '8em'
+        //};
         return (
             <div className="course-panel-header">
-                <img src={this.props.title} style={imgStyle}></img>
+                <img src={this.props.title}></img>
             </div>
         );
     }
@@ -90,12 +90,12 @@ var CoursePanelHeader = React.createClass({
 // Course Panel Footer
 var CoursePanelFooter = React.createClass({
     render: function(){
-        var imgStyle = {
-            width: '100%'
-        };
+        //var imgStyle = {
+        //    width: '100%'
+        //};
         return (
             <div className="course-panel-footer">
-                <img src={this.props.footer} style={imgStyle}></img>
+                <img src={this.props.footer} ></img>
             </div>
         );
     }
@@ -246,6 +246,5 @@ var CoursePanelContentLecturer = React.createClass({
 
 React.render(
     <CoursePanel url="/json/course/course.json"/>,
-    //<CoursePanelContent url="/json/course/course.json" page="ios" />,
     $('body')[0]
 );
