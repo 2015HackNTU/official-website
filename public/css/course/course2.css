@@ -90,7 +90,7 @@ table th {
     /*background-color: #000000;*/
     z-index: 0;
     width: 25%;
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -172,8 +172,7 @@ table th {
 
 .course-panel-header {
     position: relative;
-    width: 100%;
-
+    font-size: 1px;
     -webkit-transition: all 0.35s;
     -moz-transition: all 0.35s;
     -ms-transition: all 0.35s;
@@ -182,11 +181,15 @@ table th {
 }
 
 .course-panel-header>img {
-    width: 60%;
+    width: 11.5em;
+}
+
+#iot>.course-panel-header>img {
+    width: 11em;
 }
 
 #ui>.course-panel-header>img {
-    width: 44%;
+    width: 8em;
 }
 
 
