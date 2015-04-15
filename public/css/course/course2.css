@@ -69,6 +69,7 @@ table th {
     z-index: 0;
     white-space: nowrap;
     overflow-x: hidden;
+    padding: 0;
     /*overflow: hidden;*/
 }
 
@@ -90,6 +91,8 @@ table th {
     z-index: 0;
     width: 25%;
     height: 100%;
+    margin: 0;
+    padding: 0;
     text-align: center;
     overflow: hidden;
 
@@ -179,11 +182,11 @@ table th {
 }
 
 .course-panel-header>img {
-    width: 50%;
+    width: 60%;
 }
 
 #ui>.course-panel-header>img {
-    width: 38%;
+    width: 44%;
 }
 
 
