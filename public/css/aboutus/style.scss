@@ -198,25 +198,25 @@ body {
                 @include circleStyle();
                 @include thirdChildCommonStyle();
                 @include rotation(3,12,$businessAdj);
-                background-image: url('../../imgs/aboutus/hc.svg');
+                background-image: url('../../imgs/aboutus/HC.svg');
             }
             &-2 {
                 @include circleStyle();
                 @include thirdChildCommonStyle();
                 @include rotation(3,12,$businessAdj);
-                background-image: url('../../imgs/aboutus/hackcourse.svg');
+                background-image: url('../../imgs/aboutus/HackCourse.svg');
             }
             &-3 {
                 @include circleStyle();
                 @include thirdChildCommonStyle();
                 @include rotation(3,12,$businessAdj);
-                background-image: url('../../imgs/aboutus/cr.svg');
+                background-image: url('../../imgs/aboutus/CR.svg');
             }
             &-4 {
                 @include circleStyle();
                 @include thirdChildCommonStyle();
                 @include rotation(3,12,$businessAdj);
-                background-image: url('../../imgs/aboutus/hackcampus.svg');
+                background-image: url('../../imgs/aboutus/HackCampus.svg');
             }
         }
     }

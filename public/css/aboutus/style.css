@@ -281,7 +281,7 @@ body {
     width: 120px;
     top: 30.0px;
     left: 230.0px;
-    background-image: url("../../imgs/aboutus/hc.svg"); }
+    background-image: url("../../imgs/aboutus/HC.svg"); }
     .secondLayer .circleFirstChildRight .thirdChild-1:hover {
       transition: all ease-out 2s; }
   .secondLayer .circleFirstChildRight .thirdChild-2 {
@@ -300,7 +300,7 @@ body {
     width: 120px;
     top: 30.0px;
     left: 230.0px;
-    background-image: url("../../imgs/aboutus/hackcourse.svg"); }
+    background-image: url("../../imgs/aboutus/HackCourse.svg"); }
     .secondLayer .circleFirstChildRight .thirdChild-2:hover {
       transition: all ease-out 2s; }
   .secondLayer .circleFirstChildRight .thirdChild-3 {
@@ -319,7 +319,7 @@ body {
     width: 120px;
     top: 30.0px;
     left: 230.0px;
-    background-image: url("../../imgs/aboutus/cr.svg"); }
+    background-image: url("../../imgs/aboutus/CR.svg"); }
     .secondLayer .circleFirstChildRight .thirdChild-3:hover {
       transition: all ease-out 2s; }
   .secondLayer .circleFirstChildRight .thirdChild-4 {
@@ -338,7 +338,7 @@ body {
     width: 120px;
     top: 30.0px;
     left: 230.0px;
-    background-image: url("../../imgs/aboutus/hackcampus.svg"); }
+    background-image: url("../../imgs/aboutus/HackCampus.svg"); }
     .secondLayer .circleFirstChildRight .thirdChild-4:hover {
       transition: all ease-out 2s; }
 
