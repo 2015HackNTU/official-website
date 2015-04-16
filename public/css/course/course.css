@@ -86,6 +86,8 @@ a {
     transition:  ease-in-out 0.5s;
     color: rgba(0,0,0,0);
     width: 0;
+    z-index: 2;
+    display: inline;
 }
 .panel:hover .content {
     z-index: 6;

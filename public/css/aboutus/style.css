@@ -1,0 +1,350 @@
+* {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  background: white;
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  color: #000;
+  overflow-x: hidden; }
+
+.frame {
+  position: absolute;
+  width: 100%;
+  height: 200px; }
+
+.circleCenter {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 500px;
+  margin: 0 auto;
+  z-index: 3;
+  display: block;
+  background-size: cover;
+  transition: all ease-out 2s;
+  margin-top: 3%;
+  background-image: url("../../imgs/aboutus/hackntu.svg"); }
+  .circleCenter:hover {
+    transition: all ease-out 2s; }
+  .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-1 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(0deg); }
+  .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-2 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-32deg); }
+  .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-3 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-64deg); }
+  .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-4 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-96deg); }
+  .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-5 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-128deg); }
+  .circleCenter:hover + .secondLayer .circleFirstChildRight > .thirdChild-1 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(90deg); }
+  .circleCenter:hover + .secondLayer .circleFirstChildRight > .thirdChild-2 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(60deg); }
+  .circleCenter:hover + .secondLayer .circleFirstChildRight > .thirdChild-3 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(30deg); }
+  .circleCenter:hover + .secondLayer .circleFirstChildRight > .thirdChild-4 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(0deg); }
+
+.secondLayer {
+  text-align: center; }
+.secondLayer .circleFirstChildLeft {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 500px;
+  margin: 0 auto;
+  z-index: 3;
+  display: block;
+  background-size: cover;
+  transition: all ease-out 2s;
+  margin: 0 5%;
+  display: inline-block;
+  background-image: url("../../imgs/aboutus/functional.svg"); }
+  .secondLayer .circleFirstChildLeft:hover {
+    transition: all ease-out 2s; }
+  .secondLayer .circleFirstChildLeft:hover > .thirdChild-1 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(0deg); }
+  .secondLayer .circleFirstChildLeft:hover > .thirdChild-2 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-32deg); }
+  .secondLayer .circleFirstChildLeft:hover > .thirdChild-3 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-64deg); }
+  .secondLayer .circleFirstChildLeft:hover > .thirdChild-4 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-96deg); }
+  .secondLayer .circleFirstChildLeft:hover > .thirdChild-5 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-128deg); }
+  .secondLayer .circleFirstChildLeft .thirdChild-1 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    transition: all ease-out 2s;
+    position: absolute;
+    opacity: 0;
+    height: 120px;
+    width: 120px;
+    top: 50.00011px;
+    left: -149.99998px;
+    background-image: url("../../imgs/aboutus/TD.svg"); }
+    .secondLayer .circleFirstChildLeft .thirdChild-1:hover {
+      transition: all ease-out 2s; }
+  .secondLayer .circleFirstChildLeft .thirdChild-2 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    transition: all ease-out 2s;
+    position: absolute;
+    opacity: 0;
+    height: 120px;
+    width: 120px;
+    top: 50.00011px;
+    left: -149.99998px;
+    background-image: url("../../imgs/aboutus/CD.svg"); }
+    .secondLayer .circleFirstChildLeft .thirdChild-2:hover {
+      transition: all ease-out 2s; }
+  .secondLayer .circleFirstChildLeft .thirdChild-3 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    transition: all ease-out 2s;
+    position: absolute;
+    opacity: 0;
+    height: 120px;
+    width: 120px;
+    top: 50.00011px;
+    left: -149.99998px;
+    background-image: url("../../imgs/aboutus/HR.svg"); }
+    .secondLayer .circleFirstChildLeft .thirdChild-3:hover {
+      transition: all ease-out 2s; }
+  .secondLayer .circleFirstChildLeft .thirdChild-4 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    transition: all ease-out 2s;
+    position: absolute;
+    opacity: 0;
+    height: 120px;
+    width: 120px;
+    top: 50.00011px;
+    left: -149.99998px;
+    background-image: url("../../imgs/aboutus/BD.svg"); }
+    .secondLayer .circleFirstChildLeft .thirdChild-4:hover {
+      transition: all ease-out 2s; }
+  .secondLayer .circleFirstChildLeft .thirdChild-5 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    transition: all ease-out 2s;
+    position: absolute;
+    opacity: 0;
+    height: 120px;
+    width: 120px;
+    top: 50.00011px;
+    left: -149.99998px;
+    background-image: url("../../imgs/aboutus/DM.svg"); }
+    .secondLayer .circleFirstChildLeft .thirdChild-5:hover {
+      transition: all ease-out 2s; }
+.secondLayer .circleFirstChildRight {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 500px;
+  margin: 0 auto;
+  z-index: 3;
+  display: block;
+  background-size: cover;
+  transition: all ease-out 2s;
+  margin: 0 5%;
+  display: inline-block;
+  background-image: url("../../imgs/aboutus/business.svg"); }
+  .secondLayer .circleFirstChildRight:hover {
+    transition: all ease-out 2s; }
+  .secondLayer .circleFirstChildRight:hover > .thirdChild-1 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(90deg); }
+  .secondLayer .circleFirstChildRight:hover > .thirdChild-2 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(60deg); }
+  .secondLayer .circleFirstChildRight:hover > .thirdChild-3 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(30deg); }
+  .secondLayer .circleFirstChildRight:hover > .thirdChild-4 {
+    opacity: 1;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(0deg); }
+  .secondLayer .circleFirstChildRight .thirdChild-1 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    transition: all ease-out 2s;
+    position: absolute;
+    opacity: 0;
+    height: 120px;
+    width: 120px;
+    top: 30.0px;
+    left: 230.0px;
+    background-image: url("../../imgs/aboutus/HC.svg"); }
+    .secondLayer .circleFirstChildRight .thirdChild-1:hover {
+      transition: all ease-out 2s; }
+  .secondLayer .circleFirstChildRight .thirdChild-2 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    transition: all ease-out 2s;
+    position: absolute;
+    opacity: 0;
+    height: 120px;
+    width: 120px;
+    top: 30.0px;
+    left: 230.0px;
+    background-image: url("../../imgs/aboutus/HackCourse.svg"); }
+    .secondLayer .circleFirstChildRight .thirdChild-2:hover {
+      transition: all ease-out 2s; }
+  .secondLayer .circleFirstChildRight .thirdChild-3 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    transition: all ease-out 2s;
+    position: absolute;
+    opacity: 0;
+    height: 120px;
+    width: 120px;
+    top: 30.0px;
+    left: 230.0px;
+    background-image: url("../../imgs/aboutus/CR.svg"); }
+    .secondLayer .circleFirstChildRight .thirdChild-3:hover {
+      transition: all ease-out 2s; }
+  .secondLayer .circleFirstChildRight .thirdChild-4 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    transition: all ease-out 2s;
+    position: absolute;
+    opacity: 0;
+    height: 120px;
+    width: 120px;
+    top: 30.0px;
+    left: 230.0px;
+    background-image: url("../../imgs/aboutus/HackCampus.svg"); }
+    .secondLayer .circleFirstChildRight .thirdChild-4:hover {
+      transition: all ease-out 2s; }
+
+.canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+/*# sourceMappingURL=style.css.map */

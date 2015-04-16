@@ -14,5 +14,8 @@ router.use('/community', route_community);
 router.use('/course', route_course);
 router.use('/hackathon', route_hackathon);
 router.use('/hackcampus', route_hackcampus);
+router.get('/aboutus',function(req,res) { 
+	res.render('aboutus/aboutus');
+});
 
 module.exports = router;
