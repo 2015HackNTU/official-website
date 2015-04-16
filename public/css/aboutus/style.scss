@@ -1,0 +1,232 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: white;
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    color: #000;
+    overflow-x: hidden; 
+}
+.frame {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+}
+
+// Circle Style //
+@mixin circleStyle(){
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    // box-shadow: 4px 4px 3px rgba(51, 51, 102, 0.5);
+    transition: all ease-out 2s;
+    &:hover {
+        // box-shadow: -4px 5px 3px rgba(51, 51, 102, 0.8);
+        transition: all ease-out 2s;
+    }
+}
+@function pow($number, $exp) {
+  $value: 1;
+  @if $exp > 0 {
+    @for $i from 1 through $exp {
+      $value: $value * $number;
+    }
+  }
+  @else if $exp < 0 {
+    @for $i from 1 through -$exp {
+      $value: $value / $number;
+    }
+  }
+  @return $value;
+}
+@function fact($number) {
+  $value: 1;
+  @if $number > 0 {
+    @for $i from 1 through $number {
+      $value: $value * $i;
+    }
+  }
+  @return $value;
+}
+@function pi() {
+  @return 3.14159265359;
+}
+
+@function rad($angle) {
+  $unit: unit($angle);
+  $unitless: $angle / ($angle * 0 + 1);
+  // If the angle has 'deg' as unit, convert to radians.
+  @if $unit == deg {
+    $unitless: $unitless / 180 * pi();
+  }
+  @return $unitless;
+}
+
+@function sin($angle) {
+  $sin: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+  }
+  @return $sin;
+}
+
+@function cos($angle) {
+  $cos: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+  }
+  @return $cos;
+}
+
+@function tan($angle) {
+  @return sin($angle) / cos($angle);
+}
+
+@mixin rotation($current, $total, $adjustment){
+    $angleRad : pi() * 2 * ( $current / $total );
+    top : cos($angleRad) * 200px + $adjustment;
+    left : sin($angleRad) * 200px + $adjustment;
+}
+@mixin thirdChildCommonStyle(){
+    position: absolute;
+    opacity: 0;
+    height: 120px;
+    width: 120px;
+    // transition-origin: 10% 50%;
+}
+@mixin transition($current, $total, $rotate, $adj){
+    opacity: 1;
+    $angleRad : pi() * 2 * ($current/$total);
+    $top : cos($angleRad) * 200px + $adj;
+    $left : sin($angleRad) * 200px + $adj;
+    transition: transform 1s ease-out;
+    transform-origin: $top $left ;
+    transform-style: preserve-3D;
+    transform: rotate($rotate);
+}
+.circleCenter {
+    @include circleStyle();
+    margin-top: 3%;
+    background-image: url('../../imgs/aboutus/hackntu.svg');
+    &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-1 { @include transition(10,10,0deg,50px); }
+    &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-2 { @include transition(10,10,-32deg,50px); }
+    &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-3 { @include transition(10,10,-64deg,50px); }
+    &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-4 { @include transition(10,10,-96deg,50px); }
+    &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-5 { @include transition(10,10,-128deg,50px); }
+    
+    &:hover + .secondLayer .circleFirstChildRight > .thirdChild-1 { @include transition(6,12,90deg,50px); }
+    &:hover + .secondLayer .circleFirstChildRight > .thirdChild-2 { @include transition(6,12,60deg,50px); }
+    &:hover + .secondLayer .circleFirstChildRight > .thirdChild-3 { @include transition(6,12,30deg,50px); }
+    &:hover + .secondLayer .circleFirstChildRight > .thirdChild-4 { @include transition(6,12,0deg,50px); }
+}
+.secondLayer {
+    & {
+        text-align: center;
+    }
+    .circleFirstChildLeft { 
+        // Functional 
+        @include circleStyle();
+        margin: 0 5%;
+        display: inline-block;
+        background-image: url('../../imgs/aboutus/functional.svg');
+        &:hover > .thirdChild-1 { @include transition(10,10,0deg,50px); }
+        &:hover > .thirdChild-2 { @include transition(10,10,-32deg,50px); }
+        &:hover > .thirdChild-3 { @include transition(10,10,-64deg,50px); }
+        &:hover > .thirdChild-4 { @include transition(10,10,-96deg,50px); }
+        &:hover > .thirdChild-5 { @include transition(10,10,-128deg,50px); }
+        .thirdChild {
+            $functionalAdj : 50px;
+            &-1 {
+                @include circleStyle();
+                @include thirdChildCommonStyle();
+                @include rotation(9,12,$functionalAdj);
+                background-image: url('../../imgs/aboutus/TD.svg');
+            }
+            &-2 {
+                @include circleStyle();
+                @include thirdChildCommonStyle();
+                @include rotation(9,12,$functionalAdj);
+                background-image: url('../../imgs/aboutus/CD.svg');
+            }
+            &-3 {
+                @include circleStyle();
+                @include thirdChildCommonStyle();
+                @include rotation(9,12,$functionalAdj);
+                background-image: url('../../imgs/aboutus/HR.svg');
+            }
+            &-4 {
+                @include circleStyle();
+                @include thirdChildCommonStyle();
+                @include rotation(9,12,$functionalAdj);
+                background-image: url('../../imgs/aboutus/BD.svg');
+            }
+            &-5 {
+                @include circleStyle();
+                @include thirdChildCommonStyle();
+                @include rotation(9,12,$functionalAdj);
+                background-image: url('../../imgs/aboutus/DM.svg');
+            }
+        }
+    }
+    .circleFirstChildRight { 
+        // Business
+        @include circleStyle();
+        margin: 0 5%;
+        display: inline-block;
+        background-image: url('../../imgs/aboutus/business.svg');
+        &:hover > .thirdChild-1 { @include transition(6,12,90deg,50px); }
+        &:hover > .thirdChild-2 { @include transition(6,12,60deg,50px); }
+        &:hover > .thirdChild-3 { @include transition(6,12,30deg,50px); }
+        &:hover > .thirdChild-4 { @include transition(6,12,0deg,50px); }
+        .thirdChild {
+            $businessAdj : 30px;
+            
+            &-1 {
+                @include circleStyle();
+                @include thirdChildCommonStyle();
+                @include rotation(3,12,$businessAdj);
+                background-image: url('../../imgs/aboutus/hc.svg');
+            }
+            &-2 {
+                @include circleStyle();
+                @include thirdChildCommonStyle();
+                @include rotation(3,12,$businessAdj);
+                background-image: url('../../imgs/aboutus/hackcourse.svg');
+            }
+            &-3 {
+                @include circleStyle();
+                @include thirdChildCommonStyle();
+                @include rotation(3,12,$businessAdj);
+                background-image: url('../../imgs/aboutus/cr.svg');
+            }
+            &-4 {
+                @include circleStyle();
+                @include thirdChildCommonStyle();
+                @include rotation(3,12,$businessAdj);
+                background-image: url('../../imgs/aboutus/hackcampus.svg');
+            }
+        }
+    }
+}
+
+.canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
