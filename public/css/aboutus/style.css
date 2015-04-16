@@ -24,11 +24,11 @@ body {
   z-index: 3;
   display: block;
   background-size: cover;
-  transition: all ease-out 2s;
+  transition: all ease-out 0.5s;
   margin-top: 3%;
   background-image: url("../../imgs/aboutus/hackntu.svg"); }
   .circleCenter:hover {
-    transition: all ease-out 2s; }
+    transition: all ease-out 0.5s; }
   .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-1 {
     opacity: 1;
     transition: transform 1s ease-out;
@@ -95,12 +95,12 @@ body {
   z-index: 3;
   display: block;
   background-size: cover;
-  transition: all ease-out 2s;
+  transition: all ease-out 0.5s;
   margin: 0 5%;
   display: inline-block;
   background-image: url("../../imgs/aboutus/functional.svg"); }
   .secondLayer .circleFirstChildLeft:hover {
-    transition: all ease-out 2s; }
+    transition: all ease-out 0.5s; }
   .secondLayer .circleFirstChildLeft:hover > .thirdChild-1 {
     opacity: 1;
     transition: transform 1s ease-out;
@@ -140,7 +140,7 @@ body {
     z-index: 3;
     display: block;
     background-size: cover;
-    transition: all ease-out 2s;
+    transition: all ease-out 0.5s;
     position: absolute;
     opacity: 0;
     height: 120px;
@@ -149,7 +149,7 @@ body {
     left: -149.99998px;
     background-image: url("../../imgs/aboutus/TD.svg"); }
     .secondLayer .circleFirstChildLeft .thirdChild-1:hover {
-      transition: all ease-out 2s; }
+      transition: all ease-out 0.5s; }
   .secondLayer .circleFirstChildLeft .thirdChild-2 {
     position: relative;
     height: 200px;
@@ -159,7 +159,7 @@ body {
     z-index: 3;
     display: block;
     background-size: cover;
-    transition: all ease-out 2s;
+    transition: all ease-out 0.5s;
     position: absolute;
     opacity: 0;
     height: 120px;
@@ -168,7 +168,7 @@ body {
     left: -149.99998px;
     background-image: url("../../imgs/aboutus/CD.svg"); }
     .secondLayer .circleFirstChildLeft .thirdChild-2:hover {
-      transition: all ease-out 2s; }
+      transition: all ease-out 0.5s; }
   .secondLayer .circleFirstChildLeft .thirdChild-3 {
     position: relative;
     height: 200px;
@@ -178,7 +178,7 @@ body {
     z-index: 3;
     display: block;
     background-size: cover;
-    transition: all ease-out 2s;
+    transition: all ease-out 0.5s;
     position: absolute;
     opacity: 0;
     height: 120px;
@@ -187,7 +187,7 @@ body {
     left: -149.99998px;
     background-image: url("../../imgs/aboutus/HR.svg"); }
     .secondLayer .circleFirstChildLeft .thirdChild-3:hover {
-      transition: all ease-out 2s; }
+      transition: all ease-out 0.5s; }
   .secondLayer .circleFirstChildLeft .thirdChild-4 {
     position: relative;
     height: 200px;
@@ -197,7 +197,7 @@ body {
     z-index: 3;
     display: block;
     background-size: cover;
-    transition: all ease-out 2s;
+    transition: all ease-out 0.5s;
     position: absolute;
     opacity: 0;
     height: 120px;
@@ -206,7 +206,7 @@ body {
     left: -149.99998px;
     background-image: url("../../imgs/aboutus/BD.svg"); }
     .secondLayer .circleFirstChildLeft .thirdChild-4:hover {
-      transition: all ease-out 2s; }
+      transition: all ease-out 0.5s; }
   .secondLayer .circleFirstChildLeft .thirdChild-5 {
     position: relative;
     height: 200px;
@@ -216,7 +216,7 @@ body {
     z-index: 3;
     display: block;
     background-size: cover;
-    transition: all ease-out 2s;
+    transition: all ease-out 0.5s;
     position: absolute;
     opacity: 0;
     height: 120px;
@@ -225,7 +225,7 @@ body {
     left: -149.99998px;
     background-image: url("../../imgs/aboutus/DM.svg"); }
     .secondLayer .circleFirstChildLeft .thirdChild-5:hover {
-      transition: all ease-out 2s; }
+      transition: all ease-out 0.5s; }
 .secondLayer .circleFirstChildRight {
   position: relative;
   height: 200px;
@@ -235,12 +235,12 @@ body {
   z-index: 3;
   display: block;
   background-size: cover;
-  transition: all ease-out 2s;
+  transition: all ease-out 0.5s;
   margin: 0 5%;
   display: inline-block;
   background-image: url("../../imgs/aboutus/business.svg"); }
   .secondLayer .circleFirstChildRight:hover {
-    transition: all ease-out 2s; }
+    transition: all ease-out 0.5s; }
   .secondLayer .circleFirstChildRight:hover > .thirdChild-1 {
     opacity: 1;
     transition: transform 1s ease-out;
@@ -274,7 +274,7 @@ body {
     z-index: 3;
     display: block;
     background-size: cover;
-    transition: all ease-out 2s;
+    transition: all ease-out 0.5s;
     position: absolute;
     opacity: 0;
     height: 120px;
@@ -283,7 +283,7 @@ body {
     left: 230.0px;
     background-image: url("../../imgs/aboutus/HC.svg"); }
     .secondLayer .circleFirstChildRight .thirdChild-1:hover {
-      transition: all ease-out 2s; }
+      transition: all ease-out 0.5s; }
   .secondLayer .circleFirstChildRight .thirdChild-2 {
     position: relative;
     height: 200px;
@@ -293,7 +293,7 @@ body {
     z-index: 3;
     display: block;
     background-size: cover;
-    transition: all ease-out 2s;
+    transition: all ease-out 0.5s;
     position: absolute;
     opacity: 0;
     height: 120px;
@@ -302,7 +302,7 @@ body {
     left: 230.0px;
     background-image: url("../../imgs/aboutus/HackCourse.svg"); }
     .secondLayer .circleFirstChildRight .thirdChild-2:hover {
-      transition: all ease-out 2s; }
+      transition: all ease-out 0.5s; }
   .secondLayer .circleFirstChildRight .thirdChild-3 {
     position: relative;
     height: 200px;
@@ -312,7 +312,7 @@ body {
     z-index: 3;
     display: block;
     background-size: cover;
-    transition: all ease-out 2s;
+    transition: all ease-out 0.5s;
     position: absolute;
     opacity: 0;
     height: 120px;
@@ -321,7 +321,7 @@ body {
     left: 230.0px;
     background-image: url("../../imgs/aboutus/CR.svg"); }
     .secondLayer .circleFirstChildRight .thirdChild-3:hover {
-      transition: all ease-out 2s; }
+      transition: all ease-out 0.5s; }
   .secondLayer .circleFirstChildRight .thirdChild-4 {
     position: relative;
     height: 200px;
@@ -331,7 +331,7 @@ body {
     z-index: 3;
     display: block;
     background-size: cover;
-    transition: all ease-out 2s;
+    transition: all ease-out 0.5s;
     position: absolute;
     opacity: 0;
     height: 120px;
@@ -340,7 +340,7 @@ body {
     left: 230.0px;
     background-image: url("../../imgs/aboutus/HackCampus.svg"); }
     .secondLayer .circleFirstChildRight .thirdChild-4:hover {
-      transition: all ease-out 2s; }
+      transition: all ease-out 0.5s; }
 
 .canvas {
   position: absolute;
