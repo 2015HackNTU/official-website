@@ -24,17 +24,22 @@
 			<div class="circleCenter" ng-click="spreadChild('both')" ng-class="{'clicked' : (isActivatedLeft && isActivatedRight) }"></div>
 			<div class="secondLayer">
 				<div class="circleFirstChildLeft" ng-click="spreadChild('left')" ng-class="{'clicked' : isActivatedLeft}" $event.stopPropagation();> 
-					<div class="thirdChild-1" ng-class="{'isActivatedLeft-1' : isActivatedLeft}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
-					<div class="thirdChild-2" ng-class="{'isActivatedLeft-2' : isActivatedLeft}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
-					<div class="thirdChild-3" ng-class="{'isActivatedLeft-3' : isActivatedLeft}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
-					<div class="thirdChild-4" ng-class="{'isActivatedLeft-4' : isActivatedLeft}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
-					<div class="thirdChild-5" ng-class="{'isActivatedLeft-5' : isActivatedLeft}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-1" ng-class="{'isActivatedLeft-1' : isActivatedLeft}" ng-click="flip($event, 'left-1'); spreadChild('stay');" $event.stopPropagation();>
+					</div>	
+					<div class="thirdChild-2" ng-class="{'isActivatedLeft-2' : isActivatedLeft}" ng-click="flip($event, 'left-2'); spreadChild('stay');" $event.stopPropagation();>
+					</div>	
+					<div class="thirdChild-3" ng-class="{'isActivatedLeft-3' : isActivatedLeft}" ng-click="flip($event, 'left-3'); spreadChild('stay');" $event.stopPropagation();>
+					</div>	
+					<div class="thirdChild-4" ng-class="{'isActivatedLeft-4' : isActivatedLeft}" ng-click="flip($event, 'left-4'); spreadChild('stay');" $event.stopPropagation();>
+					</div>	
+					<div class="thirdChild-5" ng-class="{'isActivatedLeft-5' : isActivatedLeft}" ng-click="flip($event, 'left-5'); spreadChild('stay');" $event.stopPropagation();>
+					</div>	
 				</div>
 				<div class="circleFirstChildRight" ng-click="spreadChild('right')" ng-class="{'clicked' : isActivatedRight}">
-					<div class="thirdChild-1" ng-class="{'isActivatedRight-1' : isActivatedRight}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
-					<div class="thirdChild-2" ng-class="{'isActivatedRight-2' : isActivatedRight}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
-					<div class="thirdChild-3" ng-class="{'isActivatedRight-3' : isActivatedRight}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>
-					<div class="thirdChild-4" ng-class="{'isActivatedRight-4' : isActivatedRight}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>
+					<div class="thirdChild-1" ng-class="{'isActivatedRight-1' : isActivatedRight}" ng-click="flip($event, 'right-1'); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-2" ng-class="{'isActivatedRight-2' : isActivatedRight}" ng-click="flip($event, 'right-2'); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-3" ng-class="{'isActivatedRight-3' : isActivatedRight}" ng-click="flip($event, 'right-3'); spreadChild('stay');" $event.stopPropagation();></div>
+					<div class="thirdChild-4" ng-class="{'isActivatedRight-4' : isActivatedRight}" ng-click="flip($event, 'right-4'); spreadChild('stay');" $event.stopPropagation();></div>
 				</div>
 			</div>
 		</div>

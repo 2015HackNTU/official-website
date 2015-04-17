@@ -27,11 +27,25 @@ body {
     z-index: 3;
     display: block;
     background-size: cover;
+
     // box-shadow: 4px 4px 3px rgba(51, 51, 102, 0.5);
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
     transition: all ease-out 0.5s;
     &:hover {
         // box-shadow: -4px 5px 3px rgba(51, 51, 102, 0.8);
+        -webkit-transition: all ease-out 0.5s;
+        -moz-transition: all ease-out 0.5s;
+        -o-transition: all ease-out 0.5s;
         transition: all ease-out 0.5s;
+    }
+    & > a {
+        font-size: 40px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        line-height: 2.6em;
     }
 }
 @function pow($number, $exp) {
@@ -103,8 +117,13 @@ body {
 @mixin thirdChildCommonStyle(){
     position: absolute;
     opacity: 0;
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
+    // background-color: #FF9732;
+    &:hover {
+        box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+        transition: all ease-out 0.1s;
+    }
     // transition-origin: 10% 50%;
 }
 @mixin transition($current, $total, $rotate, $adj){
@@ -119,6 +138,7 @@ body {
 }
 .flip{
     transform: rotateY(180deg);
+    transform-origin: 0 0 ;
 }
 .clicked {
     box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
