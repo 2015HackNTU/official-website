@@ -28,10 +28,10 @@ body {
     display: block;
     background-size: cover;
     // box-shadow: 4px 4px 3px rgba(51, 51, 102, 0.5);
-    transition: all ease-out 2s;
+    transition: all ease-out 0.5s;
     &:hover {
         // box-shadow: -4px 5px 3px rgba(51, 51, 102, 0.8);
-        transition: all ease-out 2s;
+        transition: all ease-out 0.5s;
     }
 }
 @function pow($number, $exp) {
@@ -117,20 +117,31 @@ body {
     transform-style: preserve-3D;
     transform: rotate($rotate);
 }
+.flip{
+    transform: rotateY(180deg);
+}
+.clicked {
+    box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+    transition: all ease-out 0.1s;
+}
 .circleCenter {
     @include circleStyle();
     margin-top: 3%;
     background-image: url('../../imgs/aboutus/hackntu.svg');
-    &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-1 { @include transition(10,10,0deg,50px); }
-    &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-2 { @include transition(10,10,-32deg,50px); }
-    &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-3 { @include transition(10,10,-64deg,50px); }
-    &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-4 { @include transition(10,10,-96deg,50px); }
-    &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-5 { @include transition(10,10,-128deg,50px); }
+    &:hover {
+        box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+        transition: all ease-out 0.1s;
+    }
+    // &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-1 { @include transition(10,10,0deg,50px); }
+    // &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-2 { @include transition(10,10,-32deg,50px); }
+    // &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-3 { @include transition(10,10,-64deg,50px); }
+    // &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-4 { @include transition(10,10,-96deg,50px); }
+    // &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-5 { @include transition(10,10,-128deg,50px); }
     
-    &:hover + .secondLayer .circleFirstChildRight > .thirdChild-1 { @include transition(6,12,90deg,50px); }
-    &:hover + .secondLayer .circleFirstChildRight > .thirdChild-2 { @include transition(6,12,60deg,50px); }
-    &:hover + .secondLayer .circleFirstChildRight > .thirdChild-3 { @include transition(6,12,30deg,50px); }
-    &:hover + .secondLayer .circleFirstChildRight > .thirdChild-4 { @include transition(6,12,0deg,50px); }
+    // &:hover + .secondLayer .circleFirstChildRight > .thirdChild-1 { @include transition(6,12,90deg,50px); }
+    // &:hover + .secondLayer .circleFirstChildRight > .thirdChild-2 { @include transition(6,12,60deg,50px); }
+    // &:hover + .secondLayer .circleFirstChildRight > .thirdChild-3 { @include transition(6,12,30deg,50px); }
+    // &:hover + .secondLayer .circleFirstChildRight > .thirdChild-4 { @include transition(6,12,0deg,50px); }
 }
 .secondLayer {
     & {
@@ -142,11 +153,15 @@ body {
         margin: 0 5%;
         display: inline-block;
         background-image: url('../../imgs/aboutus/functional.svg');
-        &:hover > .thirdChild-1 { @include transition(10,10,0deg,50px); }
-        &:hover > .thirdChild-2 { @include transition(10,10,-32deg,50px); }
-        &:hover > .thirdChild-3 { @include transition(10,10,-64deg,50px); }
-        &:hover > .thirdChild-4 { @include transition(10,10,-96deg,50px); }
-        &:hover > .thirdChild-5 { @include transition(10,10,-128deg,50px); }
+        &:hover {
+            box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+            transition: all ease-out 0.1s;
+        }
+        // &:hover > .thirdChild-1 { @include transition(10,10,0deg,50px); }
+        // &:hover > .thirdChild-2 { @include transition(10,10,-32deg,50px); }
+        // &:hover > .thirdChild-3 { @include transition(10,10,-64deg,50px); }
+        // &:hover > .thirdChild-4 { @include transition(10,10,-96deg,50px); }
+        // &:hover > .thirdChild-5 { @include transition(10,10,-128deg,50px); }
         .thirdChild {
             $functionalAdj : 50px;
             &-1 {
@@ -187,10 +202,14 @@ body {
         margin: 0 5%;
         display: inline-block;
         background-image: url('../../imgs/aboutus/business.svg');
-        &:hover > .thirdChild-1 { @include transition(6,12,90deg,50px); }
-        &:hover > .thirdChild-2 { @include transition(6,12,60deg,50px); }
-        &:hover > .thirdChild-3 { @include transition(6,12,30deg,50px); }
-        &:hover > .thirdChild-4 { @include transition(6,12,0deg,50px); }
+        &:hover {
+            box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+            transition: all ease-out 0.1s;
+        }
+        // &:hover > .thirdChild-1 { @include transition(6,12,90deg,50px); }
+        // &:hover > .thirdChild-2 { @include transition(6,12,60deg,50px); }
+        // &:hover > .thirdChild-3 { @include transition(6,12,30deg,50px); }
+        // &:hover > .thirdChild-4 { @include transition(6,12,0deg,50px); }
         .thirdChild {
             $businessAdj : 30px;
             
@@ -228,5 +247,79 @@ body {
     height: 100%;
 }
 
+
+// Angular Purpose - Bad SCSS //
+.isActivatedLeft-1 {
+    z-index: 5 !important; 
+    opacity: 1 !important;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(0deg); 
+}
+.isActivatedLeft-2 {
+    z-index: 5 !important; 
+    opacity: 1 !important;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-32deg); 
+}
+.isActivatedLeft-3 {
+    z-index: 5 !important; 
+    opacity: 1 !important;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-64deg); 
+}
+.isActivatedLeft-4 {
+    z-index: 5 !important; 
+    opacity: 1 !important;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-96deg); 
+}
+.isActivatedLeft-5 {
+    z-index: 5 !important; 
+    opacity: 1 !important;
+    transition: transform 1s ease-out;
+    transform-origin: 250.06024px 50.01655px;
+    transform-style: preserve-3D;
+    transform: rotate(-128deg); 
+}
+.isActivatedRight-1 {
+    z-index: 5 !important; 
+    opacity: 1 !important;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(90deg); 
+}
+.isActivatedRight-2 {
+    z-index: 5 !important; 
+    opacity: 1 !important;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(60deg); 
+}
+.isActivatedRight-3 {
+    z-index: 5 !important; 
+    opacity: 1 !important;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(30deg); 
+}
+.isActivatedRight-4 {
+    z-index: 5 !important; 
+    opacity: 1 !important;
+    transition: transform 1s ease-out;
+    transform-origin: -150.0px 50.0px;
+    transform-style: preserve-3D;
+    transform: rotate(0deg); 
+}
 
 

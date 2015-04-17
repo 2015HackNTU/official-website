@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang=zh-tw>
+<html lang=zh-tw ng-app="ngAboutUs">
 	<head>
 		<meta charset=utf-8>
 		<title>About Us</title>
@@ -16,31 +16,30 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
 		<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.js"></script>
 		<script type="text/javascript" src="js/course/angular-animate.js"></script>
+		<script type="text/javascript" src="js/aboutus/ngAboutUs.js"></script>
 	</head>
-	<body>
+	<body ng-controller="aboutUsCtrl" >
 		<% include ../shared/navbar.ejs %>
-		<div class="frame">
-			<div class="circleCenter"></div>
+		<div class="frame" >
+			<div class="circleCenter" ng-click="spreadChild('both')" ng-class="{'clicked' : (isActivatedLeft && isActivatedRight) }"></div>
 			<div class="secondLayer">
-				<div class="circleFirstChildLeft" id="circleFirstChildLeft"> 
-					<div class="thirdChild-1"></div>	
-					<div class="thirdChild-2"></div>	
-					<div class="thirdChild-3"></div>	
-					<div class="thirdChild-4"></div>	
-					<div class="thirdChild-5"></div>	
+				<div class="circleFirstChildLeft" ng-click="spreadChild('left')" ng-class="{'clicked' : isActivatedLeft}" $event.stopPropagation();> 
+					<div class="thirdChild-1" ng-class="{'isActivatedLeft-1' : isActivatedLeft}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-2" ng-class="{'isActivatedLeft-2' : isActivatedLeft}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-3" ng-class="{'isActivatedLeft-3' : isActivatedLeft}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-4" ng-class="{'isActivatedLeft-4' : isActivatedLeft}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-5" ng-class="{'isActivatedLeft-5' : isActivatedLeft}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
 				</div>
-				<div class="circleFirstChildRight">
-					<div class="thirdChild-1"></div>	
-					<div class="thirdChild-2"></div>	
-					<div class="thirdChild-3"></div>
-					<div class="thirdChild-4"></div>
+				<div class="circleFirstChildRight" ng-click="spreadChild('right')" ng-class="{'clicked' : isActivatedRight}">
+					<div class="thirdChild-1" ng-class="{'isActivatedRight-1' : isActivatedRight}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-2" ng-class="{'isActivatedRight-2' : isActivatedRight}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-3" ng-class="{'isActivatedRight-3' : isActivatedRight}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>
+					<div class="thirdChild-4" ng-class="{'isActivatedRight-4' : isActivatedRight}" ng-click="flip($event); spreadChild('stay');" $event.stopPropagation();></div>
 				</div>
 			</div>
 		</div>
 
-<!-- 		<svg class="canvas">
-			<line x1="50%" y1="30%" x2="65%" y2="55%" stroke="black" stroke-width="5px"></line>
-		</svg> -->
+			<!-- <line x1="50%" y1="30%" x2="65%" y2="55%" stroke="black" stroke-width="5px"></line> -->
 
 	</body>
 </html>

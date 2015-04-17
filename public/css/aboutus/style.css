@@ -15,6 +15,13 @@ body {
   width: 100%;
   height: 200px; }
 
+.flip {
+  transform: rotateY(180deg); }
+
+.clicked {
+  box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+  transition: all ease-out 0.1s; }
+
 .circleCenter {
   position: relative;
   height: 200px;
@@ -29,60 +36,9 @@ body {
   background-image: url("../../imgs/aboutus/hackntu.svg"); }
   .circleCenter:hover {
     transition: all ease-out 0.5s; }
-  .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-1 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
-    transform: rotate(0deg); }
-  .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-2 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
-    transform: rotate(-32deg); }
-  .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-3 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
-    transform: rotate(-64deg); }
-  .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-4 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
-    transform: rotate(-96deg); }
-  .circleCenter:hover + .secondLayer .circleFirstChildLeft > .thirdChild-5 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
-    transform: rotate(-128deg); }
-  .circleCenter:hover + .secondLayer .circleFirstChildRight > .thirdChild-1 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: -150.0px 50.0px;
-    transform-style: preserve-3D;
-    transform: rotate(90deg); }
-  .circleCenter:hover + .secondLayer .circleFirstChildRight > .thirdChild-2 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: -150.0px 50.0px;
-    transform-style: preserve-3D;
-    transform: rotate(60deg); }
-  .circleCenter:hover + .secondLayer .circleFirstChildRight > .thirdChild-3 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: -150.0px 50.0px;
-    transform-style: preserve-3D;
-    transform: rotate(30deg); }
-  .circleCenter:hover + .secondLayer .circleFirstChildRight > .thirdChild-4 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: -150.0px 50.0px;
-    transform-style: preserve-3D;
-    transform: rotate(0deg); }
+  .circleCenter:hover {
+    box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+    transition: all ease-out 0.1s; }
 
 .secondLayer {
   text-align: center; }
@@ -101,36 +57,9 @@ body {
   background-image: url("../../imgs/aboutus/functional.svg"); }
   .secondLayer .circleFirstChildLeft:hover {
     transition: all ease-out 0.5s; }
-  .secondLayer .circleFirstChildLeft:hover > .thirdChild-1 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
-    transform: rotate(0deg); }
-  .secondLayer .circleFirstChildLeft:hover > .thirdChild-2 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
-    transform: rotate(-32deg); }
-  .secondLayer .circleFirstChildLeft:hover > .thirdChild-3 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
-    transform: rotate(-64deg); }
-  .secondLayer .circleFirstChildLeft:hover > .thirdChild-4 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
-    transform: rotate(-96deg); }
-  .secondLayer .circleFirstChildLeft:hover > .thirdChild-5 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
-    transform: rotate(-128deg); }
+  .secondLayer .circleFirstChildLeft:hover {
+    box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+    transition: all ease-out 0.1s; }
   .secondLayer .circleFirstChildLeft .thirdChild-1 {
     position: relative;
     height: 200px;
@@ -241,30 +170,9 @@ body {
   background-image: url("../../imgs/aboutus/business.svg"); }
   .secondLayer .circleFirstChildRight:hover {
     transition: all ease-out 0.5s; }
-  .secondLayer .circleFirstChildRight:hover > .thirdChild-1 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: -150.0px 50.0px;
-    transform-style: preserve-3D;
-    transform: rotate(90deg); }
-  .secondLayer .circleFirstChildRight:hover > .thirdChild-2 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: -150.0px 50.0px;
-    transform-style: preserve-3D;
-    transform: rotate(60deg); }
-  .secondLayer .circleFirstChildRight:hover > .thirdChild-3 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: -150.0px 50.0px;
-    transform-style: preserve-3D;
-    transform: rotate(30deg); }
-  .secondLayer .circleFirstChildRight:hover > .thirdChild-4 {
-    opacity: 1;
-    transition: transform 1s ease-out;
-    transform-origin: -150.0px 50.0px;
-    transform-style: preserve-3D;
-    transform: rotate(0deg); }
+  .secondLayer .circleFirstChildRight:hover {
+    box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+    transition: all ease-out 0.1s; }
   .secondLayer .circleFirstChildRight .thirdChild-1 {
     position: relative;
     height: 200px;
@@ -346,5 +254,77 @@ body {
   position: absolute;
   width: 100%;
   height: 100%; }
+
+.isActivatedLeft-1 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: 250.06024px 50.01655px;
+  transform-style: preserve-3D;
+  transform: rotate(0deg); }
+
+.isActivatedLeft-2 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: 250.06024px 50.01655px;
+  transform-style: preserve-3D;
+  transform: rotate(-32deg); }
+
+.isActivatedLeft-3 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: 250.06024px 50.01655px;
+  transform-style: preserve-3D;
+  transform: rotate(-64deg); }
+
+.isActivatedLeft-4 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: 250.06024px 50.01655px;
+  transform-style: preserve-3D;
+  transform: rotate(-96deg); }
+
+.isActivatedLeft-5 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: 250.06024px 50.01655px;
+  transform-style: preserve-3D;
+  transform: rotate(-128deg); }
+
+.isActivatedRight-1 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: -150.0px 50.0px;
+  transform-style: preserve-3D;
+  transform: rotate(90deg); }
+
+.isActivatedRight-2 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: -150.0px 50.0px;
+  transform-style: preserve-3D;
+  transform: rotate(60deg); }
+
+.isActivatedRight-3 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: -150.0px 50.0px;
+  transform-style: preserve-3D;
+  transform: rotate(30deg); }
+
+.isActivatedRight-4 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: -150.0px 50.0px;
+  transform-style: preserve-3D;
+  transform: rotate(0deg); }
 
 /*# sourceMappingURL=style.css.map */
