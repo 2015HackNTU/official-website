@@ -3,21 +3,15 @@
 /*******************************/
 
 @font-face {
-    font-family: Megalopolis;
-    src: url('../../fonts/Megalopolis.ttf');
+    font-family: STHeiti;
+    src: url('/fonts/STHeiti.ttf');
 }
+
+
 
 /*******************************/
 /*          Default            */
 /*******************************/
-
-* {
-    -webkit-transition-timing-function: ease-in-out;
-    -mos-transition-timing-function: ease-in-out;
-    -ms-transition-timing-function: ease-in-out;
-    -o-transition-timing-function: ease-in-out;
-    transition-timing-function: ease-in-out;
-}
 
 html, body {
     width: 100%;
@@ -251,18 +245,29 @@ table th {
     background-color: white;
     text-align: left;
     width: 960px;
-    margin: 0 auto;
+    margin: 2.5em auto;
     padding: 0.5em 6em;
     -webkit-box-shadow: 0px 0px 3px rgba(20%,20%,40%,0.5);
     z-index: 50;
     white-space: normal;
+}
 
+.show-from-bottom{
     -webkit-animation: show-from-bottom 0.5s forwards;
     animation: show-from-bottom 0.5s forwards;
 }
 
+.hide-to-bottom {
+    -webkit-animation: show-from-bottom 0.5s forwards;
+    -webkit-animation-direction: reverse;
+    animation: show-from-bottom 0.5s forwards;
+    animation-direction: reverse;
+}
+
 .course-panel-content .section-header {
     font-size: 1.4em;
+    font-family: STHeiti;
+    font-weight: bolder;
     text-align: center;
     margin-bottom: 0.5em;
 }
@@ -304,15 +309,65 @@ table th {
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
     transform: rotate(-90deg);
+}
 
+/*
+ *  Prev, Next Arrow
+ */
+
+.left-arrow, .right-arrow {
+    position: fixed;
+    top: 0;
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.5em;
+    height: 100%;
+
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.left-arrow {
+    text-align: left;
+    left: 0;
+}
+
+.right-arrow {
+    text-align: right;
+    right: 0;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    cursor: hand;
 }
 
 /*******************************/
 /*          General            */
 /*******************************/
 
+.shrink-left {
+    padding-left: 2em;
+}
+
+.shrink-right {
+    padding-right: 2em;
+}
+
 .margin-25 {
     margin-left: -25%;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 .overflow-visible {

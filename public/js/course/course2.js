@@ -43,7 +43,6 @@ var CoursePanel = React.createClass({
         $('#' + page).addClass('show-content');
         $('#' + page).removeClass('list');
         $('#' + page).prevAll().addClass('margin-25');
-        $('#' + page).attr('onclick', '');
 
         setTimeout(function(){
             React.render(
@@ -51,6 +50,7 @@ var CoursePanel = React.createClass({
                 $('#' + page + ">.color")[0]
             );
             $('#' + page).addClass('overflow-visible');
+            $('#course-footer').addClass('show');
         }, 700);
         guard.deactivate('list');
     },
@@ -120,7 +120,11 @@ var CoursePanelFooter = React.createClass({
 
 var CoursePanelContent = React.createClass({
     getInitialState: function() {
-        return {data: []};
+        return {
+            data: [],
+            leftHover: false,
+            rightHover: false
+        };
     },
     componentDidMount: function() {
         $.ajax({
@@ -137,25 +141,75 @@ var CoursePanelContent = React.createClass({
     },
     closeOnClick: function(){
         var page = this.props.page;
-        $('#' + page).removeClass('show-content');
-        $('#' + page).removeClass('overflow-visible');
-        $('#' + page).prevAll().removeClass('margin-25');
-        $('#' + page + '>.color').html('');
+        $('#' + page + " .course-panel-content").removeClass('show-from-bottom');
         setTimeout(function(){
-            $('#' + page).addClass('list');
-            $('#' + page + ':not(:hover)>.course-panel-header>img').attr('src', '/imgs/course/' + page + '_b.png');
-            guard.activate('list');
-        }, 350);
+            $('#' + page + " .course-panel-content").addClass('hide-to-bottom');
+        }, 10);
+
+
+        setTimeout(function(){
+            $('#' + page).removeClass('show-content');
+            $('#' + page).removeClass('overflow-visible');
+            $('#' + page).prevAll().removeClass('margin-25');
+            $('#' + page + '>.color').html('');
+            setTimeout(function(){
+                $('#' + page).addClass('list');
+                $('#' + page + ':not(:hover)>.course-panel-header>img').attr('src', '/imgs/course/' + page + '_b.png');
+                guard.activate('list');
+            }, 350);
+        }, 1000);
+
+    },
+    arrowOnClick: function(pageObject){
+        console.log(pageObject);
+        pageObject.addClass('margin-25');
+    },
+    leftArrowOnMouseEnter: function(){
+        this.setState({leftHover: true});
+    },
+    leftArrowOnMouseLeave: function(){
+        this.setState({leftHover: false});
+    },
+    rightArrowOnMouseEnter: function(){
+        this.setState({rightHover: true});
+    },
+    rightArrowOnMouseLeave: function(){
+        this.setState({rightHover: false});
     },
     render: function(){
         if (this.state.data.length == 0) {
             console.log('loading');
             return <div></div>;
         }
-        var coursePanelNodeContentClass = "course-panel-content";
+        var page = this.props.page;
+        var prev = $('#' + page).prev();
+        var next = $('#' + page).next();
+
+        var coursePanelNodeContentClass = "course-panel-content show-from-bottom";
+        var leftArrowClass = "left-arrow text-vertical-center" + (prev.length == 0 ? " hide" : "");
+        var rightArrowClass = "right-arrow text-vertical-center" + (next.length == 0 ? " hide" : "");
+
+        var prev_color = (prev.length > 0 ? prev.children('.color').attr('class').split(' ')[1] : "");
+        var next_color = (next.length > 0 ? next.children('.color').attr('class').split(' ')[1] : "");
+
+        if(this.state.leftHover){
+            leftArrowClass += " " + prev_color;
+            $('#' + page + '>.color').addClass('shrink-left');
+        }else{
+            $('#' + page + '>.color').removeClass('shrink-left');
+        }
+
+        if(this.state.rightHover){
+            rightArrowClass += " " + next_color;
+            $('#' + page + '>.color').addClass('shrink-right');
+        }else{
+            $('#' + page + '>.color').removeClass('shrink-right');
+        }
 
         return (
             <div className={coursePanelNodeContentClass}>
+                <div className={leftArrowClass} onClick={this.arrowOnClick.bind(null, prev)} onMouseEnter={this.leftArrowOnMouseEnter} onMouseLeave={this.leftArrowOnMouseLeave}><span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+                <div className={rightArrowClass} onClick={this.arrowOnClick.bind(null, next)} onMouseEnter={this.rightArrowOnMouseEnter} onMouseLeave={this.rightArrowOnMouseLeave}><span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
                 <div className="close-button" onClick={this.closeOnClick}>&times;</div>
                 <CoursePanelContentIntroduction data={this.state.data.introduction}/>
                 <CoursePanelContentSyllabus data={this.state.data.syllabus}/>
@@ -165,8 +219,6 @@ var CoursePanelContent = React.createClass({
 
     }
 });
-
-
 
 var SectionHeader = React.createClass({
     render: function(){
