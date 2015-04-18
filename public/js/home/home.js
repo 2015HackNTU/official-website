@@ -90,11 +90,4 @@ $(document).ready(function(){
         top_anchor_waypoint.disable();
         bot_anchor_waypoint.disable();
     }
-
-
-
-
-
-
-
 });

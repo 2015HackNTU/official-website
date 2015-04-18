@@ -26,6 +26,7 @@ html, body {
     letter-spacing: 0.05em;
     padding: 0em;
     margin: 0em;
+
     /*font-size: 90%;*/
 }
 
@@ -96,11 +97,11 @@ table th {
     text-align: center;
     overflow: hidden;
 
-    -webkit-transition: all 0.35s;
-    -moz-transition: all 0.35s;
-    -ms-transition: all 0.35s;
-    -o-transition: all 0.35s;
-    transition: all 0.35s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
 .course-panel.list {
@@ -115,11 +116,11 @@ table th {
     top: 0;
     left: 0;
 
-    -webkit-transition: all 0.35s;
-    -moz-transition: all 0.35s;
-    -ms-transition: all 0.35s;
-    -o-transition: all 0.35s;
-    transition: all 0.35s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
 .main:hover .course-panel.list:not(:hover) .color{
@@ -172,11 +173,11 @@ table th {
 
 .course-panel-header {
     position: relative;
-    -webkit-transition: all 0.35s;
-    -moz-transition: all 0.35s;
-    -ms-transition: all 0.35s;
-    -o-transition: all 0.35s;
-    transition: all 0.35s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
 .course-panel-header>img {
@@ -233,20 +234,20 @@ table th {
 /*     Course Panel Content    */
 /*******************************/
 
-.course-panel.content {
+.course-panel.show-content {
     position: relative;
     width: 100%;
     z-index: 100;
 }
 
-
-.course-panel.content .course-panel-header,
-.course-panel.content .course-panel-footer{
+.course-panel.show-content .course-panel-header,
+.course-panel.show-content .course-panel-footer{
     opacity: 0;
     z-index: -999;
 }
 
 .course-panel-content {
+    position: relative;
     background-color: white;
     text-align: left;
     width: 960px;
@@ -255,22 +256,55 @@ table th {
     -webkit-box-shadow: 0px 0px 3px rgba(20%,20%,40%,0.5);
     z-index: 50;
     white-space: normal;
+
+    -webkit-animation: show-from-bottom 0.5s forwards;
+    animation: show-from-bottom 0.5s forwards;
 }
 
-.section-header {
+.course-panel-content .section-header {
     font-size: 1.4em;
     text-align: center;
     margin-bottom: 0.5em;
 }
 
-.section-content {
+.course-panel-content .section-content {
     padding: 0.5em 0;
     margin-bottom: 2em;
 }
 
-.section-content>.section-inner-content {
+.course-panel-content .section-content>.section-inner-content {
     margin: 0.5em 0;
     padding: 0.1em 0;
+}
+
+.course-panel-content .close-button {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0.3em;
+    right: 0.8em;
+    font-size: 2em;
+    color: darkgray;
+
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.course-panel-content .close-button:hover {
+    font-weight: bolder;
+    color: #000000;
+    cursor: pointer;
+    cursor: hand;
+
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+
 }
 
 /*******************************/
@@ -314,4 +348,63 @@ table th {
 .background-red {
     /*background-color: #c01733;*/
     background-color: rgba(192, 23, 51, 1);
+}
+
+/*******************************/
+/*         Animation           */
+/*******************************/
+
+@-webkit-keyframes show-from-bottom{
+    from {
+        margin-top: 8em;
+        opacity: 0;
+    }
+    to {
+        margin-top: 2.5em;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes show-from-bottom{
+    from {
+        margin-top: 5em;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0em;
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes show-from-bottom{
+    from {
+        margin-top: 5em;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0em;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes show-from-bottom{
+    from {
+        margin-top: 5em;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0em;
+        opacity: 1;
+    }
+}
+
+@keyframes show-from-bottom{
+    from {
+        margin-top: 5em;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0em;
+        opacity: 1;
+    }
 }
