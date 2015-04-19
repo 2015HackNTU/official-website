@@ -1,0 +1,502 @@
+* {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  background: white;
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  color: #000;
+  overflow-x: hidden; }
+
+.frame {
+  position: absolute;
+  width: 100%;
+  height: 200px; }
+
+.flip {
+  transform: rotateY(180deg);
+  transform-origin: 0 0; }
+
+.clicked {
+  box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+  transition: all ease-out 0.1s; }
+
+.circleCenter {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 500px;
+  margin: 0 auto;
+  z-index: 3;
+  display: block;
+  background-size: cover;
+  -webkit-transition: all ease-out 0.5s;
+  -moz-transition: all ease-out 0.5s;
+  -o-transition: all ease-out 0.5s;
+  transition: all ease-out 0.5s;
+  margin-top: 3%;
+  background-image: url("../../imgs/aboutus/hackntu.svg"); }
+  .circleCenter:hover {
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s; }
+  .circleCenter > a {
+    font-size: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    line-height: 2.6em; }
+  .circleCenter:hover {
+    box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+    transition: all ease-out 0.1s; }
+
+.secondLayer {
+  text-align: center; }
+.secondLayer .circleFirstChildLeft {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 500px;
+  margin: 0 auto;
+  z-index: 3;
+  display: block;
+  background-size: cover;
+  -webkit-transition: all ease-out 0.5s;
+  -moz-transition: all ease-out 0.5s;
+  -o-transition: all ease-out 0.5s;
+  transition: all ease-out 0.5s;
+  margin: 0 5%;
+  display: inline-block;
+  background-image: url("../../imgs/aboutus/functional.svg"); }
+  .secondLayer .circleFirstChildLeft:hover {
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s; }
+  .secondLayer .circleFirstChildLeft > a {
+    font-size: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    line-height: 2.6em; }
+  .secondLayer .circleFirstChildLeft:hover {
+    box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+    transition: all ease-out 0.1s; }
+  .secondLayer .circleFirstChildLeft .thirdChild-1 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    position: absolute;
+    opacity: 0;
+    height: 100px;
+    width: 100px;
+    top: 50.00011px;
+    left: -149.99998px;
+    background-image: url("../../imgs/aboutus/TD.svg"); }
+    .secondLayer .circleFirstChildLeft .thirdChild-1:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s; }
+    .secondLayer .circleFirstChildLeft .thirdChild-1 > a {
+      font-size: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      line-height: 2.6em; }
+    .secondLayer .circleFirstChildLeft .thirdChild-1:hover {
+      box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+      transition: all ease-out 0.1s; }
+  .secondLayer .circleFirstChildLeft .thirdChild-2 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    position: absolute;
+    opacity: 0;
+    height: 100px;
+    width: 100px;
+    top: 50.00011px;
+    left: -149.99998px;
+    background-image: url("../../imgs/aboutus/CD.svg"); }
+    .secondLayer .circleFirstChildLeft .thirdChild-2:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s; }
+    .secondLayer .circleFirstChildLeft .thirdChild-2 > a {
+      font-size: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      line-height: 2.6em; }
+    .secondLayer .circleFirstChildLeft .thirdChild-2:hover {
+      box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+      transition: all ease-out 0.1s; }
+  .secondLayer .circleFirstChildLeft .thirdChild-3 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    position: absolute;
+    opacity: 0;
+    height: 100px;
+    width: 100px;
+    top: 50.00011px;
+    left: -149.99998px;
+    background-image: url("../../imgs/aboutus/HR.svg"); }
+    .secondLayer .circleFirstChildLeft .thirdChild-3:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s; }
+    .secondLayer .circleFirstChildLeft .thirdChild-3 > a {
+      font-size: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      line-height: 2.6em; }
+    .secondLayer .circleFirstChildLeft .thirdChild-3:hover {
+      box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+      transition: all ease-out 0.1s; }
+  .secondLayer .circleFirstChildLeft .thirdChild-4 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    position: absolute;
+    opacity: 0;
+    height: 100px;
+    width: 100px;
+    top: 50.00011px;
+    left: -149.99998px;
+    background-image: url("../../imgs/aboutus/BD.svg"); }
+    .secondLayer .circleFirstChildLeft .thirdChild-4:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s; }
+    .secondLayer .circleFirstChildLeft .thirdChild-4 > a {
+      font-size: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      line-height: 2.6em; }
+    .secondLayer .circleFirstChildLeft .thirdChild-4:hover {
+      box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+      transition: all ease-out 0.1s; }
+  .secondLayer .circleFirstChildLeft .thirdChild-5 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    position: absolute;
+    opacity: 0;
+    height: 100px;
+    width: 100px;
+    top: 50.00011px;
+    left: -149.99998px;
+    background-image: url("../../imgs/aboutus/DM.svg"); }
+    .secondLayer .circleFirstChildLeft .thirdChild-5:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s; }
+    .secondLayer .circleFirstChildLeft .thirdChild-5 > a {
+      font-size: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      line-height: 2.6em; }
+    .secondLayer .circleFirstChildLeft .thirdChild-5:hover {
+      box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+      transition: all ease-out 0.1s; }
+.secondLayer .circleFirstChildRight {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 500px;
+  margin: 0 auto;
+  z-index: 3;
+  display: block;
+  background-size: cover;
+  -webkit-transition: all ease-out 0.5s;
+  -moz-transition: all ease-out 0.5s;
+  -o-transition: all ease-out 0.5s;
+  transition: all ease-out 0.5s;
+  margin: 0 5%;
+  display: inline-block;
+  background-image: url("../../imgs/aboutus/business.svg"); }
+  .secondLayer .circleFirstChildRight:hover {
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s; }
+  .secondLayer .circleFirstChildRight > a {
+    font-size: 40px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    line-height: 2.6em; }
+  .secondLayer .circleFirstChildRight:hover {
+    box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+    transition: all ease-out 0.1s; }
+  .secondLayer .circleFirstChildRight .thirdChild-1 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    position: absolute;
+    opacity: 0;
+    height: 100px;
+    width: 100px;
+    top: 30.0px;
+    left: 230.0px;
+    background-image: url("../../imgs/aboutus/HC.svg"); }
+    .secondLayer .circleFirstChildRight .thirdChild-1:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s; }
+    .secondLayer .circleFirstChildRight .thirdChild-1 > a {
+      font-size: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      line-height: 2.6em; }
+    .secondLayer .circleFirstChildRight .thirdChild-1:hover {
+      box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+      transition: all ease-out 0.1s; }
+  .secondLayer .circleFirstChildRight .thirdChild-2 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    position: absolute;
+    opacity: 0;
+    height: 100px;
+    width: 100px;
+    top: 30.0px;
+    left: 230.0px;
+    background-image: url("../../imgs/aboutus/HackCourse.svg"); }
+    .secondLayer .circleFirstChildRight .thirdChild-2:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s; }
+    .secondLayer .circleFirstChildRight .thirdChild-2 > a {
+      font-size: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      line-height: 2.6em; }
+    .secondLayer .circleFirstChildRight .thirdChild-2:hover {
+      box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+      transition: all ease-out 0.1s; }
+  .secondLayer .circleFirstChildRight .thirdChild-3 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    position: absolute;
+    opacity: 0;
+    height: 100px;
+    width: 100px;
+    top: 30.0px;
+    left: 230.0px;
+    background-image: url("../../imgs/aboutus/CR.svg"); }
+    .secondLayer .circleFirstChildRight .thirdChild-3:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s; }
+    .secondLayer .circleFirstChildRight .thirdChild-3 > a {
+      font-size: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      line-height: 2.6em; }
+    .secondLayer .circleFirstChildRight .thirdChild-3:hover {
+      box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+      transition: all ease-out 0.1s; }
+  .secondLayer .circleFirstChildRight .thirdChild-4 {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    margin: 0 auto;
+    z-index: 3;
+    display: block;
+    background-size: cover;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    position: absolute;
+    opacity: 0;
+    height: 100px;
+    width: 100px;
+    top: 30.0px;
+    left: 230.0px;
+    background-image: url("../../imgs/aboutus/HackCampus.svg"); }
+    .secondLayer .circleFirstChildRight .thirdChild-4:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s; }
+    .secondLayer .circleFirstChildRight .thirdChild-4 > a {
+      font-size: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      line-height: 2.6em; }
+    .secondLayer .circleFirstChildRight .thirdChild-4:hover {
+      box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+      transition: all ease-out 0.1s; }
+
+.canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.isActivatedLeft-1 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: 250.06024px 50.01655px;
+  transform-style: preserve-3D;
+  transform: rotate(0deg); }
+
+.isActivatedLeft-2 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: 250.06024px 50.01655px;
+  transform-style: preserve-3D;
+  transform: rotate(-32deg); }
+
+.isActivatedLeft-3 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: 250.06024px 50.01655px;
+  transform-style: preserve-3D;
+  transform: rotate(-64deg); }
+
+.isActivatedLeft-4 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: 250.06024px 50.01655px;
+  transform-style: preserve-3D;
+  transform: rotate(-96deg); }
+
+.isActivatedLeft-5 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: 250.06024px 50.01655px;
+  transform-style: preserve-3D;
+  transform: rotate(-128deg); }
+
+.isActivatedRight-1 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: -150.0px 50.0px;
+  transform-style: preserve-3D;
+  transform: rotate(90deg); }
+
+.isActivatedRight-2 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: -150.0px 50.0px;
+  transform-style: preserve-3D;
+  transform: rotate(60deg); }
+
+.isActivatedRight-3 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: -150.0px 50.0px;
+  transform-style: preserve-3D;
+  transform: rotate(30deg); }
+
+.isActivatedRight-4 {
+  z-index: 5 !important;
+  opacity: 1 !important;
+  transition: transform 1s ease-out;
+  transform-origin: -150.0px 50.0px;
+  transform-style: preserve-3D;
+  transform: rotate(0deg); }
+
+/*# sourceMappingURL=style.css.map */
