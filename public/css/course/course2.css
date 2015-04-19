@@ -245,7 +245,7 @@ table th {
     background-color: white;
     text-align: left;
     width: 960px;
-    margin: 2.5em auto;
+    margin: 2.5em auto !important;
     padding: 0.5em 6em;
     -webkit-box-shadow: 0px 0px 3px rgba(20%,20%,40%,0.5);
     z-index: 50;
@@ -257,10 +257,34 @@ table th {
     animation: show-from-bottom 0.5s forwards;
 }
 
+.show-from-left{
+    -webkit-animation: show-from-left 0.5s forwards;
+    animation: show-from-left 0.5s forwards;
+}
+
+.show-from-right{
+    -webkit-animation: show-from-right 0.5s forwards;
+    animation: show-from-right 0.5s forwards;
+}
+
 .hide-to-bottom {
-    -webkit-animation: show-from-bottom 0.5s forwards;
+    -webkit-animation: show-from-bottom 0.3s forwards;
     -webkit-animation-direction: reverse;
-    animation: show-from-bottom 0.5s forwards;
+    animation: show-from-bottom 0.3s forwards;
+    animation-direction: reverse;
+}
+
+.hide-to-left {
+    -webkit-animation: show-from-left 0.3s forwards;
+    -webkit-animation-direction: reverse;
+    animation: show-from-left 0.3s forwards;
+    animation-direction: reverse;
+}
+
+.hide-to-right {
+    -webkit-animation: show-from-right 0.3s forwards;
+    -webkit-animation-direction: reverse;
+    animation: show-from-right 0.3s forwards;
     animation-direction: reverse;
 }
 
@@ -409,6 +433,10 @@ table th {
 /*         Animation           */
 /*******************************/
 
+/*
+ *  Show from Bottom
+ */
+
 @-webkit-keyframes show-from-bottom{
     from {
         margin-top: 8em;
@@ -422,44 +450,162 @@ table th {
 
 @-moz-keyframes show-from-bottom{
     from {
-        margin-top: 5em;
+        margin-top: 8em;
         opacity: 0;
     }
     to {
-        margin-top: 0em;
+        margin-top: 2.5em;
         opacity: 1;
     }
 }
 
 @-ms-keyframes show-from-bottom{
     from {
-        margin-top: 5em;
+        margin-top: 8em;
         opacity: 0;
     }
     to {
-        margin-top: 0em;
+        margin-top: 2.5em;
         opacity: 1;
     }
 }
 
 @-o-keyframes show-from-bottom{
     from {
-        margin-top: 5em;
+        margin-top: 8em;
         opacity: 0;
     }
     to {
-        margin-top: 0em;
+        margin-top: 2.5em;
         opacity: 1;
     }
 }
 
 @keyframes show-from-bottom{
     from {
-        margin-top: 5em;
+        margin-top: 8em;
         opacity: 0;
     }
     to {
-        margin-top: 0em;
+        margin-top: 2.5em;
+        opacity: 1;
+    }
+}
+
+/*
+ *  Show from Left
+ */
+
+@-webkit-keyframes show-from-left{
+    from {
+        margin-left: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5em;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes show-from-left{
+    from {
+        margin-left: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5em;
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes show-from-left{
+    from {
+        margin-left: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5em;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes show-from-left{
+    from {
+        margin-left: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5em;
+        opacity: 1;
+    }
+}
+
+@keyframes show-from-left{
+    from {
+        margin-left: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5em;
+        opacity: 1;
+    }
+}
+
+/*
+ *  Show from Right
+ */
+
+@-webkit-keyframes show-from-right{
+    from {
+        margin-right: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5em;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes show-from-right{
+    from {
+        margin-right: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5em;
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes show-from-right{
+    from {
+        margin-right: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5em;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes show-from-right{
+    from {
+        margin-right: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5em;
+        opacity: 1;
+    }
+}
+
+@keyframes show-from-right{
+    from {
+        margin-right: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5em;
         opacity: 1;
     }
 }

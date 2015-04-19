@@ -2,6 +2,9 @@
  * Created by pilagod on 4/11/15.
  */
 
+/*
+ *  Make Sure Course Panel List can Access
+ */
 var guard = function(key, fn){
     return function(){
         if (guard.flags[key]) {
@@ -20,7 +23,6 @@ guard.activate('list');
  *  Course Panel
  */
 
-//onMouseOver={onMouseOver} onMouseOut={onMouseOut}
 var CoursePanel = React.createClass({
     getInitialState: function() {
         return {
@@ -45,12 +47,12 @@ var CoursePanel = React.createClass({
         $('#' + page).prevAll().addClass('margin-25');
 
         setTimeout(function(){
+            $('#' + page).siblings().addClass('hide');
             React.render(
                 <CoursePanelContent url="/json/course/course.json" page={page}/>,
                 $('#' + page + ">.color")[0]
             );
             $('#' + page).addClass('overflow-visible');
-            $('#course-footer').addClass('show');
         }, 700);
         guard.deactivate('list');
     },
@@ -141,11 +143,16 @@ var CoursePanelContent = React.createClass({
     },
     closeOnClick: function(){
         var page = this.props.page;
-        $('#' + page + " .course-panel-content").removeClass('show-from-bottom');
-        setTimeout(function(){
-            $('#' + page + " .course-panel-content").addClass('hide-to-bottom');
-        }, 10);
+        var $this =  $(this.getDOMNode());
 
+        // Show Other Panel
+        $('#' + page).siblings().removeClass('hide');
+
+        // Remove Show From Bottom
+        $this.removeClass($this.attr('class').split(' ')[1]);
+        setTimeout(function(){
+            $this.addClass('hide-to-bottom');
+        }, 10);
 
         setTimeout(function(){
             $('#' + page).removeClass('show-content');
@@ -160,9 +167,55 @@ var CoursePanelContent = React.createClass({
         }, 1000);
 
     },
-    arrowOnClick: function(pageObject){
-        console.log(pageObject);
-        pageObject.addClass('margin-25');
+    arrowOnClick: function(pageObject, direction, page){
+        var $this =  $(this.getDOMNode());
+
+        // Show Target Panel
+        pageObject.removeClass('hide');
+
+        //setTimeout(function(){
+
+        // Remove Show From Bottom
+        $this.removeClass($this.attr('class').split(' ')[1]);
+
+        if(direction == "right"){
+            setTimeout(function(){
+                $this.addClass('hide-to-left');
+                $('#' + page).addClass('margin-25');
+            }, 10);
+        }
+        if(direction == "left"){
+            setTimeout(function(){
+                $this.addClass('hide-to-right');
+                pageObject.removeClass('margin-25');
+            }, 10);
+        }
+
+        setTimeout(function(){
+            // Hide Current Page
+            $('#' + page).removeClass('show-content');
+            $('#' + page).removeClass('overflow-visible');
+            setTimeout(function(){
+                $('#' + page).addClass('list');
+                $('#' + page).addClass('hide');
+                $('#' + page + '>.color').html('');
+                $('#' + page + ':not(:hover)>.course-panel-header>img').attr('src', '/imgs/course/' + page + '_b.png');
+            }, 400);
+
+            // Show Other Page
+            pageObject.removeClass('list');
+            pageObject.addClass('show-content');
+            setTimeout(function(){
+                React.render(
+                    <CoursePanelContent url="/json/course/course.json" page={pageObject.attr('id')}/>,
+                    pageObject.children('.color')[0]
+                );
+                pageObject.addClass('overflow-visible');
+            }, 700);
+        }, 300);
+
+        //}, 100);
+
     },
     leftArrowOnMouseEnter: function(){
         this.setState({leftHover: true});
@@ -208,8 +261,8 @@ var CoursePanelContent = React.createClass({
 
         return (
             <div className={coursePanelNodeContentClass}>
-                <div className={leftArrowClass} onClick={this.arrowOnClick.bind(null, prev)} onMouseEnter={this.leftArrowOnMouseEnter} onMouseLeave={this.leftArrowOnMouseLeave}><span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
-                <div className={rightArrowClass} onClick={this.arrowOnClick.bind(null, next)} onMouseEnter={this.rightArrowOnMouseEnter} onMouseLeave={this.rightArrowOnMouseLeave}><span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+                <div className={leftArrowClass} onClick={this.arrowOnClick.bind(null, prev, "left", page)} onMouseEnter={this.leftArrowOnMouseEnter} onMouseLeave={this.leftArrowOnMouseLeave}><span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></div>
+                <div className={rightArrowClass} onClick={this.arrowOnClick.bind(null, next, "right", page)} onMouseEnter={this.rightArrowOnMouseEnter} onMouseLeave={this.rightArrowOnMouseLeave}><span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
                 <div className="close-button" onClick={this.closeOnClick}>&times;</div>
                 <CoursePanelContentIntroduction data={this.state.data.introduction}/>
                 <CoursePanelContentSyllabus data={this.state.data.syllabus}/>
