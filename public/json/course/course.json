@@ -95,19 +95,18 @@
           {"col_name": "Homework"}
         ],
         "table_data": [
-          {"date": "week1(3/17)", "description": "", "link": "", "homework": ""},
-          {"date": "week2(3/24)", "description": "", "link": "", "homework": ""},
-          {"date": "week3(3/31)", "description": "", "link": "", "homework": ""},
-          {"date": "week4(4/7)", "description": "", "link": "", "homework": ""},
-          {"date": "week5(4/14)", "description": "", "link": "", "homework": ""},
-          {"date": "week6(4/21)", "description": "", "link": "", "homework": ""},
-          {"date": "week7(4/28)", "description": "", "link": "", "homework": ""},
-          {"date": "week8(5/5)", "description": "", "link": "", "homework": ""},
-          {"date": "week9(5/12)", "description": "", "link": "", "homework": ""},
-          {"date": "week10(5/19)", "description": "", "link": "", "homework": ""},
-          {"date": "week11(5/26)", "description": "", "link": "", "homework": ""},
-          {"date": "week12(6/2)", "description": "", "link": "", "homework": ""},
-          {"date": "", "description": "", "link": "", "homework": ""}
+          {"date": "week1(3/17)", "description": "Course Intro", "link": "", "homework": ""},
+          {"date": "week2(3/24)", "description": "UX Introduction, why it maters", "link": "", "homework": ""},
+          {"date": "week3(3/31)", "description": "Research planning and design", "link": "", "homework": ""},
+          {"date": "week4(4/7)", "description": "休假", "link": "", "homework": ""},
+          {"date": "week5(4/14)", "description": "How to do a User research", "link": "", "homework": ""},
+          {"date": "week6(4/21)", "description": "休假", "link": "", "homework": ""},
+          {"date": "week7(4/28)", "description": "Define Problems & Ideation", "link": "", "homework": ""},
+          {"date": "week8(5/5)", "description": "Prototyping & Testing Concept", "link": "", "homework": ""},
+          {"date": "week9(5/12)", "description": "Prototype Tools Intro I", "link": "", "homework": ""},
+          {"date": "week10(5/19)", "description": "Prototype Tools Intro II", "link": "", "homework": ""},
+          {"date": "week11(5/26)", "description": "Product Testing and Re-Design", "link": "", "homework": ""},
+          {"date": "week12(6/2)", "description": "Story Telling", "link": "", "homework": ""}
         ]
       },
       "lecturer": {

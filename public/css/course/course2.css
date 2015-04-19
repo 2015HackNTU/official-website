@@ -3,21 +3,15 @@
 /*******************************/
 
 @font-face {
-    font-family: Megalopolis;
-    src: url('../../fonts/Megalopolis.ttf');
+    font-family: STHeiti;
+    src: url('/fonts/STHeiti.ttf');
 }
+
+
 
 /*******************************/
 /*          Default            */
 /*******************************/
-
-* {
-    -webkit-transition-timing-function: ease-in-out;
-    -mos-transition-timing-function: ease-in-out;
-    -ms-transition-timing-function: ease-in-out;
-    -o-transition-timing-function: ease-in-out;
-    transition-timing-function: ease-in-out;
-}
 
 html, body {
     width: 100%;
@@ -26,6 +20,7 @@ html, body {
     letter-spacing: 0.05em;
     padding: 0em;
     margin: 0em;
+
     /*font-size: 90%;*/
 }
 
@@ -96,11 +91,11 @@ table th {
     text-align: center;
     overflow: hidden;
 
-    -webkit-transition: all 0.35s;
-    -moz-transition: all 0.35s;
-    -ms-transition: all 0.35s;
-    -o-transition: all 0.35s;
-    transition: all 0.35s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
 .course-panel.list {
@@ -115,11 +110,11 @@ table th {
     top: 0;
     left: 0;
 
-    -webkit-transition: all 0.35s;
-    -moz-transition: all 0.35s;
-    -ms-transition: all 0.35s;
-    -o-transition: all 0.35s;
-    transition: all 0.35s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
 .main:hover .course-panel.list:not(:hover) .color{
@@ -172,12 +167,11 @@ table th {
 
 .course-panel-header {
     position: relative;
-    font-size: 1px;
-    -webkit-transition: all 0.35s;
-    -moz-transition: all 0.35s;
-    -ms-transition: all 0.35s;
-    -o-transition: all 0.35s;
-    transition: all 0.35s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
 .course-panel-header>img {
@@ -234,52 +228,170 @@ table th {
 /*     Course Panel Content    */
 /*******************************/
 
-.course-panel.content {
+.course-panel.show-content {
     position: relative;
     width: 100%;
     z-index: 100;
 }
 
-
-.course-panel.content .course-panel-header,
-.course-panel.content .course-panel-footer{
+.course-panel.show-content .course-panel-header,
+.course-panel.show-content .course-panel-footer{
     opacity: 0;
     z-index: -999;
 }
 
 .course-panel-content {
+    position: relative;
     background-color: white;
     text-align: left;
     width: 960px;
-    margin: 0 auto;
+    margin: 2.5em auto !important;
     padding: 0.5em 6em;
     -webkit-box-shadow: 0px 0px 3px rgba(20%,20%,40%,0.5);
     z-index: 50;
     white-space: normal;
 }
 
-.section-header {
+.show-from-bottom{
+    -webkit-animation: show-from-bottom 0.5s forwards;
+    animation: show-from-bottom 0.5s forwards;
+}
+
+.show-from-left{
+    -webkit-animation: show-from-left 0.5s forwards;
+    animation: show-from-left 0.5s forwards;
+}
+
+.show-from-right{
+    -webkit-animation: show-from-right 0.5s forwards;
+    animation: show-from-right 0.5s forwards;
+}
+
+.hide-to-bottom {
+    -webkit-animation: show-from-bottom 0.3s forwards;
+    -webkit-animation-direction: reverse;
+    animation: show-from-bottom 0.3s forwards;
+    animation-direction: reverse;
+}
+
+.hide-to-left {
+    -webkit-animation: show-from-left 0.3s forwards;
+    -webkit-animation-direction: reverse;
+    animation: show-from-left 0.3s forwards;
+    animation-direction: reverse;
+}
+
+.hide-to-right {
+    -webkit-animation: show-from-right 0.3s forwards;
+    -webkit-animation-direction: reverse;
+    animation: show-from-right 0.3s forwards;
+    animation-direction: reverse;
+}
+
+.course-panel-content .section-header {
     font-size: 1.4em;
+    font-family: STHeiti;
+    font-weight: bolder;
     text-align: center;
     margin-bottom: 0.5em;
 }
 
-.section-content {
+.course-panel-content .section-content {
     padding: 0.5em 0;
     margin-bottom: 2em;
 }
 
-.section-content>.section-inner-content {
+.course-panel-content .section-content>.section-inner-content {
     margin: 0.5em 0;
     padding: 0.1em 0;
+}
+
+.course-panel-content .close-button {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0.3em;
+    right: 0.8em;
+    font-size: 2em;
+    color: darkgray;
+
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.course-panel-content .close-button:hover {
+    font-weight: bolder;
+    color: #000000;
+    cursor: pointer;
+    cursor: hand;
+
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+/*
+ *  Prev, Next Arrow
+ */
+
+.left-arrow, .right-arrow {
+    position: fixed;
+    top: 0;
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.5em;
+    height: 100%;
+
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.left-arrow {
+    text-align: left;
+    left: 0;
+}
+
+.right-arrow {
+    text-align: right;
+    right: 0;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    cursor: hand;
 }
 
 /*******************************/
 /*          General            */
 /*******************************/
 
+.shrink-left {
+    padding-left: 2em;
+}
+
+.shrink-right {
+    padding-right: 2em;
+}
+
 .margin-25 {
     margin-left: -25%;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 .overflow-visible {
@@ -315,4 +427,185 @@ table th {
 .background-red {
     /*background-color: #c01733;*/
     background-color: rgba(192, 23, 51, 1);
+}
+
+/*******************************/
+/*         Animation           */
+/*******************************/
+
+/*
+ *  Show from Bottom
+ */
+
+@-webkit-keyframes show-from-bottom{
+    from {
+        margin-top: 8em;
+        opacity: 0;
+    }
+    to {
+        margin-top: 2.5em;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes show-from-bottom{
+    from {
+        margin-top: 8em;
+        opacity: 0;
+    }
+    to {
+        margin-top: 2.5em;
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes show-from-bottom{
+    from {
+        margin-top: 8em;
+        opacity: 0;
+    }
+    to {
+        margin-top: 2.5em;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes show-from-bottom{
+    from {
+        margin-top: 8em;
+        opacity: 0;
+    }
+    to {
+        margin-top: 2.5em;
+        opacity: 1;
+    }
+}
+
+@keyframes show-from-bottom{
+    from {
+        margin-top: 8em;
+        opacity: 0;
+    }
+    to {
+        margin-top: 2.5em;
+        opacity: 1;
+    }
+}
+
+/*
+ *  Show from Left
+ */
+
+@-webkit-keyframes show-from-left{
+    from {
+        margin-left: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5em;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes show-from-left{
+    from {
+        margin-left: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5em;
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes show-from-left{
+    from {
+        margin-left: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5em;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes show-from-left{
+    from {
+        margin-left: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5em;
+        opacity: 1;
+    }
+}
+
+@keyframes show-from-left{
+    from {
+        margin-left: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-left: 5em;
+        opacity: 1;
+    }
+}
+
+/*
+ *  Show from Right
+ */
+
+@-webkit-keyframes show-from-right{
+    from {
+        margin-right: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5em;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes show-from-right{
+    from {
+        margin-right: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5em;
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes show-from-right{
+    from {
+        margin-right: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5em;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes show-from-right{
+    from {
+        margin-right: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5em;
+        opacity: 1;
+    }
+}
+
+@keyframes show-from-right{
+    from {
+        margin-right: 0em;
+        opacity: 0;
+    }
+    to {
+        margin-right: 5em;
+        opacity: 1;
+    }
 }
