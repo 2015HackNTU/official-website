@@ -89,10 +89,6 @@ var CoursePanel = React.createClass({
 // Course Panel Header
 var CoursePanelHeader = React.createClass({
     render: function(){
-        //var imgStyle = {
-        //    marginLeft: '-0.9em',
-        //    width: '8em'
-        //};
         return (
             <div className="course-panel-header">
                 <img src={this.props.title}></img>
@@ -104,9 +100,6 @@ var CoursePanelHeader = React.createClass({
 // Course Panel Footer
 var CoursePanelFooter = React.createClass({
     render: function(){
-        //var imgStyle = {
-        //    width: '100%'
-        //};
         return (
             <div className="course-panel-footer">
                 <img src={this.props.footer} ></img>
@@ -173,6 +166,7 @@ var CoursePanelContent = React.createClass({
         // Show Target Panel
         pageObject.removeClass('hide');
 
+        // Hide Content and Show Next Panel
         if(direction == "right"){
             setTimeout(function(){
                 $this.addClass('hide-to-left');
@@ -187,35 +181,31 @@ var CoursePanelContent = React.createClass({
         }
 
         setTimeout(function(){
+            // Remove Content Class 'Show From Bottom'
+            $this.removeClass($this.attr('class').split(' ')[1]);
 
-        // Remove Show From Bottom
-        $this.removeClass($this.attr('class').split(' ')[1]);
-
-
-
-        setTimeout(function(){
-            // Hide Current Page
-            $('#' + page).removeClass('show-content');
-            $('#' + page).removeClass('overflow-visible');
             setTimeout(function(){
-                $('#' + page).addClass('list');
-                $('#' + page).addClass('hide');
-                $('#' + page + '>.color').html('');
-                $('#' + page + ':not(:hover)>.course-panel-header>img').attr('src', '/imgs/course/' + page + '_b.png');
-            }, 400);
+                // Hide Current Page
+                $('#' + page).removeClass('show-content');
+                $('#' + page).removeClass('overflow-visible');
+                setTimeout(function(){
+                    $('#' + page).addClass('list');
+                    $('#' + page).addClass('hide');
+                    $('#' + page + '>.color').html('');
+                    $('#' + page + ':not(:hover)>.course-panel-header>img').attr('src', '/imgs/course/' + page + '_b.png');
+                }, 400);
 
-            // Show Other Page
-            pageObject.removeClass('list');
-            pageObject.addClass('show-content');
-            setTimeout(function(){
-                React.render(
-                    <CoursePanelContent url="/json/course/course.json" page={pageObject.attr('id')}/>,
-                    pageObject.children('.color')[0]
-                );
-                pageObject.addClass('overflow-visible');
-            }, 700);
-        }, 300);
-
+                // Show Other Page
+                pageObject.removeClass('list');
+                pageObject.addClass('show-content');
+                setTimeout(function(){
+                    React.render(
+                        <CoursePanelContent url="/json/course/course.json" page={pageObject.attr('id')}/>,
+                        pageObject.children('.color')[0]
+                    );
+                    pageObject.addClass('overflow-visible');
+                }, 700);
+            }, 300);
         }, 150);
 
     },

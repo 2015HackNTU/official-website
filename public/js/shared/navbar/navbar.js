@@ -4,19 +4,21 @@
 
 $(document).ready(function(){
     $('#nav-button').on('click', function(){
-        if($('#nav-button + ul').hasClass('show')){
-            $('#nav-button + ul').removeClass('show');
+        if($('#nav-button ~ ul').hasClass('show')){
+            $('#nav-button ~ ul').removeClass('show');
         }
         else{
-            $('#nav-button + ul').addClass('show');
+            $('#nav-button ~ ul').addClass('show');
         }
     });
-
-    if(location.pathname === "/community"){
-        $('.navbar-page ul>li:nth-child(2)>a').addClass('active');
+    if(location.pathname === "/aboutus"){
+        $('.navbar-page ul>li:nth-child(1)>a').addClass('active');
+    }
+    else if(location.pathname === "/community"){
+        $('.navbar-page ul>li:nth-child(3)>a').addClass('active');
     }
     else if(location.pathname === "/course"){
-        $('.navbar-page ul>li:nth-child(3)>a').addClass('active');
+        $('.navbar-page ul>li:nth-child(4)>a').addClass('active');
     }
 
 });
