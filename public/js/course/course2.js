@@ -173,11 +173,6 @@ var CoursePanelContent = React.createClass({
         // Show Target Panel
         pageObject.removeClass('hide');
 
-        //setTimeout(function(){
-
-        // Remove Show From Bottom
-        $this.removeClass($this.attr('class').split(' ')[1]);
-
         if(direction == "right"){
             setTimeout(function(){
                 $this.addClass('hide-to-left');
@@ -190,6 +185,13 @@ var CoursePanelContent = React.createClass({
                 pageObject.removeClass('margin-25');
             }, 10);
         }
+
+        setTimeout(function(){
+
+        // Remove Show From Bottom
+        $this.removeClass($this.attr('class').split(' ')[1]);
+
+
 
         setTimeout(function(){
             // Hide Current Page
@@ -214,7 +216,7 @@ var CoursePanelContent = React.createClass({
             }, 700);
         }, 300);
 
-        //}, 100);
+        }, 150);
 
     },
     leftArrowOnMouseEnter: function(){
