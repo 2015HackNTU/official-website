@@ -49,7 +49,7 @@
 			</div>
 		</div>
 		<div class="content" ng-show="showContent" ng-class="{'content-activated':showContent}">
-			<div class="closeBtn" ng-click="showContent = !showContent">
+			<div class="closeBtn" ng-click="showContent = !showContent; spreadChild('both');">
 				<i class="fa fa-4x fa-chevron-circle-left"></i>
 			</div>
 			<div class="header">{{title}}</div>
@@ -65,8 +65,28 @@
 		</div>
 
 		<div class="director" ng-show="currentPage === 2;" >
-			<div class="prevPage" ng-click="prevPage(currentPage)">
+			<div class="prevPage" ng-click="prevPage(currentPage);isActivatedLeft = true;
+			isActivatedRight = true; ">
 				<i class="fa fa-angle-double-up fa-4x"></i>
+			</div>
+			<div class="content">
+				<h1>HackNTU 臺大黑客松</h1>
+				<div class="photo" style="background:url('https://graph.facebook.com/s3355004/picture?width=300')"> 
+					<p>總召／李冠億</p>
+				</div>
+				<div class="photo" style="background:url('../../imgs/aboutus/member/TD_陳步青.jpg')"> 
+					<p>技術副召／陳步青</p>
+				</div>
+				<div class="photo" style="background:url('../../imgs/aboutus/member/DM_黃偉軒.jpg')"> 
+					<p>行銷副召／黃偉軒</p>
+				</div>
+				<div style="height: 50px;"></div>
+				<h1>Hacker spirit</h1>
+				<p>
+				獨⽴思考，⾃由探索，發揮創意，解決問題 <br>
+				The spirit represents thinking independently, discovering questions and
+				solving them with creativity.
+				</p>
 			</div>
 			<div class="nextPage" ng-click="nextPage(currentPage)">
 				<i class="fa fa-angle-double-down fa-4x"></i>
@@ -75,6 +95,63 @@
 		<div class="director" ng-show="currentPage === 3;" >
 			<div class="prevPage" ng-click="prevPage(currentPage)" ng-show="currentPage > 1">
 				<i class="fa fa-angle-double-up fa-4x"></i>
+			</div>
+			<div class="content">
+				<h1>起源</h1>
+				<p>
+				Hackathon為近年來⾵⾏於國內外知名企業以及⼀流⼤學間的創意發想與
+				實踐活動。 <br>	
+				然⽽，包括台⼤在內，台灣各⼤專院校卻都沒有提供類似的平台或是活動，
+				能讓創意萌芽、發展。<br>
+				HackNTU共同創辦⼈之⼀的張凱迪，在參加 Yahoo的Hackday之後，深刻意識到這個問題。因此，憑藉著對⿊客精神的熱愛與使命感，2013年，在台⼤正式成⽴HackNTU 。
+				</p>
+				<br>
+				<h1>Origin</h1>
+				<p>
+				Hackathon is a popular event in recent years. Both domestic and foreign
+				enterprises, and prestigious universities hold such event to promote the
+				spirit of creative thinking and practicing.
+				However, all universities in Taiwan, including NTU, didn’t have such
+				event.
+				KD Chang, one of the co-founders of HackNTU, determined to started a
+				hackathon in NTU after he participated the Hackday held by Yahoo.
+				In the year of 2013, HackNTU was established.
+				</p>
+			</div>
+			<div class="nextPage" ng-click="nextPage(currentPage)" ng-show="currentPage < maxPage">
+				<i class="fa fa-angle-double-down fa-4x"></i>
+			</div>
+		</div>
+		<div class="director" ng-show="currentPage === 4;" >
+			<div class="prevPage" ng-click="prevPage(currentPage)" ng-show="currentPage > 1">
+				<i class="fa fa-angle-double-up fa-4x"></i>
+			</div>
+			<div class="content">
+				<h1>什麼是黑客松？</h1>
+				<p>
+				Hackathon = Hack + Marathon <br>
+				Hack 的原意是解決問題、創意程式設計，⽽⾮蓄意破壞或竊取機密⽂件。
+				</p>
+				<h1>What is Hackathon?</h1>
+				<p>
+				Hackathon= Hack+ Marathon <br>
+				Hack originally means to solve problems and design creative programs. It
+				does not mean to destroy or steal confidential documents.
+				</p>
+				<br>
+				<h1>編程 X 設計 X 食物</h1>
+				<p>
+				由三⾄五⼈組成團隊，在數天的活動期間，提出⽣活中注意到的問題與解決⽅
+				法，並透過技術執⾏，創造出有⽤⽽創新的產品。
+				</p>
+				
+				<h1>Code X Design X Food</h1>
+				<p>
+				The goal of Hackathon is to discover problems and design a way to solve it. It
+				typically last between a day to a week, developing products by a team with
+				3-5 programmers, including graphic designers, interface designers and
+				project managers.
+				</p>
 			</div>
 			<div class="nextPage" ng-click="nextPage(currentPage)" ng-show="currentPage < maxPage">
 				<i class="fa fa-angle-double-down fa-4x"></i>
