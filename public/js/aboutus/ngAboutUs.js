@@ -6,7 +6,8 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 	console.log('poka')
 	$scope.spreadChild = function(whitchSide){
 		if (whitchSide === 'both' && (!$scope.isActivatedLeft || !$scope.isActivatedRight) ){
-			$scope.isActivatedLeft = $scope.isActivatedRight = true 
+			$scope.isActivatedLeft = true;
+			$scope.isActivatedRight = true; 
 		} else {
 			$scope.isActivatedLeft  = (whitchSide === 'left' && !$scope.isActivatedLeft) ?  true : false;
 			$scope.isActivatedRight = (whitchSide === 'right' && !$scope.isActivatedRight) ? true : false; 

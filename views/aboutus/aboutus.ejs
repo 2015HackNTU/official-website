@@ -65,7 +65,8 @@
 		</div>
 
 		<div class="director" ng-show="currentPage === 2;" >
-			<div class="prevPage" ng-click="prevPage(currentPage); spreadChild('both');">
+			<div class="prevPage" ng-click="prevPage(currentPage);isActivatedLeft = true;
+			isActivatedRight = true; ">
 				<i class="fa fa-angle-double-up fa-4x"></i>
 			</div>
 			<div class="content">
