@@ -1,14 +1,37 @@
+var app = angular.module('communityApp', []);
+
+app.controller('communityCtrl',['$scope', function($scope){
+	$scope.frameLeft = '藉由提供學生族群基本技術的課程，試圖讓更多人能結合所學解決真實的問題。';
+	$scope.frameRight = 'HackNTU致力於讓每個人都擁有"Make Changes Happen"、"Get Hands Dirty"的精神，除了啟發更多火苗，我們亦希望能讓具有能力的開發者能更緊密的聚集，共創一個能激發創意及點子的平台。';
+}]);
+
 $(document).ready(function () {
+	$('.frame').height(function(){
+		return $(this).width();
+	});
+	$( window ).resize(function() {
+		$('.frame').height(function(){
+			return $(this).width();
+		});
+	});
+	$('.month-tag div div').height(function(){
+		return $('.timeline').height();
+	});
+
 	$('.frame-outer').click(function () {
 		$(this).addClass('animated flipOutY').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 			$(this).removeClass('animated flipOutY').hide();
-			$(this).siblings('.frame-inner').addClass('animated flipInY').show();
+			$(this).siblings('.frame-inner').css('display','table').addClass('animated flipInY').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+				$(this).removeClass('animated flipInY');
+			});
 		});
 	});
 	$('.frame-inner').click(function () {
 		$(this).addClass('animated flipOutY').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
 			$(this).removeClass('animated flipOutY').hide();
-			$(this).siblings('.frame-outer').addClass('animated flipInY').show();
+			$(this).siblings('.frame-outer').addClass('animated flipInY').show().one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+				$(this).removeClass('animated flipInY');
+			});
 		});
 	});
 	$('.timeline-tag').click(function () {

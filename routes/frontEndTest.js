@@ -24,7 +24,6 @@ module.exports = function(app){
 
 	==================================== */
 
-<<<<<<< HEAD
 	app.get('/course',function(req,res){
 		res.render('client/course', { 
 			
@@ -43,8 +42,6 @@ module.exports = function(app){
 		});
 	})
 
-=======
->>>>>>> 583bf1713c6d32c01461543d2a9f365353893746
 	app.get('/example',function(req,res){
 		res.render('client/example', { message : 'example.ejs' }); // You can also pass something to the front
 	});
@@ -58,7 +55,7 @@ module.exports = function(app){
 	//render to a file called example.ejs
 	app.get('/test',function(req,res){
 		res.render('client/testing', { 
-			message : 'Test.ejs',
+			message : 'Test.ejs'
 		});
 	})
 
@@ -76,25 +73,20 @@ module.exports = function(app){
 	app.get('/org',function(req,res){
 		res.render('client/organization')
 	})
-<<<<<<< HEAD
+
 	app.get('/aboutus',function(req,res){
 		res.render('client/aboutus')
 	})
-=======
->>>>>>> 583bf1713c6d32c01461543d2a9f365353893746
+
 	/* Move to routes/blogposts.js
 		app.get('/blog',function(req,res){
 			res.render('client/blog')
 		})
 	*/
 	app.get('/posts/:id',function(req,res){
-<<<<<<< HEAD
-		res.render('client/posts/:id')
-=======
 		res.render('client/posts',{
 			id : req.params.id
 		})
->>>>>>> 583bf1713c6d32c01461543d2a9f365353893746
 	})
 	app.get('/activity',function(req,res){
 		res.render('client/activitynew')
