@@ -49,7 +49,7 @@
 			</div>
 		</div>
 		<div class="content" ng-show="showContent" ng-class="{'content-activated':showContent}">
-			<div class="closeBtn" ng-click="showContent = !showContent">
+			<div class="closeBtn" ng-click="showContent = !showContent; spreadChild('both');">
 				<i class="fa fa-4x fa-chevron-circle-left"></i>
 			</div>
 			<div class="header">{{title}}</div>
@@ -65,7 +65,7 @@
 		</div>
 
 		<div class="director" ng-show="currentPage === 2;" >
-			<div class="prevPage" ng-click="prevPage(currentPage)">
+			<div class="prevPage" ng-click="prevPage(currentPage); spreadChild('both');">
 				<i class="fa fa-angle-double-up fa-4x"></i>
 			</div>
 			<div class="content">
