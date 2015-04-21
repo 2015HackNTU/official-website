@@ -27,13 +27,13 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 		})
 	}
 	$scope.currentPage = 1;
-	$scope.maxPage = 2;
+	$scope.maxPage = 4;
 	$scope.prevPage = function(curr){
 		if ( $scope.currentPage > 1 )
 			$scope.currentPage--;
 	}
 	$scope.nextPage = function(curr){
-		if ( $scope.currentPage <= 2 )
+		if ( $scope.currentPage <= $scope.maxPage )
 			$scope.currentPage++;
 	}
 
