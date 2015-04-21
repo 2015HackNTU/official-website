@@ -21,7 +21,7 @@
 	</head>
 	<body ng-controller="aboutUsCtrl" >
 		<% include ../shared/navbar.ejs %>
-		<div class="frame" ng-show="currentPage === 1" ng-class="{'frame-load':!showContent; 'change': director}">
+		<div class="frame" ng-show="currentPage === 1 && !showContent" ng-class="{'frame-load':!showContent; 'change': director}">
 			<div class="circleCenter" ng-click="spreadChild('both')" ng-class="{'clicked' : (isActivatedLeft && isActivatedRight) }"></div>
 			<div class="secondLayer">
 				<div class="circleFirstChildLeft" ng-click="spreadChild('left')" ng-class="{'clicked' : isActivatedLeft}" $event.stopPropagation();> 
