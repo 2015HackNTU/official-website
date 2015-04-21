@@ -13,20 +13,44 @@ body {
 }
 .frame {
     position: absolute;
-    margin-top: 5%;
+    margin-top: 3%;
     width: 100%;
     height: 200px;
-    opacity: 0;
-    -webkit-transition: all ease-in-out 0.8s;
-    -moz-transition: all ease-in-out 0.8s;
-    -o-transition: all ease-in-out 0.8s;
-    transition: all ease-in-out 0.8s;
-    &-load {
-        -webkit-transition: all ease-in-out 0.8s;
-        -moz-transition: all ease-in-out 0.8s;
-        -o-transition: all ease-in-out 0.8s;
-        transition: all ease-in-out 0.8s;
-        opacity: 1;
+    // -webkit-transition: all ease-in-out 0.5s;
+    // -moz-transition: all ease-in-out 0.5s;
+    // -o-transition: all ease-in-out 0.5s;
+    // transition: all ease-in-out 0.5s;
+    -webkit-animation: frameBlockShow 0.8s;
+    animation: frameBlockShow 0.8s;
+
+    // &-load {
+    //     margin-top: 5%;
+    //     -webkit-transition: all ease-in-out 0.5s;
+    //     -moz-transition: all ease-in-out 0.5s;
+    //     -o-transition: all ease-in-out 0.5s;
+    //     transition: all ease-in-out 0.5s;
+    // }
+    .nextPage {
+        text-align: center;
+        position: fixed;
+        bottom: 3px;
+        left: 50%;
+        opacity: 0.5;
+        
+        -webkit-transition: all ease-out 0.5s;
+        -moz-transition: all ease-out 0.5s;
+        -o-transition: all ease-out 0.5s;
+        transition: all ease-out 0.5s;
+
+        -webkit-animation: nextPage 0.8s infinite;
+        animation: nextPage 0.8s infinite;
+        &:hover {
+            -webkit-transition: all ease-out 0.5s;
+            -moz-transition: all ease-out 0.5s;
+            -o-transition: all ease-out 0.5s;
+            transition: all ease-out 0.5s;
+            opacity: 1;
+        }
     }
 }
 // keyframes mixin
@@ -414,6 +438,7 @@ body {
     width: 100%;
     height: 842px;
     background: url('../../imgs/aboutus/background.png');
+    background-repeat: repeat-y;
     background-size: cover;
     opacity: 0;
     transition: all 1.2s ease-in-out;
@@ -426,7 +451,6 @@ body {
         top: 13%;
         left: 31%;
         opacity: 0.5;
-        
         &:hover {
             opacity: 0.8;
         }
@@ -479,6 +503,78 @@ body {
 
 }
 
+// Director //
+.director {
+    margin-top: -2%;
+    height: 720px;
+    text-align: center;
+    -webkit-animation: directorBlockShow 1.2s;
+    animation: directorBlockShow 1.2s;
+    background: url('../../imgs/aboutus/background.png');
+    .nextPage {
+        text-align: center;
+        position: fixed;
+        bottom: 3px;
+        left: 50%;
+        opacity: 0.5;
+        
+        -webkit-transition: all ease-out 0.5s;
+        -moz-transition: all ease-out 0.5s;
+        -o-transition: all ease-out 0.5s;
+        transition: all ease-out 0.5s;
+
+        -webkit-animation: nextPage 0.8s infinite;
+        animation: nextPage 0.8s infinite;
+        &:hover {
+            -webkit-transition: all ease-out 0.5s;
+            -moz-transition: all ease-out 0.5s;
+            -o-transition: all ease-out 0.5s;
+            transition: all ease-out 0.5s;
+            opacity: 1;
+        }
+    }
+    .prevPage {
+        text-align: center;
+        position: fixed;
+        top: 8%;
+        left: 50%;
+        opacity: 0.5;
+        
+        -webkit-transition: all ease-out 0.5s;
+        -moz-transition: all ease-out 0.5s;
+        -o-transition: all ease-out 0.5s;
+        transition: all ease-out 0.5s;
+
+        -webkit-animation: nextPage 0.8s infinite;
+        animation: nextPage 0.8s infinite;
+        &:hover {
+            -webkit-transition: all ease-out 0.5s;
+            -moz-transition: all ease-out 0.5s;
+            -o-transition: all ease-out 0.5s;
+            transition: all ease-out 0.5s;
+            opacity: 1;
+        }
+    }
+}
+@include keyframes(frameBlockShow) {
+    from {
+        margin-top: -5%;
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@include keyframes(directorBlockShow) {
+    from {
+        margin-top: 30%;
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 // MemberBlock Show
 @include keyframes(memberBlockShow) {
     from {
@@ -491,3 +587,11 @@ body {
     }
 }
 
+@include keyframes(nextPage) {
+   from {  
+        bottom: 5px;
+   }
+   to {
+        bottom: 3px;
+   }
+}

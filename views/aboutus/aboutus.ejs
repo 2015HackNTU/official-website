@@ -21,12 +21,8 @@
 	</head>
 	<body ng-controller="aboutUsCtrl" >
 		<% include ../shared/navbar.ejs %>
-		<div class="frame" ng-show="!showContent" ng-class="{'frame-load':!showContent}">
-			<div class="circleCenter" ng-click="spreadChild('both')" ng-class="{'clicked' : (isActivatedLeft && isActivatedRight) }">
-				<div class="upper-1" $event.stopPropagation();></div>
-				<div class="upper-2" $event.stopPropagation();></div>
-				<div class="upper-3" $event.stopPropagation();></div>
-			</div>
+		<div class="frame" ng-show="!showContent && !director " ng-class="{'frame-load':!showContent; 'change': director}">
+			<div class="circleCenter" ng-click="spreadChild('both')" ng-class="{'clicked' : (isActivatedLeft && isActivatedRight) }"></div>
 			<div class="secondLayer">
 				<div class="circleFirstChildLeft" ng-click="spreadChild('left')" ng-class="{'clicked' : isActivatedLeft}" $event.stopPropagation();> 
 					<div class="thirdChild-1" ng-class="{'isActivatedLeft-1' : isActivatedLeft}" ng-click="flip('TD'); spreadChild('stay');" $event.stopPropagation();>
@@ -46,6 +42,10 @@
 					<div class="thirdChild-3" ng-class="{'isActivatedRight-3' : isActivatedRight}" ng-click="flip('CR'); spreadChild('stay');" $event.stopPropagation();></div>
 					<div class="thirdChild-4" ng-class="{'isActivatedRight-4' : isActivatedRight}" ng-click="flip('HackCampus'); spreadChild('stay');" $event.stopPropagation();></div>
 				</div>
+				
+			</div>
+			<div class="nextPage" ng-click="showContent = false; director = true;">
+				<i class="fa fa-angle-double-down fa-4x" ></i>
 			</div>
 		</div>
 		<div class="content" ng-show="showContent" ng-class="{'content-activated':showContent}">
@@ -61,26 +61,15 @@
 					<div class="picture" style="background:url({{member.url}})"></div>
 					<div class="name">{{member.name}}</div>
 				</div>
-				<!-- <div class="memberBlock">
-					<div class="picture"></div>
-					<div class="name">Puchin Chen</div>
-				</div>
-				<div class="memberBlock">
-					<div class="picture"></div>
-					<div class="name">Puchin Chen</div>
-				</div>
-				<div class="memberBlock">
-					<div class="picture"></div>
-					<div class="name">Puchin Chen</div>
-				</div>
-				<div class="memberBlock">
-					<div class="picture"></div>
-					<div class="name">Puchin Chen</div>
-				</div>
-				<div class="memberBlock">
-					<div class="picture"></div>
-					<div class="name">Puchin Chen</div>
-				</div> -->
+			</div>
+		</div>
+
+		<div class="director" ng-show="director" >
+			<div class="prevPage" ng-click="showContent = false; director = false;">
+				<i class="fa fa-angle-double-up fa-4x"></i>
+			</div>
+			<div class="nextPage">
+				<i class="fa fa-angle-double-down fa-4x"></i>
 			</div>
 		</div>
 

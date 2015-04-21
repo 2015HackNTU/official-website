@@ -12,20 +12,29 @@ body {
 
 .frame {
   position: absolute;
-  margin-top: 5%;
+  margin-top: 3%;
   width: 100%;
   height: 200px;
-  opacity: 0;
-  -webkit-transition: all ease-in-out 0.8s;
-  -moz-transition: all ease-in-out 0.8s;
-  -o-transition: all ease-in-out 0.8s;
-  transition: all ease-in-out 0.8s; }
-  .frame-load {
-    -webkit-transition: all ease-in-out 0.8s;
-    -moz-transition: all ease-in-out 0.8s;
-    -o-transition: all ease-in-out 0.8s;
-    transition: all ease-in-out 0.8s;
-    opacity: 1; }
+  -webkit-animation: frameBlockShow 0.8s;
+  animation: frameBlockShow 0.8s; }
+  .frame .nextPage {
+    text-align: center;
+    position: fixed;
+    bottom: 3px;
+    left: 50%;
+    opacity: 0.5;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    -webkit-animation: nextPage 0.8s infinite;
+    animation: nextPage 0.8s infinite; }
+    .frame .nextPage:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s;
+      opacity: 1; }
 
 .boom {
   position: absolute !important;
@@ -633,6 +642,7 @@ body {
   width: 100%;
   height: 842px;
   background: url("../../imgs/aboutus/background.png");
+  background-repeat: repeat-y;
   background-size: cover;
   opacity: 0;
   transition: all 1.2s ease-in-out; }
@@ -703,6 +713,98 @@ body {
         font-size: 20px;
         display: block; }
 
+.director {
+  margin-top: -2%;
+  height: 720px;
+  text-align: center;
+  -webkit-animation: directorBlockShow 1.2s;
+  animation: directorBlockShow 1.2s;
+  background: url("../../imgs/aboutus/background.png"); }
+  .director .nextPage {
+    text-align: center;
+    position: fixed;
+    bottom: 3px;
+    left: 50%;
+    opacity: 0.5;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    -webkit-animation: nextPage 0.8s infinite;
+    animation: nextPage 0.8s infinite; }
+    .director .nextPage:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s;
+      opacity: 1; }
+  .director .prevPage {
+    text-align: center;
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    opacity: 0.5;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
+    -webkit-animation: nextPage 0.8s infinite;
+    animation: nextPage 0.8s infinite; }
+    .director .prevPage:hover {
+      -webkit-transition: all ease-out 0.5s;
+      -moz-transition: all ease-out 0.5s;
+      -o-transition: all ease-out 0.5s;
+      transition: all ease-out 0.5s;
+      opacity: 1; }
+
+@-webkit-keyframes frameBlockShow {
+  from {
+    margin-top: -5%;
+    opacity: 0.3; }
+  to {
+    opacity: 1; } }
+@-moz-keyframes frameBlockShow {
+  from {
+    margin-top: -5%;
+    opacity: 0.3; }
+  to {
+    opacity: 1; } }
+@-ms-keyframes frameBlockShow {
+  from {
+    margin-top: -5%;
+    opacity: 0.3; }
+  to {
+    opacity: 1; } }
+@keyframes frameBlockShow {
+  from {
+    margin-top: -5%;
+    opacity: 0.3; }
+  to {
+    opacity: 1; } }
+@-webkit-keyframes directorBlockShow {
+  from {
+    margin-top: 30%;
+    opacity: 0.3; }
+  to {
+    opacity: 1; } }
+@-moz-keyframes directorBlockShow {
+  from {
+    margin-top: 30%;
+    opacity: 0.3; }
+  to {
+    opacity: 1; } }
+@-ms-keyframes directorBlockShow {
+  from {
+    margin-top: 30%;
+    opacity: 0.3; }
+  to {
+    opacity: 1; } }
+@keyframes directorBlockShow {
+  from {
+    margin-top: 30%;
+    opacity: 0.3; }
+  to {
+    opacity: 1; } }
 @-webkit-keyframes memberBlockShow {
   from {
     margin-top: 3em;
@@ -731,5 +833,25 @@ body {
   to {
     margin-top: 20px;
     opacity: 1; } }
+@-webkit-keyframes nextPage {
+  from {
+    bottom: 5px; }
+  to {
+    bottom: 3px; } }
+@-moz-keyframes nextPage {
+  from {
+    bottom: 5px; }
+  to {
+    bottom: 3px; } }
+@-ms-keyframes nextPage {
+  from {
+    bottom: 5px; }
+  to {
+    bottom: 3px; } }
+@keyframes nextPage {
+  from {
+    bottom: 5px; }
+  to {
+    bottom: 3px; } }
 
 /*# sourceMappingURL=style.css.map */
