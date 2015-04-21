@@ -1,8 +1,8 @@
 node_modules/*
 .DS_Store
 .elasticbeanstalk/
-*/.DS_Store
+**/.DS_Store
 *.pem
 npm-debug.log
-.idea/*
+**/.idea/*
 projectFilesBackup/*
