@@ -26,7 +26,18 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 			console.log($scope.members);
 		})
 	}
+	$scope.currentPage = 1;
+	$scope.maxPage = 2;
+	$scope.prevPage = function(curr){
+		if ( $scope.currentPage > 1 )
+			$scope.currentPage--;
+	}
+	$scope.nextPage = function(curr){
+		if ( $scope.currentPage <= 2 )
+			$scope.currentPage++;
+	}
 
+	$scope.departments = ['TD','CD','HR','BD','DM','HackCampus','CR','Course','HC'];
 	$scope.departmentList = {
 		'TD':'Technology Development',
 		'CD' : 'Cooperate Development',
@@ -39,6 +50,14 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 		'HC' : 'Hackathon Competition'
 	}
 
+	// $scope.preload = function(){
+	// 	console.log( $scope.departments );
+	// 	for (var i = 0; i < $scope.departments.length; i++){
+	// 		$scope.flip($scope.departments[i]);
+	// 		$scope.showContent = false;
+	// 	}
+	// }
+	// $scope.preload();
 	
 
 }])

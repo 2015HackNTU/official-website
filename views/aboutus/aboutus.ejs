@@ -21,7 +21,7 @@
 	</head>
 	<body ng-controller="aboutUsCtrl" >
 		<% include ../shared/navbar.ejs %>
-		<div class="frame" ng-show="!showContent && !director " ng-class="{'frame-load':!showContent; 'change': director}">
+		<div class="frame" ng-show="currentPage === 1" ng-class="{'frame-load':!showContent; 'change': director}">
 			<div class="circleCenter" ng-click="spreadChild('both')" ng-class="{'clicked' : (isActivatedLeft && isActivatedRight) }"></div>
 			<div class="secondLayer">
 				<div class="circleFirstChildLeft" ng-click="spreadChild('left')" ng-class="{'clicked' : isActivatedLeft}" $event.stopPropagation();> 
@@ -44,7 +44,7 @@
 				</div>
 				
 			</div>
-			<div class="nextPage" ng-click="showContent = false; director = true;">
+			<div class="nextPage" ng-click="nextPage(currentPage);">
 				<i class="fa fa-angle-double-down fa-4x" ></i>
 			</div>
 		</div>
@@ -64,11 +64,19 @@
 			</div>
 		</div>
 
-		<div class="director" ng-show="director" >
-			<div class="prevPage" ng-click="showContent = false; director = false;">
+		<div class="director" ng-show="currentPage === 2;" >
+			<div class="prevPage" ng-click="prevPage(currentPage)">
 				<i class="fa fa-angle-double-up fa-4x"></i>
 			</div>
-			<div class="nextPage">
+			<div class="nextPage" ng-click="nextPage(currentPage)">
+				<i class="fa fa-angle-double-down fa-4x"></i>
+			</div>
+		</div>
+		<div class="director" ng-show="currentPage === 3;" >
+			<div class="prevPage" ng-click="prevPage(currentPage)" ng-show="currentPage > 1">
+				<i class="fa fa-angle-double-up fa-4x"></i>
+			</div>
+			<div class="nextPage" ng-click="nextPage(currentPage)" ng-show="currentPage < maxPage">
 				<i class="fa fa-angle-double-down fa-4x"></i>
 			</div>
 		</div>
