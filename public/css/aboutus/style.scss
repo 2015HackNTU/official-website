@@ -5,7 +5,7 @@
 
 body {
     background: white;
-    margin: 0px;
+    margin-top: 0;
     padding: 0px;
     font-size: 14px;
     color: #000;
@@ -13,10 +13,37 @@ body {
 }
 .frame {
     position: absolute;
+    margin-top: 5%;
     width: 100%;
     height: 200px;
+    opacity: 0;
+    -webkit-transition: all ease-in-out 0.8s;
+    -moz-transition: all ease-in-out 0.8s;
+    -o-transition: all ease-in-out 0.8s;
+    transition: all ease-in-out 0.8s;
+    &-load {
+        -webkit-transition: all ease-in-out 0.8s;
+        -moz-transition: all ease-in-out 0.8s;
+        -o-transition: all ease-in-out 0.8s;
+        transition: all ease-in-out 0.8s;
+        opacity: 1;
+    }
 }
-
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
 // Circle Style //
 @mixin circleStyle(){
     position: relative;
@@ -136,6 +163,13 @@ body {
     transform-style: preserve-3D;
     transform: rotate($rotate);
 }
+.boom{
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: red !important;
+    background-size: cover !important;
+}
 .flip{
     transform: rotateY(180deg);
     transform-origin: 0 0 ;
@@ -152,6 +186,38 @@ body {
         box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
         transition: all ease-out 0.1s;
     }
+    .upper { 
+        &-1 {
+            @include circleStyle();
+            @include thirdChildCommonStyle();
+            @include rotation(10,12,200px);
+            height: 200px;
+            width: 200px;
+            // opacity: 1;
+            background-image: url('../../imgs/aboutus/functional.svg');
+            display: inline-block;
+        }
+        &-2 {
+            @include circleStyle();
+             @include thirdChildCommonStyle();
+            @include rotation(5,12,200px);
+            height: 200px;
+            width: 200px;
+            // opacity: 1;
+            background-image: url('../../imgs/aboutus/functional.svg');
+            display: inline-block;
+        }
+        &-3 {
+            @include circleStyle();
+            @include thirdChildCommonStyle();
+            @include rotation(5,12,200px);
+            height: 200px;
+            width: 200px;
+            // opacity: 1;
+            background-image: url('../../imgs/aboutus/functional.svg');
+            display: inline-block;
+        }
+    }    
     // &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-1 { @include transition(10,10,0deg,50px); }
     // &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-2 { @include transition(10,10,-32deg,50px); }
     // &:hover + .secondLayer .circleFirstChildLeft  > .thirdChild-3 { @include transition(10,10,-64deg,50px); }
@@ -342,4 +408,86 @@ body {
     transform: rotate(0deg); 
 }
 
+// Content //
+
+.content { 
+    width: 100%;
+    height: 842px;
+    background: url('../../imgs/aboutus/background.png');
+    background-size: cover;
+    opacity: 0;
+    transition: all 1.2s ease-in-out;
+    &-activated {
+        transition: all 1.2s ease-in-out;
+        opacity: 1;
+    }
+    .closeBtn {
+        position: absolute;
+        top: 13%;
+        left: 31%;
+        opacity: 0.5;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .header {
+        // @include circleStyle();
+        height: 70px;
+        width: 100%;
+        display: block;  
+        font-size: 30px;
+        color: black;
+        padding-top: 8%;
+        text-align: center;
+        img {
+            height: 120px;
+        }
+    }
+    .member {
+        margin: 0 5%;
+            
+        .memberBlock {
+            float: left;
+            display: inline-block;
+            margin: 20px 8px;
+            -webkit-animation:memberBlockShow 1.2s;
+            animation: memberBlockShow 1.2s;
+
+            .picture {
+                @include circleStyle();
+                height: 160px !important;
+                width: 160px !important;
+                display: block;
+                background-size: cover !important;
+                border: 5px solid white;
+                transition: all ease-in-out 0.1s;
+
+                &:hover {
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+                    transition: all ease-in-out 0.1s;
+                }
+            }
+            .name {
+                text-align: center;
+                margin-top: 1em;
+                font-size: 20px;
+                display: block;
+            }
+        }
+    }
+
+}
+
+// MemberBlock Show
+@include keyframes(memberBlockShow) {
+    from {
+        margin-top: 3em;
+        opacity: 0.5;
+    }
+    to {
+        margin-top: 20px;
+        opacity: 1;
+    }
+}
 
