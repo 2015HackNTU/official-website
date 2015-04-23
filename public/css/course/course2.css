@@ -398,6 +398,17 @@ table th {
     overflow: visible;
 }
 
+.text-vertical-center {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+
+    -webkit-align-items: center;
+    align-items: center;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
 .background-dark-orange {
     /*background-color: #ec6517;*/
     background-color: rgba(236, 101, 23, 1);
