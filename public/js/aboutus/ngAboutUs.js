@@ -1,43 +1,10 @@
 var app = angular.module('ngAboutUs', []);
-var host = 'http://localhost:3000/'
+// var host = 'http://localhost:3000/';
 
 app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 	$scope.poka = 'test';
 	console.log('poka')
-	$scope.spreadChild = function(whitchSide){
-		if (whitchSide === 'both' && (!$scope.isActivatedLeft || !$scope.isActivatedRight) ){
-			$scope.isActivatedLeft = true;
-			$scope.isActivatedRight = true; 
-		} else {
-			$scope.isActivatedLeft  = (whitchSide === 'left' && !$scope.isActivatedLeft) ?  true : false;
-			$scope.isActivatedRight = (whitchSide === 'right' && !$scope.isActivatedRight) ? true : false; 
-		}
-	}
-	$scope.spreadChild('both');
-
-	$scope.flip = function(department){
-		$scope.showContent = true;
-		$scope.title = $scope.departmentList[department];
-		// Member //
-		$scope.members = [];
-		$http.get('/api/aboutus/member/' + department).success(function(data){
-			angular.forEach(data, function(val){
-				$scope.members.push(val);
-			})
-			console.log($scope.members);
-		})
-	}
-	$scope.currentPage = 1;
-	$scope.maxPage = 4;
-	$scope.prevPage = function(curr){
-		if ( $scope.currentPage > 1 )
-			$scope.currentPage--;
-	}
-	$scope.nextPage = function(curr){
-		if ( $scope.currentPage <= $scope.maxPage )
-			$scope.currentPage++;
-	}
-
+	$scope.preload = [];
 	$scope.departments = ['TD','CD','HR','BD','DM','HackCampus','CR','Course','HC'];
 	$scope.departmentList = {
 		'TD':'Technology Development',
@@ -50,7 +17,72 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 		'Course' : 'Hack Course',
 		'HC' : 'Hackathon Competition'
 	}
+	$scope.spreadChild = function(whitchSide){
+		if (whitchSide === 'both' && (!$scope.isActivatedLeft || !$scope.isActivatedRight) ){
+			$scope.isActivatedLeft = true;
+			$scope.isActivatedRight = true; 
+		} else {
+			$scope.isActivatedLeft  = (whitchSide === 'left' && !$scope.isActivatedLeft) ?  true : false;
+			$scope.isActivatedRight = (whitchSide === 'right' && !$scope.isActivatedRight) ? true : false; 
+		}
+	}
+	$scope.spreadChild('both');
 
+	$scope.preloadImage = function(){
+		for (var i = 0 ; i < $scope.departments.length; i++) {
+			$http.get('/api/aboutus/member/' + $scope.departments[i]).success(function(data){
+				angular.forEach(data, function(val){
+					$scope.preload.push(val);
+				})
+			})
+		}
+	}
+	$scope.preloadImage();
+
+	$scope.flip = function(department){
+		$scope.showContent = true;
+		$scope.title = $scope.departmentList[department];
+
+		// Member //
+		$scope.members = [];
+		for (var i = 0 ; i < $scope.preload.length; i++) {
+			if (department === $scope.preload[i].department){
+				$scope.members.push($scope.preload[i]);
+			}
+		}
+	}
+
+	
+	$scope.currentPage = 1;
+	$scope.maxPage = 4;
+	$scope.prevPage = function(curr){
+		if ( $scope.currentPage > 1 ){
+			$scope.currentPage--;
+			$('.director').addClass('prevPageAnimation');
+			$('.director').removeClass('nextPageAnimation');
+		}
+		console.log('hi')
+	}
+	$scope.nextPage = function(curr){
+		if ( $scope.currentPage < $scope.maxPage ) {
+			$scope.currentPage++;
+			$('.director').addClass('nextPageAnimation');
+			$('.director').removeClass('prevPageAnimation');
+		}
+	}
+
+	
+
+	$scope.event = function(e){
+		switch (e.keyCode) {
+			case 38 : // Keyboard up event
+				$scope.prevPage($scope.currentPage);
+				break;
+			case 40 : // Keyboard down event
+				$scope.nextPage($scope.currentPage);
+				break;
+		}
+	};
 	// $scope.preload = function(){
 	// 	console.log( $scope.departments );
 	// 	for (var i = 0; i < $scope.departments.length; i++){

@@ -487,10 +487,10 @@ body {
                 border: 5px solid white;
                 transition: all ease-in-out 0.1s;
 
-                &:hover {
-                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-                    transition: all ease-in-out 0.1s;
-                }
+                // &:hover {
+                //     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+                //     transition: all ease-in-out 0.1s;
+                // }
             }
             .name {
                 text-align: center;
@@ -508,8 +508,7 @@ body {
     margin-top: -2%;
     height: 720px;
     // text-align: center;
-    -webkit-animation: directorBlockShow 1.2s;
-    animation: directorBlockShow 1.2s;
+
     background: url('../../imgs/aboutus/background.png');
 
     .content {
@@ -520,8 +519,10 @@ body {
         max-width: 1150px;
         height: 70%;
         background: none;
-        -webkit-animation: directorBlockShow 1.2s;
-        animation: directorBlockShow 1.2s;
+        -webkit-animation: directorBlockShow 1.1s;
+        -moz-transition: directorBlockShow 1.1s;
+        -o-transition: directorBlockShow 1.1s;
+        animation: directorBlockShow 1.1s;
         opacity: 1;
         & > p {
             font-size: 20px;
@@ -549,7 +550,28 @@ body {
             }
         }
     }
+    .scrollTop {
+        text-align: center;
+        position: fixed;
+        bottom: 4%;
+        left: 47%;
+        opacity: 0.7;
+        
+        -webkit-transition: all ease-out 0.5s;
+        -moz-transition: all ease-out 0.5s;
+        -o-transition: all ease-out 0.5s;
+        transition: all ease-out 0.5s;
 
+        // -webkit-animation: nextPage 0.8s infinite;
+        // animation: nextPage 0.8s infinite;
+        &:hover {
+            -webkit-transition: all ease-out 0.5s;
+            -moz-transition: all ease-out 0.5s;
+            -o-transition: all ease-out 0.5s;
+            transition: all ease-out 0.5s;
+            opacity: 1;
+        }
+    }
     .nextPage {
         text-align: center;
         position: fixed;
@@ -595,6 +617,18 @@ body {
         }
     }
 }
+.nextPageAnimation{
+    -webkit-animation: directorBlockShow 1.1s;
+    -moz-transition: directorBlockShow 1.1s;
+    -o-transition: directorBlockShow 1.1s;
+    animation: directorBlockShow 1.1s;
+}
+.prevPageAnimation {
+    -webkit-animation: directorBlockShowPrev 1.1s;
+    -moz-transition: directorBlockShowPrev 1.1s;
+    -o-transition: directorBlockShowPrev 1.1s;
+    animation: directorBlockShowPrev 1.1s;
+}
 @include keyframes(frameBlockShow) {
     from {
         margin-top: -5%;
@@ -607,6 +641,15 @@ body {
 @include keyframes(directorBlockShow) {
     from {
         margin-top: 30%;
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@include keyframes(directorBlockShowPrev) {
+    from {
+        margin-top: -50%;
         opacity: 0.3;
     }
     to {
