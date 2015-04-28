@@ -1,5 +1,5 @@
 var app = angular.module('ngAboutUs', []);
-var host = 'http://localhost:3000/'
+// var host = 'http://localhost:3000/';
 
 app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 	$scope.poka = 'test';
@@ -30,12 +30,19 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 	$scope.currentPage = 1;
 	$scope.maxPage = 4;
 	$scope.prevPage = function(curr){
-		if ( $scope.currentPage > 1 )
+		if ( $scope.currentPage > 1 ){
 			$scope.currentPage--;
+			$('.director').addClass('prevPageAnimation');
+			$('.director').removeClass('nextPageAnimation');
+		}
+		console.log('hi')
 	}
 	$scope.nextPage = function(curr){
-		if ( $scope.currentPage <= $scope.maxPage )
+		if ( $scope.currentPage < $scope.maxPage ) {
 			$scope.currentPage++;
+			$('.director').addClass('nextPageAnimation');
+			$('.director').removeClass('prevPageAnimation');
+		}
 	}
 
 	$scope.departments = ['TD','CD','HR','BD','DM','HackCampus','CR','Course','HC'];
@@ -51,6 +58,16 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 		'HC' : 'Hackathon Competition'
 	}
 
+	$scope.event = function(e){
+		switch (e.keyCode) {
+			case 38 : // Keyboard up event
+				$scope.prevPage($scope.currentPage);
+				break;
+			case 40 : // Keyboard down event
+				$scope.nextPage($scope.currentPage);
+				break;
+		}
+	};
 	// $scope.preload = function(){
 	// 	console.log( $scope.departments );
 	// 	for (var i = 0; i < $scope.departments.length; i++){
