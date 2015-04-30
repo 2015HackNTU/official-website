@@ -998,6 +998,9 @@ body {
     -moz-transition: nextPage 0.8s infinite;
     -o-transition: nextPage 0.8s infinite;
     animation: nextPage 0.8s infinite; }
+    @media screen and (max-width: 480px) {
+      .section .nextPage {
+        display: none !important; } }
     .section .nextPage:hover {
       -webkit-transition: all ease-out 0.5s;
       -moz-transition: all ease-out 0.5s;

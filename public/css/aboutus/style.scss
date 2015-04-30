@@ -831,6 +831,9 @@ body {
         // left: 50%;
         opacity: 0.5;
         
+        @media screen and (max-width: 480px) {
+            display: none !important;
+        }
         -webkit-transition: all ease-out 0.5s;
         -moz-transition: all ease-out 0.5s;
         -o-transition: all ease-out 0.5s;
