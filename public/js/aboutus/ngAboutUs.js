@@ -5,7 +5,7 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 	$scope.poka = 'test';
 	console.log('poka')
 	$scope.preload = [];
-	$scope.departments = ['TD','CD','HR','BD','DM','HackCampus','CR','Course','HC'];
+	$scope.departments = ['TD','CD','HR','BD','DM','HackCampus','CR','Course','HC','Leader'];
 	$scope.departmentList = {
 		'TD':'Technology Development',
 		'CD' : 'Cooperate Development',
@@ -15,7 +15,8 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 		'HackCampus' : 'Hack Campus',
 		'CR' : 'Community Relation',
 		'Course' : 'Hack Course',
-		'HC' : 'Hackathon Competition'
+		'HC' : 'Hackathon Competition',
+		'Leader' : 'HackNTU Leaders'
 	}
 	$scope.spreadChild = function(whitchSide){
 		if (whitchSide === 'both' && (!$scope.isActivatedLeft || !$scope.isActivatedRight) ){
@@ -52,9 +53,9 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 		}
 	}
 
-	
+
 	$scope.currentPage = 1;
-	$scope.maxPage = 4;
+	$scope.maxPage = 2;
 	$scope.prevPage = function(curr){
 		if ( $scope.currentPage > 1 ){
 			$scope.currentPage--;
@@ -80,6 +81,10 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 				break;
 			case 40 : // Keyboard down event
 				$scope.nextPage($scope.currentPage);
+				break;
+			case 27 :
+				if( $scope.currentPage === 'director' )
+					$scope.currentPage = 1;
 				break;
 		}
 	};

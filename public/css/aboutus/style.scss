@@ -9,7 +9,9 @@ body {
     padding: 0px;
     font-size: 14px;
     color: #000;
-    overflow-x: hidden; 
+    // overflow-x: hidden; 
+    // background: url('../../imgs/aboutus/background.png');
+
 }
 .frame {
     position: absolute;
@@ -21,6 +23,8 @@ body {
     // -o-transition: all ease-in-out 0.5s;
     // transition: all ease-in-out 0.5s;
     -webkit-animation: frameBlockShow 0.8s;
+    -moz-animation: frameBlockShow 0.8s;
+    -o-animation: frameBlockShow 0.8s;
     animation: frameBlockShow 0.8s;
 
     // &-load {
@@ -43,6 +47,32 @@ body {
         transition: all ease-out 0.5s;
 
         -webkit-animation: nextPage 0.8s infinite;
+        -moz-transition: nextPage 0.8s infinite;
+        -o-transition: nextPage 0.8s infinite;
+        animation: nextPage 0.8s infinite;
+        &:hover {
+            -webkit-transition: all ease-out 0.5s;
+            -moz-transition: all ease-out 0.5s;
+            -o-transition: all ease-out 0.5s;
+            transition: all ease-out 0.5s;
+            opacity: 1;
+        }
+    }
+    .prevPage {
+        text-align: center;
+        position: relative;
+        top: 8%;
+        // left: 50%;
+        opacity: 0.5;
+        
+        -webkit-transition: all ease-out 0.5s;
+        -moz-transition: all ease-out 0.5s;
+        -o-transition: all ease-out 0.5s;
+        transition: all ease-out 0.5s;
+
+        -webkit-animation: nextPage 0.8s infinite;
+        -moz-transition: nextPage 0.8s infinite;
+        -o-transition: nextPage 0.8s infinite;
         animation: nextPage 0.8s infinite;
         &:hover {
             -webkit-transition: all ease-out 0.5s;
@@ -182,6 +212,9 @@ body {
     $angleRad : pi() * 2 * ($current/$total);
     $top : cos($angleRad) * 200px + $adj;
     $left : sin($angleRad) * 200px + $adj;
+    -webkit-transition: transform 1s ease-out; 
+    -moz-transition: transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
     transition: transform 1s ease-out;
     transform-origin: $top $left ;
     transform-style: preserve-3D;
@@ -195,11 +228,17 @@ body {
     background-size: cover !important;
 }
 .flip{
+    -webkit-transition: rotateY(180deg); 
+    -moz-transition: rotateY(180deg);
+    -o-transition: rotateY(180deg);
     transform: rotateY(180deg);
     transform-origin: 0 0 ;
 }
 .clicked {
     box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+    -webkit-transition: all ease-out 0.1s;
+    -moz-transition: all ease-out 0.1s;
+    -o-transition: all ease-out 0.1s;
     transition: all ease-out 0.1s;
 }
 .circleCenter {
@@ -208,7 +247,16 @@ body {
     background-image: url('../../imgs/aboutus/hackntu.svg');
     &:hover {
         box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+        -webkit-transition: all ease-out 0.1s;
+        -moz-transition: all ease-out 0.1s;
+        -o-transition: all ease-out 0.1s;
         transition: all ease-out 0.1s;
+    }
+    & > h1 {
+        left: -200%;
+        font-size: 4em;
+        position: relative;
+        color: red;
     }
     .upper { 
         &-1 {
@@ -265,6 +313,9 @@ body {
         background-image: url('../../imgs/aboutus/functional.svg');
         &:hover {
             box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+            -webkit-transition: all ease-out 0.1s;
+            -moz-transition: all ease-out 0.1s;
+            -o-transition: all ease-out 0.1s;
             transition: all ease-out 0.1s;
         }
         // &:hover > .thirdChild-1 { @include transition(10,10,0deg,50px); }
@@ -314,6 +365,9 @@ body {
         background-image: url('../../imgs/aboutus/business.svg');
         &:hover {
             box-shadow: 0px 0px 10px rgba(51, 51, 102, 0.8);
+            -webkit-transition: all ease-out 0.1s;
+            -moz-transition: all ease-out 0.1s;
+            -o-transition: all ease-out 0.1s;
             transition: all ease-out 0.1s;
         }
         // &:hover > .thirdChild-1 { @include transition(6,12,90deg,50px); }
@@ -362,85 +416,208 @@ body {
 .isActivatedLeft-1 {
     z-index: 5 !important; 
     opacity: 1 !important;
-    transition: transform 1s ease-out;
+    
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    
+    -webkit-transform-origin: 250.06024px 50.01655px;
+    -moz-transform-origin: 250.06024px 50.01655px;
+    -o-transform-origin: 250.06024px 50.01655px;
     transform-origin: 250.06024px 50.01655px;
+
     transform-style: preserve-3D;
+    
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
     transform: rotate(0deg); 
 }
 .isActivatedLeft-2 {
     z-index: 5 !important; 
     opacity: 1 !important;
-    transition: transform 1s ease-out;
+
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    
+    -webkit-transform-origin: 250.06024px 50.01655px;
+    -moz-transform-origin: 250.06024px 50.01655px;
+    -o-transform-origin: 250.06024px 50.01655px;
     transform-origin: 250.06024px 50.01655px;
-    transform-style: preserve-3D;
+    
+    // -webkit-transform-style: preserve-3D;
+    // -moz-transform-style: preserve-3D;
+    // -o-transform-style: preserve-3D;
+    // transform-style: preserve-3D;
+
+    -webkit-transform: rotate(-32deg);
+    -moz-transform: rotate(-32deg);
+    -o-transform: rotate(-32deg);
     transform: rotate(-32deg); 
 }
 .isActivatedLeft-3 {
     z-index: 5 !important; 
     opacity: 1 !important;
-    transition: transform 1s ease-out;
+
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+
+    -webkit-transform-origin: 250.06024px 50.01655px;
+    -moz-transform-origin: 250.06024px 50.01655px;
+    -o-transform-origin: 250.06024px 50.01655px;
     transform-origin: 250.06024px 50.01655px;
+    
     transform-style: preserve-3D;
+    
+    -webkit-transform: rotate(-64deg);
+    -moz-transform: rotate(-64deg);
+    -o-transform: rotate(-64deg);
     transform: rotate(-64deg); 
 }
 .isActivatedLeft-4 {
     z-index: 5 !important; 
     opacity: 1 !important;
-    transition: transform 1s ease-out;
+
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+
+    -webkit-transform-origin: 250.06024px 50.01655px;
+    -moz-transform-origin: 250.06024px 50.01655px;
+    -o-transform-origin: 250.06024px 50.01655px;
     transform-origin: 250.06024px 50.01655px;
+    
     transform-style: preserve-3D;
+    
+    -webkit-transform: rotate(-96deg);
+    -moz-transform: rotate(-96deg);
+    -o-transform: rotate(-96deg);
     transform: rotate(-96deg); 
 }
 .isActivatedLeft-5 {
     z-index: 5 !important; 
     opacity: 1 !important;
-    transition: transform 1s ease-out;
+
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+
+    -webkit-transform-origin: 250.06024px 50.01655px;
+    -moz-transform-origin: 250.06024px 50.01655px;
+    -o-transform-origin: 250.06024px 50.01655px;
     transform-origin: 250.06024px 50.01655px;
+    
     transform-style: preserve-3D;
+    
+    -webkit-transform: rotate(-128deg);
+    -moz-transform: rotate(-128deg);
+    -o-transform: rotate(-128deg);
     transform: rotate(-128deg); 
 }
 .isActivatedRight-1 {
     z-index: 5 !important; 
     opacity: 1 !important;
-    transition: transform 1s ease-out;
+
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    
+    -webkit-transform-origin: -150.0px 50.0px; 
+    -moz-transform-origin: -150.0px 50.0px;
+    -o-transform-origin: -150.0px 50.0px; 
     transform-origin: -150.0px 50.0px;
+    
     transform-style: preserve-3D;
+
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
     transform: rotate(90deg); 
 }
 .isActivatedRight-2 {
     z-index: 5 !important; 
     opacity: 1 !important;
-    transition: transform 1s ease-out;
+
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+
+    -webkit-transform-origin: -150.0px 50.0px; 
+    -moz-transform-origin: -150.0px 50.0px;
+    -o-transform-origin: -150.0px 50.0px; 
     transform-origin: -150.0px 50.0px;
+    
     transform-style: preserve-3D;
+
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
     transform: rotate(60deg); 
 }
 .isActivatedRight-3 {
     z-index: 5 !important; 
     opacity: 1 !important;
-    transition: transform 1s ease-out;
+
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    
+    -webkit-transform-origin: -150.0px 50.0px; 
+    -moz-transform-origin: -150.0px 50.0px;
+    -o-transform-origin: -150.0px 50.0px; 
     transform-origin: -150.0px 50.0px;
+
     transform-style: preserve-3D;
+
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
     transform: rotate(30deg); 
 }
 .isActivatedRight-4 {
     z-index: 5 !important; 
     opacity: 1 !important;
-    transition: transform 1s ease-out;
+
+    -webkit-transition: transform 1s ease-in-out;
+    -moz-transition: transform 1s ease-in-out;
+    -o-transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    
+    -webkit-transform-origin: -150.0px 50.0px; 
+    -moz-transform-origin: -150.0px 50.0px;
+    -o-transform-origin: -150.0px 50.0px; 
     transform-origin: -150.0px 50.0px;
+
     transform-style: preserve-3D;
+
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
     transform: rotate(0deg); 
 }
 
 // Content //
 
-.content { 
+.contentMember { 
     width: 100%;
     height: 842px;
     background: url('../../imgs/aboutus/background.png');
     background-repeat: repeat-y;
     background-size: cover;
     opacity: 0;
+    -webkit-transition: all 1.2s ease-in-out;
+    -moz-transition: all 1.2s ease-in-out;
+    -o-transition: all 1.2s ease-in-out;
     transition: all 1.2s ease-in-out;
     &-activated {
         transition: all 1.2s ease-in-out;
@@ -482,6 +659,8 @@ body {
             display: inline-block;
             margin: 20px 8px;
             -webkit-animation:memberBlockShow 1.2s;
+            -moz-transition: memberBlockShow 1.2s;
+            -o-transition: memberBlockShow 1.2s;
             animation: memberBlockShow 1.2s;
 
             .picture {
@@ -491,6 +670,9 @@ body {
                 display: block;
                 background-size: cover !important;
                 border: 5px solid white;
+                -webkit-animation:memberBlockShow 0.1s;
+                -moz-transition: memberBlockShow 0.1s;
+                -o-transition: memberBlockShow 0.1s;
                 transition: all ease-in-out 0.1s;
 
                 // &:hover {
@@ -512,20 +694,37 @@ body {
 // Section //
 .section {
     margin-top: -2%;
-    height: 720px;
+    // height: 720px;
+    height: 40%;
 
     // text-align: center;
 
     background: url('../../imgs/aboutus/background.png');
 
+
     .content {
-        position: absolute;
-        margin: 15% 7% 5% 10%;
-        overflow: hidden;
+        // position: absolute;
+        position: relative;
+        margin: 12% 7% 10% 10%;
+        // overflow: hidden;
         text-align: justify;
         max-width: 1000px;
-        height: 70%;
+        // height: 70%;
+        display: block;
         background: none;
+
+background-repeat: repeat-y;
+    background-size: cover;
+    opacity: 0;
+    -webkit-transition: all 1.2s ease-in-out;
+    -moz-transition: all 1.2s ease-in-out;
+    -o-transition: all 1.2s ease-in-out;
+    transition: all 1.2s ease-in-out;
+    &-activated {
+        transition: all 1.2s ease-in-out;
+        opacity: 1;
+    }
+
         -webkit-animation: directorBlockShow 1.1s;
         -moz-transition: directorBlockShow 1.1s;
         -o-transition: directorBlockShow 1.1s;
@@ -533,6 +732,7 @@ body {
         opacity: 1;
         p {
             display: inline-block;
+            line-height: 1.4em;
             font-size: 22px;
             font-family: monospace;
         }
@@ -564,6 +764,21 @@ body {
             display: inline-block;
             width: 20%;
             height: 15%;
+        }
+        .hackSpirit {
+            & {
+                @include circleStyle();
+                margin: 0 5%;
+                display: inline-block;
+                background-color: blue;
+                z-index: 1;
+                text-align: center;
+
+            }
+            & > i {
+                position: absolute;
+                z-index: 9;
+            }
         }
     }
     .scrollTop {
@@ -611,9 +826,9 @@ body {
     }
     .nextPage {
         text-align: center;
-        position: fixed;
-        bottom: 3px;
-        left: 50%;
+        position: relative;
+        bottom: 5px;
+        // left: 50%;
         opacity: 0.5;
         
         -webkit-transition: all ease-out 0.5s;
@@ -622,6 +837,8 @@ body {
         transition: all ease-out 0.5s;
 
         -webkit-animation: nextPage 0.8s infinite;
+        -moz-transition: nextPage 0.8s infinite;
+        -o-transition: nextPage 0.8s infinite;
         animation: nextPage 0.8s infinite;
         &:hover {
             -webkit-transition: all ease-out 0.5s;
@@ -644,6 +861,8 @@ body {
         transition: all ease-out 0.5s;
 
         -webkit-animation: nextPage 0.8s infinite;
+        -moz-transition: nextPage 0.8s infinite;
+        -o-transition: nextPage 0.8s infinite;
         animation: nextPage 0.8s infinite;
         &:hover {
             -webkit-transition: all ease-out 0.5s;

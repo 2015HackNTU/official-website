@@ -21,73 +21,32 @@
 	</head>
 	<body ng-controller="aboutUsCtrl" ng-keydown="event($event)">
 		<% include ../shared/navbar.ejs %>
-		<div class="frame" ng-show="currentPage === 1 && !showContent" ng-class="{'frame-load':!showContent, 'change': director}">
-			<div class="circleCenter" ng-click="flip('Leader'); spreadChild('both');" ng-class="{'clicked' : (isActivatedLeft && isActivatedRight) }"></div>
-			<div class="secondLayer">
-				<div class="circleFirstChildLeft" ng-click="spreadChild('left')" ng-class="{'clicked' : isActivatedLeft}" $event.stopPropagation();> 
-					<div class="thirdChild-1" ng-class="{'isActivatedLeft-1' : isActivatedLeft}" ng-click="flip('TD'); spreadChild('stay');" $event.stopPropagation();>
-					</div>	
-					<div class="thirdChild-2" ng-class="{'isActivatedLeft-2' : isActivatedLeft}" ng-click="flip('CD'); spreadChild('stay');" $event.stopPropagation();>
-					</div>	
-					<div class="thirdChild-3" ng-class="{'isActivatedLeft-3' : isActivatedLeft}" ng-click="flip('HR'); spreadChild('stay');" $event.stopPropagation();>
-					</div>	
-					<div class="thirdChild-4" ng-class="{'isActivatedLeft-4' : isActivatedLeft}" ng-click="flip('BD'); spreadChild('stay');" $event.stopPropagation();>
-					</div>	
-					<div class="thirdChild-5" ng-class="{'isActivatedLeft-5' : isActivatedLeft}" ng-click="flip('DM'); spreadChild('stay'); boom=true;" $event.stopPropagation();>
-					</div>	
-				</div>
-				<div class="circleFirstChildRight" ng-click="spreadChild('right')" ng-class="{'clicked' : isActivatedRight}">
-					<div class="thirdChild-1" ng-class="{'isActivatedRight-1' : isActivatedRight}" ng-click="flip('HC'); spreadChild('stay');" $event.stopPropagation();></div>	
-					<div class="thirdChild-2" ng-class="{'isActivatedRight-2' : isActivatedRight}" ng-click="flip('Course'); spreadChild('stay');" $event.stopPropagation();></div>	
-					<div class="thirdChild-3" ng-class="{'isActivatedRight-3' : isActivatedRight}" ng-click="flip('CR'); spreadChild('stay');" $event.stopPropagation();></div>
-					<div class="thirdChild-4" ng-class="{'isActivatedRight-4' : isActivatedRight}" ng-click="flip('HackCampus'); spreadChild('stay');" $event.stopPropagation();></div>
-				</div>
-				
-			</div>
-			<div class="nextPage" ng-click="nextPage(currentPage);">
-				<i class="fa fa-angle-double-down fa-4x" ></i>
-			</div>
-		</div>
-		<div class="content" ng-show="showContent" ng-class="{'content-activated':showContent}">
-			
-			<div class="header">
-				<div class="closeBtn" ng-click="showContent = !showContent; spreadChild('both');">
-					<i class="fa fa-chevron-circle-left"></i>
-				</div>
-				{{title}}
-			</div>
-			<!-- <div class="header">
-				<img src="imgs/aboutus/TD_.svg">
-			</div> -->
-			<div class="member">
-				<div class="memberBlock" ng-repeat="member in members">
-					<div class="picture" style="background:url({{member.url}})"></div>
-					<div class="name">{{member.name}}</div>
-				</div>
-			</div>
-		</div>
+		
+		
 
-		<div class="section" ng-show="currentPage === 2;" >
-			<div class="prevPage" ng-click="prevPage(currentPage);isActivatedLeft = true;
+		<div class="section" ng-show="currentPage === 1;" >
+			<!-- <div class="prevPage" ng-click="prevPage(currentPage);isActivatedLeft = true;
 			isActivatedRight = true; " ng-keyup="prevPage(currentPage); isActivatedLeft = true; isActivatedRight = true;">
 				<i class="fa fa-angle-double-up fa-4x"></i>
-			</div>
+			</div> -->
+			<!-- <div class="content">
+				<h1>About Us </h1>
+				<p>
+				Started in 2013 as a student society, HackNTU is a non-profit organization aimed to promote hacker spirit, which valuates the philosophy of  “Getting hands dirty”. Activities and courses are held to support the hacker community and to get people into producing and creating new things that would eventually change the world.
+				</p>
+			</div> -->
+			
 			<div class="content">
 				<h1>Hacker spirit</h1>
-				<div class="damnBox"></div><br>
-				<p>獨⽴思考  thinking independently</p><br>
-				<div class="damnBox"></div><p>⾃由探索  discovering questions</p><br>
-				<div class="damnBox"></div><div class="damnBox"></div><p>發揮創意、解決問題  solving them with creativity</p><br>
+				<br>
+				<!-- <div class="hackSpirit"><i class="fa fa-5x fa-search"></i></div>
+				<div class="hackSpirit"><i class="fa fa-5x fa-lightbulb-o"></i></div>
+				<div class="hackSpirit"><i class="fa fa-5x fa-puzzle-piece"></i></div>
+				 -->
+				<p>獨⽴思考  Thinking independently</p><br><br>
+				<p>⾃由探索  Discovering questions</p><br><br>
+				<p>發揮創意、解決問題  Solving them with creativity</p><br>
 				
-			</div>
-			<div class="nextPage" ng-click="nextPage(currentPage)" >
-				<i class="fa fa-angle-double-down fa-4x"></i>
-			</div>
-		</div>
-		
-		<div class="section" ng-show="currentPage === 3;" >
-			<div class="prevPage" ng-click="prevPage(currentPage)" ng-keyup="prevPage(currentPage)" ng-show="currentPage > 1">
-				<i class="fa fa-angle-double-up fa-4x"></i>
 			</div>
 			<div class="content">
 				<h1>什麼是黑客松？</h1>
@@ -115,6 +74,90 @@
 				project managers.
 				</p>
 			</div>
+			<div class="content">
+				<h1>Origin</h1>
+				<p>
+				Hackathon為近年來⾵⾏於國內外知名企業以及⼀流⼤學間的創意發想與
+				實踐活動。 <br>	
+				然⽽，包括台⼤在內，台灣各⼤專院校卻都沒有提供類似的平台或是活動，
+				能讓創意萌芽、發展。<br>
+				HackNTU共同創辦⼈之⼀的張凱迪，在參加 Yahoo的Hackday之後，深刻意識到這個問題。<br>因此，憑藉著對⿊客精神的熱愛與使命感，2013年，在台⼤正式成⽴HackNTU 。
+				</p>
+				<br>
+				<br>
+				<p>
+				Hackathon is a popular event in recent years. Both domestic and foreign
+				enterprises, and prestigious universities hold such event to promote the
+				spirit of creative thinking and practicing.
+				However, all universities in Taiwan, including NTU, didn’t have such
+				event.
+				KD Chang, one of the co-founders of HackNTU, determined to started a
+				hackathon in NTU after he participated the Hackday held by Yahoo.
+				In the year of 2013, HackNTU was established.
+				</p>
+			</div>
+
+			<div class="nextPage" ng-click="nextPage(currentPage)" >
+				<i class="fa fa-angle-double-down fa-4x"></i>
+			</div>
+		</div>
+		<div class="frame" ng-show="currentPage === 2 && !showContent" ng-class="{'frame-load':!showContent, 'change': director}">
+			<div class="prevPage" ng-click="prevPage(currentPage);isActivatedLeft = true;
+			isActivatedRight = true; " ng-keyup="prevPage(currentPage); isActivatedLeft = true; isActivatedRight = true;">
+				<i class="fa fa-angle-double-up fa-4x"></i>
+			</div>
+			<div class="circleCenter" ng-click="flip('Leader'); spreadChild('both');" ng-class="{'clicked' : (isActivatedLeft && isActivatedRight) }">
+				<h1>Organization</h1>
+			</div>
+
+			<div class="secondLayer">
+				<div class="circleFirstChildLeft" ng-click="spreadChild('left')" ng-class="{'clicked' : isActivatedLeft}" $event.stopPropagation();> 
+					<div class="thirdChild-1" ng-class="{'isActivatedLeft-1' : isActivatedLeft}" ng-click="flip('TD'); spreadChild('stay');" $event.stopPropagation();>
+					</div>	
+					<div class="thirdChild-2" ng-class="{'isActivatedLeft-2' : isActivatedLeft}" ng-click="flip('CD'); spreadChild('stay');" $event.stopPropagation();>
+					</div>	
+					<div class="thirdChild-3" ng-class="{'isActivatedLeft-3' : isActivatedLeft}" ng-click="flip('HR'); spreadChild('stay');" $event.stopPropagation();>
+					</div>	
+					<div class="thirdChild-4" ng-class="{'isActivatedLeft-4' : isActivatedLeft}" ng-click="flip('BD'); spreadChild('stay');" $event.stopPropagation();>
+					</div>	
+					<div class="thirdChild-5" ng-class="{'isActivatedLeft-5' : isActivatedLeft}" ng-click="flip('DM'); spreadChild('stay'); boom=true;" $event.stopPropagation();>
+					</div>	
+				</div>
+				<div class="circleFirstChildRight" ng-click="spreadChild('right')" ng-class="{'clicked' : isActivatedRight}">
+					<div class="thirdChild-1" ng-class="{'isActivatedRight-1' : isActivatedRight}" ng-click="flip('HC'); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-2" ng-class="{'isActivatedRight-2' : isActivatedRight}" ng-click="flip('Course'); spreadChild('stay');" $event.stopPropagation();></div>	
+					<div class="thirdChild-3" ng-class="{'isActivatedRight-3' : isActivatedRight}" ng-click="flip('CR'); spreadChild('stay');" $event.stopPropagation();></div>
+					<div class="thirdChild-4" ng-class="{'isActivatedRight-4' : isActivatedRight}" ng-click="flip('HackCampus'); spreadChild('stay');" $event.stopPropagation();></div>
+				</div>
+				
+			</div>
+			<!-- <div class="nextPage" ng-click="nextPage(currentPage);">
+				<i class="fa fa-angle-double-down fa-4x" ></i>
+			</div> -->
+		</div>
+		<div class="contentMember" ng-show="showContent" ng-class="{'contentMember-activated':showContent}">
+			
+			<div class="header">
+				<div class="closeBtn" ng-click="showContent = !showContent; spreadChild('both');">
+					<i class="fa fa-chevron-circle-left"></i>
+				</div>
+				{{title}}
+			</div>
+			<!-- <div class="header">
+				<img src="imgs/aboutus/TD_.svg">
+			</div> -->
+			<div class="member">
+				<div class="memberBlock" ng-repeat="member in members">
+					<div class="picture" style="background:url({{member.url}})"></div>
+					<div class="name">{{member.name}}</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="section" ng-show="currentPage === 3;" >
+			<div class="prevPage" ng-click="prevPage(currentPage)" ng-keyup="prevPage(currentPage)" ng-show="currentPage > 1">
+				<i class="fa fa-angle-double-up fa-4x"></i>
+			</div>
+			
 			<div class="nextPage" ng-click="nextPage(currentPage)" ng-keydown="nextPage(currentPage);" ng-show="currentPage < maxPage">
 				<i class="fa fa-angle-double-down fa-4x"></i>
 			</div>
@@ -125,7 +168,7 @@
 				<i class="fa fa-angle-double-up fa-4x"></i>
 			</div>
 			<div class="content">
-				<h1>起源</h1>
+				<h1>Origin</h1>
 				<p>
 				Hackathon為近年來⾵⾏於國內外知名企業以及⼀流⼤學間的創意發想與
 				實踐活動。 <br>	
@@ -134,7 +177,7 @@
 				HackNTU共同創辦⼈之⼀的張凱迪，在參加 Yahoo的Hackday之後，深刻意識到這個問題。<br>因此，憑藉著對⿊客精神的熱愛與使命感，2013年，在台⼤正式成⽴HackNTU 。
 				</p>
 				<br>
-				<h1>Origin</h1>
+				
 				<p>
 				Hackathon is a popular event in recent years. Both domestic and foreign
 				enterprises, and prestigious universities hold such event to promote the
@@ -149,7 +192,7 @@
 			<div class="scrollTop" ng-click="currentPage=1" >
 				Scroll to Top
 			</div>
-		</div>
+		</div> -->
 
 			<!-- <line x1="50%" y1="30%" x2="65%" y2="55%" stroke="black" stroke-width="5px"></line> -->
 
