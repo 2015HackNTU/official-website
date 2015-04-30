@@ -62,17 +62,20 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 			$('.director').addClass('prevPageAnimation');
 			$('.director').removeClass('nextPageAnimation');
 		}
-		console.log('hi')
 	}
 	$scope.nextPage = function(curr){
 		if ( $scope.currentPage < $scope.maxPage ) {
 			$scope.currentPage++;
 			$('.director').addClass('nextPageAnimation');
 			$('.director').removeClass('prevPageAnimation');
-		}
-	}
+			$scope.isActivatedLeft = false;
+			$scope.isActivatedRight = false; 
+			$scope.spreadChild('both');	
+		}		
+		// $setTimeout($scope.isActivatedLeft = $scope.isActivatedRight = true,300000);
+		 
+	}	
 
-	
 
 	$scope.event = function(e){
 		switch (e.keyCode) {
@@ -84,7 +87,7 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 				break;
 			case 27 :
 				if( $scope.currentPage === 'director' )
-					$scope.currentPage = 1;
+					$scope.currentPage = 2;
 				break;
 		}
 	};

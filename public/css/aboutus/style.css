@@ -847,7 +847,11 @@ body {
 .section {
   margin-top: -2%;
   height: 40%;
-  background: url("../../imgs/aboutus/background.png"); }
+  background: url("../../imgs/aboutus/background.png");
+  -webkit-animation: directorBlockShow 1.1s;
+  -moz-transition: directorBlockShow 1.1s;
+  -o-transition: directorBlockShow 1.1s;
+  animation: directorBlockShow 1.1s; }
   .section .content {
     position: relative;
     margin: 12% 7% 10% 10%;
@@ -862,10 +866,6 @@ body {
     -moz-transition: all 1.2s ease-in-out;
     -o-transition: all 1.2s ease-in-out;
     transition: all 1.2s ease-in-out;
-    -webkit-animation: directorBlockShow 1.1s;
-    -moz-transition: directorBlockShow 1.1s;
-    -o-transition: directorBlockShow 1.1s;
-    animation: directorBlockShow 1.1s;
     opacity: 1; }
     .section .content-activated {
       transition: all 1.2s ease-in-out;
@@ -1025,12 +1025,6 @@ body {
       transition: all ease-out 0.5s;
       opacity: 1; }
 
-.nextPageAnimation {
-  -webkit-animation: directorBlockShow 1.1s;
-  -moz-transition: directorBlockShow 1.1s;
-  -o-transition: directorBlockShow 1.1s;
-  animation: directorBlockShow 1.1s; }
-
 .prevPageAnimation {
   -webkit-animation: directorBlockShowPrev 1.1s;
   -moz-transition: directorBlockShowPrev 1.1s;
@@ -1039,49 +1033,49 @@ body {
 
 @-webkit-keyframes frameBlockShow {
   from {
-    margin-top: -5%;
+    margin-top: 30%;
     opacity: 0.3; }
   to {
     opacity: 1; } }
 @-moz-keyframes frameBlockShow {
   from {
-    margin-top: -5%;
+    margin-top: 30%;
     opacity: 0.3; }
   to {
     opacity: 1; } }
 @-ms-keyframes frameBlockShow {
   from {
-    margin-top: -5%;
+    margin-top: 30%;
     opacity: 0.3; }
   to {
     opacity: 1; } }
 @keyframes frameBlockShow {
   from {
-    margin-top: -5%;
+    margin-top: 30%;
     opacity: 0.3; }
   to {
     opacity: 1; } }
 @-webkit-keyframes directorBlockShow {
   from {
-    margin-top: 30%;
+    margin-top: -10%;
     opacity: 0.3; }
   to {
     opacity: 1; } }
 @-moz-keyframes directorBlockShow {
   from {
-    margin-top: 30%;
+    margin-top: -10%;
     opacity: 0.3; }
   to {
     opacity: 1; } }
 @-ms-keyframes directorBlockShow {
   from {
-    margin-top: 30%;
+    margin-top: -10%;
     opacity: 0.3; }
   to {
     opacity: 1; } }
 @keyframes directorBlockShow {
   from {
-    margin-top: 30%;
+    margin-top: -10%;
     opacity: 0.3; }
   to {
     opacity: 1; } }

@@ -701,7 +701,10 @@ body {
 
     background: url('../../imgs/aboutus/background.png');
 
-
+    -webkit-animation: directorBlockShow 1.1s;
+    -moz-transition: directorBlockShow 1.1s;
+    -o-transition: directorBlockShow 1.1s;
+    animation: directorBlockShow 1.1s;
     .content {
         // position: absolute;
         position: relative;
@@ -713,22 +716,19 @@ body {
         display: block;
         background: none;
 
-background-repeat: repeat-y;
-    background-size: cover;
-    opacity: 0;
-    -webkit-transition: all 1.2s ease-in-out;
-    -moz-transition: all 1.2s ease-in-out;
-    -o-transition: all 1.2s ease-in-out;
-    transition: all 1.2s ease-in-out;
-    &-activated {
+        background-repeat: repeat-y;
+        background-size: cover;
+        opacity: 0;
+        -webkit-transition: all 1.2s ease-in-out;
+        -moz-transition: all 1.2s ease-in-out;
+        -o-transition: all 1.2s ease-in-out;
         transition: all 1.2s ease-in-out;
-        opacity: 1;
-    }
+        &-activated {
+            transition: all 1.2s ease-in-out;
+            opacity: 1;
+        }
 
-        -webkit-animation: directorBlockShow 1.1s;
-        -moz-transition: directorBlockShow 1.1s;
-        -o-transition: directorBlockShow 1.1s;
-        animation: directorBlockShow 1.1s;
+        
         opacity: 1;
         p {
             display: inline-block;
@@ -873,12 +873,12 @@ background-repeat: repeat-y;
         }
     }
 }
-.nextPageAnimation{
-    -webkit-animation: directorBlockShow 1.1s;
-    -moz-transition: directorBlockShow 1.1s;
-    -o-transition: directorBlockShow 1.1s;
-    animation: directorBlockShow 1.1s;
-}
+// .nextPageAnimation{
+//     -webkit-animation: directorBlockShow 1.1s;
+//     -moz-transition: directorBlockShow 1.1s;
+//     -o-transition: directorBlockShow 1.1s;
+//     animation: directorBlockShow 1.1s;
+// }
 .prevPageAnimation {
     -webkit-animation: directorBlockShowPrev 1.1s;
     -moz-transition: directorBlockShowPrev 1.1s;
@@ -887,7 +887,7 @@ background-repeat: repeat-y;
 }
 @include keyframes(frameBlockShow) {
     from {
-        margin-top: -5%;
+        margin-top: 30%;
         opacity: 0.3;
     }
     to {
@@ -896,7 +896,7 @@ background-repeat: repeat-y;
 }
 @include keyframes(directorBlockShow) {
     from {
-        margin-top: 30%;
+        margin-top: -10%;
         opacity: 0.3;
     }
     to {
