@@ -35,17 +35,13 @@
 			<div class="frame frame-left">
 				<div class="frame-outer"></div>
 				<div class="frame-inner">
-					<div>
-						{{frameLeft}}
-					</div>
+					<div ng-bind="frameLeft"></div>
 				</div>
 			</div>
 			<div class="frame frame-right">
 				<div class="frame-outer"></div>
 				<div class="frame-inner">
-					<div>
-						{{frameRight}}
-					</div>
+					<div ng-bind="frameRight"></div>
 				</div>
 			</div>
 		</div>
@@ -57,24 +53,37 @@
 				<div id="month-2">4<div></div></div>
 				<div id="month-3">5<div></div></div>
 			</div>
-			<div class="timeline-tag" id="tag-1" tag="workshop">
-				<img src="imgs/community/activity-1.png" alt="">
+
+			<div ng-repeat="tag in tags" class="timeline-tag" tag="workshop" ng-click="clickTag(tag)" ng-style="{'left':'{{tag.left}}px', 'background-color': '{{tag.background}}'}">
+				<img ng-src="imgs/community/{{tag.picname}}.png" alt="">
 			</div>
-			<div class="timeline-tag" id="tag-2"></div>
-			<div class="timeline-tag" id="tag-3"></div>
-			<div class="timeline-tag" id="tag-4"></div>
-			<div class="timeline-tag" id="tag-5"></div>
+
 		</div>
 
 		<section class="activity" id="workshop">
 			<div class="cross" tag="workshop"><div>x</div></div>
 			<span>workshop</span>
 			<aside>
+				<div ng-repeat="event in events"><span><b>{{event.date}}</b>{{event.name}}</span></div>
+			</aside>
+			<article>
+				<span ng-bind="act_title"></span>
+				<section>
+					<h2><div></div>主題介紹</h2>
+					<p ng-bind-html-unsafe="act_content"></p>
+				</section>
+			</article>
+		</section>
+
+		<section class="activity" id="meetup">
+			<div class="cross" tag="meetup"><div>x</div></div>
+			<span>Meet Up</span>
+			<aside>
 				<div><span><b>3/7</b>網路前端設計</span></div>
 				<div><span><b>5/2</b>軟硬整合-相機</span></div>
 			</aside>
 			<article>
-				<span>網路前端設計</span>
+				<span ng-bind="act_title"></span>
 				<section>
 					<h2><div></div>主題介紹</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, fuga ab unde perspiciatis provident doloribus ipsam, libero repudiandae omnis consectetur et maiores. Quod earum illum ullam omnis quisquam, alias totam?</p>
@@ -82,7 +91,7 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero voluptatem suscipit aliquid illum delectus velit provident atque dolorum rerum quae porro, corporis, soluta, similique assumenda. Eveniet illum necessitatibus porro ad.</p>
 				</section>
 			</article>
-	</section>
+		</section>
 
 	</section>
 	</div>
