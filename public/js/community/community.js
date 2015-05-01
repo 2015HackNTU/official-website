@@ -42,7 +42,7 @@ $(document).ready(function () {
 	$('.timeline-tag').click(function () {
 		tag = $(this).attr('tag');
 		$('.activity#' + tag).show().animate({
-			bottom: '-20px'
+			bottom: '-55px'
 		}, 1000);
 	});
 	$('.cross').click(function () {
