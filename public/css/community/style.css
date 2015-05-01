@@ -202,29 +202,9 @@ body {
 	display: block;
 }
 
-#tag-1 {
-	left: 320px;
-	background: #BF1920;
-}
-
 #tag-2 {
 	left: 530px;
 	background: #F29417;
-}
-
-#tag-3 {
-	left: 200px;
-	background: #000;
-}
-
-#tag-4 {
-	left: 250px;
-	background: #000;
-}
-
-#tag-5 {
-	left: 600px;
-	background: #000;
 }
 
 .month-tag {
@@ -325,6 +305,7 @@ body {
 
 .activity aside>div {
     text-align: center;
+	margin-bottom: 10px;
 }
 
 .activity aside span {
@@ -381,6 +362,10 @@ body {
 .activity#workshop {
 	/*background: #c94b52;*/
     background-color: rgba(201, 75, 82, 0.95);
+}
+
+.activity#meetup {
+	background-color: rgba(255, 146, 0, 0.95);
 }
 
 .cross {
