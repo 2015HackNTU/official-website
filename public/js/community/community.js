@@ -7,14 +7,15 @@ app.controller('communityCtrl', ['$scope', function ($scope) {
 	$scope.events = [
 		//Event here
 		{date:'3/7', name:'網路前端設計', title: '網路前端工作坊',
-		 content: "誰說沒有技術背景的人不能成為hacker？<br>\
-我們相信只要有心，每個人都能成為自己動手解決問題的hacker。以一天密集的課程帶領不曾有過coding經驗，但擁有熱忱的學員踏出自己動手做的第一步。由HackNTU創辦人張凱迪擔任講師，借用他豐富的教學經驗與文組轉為工程師的特殊經歷，以過來人角度點燃初學者心中的hacker spirit。<br>\
-除此之外，透過工作坊，學員結識其他同樣朝向黑客之路的人，於活動結束後，一同持續精進實力。"},
+		 content: "<p>誰說沒有技術背景的人不能成為hacker？</p>\
+<p>我們相信只要有心，每個人都能成為自己動手解決問題的hacker。以一天密集的課程帶領不曾有過coding經驗，但擁有熱忱的學員踏出自己動手做的第一步。由HackNTU創辦人張凱迪擔任講師，借用他豐富的教學經驗與文組轉為工程師的特殊經歷，以過來人角度點燃初學者心中的hacker spirit。</p>\
+<p>除此之外，透過工作坊，學員結識其他同樣朝向黑客之路的人，於活動結束後，一同持續精進實力。</p>"},
+		{date:'3/28', title: '網頁 x 社群 x 半途出家 Meetup'},
 		{date:'5/3', name:'軟硬整合-相機', title: 'Hack into the City - Raspberry Pi 相機 IoT Workshop',
-		 content: "http://hackntuworkshop2.parseapp.com/<br>\
-  在這個資訊爆炸，科技發達的時代，人們的生活步調越來越快，IoT(物聯網)是未來資訊技術在運算與溝通上的演進趨勢，而這樣的演進過程中將會需要各式各樣領域的技術及科技創新來帶動，小從奈米科技、大至城市無線網路的佈建，其影響範圍相當廣泛。<br>\
-  今年二月，Raspberry pi基金會正推出新一代的Raspberry pi 2，搭載了時脈為900MHz的ARM四核心Cortex-A7處理器，使處理速度是前代的六倍，更可以支援microsoft新推出的Window 10作業系統，應用於物聯網開發之中。<br>\
-  在本次工作坊之中，我們將會利用Raspberry pi Model B，這塊麻雀雖小，卻能發揮許多功用的板子，在上面寫些簡單的程式，搭配手機去控制相機，實現我們的需求，同時也能對於IoT這項概念能有所體驗。"}
+		 content: "<p>在這個資訊爆炸，科技發達的時代，人們的生活步調越來越快，IoT(物聯網)是未來資訊技術在運算與溝通上的演進趨勢，而這樣的演進過程中將會需要各式各樣領域的技術及科技創新來帶動，小從奈米科技、大至城市無線網路的佈建，其影響範圍相當廣泛。</p>\
+  <p>今年二月，Raspberry pi基金會正推出新一代的Raspberry pi 2，搭載了時脈為900MHz的ARM四核心Cortex-A7處理器，使處理速度是前代的六倍，更可以支援microsoft新推出的Window 10作業系統，應用於物聯網開發之中。</p>\
+  <p>在本次工作坊之中，我們將會利用Raspberry pi Model B，這塊麻雀雖小，卻能發揮許多功用的板子，在上面寫些簡單的程式，搭配手機去控制相機，實現我們的需求，同時也能對於IoT這項概念能有所體驗。</p>\
+<p>連結：<a href='http://hackntuworkshop2.parseapp.com/'>http://hackntuworkshop2.parseapp.com/</a></p>"}
 	];
 
 	$scope.tags = [
