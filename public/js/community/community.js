@@ -1,4 +1,5 @@
 var app = angular.module('communityApp', []);
+var activityNow = null;
 
 app.controller('communityCtrl', ['$scope', function ($scope) {
 	$scope.frameLeft = '藉由提供學生族群基本技術的課程，試圖讓更多人能結合所學解決真實的問題。';
@@ -106,7 +107,12 @@ $(document).ready(function () {
 		});
 	});
 	$('.timeline-tag').click(function () {
+		if (activityNow !== null) {
+			activityNow.hide();
+			activityNow = null;
+		}
 		tag = $(this).attr('tag');
+		activityNow = $('.activity#' + tag);
 		$('.activity#' + tag).show().animate({
 			bottom: '-55px'
 		}, 1000);
