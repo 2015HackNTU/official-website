@@ -28,8 +28,7 @@ body {
 	width: 800px;
 	position: absolute;
 	left: 50%;
-	top: 50%;
-	margin-top: -240px;
+	top: 12%;
 	margin-left: -400px;
 }
 
@@ -70,6 +69,7 @@ body {
 	bottom: 0;
 	left: 50%;
 	margin-left: -50px;
+	opacity: 0.7;
 }
 
 .section-main {
@@ -226,16 +226,28 @@ body {
 	background: #fff;
 }
 
-#month-1 {
-	left: 270px;
-}
-
-#month-2 {
-	left: 460px;
-}
-
 #month-3 {
-	left: 660px;
+	left: 140px;
+}
+
+#month-4 {
+	left: 260px;
+}
+
+#month-5 {
+	left: 380px;
+}
+
+#month-6 {
+	left: 500px;
+}
+
+#month-7 {
+	left: 620px;
+}
+
+#month-8 {
+	left: 740px;
 }
 
 .span-date {
