@@ -111,19 +111,23 @@ body {
 	margin-right: 70px;
 }
 
+/*
 .frame-left .frame-outer {
 	background-image: url(../../imgs/community/workshopno.png);
 }
+*/
 
-.frame-left .frame-outer:hover {
+.frame-left .frame-outer/*:hover*/ {
 	background-image: url(../../imgs/community/workshopcolor.png);
 }
 
+/*
 .frame-right .frame-outer {
 	background-image: url(../../imgs/community/meetupno.png);
 }
+*/
 
-.frame-right .frame-outer:hover {
+.frame-right .frame-outer/*:hover*/ {
 	background-image: url(../../imgs/community/meetupcolor.png);
 }
 
