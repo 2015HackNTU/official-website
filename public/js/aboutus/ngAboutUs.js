@@ -12,11 +12,11 @@ app.controller('aboutUsCtrl', ['$scope','$http', function ($scope, $http) {
 		'HR' : 'Human Resource',
 		'BD' : 'Brand Design',
 		'DM' : 'Digital Marketing',
-		'HackCampus' : 'Hack Campus',
+		'HackCampus' : 'HackCampus',
 		'CR' : 'Community Relation',
 		'Course' : 'Hack Course',
-		'HC' : 'Hackathon Competition',
-		'Leader' : 'HackNTU Leaders'
+		'HC' : 'Logistic',
+		'Leader' : 'Presidents'
 	}
 	$scope.spreadChild = function(whitchSide){
 		if (whitchSide === 'both' && (!$scope.isActivatedLeft || !$scope.isActivatedRight) ){
