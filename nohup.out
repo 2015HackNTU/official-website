@@ -1,0 +1,113 @@
+
+> hackntu-official-website@0.0.0 start /Users/puchin/workspace/official-website
+> node ./bin/www
+
+events.js:85
+      throw er; // Unhandled 'error' event
+            ^
+Error: listen EADDRINUSE
+    at exports._errnoException (util.js:746:11)
+    at Server._listen2 (net.js:1146:14)
+    at listen (net.js:1172:10)
+    at Server.listen (net.js:1257:5)
+    at Function.app.listen (/Users/puchin/workspace/official-website/node_modules/express/lib/application.js:556:24)
+    at Object.<anonymous> (/Users/puchin/workspace/official-website/bin/www:7:18)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+
+npm ERR! Darwin 14.3.0
+npm ERR! argv "node" "/usr/local/bin/npm" "start"
+npm ERR! node v0.12.2
+npm ERR! npm  v2.7.4
+npm ERR! code ELIFECYCLE
+npm ERR! hackntu-official-website@0.0.0 start: `node ./bin/www`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the hackntu-official-website@0.0.0 start script 'node ./bin/www'.
+npm ERR! This is most likely a problem with the hackntu-official-website package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls hackntu-official-website
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /Users/puchin/workspace/official-website/npm-debug.log
+
+> hackntu-official-website@0.0.0 start /Users/puchin/workspace/official-website
+> node ./bin/www
+
+[0mGET / [36m304 [0m51.248 ms - -[0m
+[0mGET /libs/bootstrap/css/bootstrap.min.css [36m304 [0m16.120 ms - -[0m
+[0mGET /css/shared/navbar/navbar_style.css [36m304 [0m3.044 ms - -[0m
+[0mGET /libs/bootstrap/js/bootstrap.min.js [36m304 [0m2.416 ms - -[0m
+[0mGET /css/home/home2.css [36m304 [0m1.858 ms - -[0m
+[0mGET /js/shared/navbar/navbar.js [36m304 [0m1.545 ms - -[0m
+[0mGET /libs/jquery-2.1.3.min.js [36m304 [0m1.868 ms - -[0m
+[0mGET /css/shared/footer/footer_style.css [36m304 [0m2.037 ms - -[0m
+[0mGET /js/home/home.js [36m304 [0m1.437 ms - -[0m
+[0mGET /libs/jquery.waypoints.min.js [36m304 [0m1.272 ms - -[0m
+[0mGET /imgs/shared/navbar/navbar_logo.png [36m304 [0m3.231 ms - -[0m
+[0mGET /imgs/shared/navbar/navbar_hackntu.png [36m304 [0m2.867 ms - -[0m
+[0mGET /imgs/home2/bg.png [36m304 [0m2.174 ms - -[0m
+[0mGET /imgs/home2/hackintocity.png [36m304 [0m7.230 ms - -[0m
+[0mGET /imgs/home2/2B.png [36m304 [0m7.630 ms - -[0m
+[0mGET /imgs/home2/mainpic3.jpg [36m304 [0m3.093 ms - -[0m
+[0mGET /imgs/home2/mainpic_course6.png [32m200 [0m43.098 ms - 1246899[0m
+[0mGET /imgs/home2/workshoppost.png [32m200 [0m63.684 ms - 2229434[0m
+[0mGET /imgs/home2/mainpic2.png [32m200 [0m54.771 ms - 2219006[0m
+[0mGET /imgs/home2/BENSON.png [32m200 [0m121.374 ms - 7720537[0m
+[0mGET /libs/bootstrap/fonts/glyphicons-halflings-regular.woff [36m304 [0m5.732 ms - -[0m
+[0mGET /fonts/Montserrat-Light.otf [36m304 [0m5.512 ms - -[0m
+[0mGET /fonts/Adobe-Fan-Heiti-Std-B.otf [32m200 [0m76.696 ms - 5497908[0m
+[0mGET /fonts/STXiHei.ttf [32m200 [0m101.273 ms - 9768704[0m
+
+> hackntu-official-website@0.0.0 start /Users/puchin/workspace/official-website
+> node ./bin/www
+
+[0mGET / [36m304 [0m38.698 ms - -[0m
+[0mGET /libs/bootstrap/css/bootstrap.min.css [36m304 [0m25.994 ms - -[0m
+[0mGET /css/shared/navbar/navbar_style.css [36m304 [0m5.889 ms - -[0m
+[0mGET /css/home/home2.css [36m304 [0m4.643 ms - -[0m
+[0mGET /libs/bootstrap/js/bootstrap.min.js [36m304 [0m4.291 ms - -[0m
+[0mGET /libs/jquery-2.1.3.min.js [36m304 [0m4.418 ms - -[0m
+[0mGET /js/shared/navbar/navbar.js [36m304 [0m4.368 ms - -[0m
+[0mGET /css/shared/footer/footer_style.css [36m304 [0m5.394 ms - -[0m
+[0mGET /js/home/home.js [36m304 [0m3.991 ms - -[0m
+[0mGET /libs/jquery.waypoints.min.js [36m304 [0m4.033 ms - -[0m
+[0mGET /imgs/shared/navbar/navbar_logo.png [36m304 [0m1.706 ms - -[0m
+[0mGET /imgs/shared/navbar/navbar_hackntu.png [36m304 [0m1.047 ms - -[0m
+[0mGET /imgs/home2/bg.png [36m304 [0m3.977 ms - -[0m
+[0mGET /imgs/home2/mainpic3.jpg [36m304 [0m7.611 ms - -[0m
+[0mGET /imgs/home2/2B.png [36m304 [0m3.539 ms - -[0m
+[0mGET /imgs/home2/hackintocity.png [36m304 [0m3.239 ms - -[0m
+[0mGET /imgs/home2/mainpic_course6.png [32m200 [0m55.513 ms - 1246899[0m
+[0mGET /imgs/home2/workshoppost.png [32m200 [0m79.475 ms - 2229434[0m
+[0mGET /imgs/home2/mainpic2.png [32m200 [0m68.037 ms - 2219006[0m
+[0mGET /imgs/home2/BENSON.png [32m200 [0m142.470 ms - 7720537[0m
+[0mGET /libs/bootstrap/fonts/glyphicons-halflings-regular.woff [36m304 [0m3.273 ms - -[0m
+[0mGET /fonts/Montserrat-Light.otf [36m304 [0m2.491 ms - -[0m
+[0mGET /fonts/Adobe-Fan-Heiti-Std-B.otf [32m200 [0m91.705 ms - 5497908[0m
+[0mGET /fonts/STXiHei.ttf [32m200 [0m127.299 ms - 9768704[0m
+[0mGET / [32m200 [0m28.742 ms - 52504[0m
+[0mGET /libs/bootstrap/css/bootstrap.min.css [36m304 [0m7.828 ms - -[0m
+[0mGET /css/shared/navbar/navbar_style.css [36m304 [0m4.378 ms - -[0m
+[0mGET /css/home/home2.css [36m304 [0m4.230 ms - -[0m
+[0mGET /libs/jquery-2.1.3.min.js [36m304 [0m5.526 ms - -[0m
+[0mGET /js/shared/navbar/navbar.js [36m304 [0m5.830 ms - -[0m
+[0mGET /js/home/home.js [36m304 [0m1.385 ms - -[0m
+[0mGET /css/shared/footer/footer_style.css [36m304 [0m1.362 ms - -[0m
+[0mGET /libs/bootstrap/js/bootstrap.min.js [36m304 [0m2.399 ms - -[0m
+[0mGET /libs/jquery.waypoints.min.js [36m304 [0m0.840 ms - -[0m
+[0mGET /imgs/shared/navbar/navbar_logo.png [36m304 [0m2.912 ms - -[0m
+[0mGET /imgs/shared/navbar/navbar_hackntu.png [36m304 [0m2.832 ms - -[0m
+[0mGET /imgs/home2/hackintocity.png [36m304 [0m1.441 ms - -[0m
+[0mGET /imgs/home2/BENSON.png [36m304 [0m1.471 ms - -[0m
+[0mGET /imgs/home2/2B.png [36m304 [0m4.593 ms - -[0m
+[0mGET /imgs/home2/workshoppost.png [36m304 [0m5.486 ms - -[0m
+[0mGET /imgs/home2/mainpic3.jpg [36m304 [0m3.969 ms - -[0m
+[0mGET /imgs/home2/mainpic_course6.png [36m304 [0m2.494 ms - -[0m
+[0mGET /imgs/home2/bg.png [36m304 [0m2.656 ms - -[0m
