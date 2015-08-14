@@ -155,6 +155,7 @@ i {
     height: 6%;
 }
 
+
 /*******************************/
 /*       Why, How, What        */
 /*******************************/
@@ -439,7 +440,6 @@ figure > .svg-container {
     #myCarousel {
         height: 25em;
     }
-
     .content-block {
         padding: 3% 0;
     }
@@ -457,7 +457,6 @@ figure > .svg-container {
     #myCarousel {
         height: 20em;
     }
-
     #top-nav, #bot-nav {
         display: none;
     }
